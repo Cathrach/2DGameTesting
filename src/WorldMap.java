@@ -10,7 +10,7 @@ public class WorldMap extends BasicGameState {
 
     private int id;
     TiledMap map;
-    private Character square;
+    private Entity square;
 
 
     public WorldMap(int id) {
@@ -25,7 +25,7 @@ public class WorldMap extends BasicGameState {
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         map = new TiledMap("maps/sample.tmx");
-        square = new Character(0, 0);
+        square = new Entity(0, 0);
     }
 
     @Override
@@ -44,12 +44,18 @@ public class WorldMap extends BasicGameState {
 
     }
 
+    public void changeMap(String map_name) throws SlickException {
+        map = new TiledMap(map_name);
+    }
+
     public boolean isBlocked(float xPos, float yPos) {
+        if (xPos == 0 || yPos == 0 || xPos == map.getWidth() * map.getTileWidth() || yPos == map.getHeight() * map.getTileHeight()) {
+            return true;
+        }
         // current tile is xPos / the tile width
         int tileWidth = map.getTileWidth();
         int tileHeight = map.getTileHeight();
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Blocked"));
-        System.out.println((int) xPos / tileWidth + ", " + (int) yPos / tileHeight);
         return map.getTileProperty(tileID, "Blocked", "false").equals("true");
     }
 }

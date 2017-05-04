@@ -5,7 +5,7 @@
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
-public class Character {
+public class Entity {
     // image representing character
     private Image sprite;
     private float xPos, yPos;
@@ -14,7 +14,7 @@ public class Character {
     // TODO: animations
 
     // constructor: make character at some position
-    public Character(float xPos, float yPos) throws SlickException {
+    public Entity(float xPos, float yPos) throws SlickException {
         sprite = new Image("sprites/sample_sprite.png");
         this.xPos = xPos;
         this.yPos = yPos;
@@ -31,7 +31,7 @@ public class Character {
         sprite.draw(xPos, yPos);
     }
 
-    // update: check if keys are pressed -> change position; handle collisions/damage eventually
+    // update: check if keys are pressed -> change position; handle collisions/damage/teleports eventually
     public void update(GameContainer container, StateBasedGame game, int delta, WorldMap map) throws SlickException {
         Input input = container.getInput();
         if (input.isKeyDown(Input.KEY_UP) && !(map.isBlocked(xPos + width, yPos) || map.isBlocked(xPos, yPos))) {
