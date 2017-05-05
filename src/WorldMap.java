@@ -11,7 +11,7 @@ public class WorldMap extends BasicGameState {
     private int id;
     TiledMap map;
     private Entity square;
-
+    private BattleEntity player;
 
     public WorldMap(int id) {
         this.id = id;
@@ -25,7 +25,9 @@ public class WorldMap extends BasicGameState {
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         map = new TiledMap("maps/sample.tmx");
-        square = new Entity(0, 0);
+        // check if there's a "save"; if not, make a new entity
+        player = new BattleEntity("square");
+        square = new Entity(0, 0, player);
     }
 
     @Override
