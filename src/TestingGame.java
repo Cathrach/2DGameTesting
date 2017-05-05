@@ -18,7 +18,12 @@ public class TestingGame extends StateBasedGame {
     public static final int HEIGHT = 480;
     public static final int FPS = 60;
 
-    public TestingGame(String name) {
+    static int money;
+    static Entity[] party;
+    // change to enemy class later
+    static BattleEntity[] enemies;
+
+    public TestingGame(String name) throws SlickException {
         super(name);
         this.addState(new MainMenu(MAIN_MENU));
         this.addState(new WorldMap(WORLD_MAP));

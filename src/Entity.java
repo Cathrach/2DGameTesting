@@ -3,7 +3,6 @@
  */
 
 import org.newdawn.slick.*;
-import org.newdawn.slick.geom.*;
 import org.newdawn.slick.state.*;
 
 public class Entity {
@@ -13,7 +12,6 @@ public class Entity {
     private int width, height;
     private final float SPEED = 0.1f;
     private BattleEntity player;
-    private Rectangle boundingBox;
     // TODO: animations
 
     // constructor: make character at some position
@@ -35,17 +33,32 @@ public class Entity {
         sprite.draw(xPos, yPos);
     }
 
+    @Override
+    public String toString() {
+        return "Entity{" +
+                "sprite=" + sprite +
+                ", xPos=" + xPos +
+                ", yPos=" + yPos +
+                ", width=" + width +
+                ", height=" + height +
+                ", SPEED=" + SPEED +
+                ", player=" + player +
+                '}';
+    }
+
     // update: check if keys are pressed -> change position; handle collisions/damage/teleports eventually
     public void update(GameContainer container, StateBasedGame game, int delta, WorldMap map) throws SlickException {
         Input input = container.getInput();
-        if (input.isKeyDown(Input.KEY_UP) && !(map.isBlocked(xPos + width, yPos) || map.isBlocked(xPos, yPos))) {
+        if (input.isKeyDown(Input.KEY_UP) && !(map.isBlocked(xPos + width, yPos) || map.isBlocked(xPos, yPos) || yPos <= 0)) {
             yPos -= delta * SPEED;
-        } else if (input.isKeyDown(Input.KEY_DOWN) && !(map.isBlocked(xPos + width, yPos + height) || map.isBlocked(xPos, yPos + height))) {
+        } else if (input.isKeyDown(Input.KEY_DOWN) && !(map.isBlocked(xPos + width, yPos + height) || map.isBlocked(xPos, yPos + height) || yPos >= map.getHeight())) {
             yPos += delta * SPEED;
-        } else if (input.isKeyDown(Input.KEY_LEFT) && !(map.isBlocked(xPos, yPos + height) || map.isBlocked(xPos, yPos))) {
+        } else if (input.isKeyDown(Input.KEY_LEFT) && !(map.isBlocked(xPos, yPos + height) || map.isBlocked(xPos, yPos) || xPos <= 0)) {
             xPos -= delta * SPEED;
-        } else if (input.isKeyDown(Input.KEY_RIGHT) && !(map.isBlocked(xPos + width, yPos) || map.isBlocked(xPos + width, yPos + height))) {
+        } else if (input.isKeyDown(Input.KEY_RIGHT) && !(map.isBlocked(xPos + width, yPos) || map.isBlocked(xPos + width, yPos + height) || xPos >= map.getWidth())) {
             xPos += delta * SPEED;
+        } else {
+
         }
     }
 

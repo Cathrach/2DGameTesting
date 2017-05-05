@@ -5,8 +5,6 @@
 import org.newdawn.slick.*;
 import org.newdawn.slick.geom.*;
 
-import java.util.Hashtable;
-
 public class Inventory {
 
     // a button for highlighting
@@ -14,8 +12,8 @@ public class Inventory {
     // button location (x, y)
     int buttonXPos;
     int buttonYPos;
-    // contains consumables and equips: hash table of items and quantities? make a class "InventoryItem"?
-
+    // contains consumables and equips: array list of items
+    // index in array list?
 
     public Inventory() {
 
@@ -30,21 +28,27 @@ public class Inventory {
         // by default first item is highlighted by the button (should probably handle this in init)
     }
 
-    public void update(int delta) {
+    public void update(GameContainer container, int delta) {
+        Input input = container.getInput();
         // check if keys pressed and move buttons around
         // also, check for using/equipping
+        if (input.isKeyPressed(Input.KEY_ENTER)) {
+            // use the item
+
+        }
+
     }
 
     // increase the amount of item by some quantity; should also check if quantity goes over 99
-    public void addItem(Item item, int quantity) {
+    public void addItem(String itemName, int quantity) {
 
     }
 
-    public void removeItem(Item item, int quantity) {
+    public void removeItem(String itemName, int quantity) {
 
     }
 
-    public int getQuantity(Item item) {
+    public int getQuantity(String itemName) {
         return 0;
     }
 }

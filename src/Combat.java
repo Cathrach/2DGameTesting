@@ -5,9 +5,13 @@
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 
+import java.util.List;
+
 public class Combat extends BasicGameState {
 
     private int id;
+    private boolean isPlayerTurn;
+    private List<BattleEntity> turnOrder;
 
     public Combat(int id) {
         this.id = id;
@@ -15,21 +19,36 @@ public class Combat extends BasicGameState {
 
     @Override
     public int getID() {
-        return 0;
+        return id;
     }
 
     @Override
-    public void init(GameContainer gameContainer, StateBasedGame stateBasedGame) throws SlickException {
-
-    }
-
-    @Override
-    public void render(GameContainer gameContainer, StateBasedGame stateBasedGame, Graphics graphics) throws SlickException {
+    public void init(GameContainer container, StateBasedGame game) throws SlickException {
 
     }
 
     @Override
-    public void update(GameContainer gameContainer, StateBasedGame stateBasedGame, int i) throws SlickException {
+    public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
+        // draw background
+        // display enemies on one side and players on another
+        // if player turn, render the action menu
+    }
 
+    @Override
+    public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
+        // check whose turn it is
+
+        // if player turn:
+        // change selected action w/arrow keys
+        // get selected action w/enter key
+        // else:
+        // execute an action from the AI
+
+        // move around actions in the turnOrder list
+        // execute actions
+        // delete enemies and players if necessary (check if HP <= 0)
+
+        // if all enemies or all players are dead, exit back to the world map
+        // modify the inventory with loot
     }
 }

@@ -9,17 +9,19 @@ public class BattleEntity {
     private int baseHP;
     private int baseATK;
     private int baseDEF;
+    private boolean isPlayer;
 
     // equips here
 
-    // skills (?) here
+    // skills here
 
-    public BattleEntity(String name) {
+    public BattleEntity(String name, boolean isPlayer) {
         this.name = name;
         currHP = 20;
         baseHP = 20;
         baseATK = 5;
         baseDEF = 3;
+        this.isPlayer = isPlayer;
     }
 
 
@@ -62,4 +64,6 @@ public class BattleEntity {
     public void setBaseDEF(int baseDEF) {
         this.baseDEF = baseDEF;
     }
+
+    // execute action based on skills list
 }

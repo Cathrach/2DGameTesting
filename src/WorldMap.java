@@ -10,8 +10,7 @@ public class WorldMap extends BasicGameState {
 
     private int id;
     TiledMap map;
-    private Entity square;
-    private BattleEntity player;
+    private Entity leader;
 
     public WorldMap(int id) {
         this.id = id;
@@ -26,14 +25,15 @@ public class WorldMap extends BasicGameState {
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         map = new TiledMap("maps/sample.tmx");
         // check if there's a "save"; if not, make a new entity
-        player = new BattleEntity("square");
-        square = new Entity(0, 0, player);
+        TestingGame.party = new Entity[4];
+        TestingGame.party[0] = new Entity(0, 0, new BattleEntity("square", true));
+        leader = TestingGame.party[0];
     }
 
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         map.render(0, 0);
-        square.render(container, game, g);
+        leader.render(container, game, g);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class WorldMap extends BasicGameState {
         if (input.isKeyPressed(Input.KEY_ESCAPE)) {
             game.enterState(TestingGame.MAIN_MENU);
         }
-        square.update(container, game, delta, this);
+        leader.update(container, game, delta, this);
         // if the tile is an entry, change state to the town map
         // if there's a random encounter, change state to combat
 
@@ -53,8 +53,9 @@ public class WorldMap extends BasicGameState {
         map = new TiledMap(map_name);
     }
 
+    // TODO: perhaps make it dependent on direction :)
     public boolean isBlocked(float xPos, float yPos) {
-        if (xPos == 0 || yPos == 0 || xPos == map.getWidth() * map.getTileWidth() || yPos == map.getHeight() * map.getTileHeight()) {
+        if (xPos < 0 || yPos < 0 || xPos > this.getWidth() || yPos > this.getHeight()) {
             return true;
         }
         // current tile is xPos / the tile width
@@ -62,5 +63,13 @@ public class WorldMap extends BasicGameState {
         int tileHeight = map.getTileHeight();
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Blocked"));
         return map.getTileProperty(tileID, "Blocked", "false").equals("true");
+    }
+
+    public int getWidth() {
+        return map.getWidth() * map.getTileWidth();
+    }
+
+    public int getHeight() {
+        return map.getHeight() * map.getTileHeight();
     }
 }
