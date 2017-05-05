@@ -3,12 +3,19 @@
  */
 
 import org.newdawn.slick.*;
+import org.newdawn.slick.geom.*;
+
+import java.util.Hashtable;
 
 public class Inventory {
 
     // a button for highlighting
+    Rectangle button;
     // button location (x, y)
-    // contains consumables and equips: hash table of items and quantities?
+    int buttonXPos;
+    int buttonYPos;
+    // contains consumables and equips: hash table of items and quantities? make a class "InventoryItem"?
+
 
     public Inventory() {
 
@@ -24,7 +31,8 @@ public class Inventory {
     }
 
     public void update(int delta) {
-
+        // check if keys pressed and move buttons around
+        // also, check for using/equipping
     }
 
     // increase the amount of item by some quantity; should also check if quantity goes over 99

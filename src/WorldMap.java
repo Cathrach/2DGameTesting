@@ -43,9 +43,12 @@ public class WorldMap extends BasicGameState {
             game.enterState(TestingGame.MAIN_MENU);
         }
         square.update(container, game, delta, this);
+        // if the tile is an entry, change state to the town map
+        // if there's a random encounter, change state to combat
 
     }
 
+    // don't need this cuz world map
     public void changeMap(String map_name) throws SlickException {
         map = new TiledMap(map_name);
     }

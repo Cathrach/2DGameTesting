@@ -3,6 +3,7 @@
  */
 
 import org.newdawn.slick.*;
+import org.newdawn.slick.geom.*;
 import org.newdawn.slick.state.*;
 
 public class Entity {
@@ -12,6 +13,7 @@ public class Entity {
     private int width, height;
     private final float SPEED = 0.1f;
     private BattleEntity player;
+    private Rectangle boundingBox;
     // TODO: animations
 
     // constructor: make character at some position
