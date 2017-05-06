@@ -47,7 +47,7 @@ public class Entity {
     }
 
     // update: check if keys are pressed -> change position; handle collisions/damage/teleports eventually
-    public void update(GameContainer container, StateBasedGame game, int delta, WorldMap map) throws SlickException {
+    public void update(GameContainer container, StateBasedGame game, int delta, Map map) throws SlickException {
         Input input = container.getInput();
         if (input.isKeyDown(Input.KEY_UP) && !(map.isBlocked(xPos + width, yPos) || map.isBlocked(xPos, yPos) || yPos <= 0)) {
             yPos -= delta * SPEED;

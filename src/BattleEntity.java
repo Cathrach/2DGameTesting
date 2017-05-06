@@ -15,6 +15,8 @@ public class BattleEntity {
 
     // skills here
 
+    // current skill effects here
+
     public BattleEntity(String name, boolean isPlayer) {
         this.name = name;
         currHP = 20;
@@ -65,5 +67,21 @@ public class BattleEntity {
         this.baseDEF = baseDEF;
     }
 
-    // execute action based on skills list
+    // get/modify skills list
+
+    // use skill
+    public void use(Skill skill, BattleEntity target) {
+        skill.use(this, target);
+    }
+
+    public void addSkillEffect(SkillEffect skillEffect) {
+        // add to the skill effect list
+        skillEffect.addTo(this);
+    }
+
+    // consume skill effects after turn (poison, heals, etc)
+    public void consumeSkillEffects() {
+        // elapse turn for each skill
+        // if skill has no turns left, remove from list
+    }
 }

@@ -1,18 +1,17 @@
 /**
- * Created by serinahu on 5/3/17.
+ * Created by serinahu on 5/6/17.
  */
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 import org.newdawn.slick.tiled.*;
 
-public class WorldMap extends Map {
-
+public class TownMap extends Map {
     private int id;
     TiledMap map;
     private Entity leader;
 
-    public WorldMap(int id) {
+    public TownMap(int id) {
         this.id = id;
     }
 
@@ -20,9 +19,6 @@ public class WorldMap extends Map {
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         map = new TiledMap("maps/sample.tmx");
-        // check if there's a "save"; if not, make a new entity
-        TestingGame.party = new Entity[4];
-        TestingGame.party[0] = new Entity(0, 0, new BattleEntity("square", true));
         leader = TestingGame.party[0];
     }
 
@@ -39,8 +35,10 @@ public class WorldMap extends Map {
             game.enterState(TestingGame.MAIN_MENU);
         }
         leader.update(container, game, delta, this);
-        // if the tile is an entry, change state to the town map
-        // if there's a random encounter, change state to combat
+        // if the tile is an entry, change map
+        // if the tile is an exit, change to world map
+        // if the tile is a shop, change to shop menu
+        // if the tile is a chest/some other trigger, do things
 
     }
 }

@@ -36,17 +36,18 @@ public class Combat extends BasicGameState {
 
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-        // check whose turn it is
+        // check whose move it is
 
-        // if player turn:
+        // if player move:
         // change selected action w/arrow keys
         // get selected action w/enter key
         // else:
-        // execute an action from the AI
+        // choose an action from the AI
 
         // move around actions in the turnOrder list
         // execute actions
         // delete enemies and players if necessary (check if HP <= 0)
+        // consume skill effects for entity that just moved
 
         // if all enemies or all players are dead, exit back to the world map
         // modify the inventory with loot
