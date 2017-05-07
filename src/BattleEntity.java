@@ -76,6 +76,7 @@ public class BattleEntity {
 
     public void addSkillEffect(SkillEffect skillEffect) {
         // add to the skill effect list
+        // trigger any buffs, etc
         skillEffect.addTo(this);
     }
 

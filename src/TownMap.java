@@ -41,4 +41,8 @@ public class TownMap extends Map {
         // if the tile is a chest/some other trigger, do things
 
     }
+
+    public void changeMap(TiledMap map) {
+        this.map = map;
+    }
 }
