@@ -8,7 +8,7 @@ import org.newdawn.slick.state.*;
 public class Entity {
     // image representing character
     private Image sprite;
-    private float xPos, yPos;
+    float xPos, yPos;
     private int width, height;
     private final float SPEED = 0.1f;
     private BattleEntity player;
@@ -47,18 +47,16 @@ public class Entity {
     }
 
     // update: check if keys are pressed -> change position; handle collisions/damage/teleports eventually
-    public void update(GameContainer container, StateBasedGame game, int delta, Map map) throws SlickException {
+    public void update(GameContainer container, StateBasedGame game, int delta, MapState mapState) throws SlickException {
         Input input = container.getInput();
-        if (input.isKeyDown(Input.KEY_UP) && !(map.isBlocked(xPos + width, yPos) || map.isBlocked(xPos, yPos) || yPos <= 0)) {
+        if (input.isKeyDown(Input.KEY_UP) && !(mapState.isBlocked(xPos + width, yPos) || mapState.isBlocked(xPos, yPos) || yPos <= 0)) {
             yPos -= delta * SPEED;
-        } else if (input.isKeyDown(Input.KEY_DOWN) && !(map.isBlocked(xPos + width, yPos + height) || map.isBlocked(xPos, yPos + height) || yPos >= map.getHeight())) {
+        } else if (input.isKeyDown(Input.KEY_DOWN) && !(mapState.isBlocked(xPos + width, yPos + height) || mapState.isBlocked(xPos, yPos + height) || yPos >= mapState.getHeight())) {
             yPos += delta * SPEED;
-        } else if (input.isKeyDown(Input.KEY_LEFT) && !(map.isBlocked(xPos, yPos + height) || map.isBlocked(xPos, yPos) || xPos <= 0)) {
+        } else if (input.isKeyDown(Input.KEY_LEFT) && !(mapState.isBlocked(xPos, yPos + height) || mapState.isBlocked(xPos, yPos) || xPos <= 0)) {
             xPos -= delta * SPEED;
-        } else if (input.isKeyDown(Input.KEY_RIGHT) && !(map.isBlocked(xPos + width, yPos) || map.isBlocked(xPos + width, yPos + height) || xPos >= map.getWidth())) {
+        } else if (input.isKeyDown(Input.KEY_RIGHT) && !(mapState.isBlocked(xPos + width, yPos) || mapState.isBlocked(xPos + width, yPos + height) || xPos >= mapState.getWidth())) {
             xPos += delta * SPEED;
-        } else {
-
         }
     }
 

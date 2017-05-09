@@ -11,11 +11,13 @@ public class BattleEntity {
     private int baseDEF;
     private boolean isPlayer;
 
-    // equips here
-
     // skills here
 
     // current skill effects here
+
+    public BattleEntity() {
+        this("default", true);
+    }
 
     public BattleEntity(String name, boolean isPlayer) {
         this.name = name;

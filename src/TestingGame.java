@@ -9,8 +9,7 @@ public class TestingGame extends StateBasedGame {
 
     public static final String name = "Testing";
     public static final int MAIN_MENU = 0;
-    public static final int WORLD_MAP = 1;
-    public static final int TOWN_MAP = 2;
+    public static final int MAP = 1;
     public static final int PAUSE_MENU = 3;
     public static final int COMBAT = 4;
 
@@ -18,15 +17,10 @@ public class TestingGame extends StateBasedGame {
     public static final int HEIGHT = 480;
     public static final int FPS = 60;
 
-    static int money;
-    static Entity[] party;
-    // change to enemy class later
-    static BattleEntity[] enemies;
-
     public TestingGame(String name) throws SlickException {
         super(name);
         this.addState(new MainMenu(MAIN_MENU));
-        this.addState(new WorldMap(WORLD_MAP));
+        this.addState(new MapState(MAP));
         this.addState(new PauseMenu(PAUSE_MENU));
         this.addState(new Combat(COMBAT));
         this.enterState(MAIN_MENU);
@@ -34,8 +28,9 @@ public class TestingGame extends StateBasedGame {
 
     @Override
     public void initStatesList(GameContainer container) throws SlickException {
+        Resources.init();
         getState(MAIN_MENU).init(container, this);
-        getState(WORLD_MAP).init(container, this);
+        getState(MAP).init(container, this);
         getState(PAUSE_MENU).init(container, this);
         getState(COMBAT).init(container, this);
     }

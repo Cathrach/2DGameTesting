@@ -59,7 +59,7 @@ public class MainMenu extends BasicGameState {
         if (input.isKeyPressed(Input.KEY_ENTER)) {
             switch (selectedButton) {
                 case PLAY:
-                    game.enterState(TestingGame.WORLD_MAP);
+                    game.enterState(TestingGame.MAP);
                     break;
                 case EXIT:
                     container.exit();

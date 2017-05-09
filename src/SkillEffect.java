@@ -8,6 +8,7 @@ public class SkillEffect {
     private boolean immediate;
 
     public void addTo(BattleEntity target) {
+        // deal damage
         // inflict buffs
     }
 

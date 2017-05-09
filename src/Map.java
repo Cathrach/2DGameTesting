@@ -1,68 +1,63 @@
-import org.newdawn.slick.*;
-import org.newdawn.slick.state.*;
-import org.newdawn.slick.tiled.*;
-
 /**
- * Created by serinahu on 5/6/17.
+ * Created by serinahu on 5/8/17.
  */
 
-public class Map extends BasicGameState {
-    private int id;
-    TiledMap map;
-    private Entity leader;
+import org.newdawn.slick.*;
+import org.newdawn.slick.tiled.*;
 
-    public Map() {
-        id = 0;
-    }
-    public Map(int id) {
-        this.id = id;
-    }
+import static java.lang.Integer.parseInt;
 
-    @Override
-    public int getID() {
-        return id;
-    }
+public class Map {
+    private TiledMap map;
+    // dimensions in tiles
+    int height;
+    int width;
+    int tileHeight;
+    int tileWidth;
+    // dimensions in pixels
+    int pixelHeight;
+    int pixelWidth;
+    // list of entries
+    // list of trigger-able things
 
-    @Override
-    public void init(GameContainer container, StateBasedGame game) throws SlickException {
-        map = new TiledMap("maps/sample.tmx");
-    }
-
-    @Override
-    public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-        map.render(0, 0);
-        leader.render(container, game, g);
+    public Map() throws SlickException {
+        this("maps/sample.tmx");
     }
 
-    @Override
-    public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-        Input input = container.getInput();
-        if (input.isKeyPressed(Input.KEY_ESCAPE)) {
-            game.enterState(TestingGame.MAIN_MENU);
-        }
-        leader.update(container, game, delta, this);
-        // if the tile is an entry, change state to the town map
-        // if there's a random encounter, change state to combat
-
+    public Map(String filePath) throws SlickException {
+        map = new TiledMap(filePath);
+        height = map.getHeight();
+        width = map.getWidth();
+        tileHeight = map.getTileHeight();
+        tileWidth = map.getTileWidth();
+        pixelHeight = height * tileHeight;
+        pixelWidth = width * tileWidth;
     }
 
-    // TODO: perhaps make it dependent on direction :)
+    public void render(int xPos, int yPos) {
+        map.render(xPos, yPos);
+    }
+
     public boolean isBlocked(float xPos, float yPos) {
-        if (xPos < 0 || yPos < 0 || xPos > this.getWidth() || yPos > this.getHeight()) {
+        if (xPos < 0 || yPos < 0 || xPos > pixelWidth || yPos > pixelHeight) {
             return true;
         }
-        // current tile is xPos / the tile width
-        int tileWidth = map.getTileWidth();
-        int tileHeight = map.getTileHeight();
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Blocked"));
         return map.getTileProperty(tileID, "Blocked", "false").equals("true");
     }
 
-    public int getWidth() {
-        return map.getWidth() * map.getTileWidth();
+    public boolean isEntry(float xPos, float yPos) {
+        if (xPos < 0 || yPos < 0 || xPos > pixelWidth || yPos > pixelHeight) {
+            return false;
+        }
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Entries"));
+        return !map.getTileProperty(tileID, "entryInfo", "").equals("");
     }
 
-    public int getHeight() {
-        return map.getHeight() * map.getTileHeight();
+    public int[] getEntry(float xPos, float yPos) {
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Entries"));
+        String[] data = map.getTileProperty(tileID, "entryInfo", "").split("_");
+        int[] new_data = {parseInt(data[0]), parseInt(data[1]), parseInt(data[2])};
+        return new_data;
     }
 }

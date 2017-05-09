@@ -8,7 +8,6 @@ public class Item {
     private String name;
     private Image item;
     private int value;
-    private boolean isTargetEnemy;
     private int quantity;
 
     public void init() {
