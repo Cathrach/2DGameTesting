@@ -17,7 +17,6 @@ public class Map {
     // dimensions in pixels
     int pixelHeight;
     int pixelWidth;
-    // list of entries
     // list of trigger-able things
 
     public Map() throws SlickException {
@@ -43,6 +42,7 @@ public class Map {
             return true;
         }
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Blocked"));
+        System.out.println(map.getTileProperty(tileID, "Blocked", "false"));
         return map.getTileProperty(tileID, "Blocked", "false").equals("true");
     }
 
@@ -50,12 +50,12 @@ public class Map {
         if (xPos < 0 || yPos < 0 || xPos > pixelWidth || yPos > pixelHeight) {
             return false;
         }
-        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Entries"));
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Entrances"));
         return !map.getTileProperty(tileID, "entryInfo", "").equals("");
     }
 
     public int[] getEntry(float xPos, float yPos) {
-        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Entries"));
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Entrances"));
         String[] data = map.getTileProperty(tileID, "entryInfo", "").split("_");
         int[] new_data = {parseInt(data[0]), parseInt(data[1]), parseInt(data[2])};
         return new_data;

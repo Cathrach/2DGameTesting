@@ -1,27 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mapState version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
- <tileset firstgid="1" name="sample" tilewidth="32" tileheight="32" tilecount="1" columns="1">
-  <image source="../../../../Downloads/sample.png" width="32" height="32"/>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="ground" tilewidth="32" tileheight="32" tilecount="128" columns="8">
+  <image source="../tilesets/ground.png" width="256" height="512"/>
+  <tile id="125">
+   <properties>
+    <property name="entryInfo" value="1_3_3"/>
+   </properties>
+  </tile>
+  <tile id="126">
+   <properties>
+    <property name="entryInfo" value="1_3_3"/>
+   </properties>
+  </tile>
+  <tile id="127">
+   <properties>
+    <property name="entryInfo" value="1_3_3"/>
+   </properties>
+  </tile>
  </tileset>
- <tileset firstgid="2" name="blocked" tilewidth="32" tileheight="32" tilecount="1" columns="1">
-  <image source="../../../../Downloads/blocked.png" width="32" height="32"/>
-  <tile id="0">
+ <tileset firstgid="129" name="walls" tilewidth="32" tileheight="32" tilecount="128" columns="16">
+  <image source="../tilesets/walls.png" width="512" height="256"/>
+  <tile id="2">
+   <properties>
+    <property name="Blocked" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="Blocked" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="Blocked" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="19">
    <properties>
     <property name="Blocked" type="bool" value="true"/>
    </properties>
   </tile>
  </tileset>
- <layer name="Tile Layer 1" width="20" height="15">
-  <properties>
-   <property name="blocked" type="bool" value="false"/>
-  </properties>
+ <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NkYGBgHMWjeBSP4iGAATEAE1WwBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAVMRGBSzaNEHpf7SJUjxw3kmEUL80bBKMAGAF/GVT2wBAAA
+   H4sIAAAAAAAAA2NgGAXNBDCpYAoeuclkmIdPz2AxD4bxiY2CUUApAACFNxVBsAQAAA==
   </data>
  </layer>
-</mapState>
+ <layer name="Entrances" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgwA/qgLgeiBsIqBsFo2AUjAJaAwAPG0i2sAQAAA==
+  </data>
+ </layer>
+</map>
