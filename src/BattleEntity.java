@@ -9,10 +9,14 @@ public class BattleEntity {
     private String name;
     int currHP;
     int baseHP;
+    int currMP;
+    int baseMP;
     int baseATK;
     int baseDEF;
     int fixSkillHP;
     int ratioSkillHP;
+    int fixSkillMP;
+    int ratioSkillMP;
     int fixSkillATK;
     float ratioSkillATK;
     int fixSkillDEF;
@@ -32,13 +36,15 @@ public class BattleEntity {
         this.name = name;
         currHP = 20;
         baseHP = 20;
+        currMP = 10;
+        baseMP = 10;
         baseATK = 5;
         baseDEF = 3;
         ratioSkillHP = 1;
         ratioSkillATK = 1;
         ratioSkillDEF = 1;
         this.isPlayer = isPlayer;
-        skills = new ArrayList<Skill>();
+        skills = new ArrayList<>();
 
     }
 
@@ -89,5 +95,9 @@ public class BattleEntity {
                 currSkillEffects.remove(i);
             }
         }
+    }
+
+    public BattleAction decideAction() {
+        return new BattleAction(this, skills.get(0), Resources.currEnemies.get(0));
     }
 }

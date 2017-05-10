@@ -25,10 +25,10 @@ public class Item {
     }
 
     public void addQuantity(int quantity) {
-
+        this.quantity = Math.min(99, this.quantity + quantity);
     }
 
     public void removeQuantity(int quantity) {
-
+        this.quantity = Math.max(0, this.quantity - quantity);
     }
 }

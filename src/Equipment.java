@@ -10,8 +10,21 @@ public class Equipment extends Item {
         ACCESSORY
     }
 
-    private EquipType type;
-    private int HP;
-    private int ATK;
-    private int DEF;
+    EquipType type;
+    int fixHP;
+    int fixATK;
+    int fixDEF;
+    float ratioHP;
+    float ratioATK;
+    float ratioDEF;
+
+    public Equipment(EquipType type, int fixHP, int fixATK, int fixDEF, float ratioHP, float ratioATK, float ratioDEF) {
+        this.type = type;
+        this.fixHP = fixHP;
+        this.fixATK = fixATK;
+        this.fixDEF = fixDEF;
+        this.ratioHP = ratioHP;
+        this.ratioATK = ratioATK;
+        this.ratioDEF = ratioDEF;
+    }
 }

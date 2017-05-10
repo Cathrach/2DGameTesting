@@ -14,6 +14,9 @@ public class Ally extends BattleEntity {
 
     public Ally() {
         super("player", true);
+        fixEquipHP = 0;
+        fixEquipATK = 0;
+        fixEquipDEF = 0;
         ratioEquipHP = 1;
         ratioEquipATK = 1;
         ratioEquipDEF = 1;
@@ -24,11 +27,30 @@ public class Ally extends BattleEntity {
 
     public void equip(Equipment equip) {
         // check if equips already has something of the same type
-        // if so, unequip that thing
+        for (int i = 0; i < equips.size(); i++) {
+            Equipment currEquip = equips.get(i);
+            // if so, unequip that thing
+            if (currEquip.type == equip.type) {
+                unequip(i);
+            }
+        }
         // add this equip to array list
+        fixEquipHP += equip.fixHP;
+        fixEquipATK += equip.fixATK;
+        fixEquipDEF += equip.fixDEF;
+        ratioEquipHP *= equip.ratioHP;
+        ratioEquipATK *= equip.ratioATK;
+        ratioEquipDEF *= equip.ratioDEF;
     }
 
     public void unequip(int equip_index) {
+        Equipment currEquip = equips.get(equip_index);
+        fixEquipHP -= currEquip.fixHP;
+        fixEquipATK -= currEquip.fixATK;
+        fixEquipDEF -= currEquip.fixDEF;
+        ratioEquipHP /= currEquip.ratioHP;
+        ratioEquipATK /= currEquip.ratioATK;
+        ratioEquipDEF /= currEquip.ratioDEF;
         equips.remove(equip_index);
     }
 

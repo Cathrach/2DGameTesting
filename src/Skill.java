@@ -9,9 +9,10 @@ public class Skill {
     private Image icon;
     // 0: immediate (like buffs)
     // otherwise: cast after delay turns (as shown in turnOrder list)
-    private int delay;
+    int delay;
 
     private int fixDamage;
+    int MPCost;
     private float ratioDamage;
     private float ratioRecover;
     private float ignoreDefense; // 1 for no ignore, 0.75 for 25% ignore, etc.
@@ -25,10 +26,11 @@ public class Skill {
     SkillEffect[] skillEffects;
     TargetType[] targetTypes;
 
-    public Skill(String name, Image icon, int delay, int fixDamage, float ratioDamage, float ratioRecover, float ignoreDefense, TargetType target, SkillEffect[] skillEffects, TargetType[] targetTypes) {
+    public Skill(String name, Image icon, int delay, int MPCost, int fixDamage, float ratioDamage, float ratioRecover, float ignoreDefense, TargetType target, SkillEffect[] skillEffects, TargetType[] targetTypes) {
         this.name = name;
         this.icon = icon;
         this.delay = delay;
+        this.MPCost = MPCost;
         this.fixDamage = fixDamage;
         this.ratioDamage = ratioDamage;
         this.ratioRecover = ratioRecover;
@@ -39,6 +41,8 @@ public class Skill {
     }
 
     public void use(BattleEntity caster, BattleEntity target) {
+        // TODO: Critical hits
+        caster.currMP -= MPCost;
         int damage = (int) (fixDamage + caster.getATK() * ratioDamage - target.getDEF() * ignoreDefense);
         target.currHP -= damage;
         caster.currHP = Math.min(caster.getHP(), caster.currHP + damage * (int) ratioRecover);
