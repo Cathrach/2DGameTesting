@@ -11,7 +11,7 @@ public class Entity {
     float xPos, yPos;
     private int width, height;
     private final float SPEED = 0.1f;
-    private BattleEntity player;
+    BattleEntity battleEntity;
     // TODO: animations
 
     // constructor: make character at some position
@@ -21,7 +21,7 @@ public class Entity {
         this.yPos = yPos;
         width = sprite.getWidth();
         height = sprite.getHeight();
-        player = battleEntity;
+        this.battleEntity = battleEntity;
     }
     // init: set up animations?
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
@@ -42,7 +42,7 @@ public class Entity {
                 ", width=" + width +
                 ", height=" + height +
                 ", SPEED=" + SPEED +
-                ", player=" + player +
+                ", player=" + battleEntity.getName() +
                 '}';
     }
 

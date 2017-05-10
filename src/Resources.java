@@ -1,12 +1,14 @@
 import org.newdawn.slick.*;
 
+import java.util.ArrayList;
+
 /**
  * Created by serinahu on 5/9/17.
  */
 public class Resources {
     static int money;
     static Entity[] party;
-    // change to enemy class later
+    static ArrayList<Enemy> currEnemies; // when making enemies, PLEASE clone the enemy! don't just add an element from the database!
     static Enemy[] enemy_db;
 
     // everything has an ID which corresponds to their position in this array!
@@ -23,5 +25,10 @@ public class Resources {
         Resources.party = new Entity[4];
         Resources.party[0] = new Entity(0, 0, new BattleEntity("square", true));
         // similarly for other databases
+
+        skill_db = new Skill[1];
+        skill_db[0] = new Skill("Attack", new Image(""),
+                0, 0, 1, 0, 0, TargetType.SINGLE_ENEMY,
+                new SkillEffect[]{}, new TargetType[]{});
     }
 }

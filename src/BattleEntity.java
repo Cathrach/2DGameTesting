@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Created by serinahu on 5/4/17.
  */
@@ -5,15 +7,22 @@
 
 public class BattleEntity {
     private String name;
-    private int currHP;
-    private int baseHP;
-    private int baseATK;
-    private int baseDEF;
+    int currHP;
+    int baseHP;
+    int baseATK;
+    int baseDEF;
+    int fixSkillHP;
+    int ratioSkillHP;
+    int fixSkillATK;
+    float ratioSkillATK;
+    int fixSkillDEF;
+    float ratioSkillDEF;
     private boolean isPlayer;
 
     // skills here
-
+    ArrayList<Skill> skills;
     // current skill effects here
+    ArrayList<SkillEffect> currSkillEffects;
 
     public BattleEntity() {
         this("default", true);
@@ -25,9 +34,25 @@ public class BattleEntity {
         baseHP = 20;
         baseATK = 5;
         baseDEF = 3;
+        ratioSkillHP = 1;
+        ratioSkillATK = 1;
+        ratioSkillDEF = 1;
         this.isPlayer = isPlayer;
+        skills = new ArrayList<Skill>();
+
     }
 
+    public int getHP() {
+        return (int) Math.floor((baseHP + fixSkillHP) * ratioSkillHP);
+    }
+
+    public int getATK() {
+        return (int) Math.floor((baseATK + fixSkillATK) * ratioSkillATK);
+    }
+
+    public int getDEF() {
+        return (int) Math.floor((baseDEF + fixSkillDEF) * ratioSkillDEF);
+    }
 
     public String getName() {
         return name;
@@ -37,39 +62,10 @@ public class BattleEntity {
         this.name = name;
     }
 
-    public int getCurrHP() {
-        return currHP;
-    }
-
-    public void setCurrHP(int currHP) {
-        this.currHP = currHP;
-    }
-
-    public int getBaseHP() {
-        return baseHP;
-    }
-
-    public void setBaseHP(int baseHP) {
-        this.baseHP = baseHP;
-    }
-
-    public int getBaseATK() {
-        return baseATK;
-    }
-
-    public void setBaseATK(int baseATK) {
-        this.baseATK = baseATK;
-    }
-
-    public int getBaseDEF() {
-        return baseDEF;
-    }
-
-    public void setBaseDEF(int baseDEF) {
-        this.baseDEF = baseDEF;
-    }
-
     // get/modify skills list
+    public void addSkill(int skillID) {
+        skills.add(Resources.skill_db[skillID]);
+    }
 
     // use skill
     public void use(Skill skill, BattleEntity target) {
@@ -84,7 +80,14 @@ public class BattleEntity {
 
     // consume skill effects after turn (poison, heals, etc)
     public void consumeSkillEffects() {
-        // elapse turn for each skill
-        // if skill has no turns left, remove from list
+        for (int i = 0; i < currSkillEffects.size(); i++) {
+            // elapse turn for each skill
+            // if skill has no turns left, remove from list
+            SkillEffect skillEffect = currSkillEffects.get(i);
+            skillEffect.elapseTurn(this);
+            if (skillEffect.turns <= 0) {
+                currSkillEffects.remove(i);
+            }
+        }
     }
 }
