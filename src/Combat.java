@@ -12,6 +12,23 @@ public class Combat extends BasicGameState {
 
     private int id;
     private boolean isPlayerTurn;
+    private boolean isSelectingTarget;
+    private boolean isSelectingItem;
+    private boolean isSelectingSkill;
+    private final int ATTACK = 0;
+    private final int DEFEND = 1;
+    private final int ITEM = 2;
+    private final int SKILL = 3;
+    private final int FLEE = 4;
+    private final String[] skillMenu = {"Attack", "Defend", "Item", "Skill", "Flee"};
+    private int highlightedActionID;
+    private int selectedActionID;
+    private BattleAction selectedAction;
+    private int highlightedUseID;
+    private Consumable selectedItem;
+    private Skill selectedSkill;
+    private int highlightedTargetID;
+    private BattleEntity selectedTarget;
     private List<BattleEntity> turnOrder;
     private List<BattleAction> actionOrder;
 
@@ -29,6 +46,8 @@ public class Combat extends BasicGameState {
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         // should be done whenever combat is entered.....
+        highlightedActionID = 0;
+        highlightedUseID = 0;
         turnOrder.clear();
         actionOrder.clear();
         for (Entity entity : Resources.party) {
@@ -42,14 +61,93 @@ public class Combat extends BasicGameState {
         // draw background
         // display enemies on one side and players on another
         // if player turn, render the skill menu
+        if (isPlayerTurn) {
+            if (isSelectingTarget) {
+                // stick arrow on top of target
+            } else if (isSelectingItem) {
+                // draw item menu, rectangle around highlighted menu
+            } else if (isSelectingSkill) {
+                // draw skill menu, rectangle around highlighted menu
+            } else {
+                // draw skill menu: attack, defend, item, skill, flee
+                // draw a rectangle around the highlighted action
+            }
+        }
     }
 
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
+        Input input = container.getInput();
         // check whose move it is
         isPlayerTurn = turnOrder.get(0) instanceof Ally;
         BattleEntity currMove = turnOrder.get(0);
-        BattleAction selectedAction = currMove.decideAction();
+        if (isPlayerTurn) {
+            // if selecting a target, different things apply....
+            if (isSelectingSkill) {
+                if (input.isKeyPressed(Input.KEY_DOWN)) {
+                }
+            } else if (isSelectingItem) {
+
+            } else if (isSelectingTarget) {
+
+            } else if (!isSelectingTarget && selectedTarget == null) { // if a target hasn't been selected yet
+                // process input
+                if (input.isKeyPressed(Input.KEY_DOWN)) {
+                    if (highlightedActionID < skillMenu.length - 1) {
+                        highlightedActionID++;
+                    }
+                } else if (input.isKeyPressed(Input.KEY_UP)) {
+                    if (highlightedActionID > 0) {
+                        highlightedActionID--;
+                    }
+                } else if (input.isKeyPressed(Input.KEY_ENTER)) {
+                    selectedActionID = highlightedActionID;
+                    switch (selectedActionID) {
+                        // attack
+                        case ATTACK:
+                            selectedSkill = currMove.skills.get(0);
+                            isSelectingTarget = true;
+                            break;
+                        case DEFEND:
+                            // cast defend on self: immediate use
+                            currMove.use(currMove.skills.get(1), currMove);
+                            break;
+                        case ITEM:
+                            // select item to use
+                            isSelectingTarget = true;
+                            break;
+                        case SKILL:
+                            // select skill to use
+                            isSelectingTarget = true;
+                            break;
+                        case FLEE:
+                            // flee somehow
+                            break;
+                        default:
+                            // shouldn't happen but
+                            System.out.println("Error: selectedActionID is not in array bounds");
+                    }
+                }
+            } else {
+                switch (selectedActionID) {
+                    case ATTACK:
+                        // attack target
+                        selectedAction = new BattleAction(currMove, selectedSkill, selectedTarget);
+                        break;
+                    case ITEM:
+                        // use item on target: immediate use!
+                        selectedItem.use(selectedTarget);
+                        break;
+                    case SKILL:
+                        // use skill on target
+                        selectedAction = new BattleAction(currMove, selectedSkill, selectedTarget);
+                        break;
+                    default:
+                        // should not occur
+                        System.out.println("Error: selected a target when there was no need to");
+                }
+            }
+        }
         // this should be handled in the Ally/Enemy things.
         // if player move:
         // change selected skill w/arrow keys
@@ -58,13 +156,15 @@ public class Combat extends BasicGameState {
         // choose an skill from the AI
 
         // move around actions in the actionOrder list
-        int i = 0;
-        while (i < actionOrder.size() || actionOrder.get(i).skill.delay < selectedAction.skill.delay) {
-            i++;
+        if (selectedAction != null) {
+            int i = 0;
+            while (i < actionOrder.size() || actionOrder.get(i).skill.delay < selectedAction.skill.delay) {
+                i++;
+            }
+            actionOrder.add(i - 1, selectedAction);
         }
-        actionOrder.add(i - 1, selectedAction);
         // execute actions
-        for (i = 0; i < actionOrder.size(); i++) {
+        for (int i = 0; i < actionOrder.size(); i++) {
             BattleAction battleAction = actionOrder.get(i);
             // delete enemies and players if necessary (check if HP <= 0)
             if (battleAction.skill.delay == 0) {
