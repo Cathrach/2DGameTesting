@@ -5,6 +5,8 @@
 import org.newdawn.slick.*;
 import org.newdawn.slick.geom.*;
 
+import java.util.ArrayList;
+
 public class Inventory {
 
     // a button for highlighting
@@ -13,6 +15,7 @@ public class Inventory {
     int buttonXPos;
     int buttonYPos;
     // contains consumables and equips: array list of items
+    ArrayList<Item> items;
     // index in array list?
 
     public Inventory() {
@@ -41,7 +44,9 @@ public class Inventory {
 
     // increase the amount of item by some quantity; should also check if quantity goes over 99
     public void addItem(String itemName, int quantity) {
+        for (Item item : items) {
 
+        }
     }
 
     public void removeItem(String itemName, int quantity) {

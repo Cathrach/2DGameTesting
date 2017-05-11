@@ -10,7 +10,6 @@ import org.newdawn.slick.state.StateBasedGame;
 public class PauseMenu extends BasicGameState {
 
     private int id;
-    private Inventory inv;
 
     public PauseMenu(int id) {
         this.id = id;
@@ -23,8 +22,7 @@ public class PauseMenu extends BasicGameState {
 
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
-        // check if save file, otherwise make a new inv
-        inv = new Inventory();
+
     }
 
     @Override

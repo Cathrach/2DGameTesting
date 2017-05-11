@@ -15,6 +15,7 @@ public class Combat extends BasicGameState {
     private boolean isSelectingTarget;
     private boolean isSelectingItem;
     private boolean isSelectingSkill;
+    private boolean isFinishedTurn;
     private final int ATTACK = 0;
     private final int DEFEND = 1;
     private final int ITEM = 2;
@@ -24,11 +25,12 @@ public class Combat extends BasicGameState {
     private int highlightedActionID;
     private int selectedActionID;
     private BattleAction selectedAction;
-    private int highlightedUseID;
+    private int highlightedSkillID;
+    private int highlightedItemID;
     private Consumable selectedItem;
     private Skill selectedSkill;
     private int highlightedTargetID;
-    private BattleEntity selectedTarget;
+    private List<BattleEntity> selectedTargets;
     private List<BattleEntity> turnOrder;
     private List<BattleAction> actionOrder;
 
@@ -47,7 +49,8 @@ public class Combat extends BasicGameState {
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         // should be done whenever combat is entered.....
         highlightedActionID = 0;
-        highlightedUseID = 0;
+        highlightedItemID = 0;
+        highlightedSkillID = 0;
         turnOrder.clear();
         actionOrder.clear();
         for (Entity entity : Resources.party) {
@@ -65,7 +68,8 @@ public class Combat extends BasicGameState {
             if (isSelectingTarget) {
                 // stick arrow on top of target
             } else if (isSelectingItem) {
-                // draw item menu, rectangle around highlighted menu
+                // draw part of the item menu, rectangle around highlighted menu
+                // move the "part" of the item menu based on the highlighted id
             } else if (isSelectingSkill) {
                 // draw skill menu, rectangle around highlighted menu
             } else {
@@ -81,16 +85,65 @@ public class Combat extends BasicGameState {
         // check whose move it is
         isPlayerTurn = turnOrder.get(0) instanceof Ally;
         BattleEntity currMove = turnOrder.get(0);
+        // clear all the selection things
+        isSelectingItem = false;
+        isSelectingTarget = false;
+        isSelectingSkill = false;
+        isFinishedTurn = false;
         if (isPlayerTurn) {
             // if selecting a target, different things apply....
             if (isSelectingSkill) {
                 if (input.isKeyPressed(Input.KEY_DOWN)) {
+                    if (highlightedSkillID < currMove.skills.size() - 1) {
+                        highlightedSkillID++;
+                    }
+                } else if (input.isKeyPressed(Input.KEY_UP)) {
+                    if (highlightedSkillID > 0) {
+                        highlightedSkillID--;
+                    }
+                } else if (input.isKeyPressed(Input.KEY_ESCAPE)) {
+                    isSelectingSkill = false;
+                } else if (input.isKeyPressed(Input.KEY_ENTER)) {
+                    selectedSkill = currMove.skills.get(highlightedSkillID);
+                    isSelectingSkill = false;
+                    isSelectingTarget = true;
                 }
             } else if (isSelectingItem) {
-
+                if (input.isKeyPressed(Input.KEY_DOWN)) {
+                    if (highlightedItemID < Resources.consumableInven.size() - 1) {
+                        highlightedItemID++;
+                    }
+                } else if (input.isKeyPressed(Input.KEY_UP)) {
+                    if (highlightedItemID > 0) {
+                        highlightedItemID--;
+                    }
+                } else if (input.isKeyPressed(Input.KEY_ESCAPE)) {
+                    isSelectingItem = false;
+                } else if (input.isKeyPressed(Input.KEY_ENTER)) {
+                    selectedItem = Resources.consumableInven.get(highlightedItemID);
+                    isSelectingItem = false;
+                    isSelectingTarget = true;
+                }
             } else if (isSelectingTarget) {
-
-            } else if (!isSelectingTarget && selectedTarget == null) { // if a target hasn't been selected yet
+                // TODO: casework: if target is self, only option is target
+                // if target is all enemies, only option is all enemies
+                // similarly for all allies
+                // if target is single enemy, go through enemy list
+                // if target is single ally, go through ally list
+                if (input.isKeyPressed(Input.KEY_DOWN)) {
+                    if (highlightedTargetID < Resources.currEnemies.size() - 1) {
+                        highlightedTargetID++;
+                    }
+                } else if (input.isKeyPressed(Input.KEY_UP)) {
+                    if (highlightedTargetID > 0) {
+                        highlightedTargetID--;
+                    }
+                } else if (input.isKeyPressed(Input.KEY_ESCAPE)) {
+                    isSelectingTarget = false;
+                } else if (input.isKeyPressed(Input.KEY_ENTER)) {
+                    selectedTargets.add(Resources.currEnemies.get(highlightedTargetID));
+                }
+            } else if (!isSelectingTarget && selectedTargets.size() == 0) { // if a target hasn't been selected yet
                 // process input
                 if (input.isKeyPressed(Input.KEY_DOWN)) {
                     if (highlightedActionID < skillMenu.length - 1) {
@@ -114,11 +167,11 @@ public class Combat extends BasicGameState {
                             break;
                         case ITEM:
                             // select item to use
-                            isSelectingTarget = true;
+                            isSelectingItem = true;
                             break;
                         case SKILL:
                             // select skill to use
-                            isSelectingTarget = true;
+                            isSelectingSkill = true;
                             break;
                         case FLEE:
                             // flee somehow
@@ -131,21 +184,26 @@ public class Combat extends BasicGameState {
             } else {
                 switch (selectedActionID) {
                     case ATTACK:
-                        // attack target
-                        selectedAction = new BattleAction(currMove, selectedSkill, selectedTarget);
+                        // attack target: first element of target list
+                        selectedAction = new BattleAction(currMove, selectedSkill, selectedTargets.get(0));
                         break;
                     case ITEM:
                         // use item on target: immediate use!
-                        selectedItem.use(selectedTarget);
+                        for (BattleEntity target : selectedTargets) {
+                            selectedItem.use(target);
+                        }
                         break;
                     case SKILL:
-                        // use skill on target
-                        selectedAction = new BattleAction(currMove, selectedSkill, selectedTarget);
+                        // use skill on all targets in target list
+                        for (BattleEntity target : selectedTargets) {
+                            selectedAction = new BattleAction(currMove, selectedSkill, target);
+                        }
                         break;
                     default:
                         // should not occur
                         System.out.println("Error: selected a target when there was no need to");
                 }
+                isFinishedTurn = true;
             }
         }
         // this should be handled in the Ally/Enemy things.
@@ -154,32 +212,42 @@ public class Combat extends BasicGameState {
         // get selected skill w/enter key
         // else:
         // choose an skill from the AI
-
-        // move around actions in the actionOrder list
-        if (selectedAction != null) {
-            int i = 0;
-            while (i < actionOrder.size() || actionOrder.get(i).skill.delay < selectedAction.skill.delay) {
-                i++;
+        if (isFinishedTurn) {
+            // move around actions in the actionOrder list
+            if (selectedAction != null) {
+                int i = 0;
+                while (i < actionOrder.size() || actionOrder.get(i).skill.delay < selectedAction.skill.delay) {
+                    i++;
+                }
+                actionOrder.add(i - 1, selectedAction);
             }
-            actionOrder.add(i - 1, selectedAction);
-        }
-        // execute actions
-        for (int i = 0; i < actionOrder.size(); i++) {
-            BattleAction battleAction = actionOrder.get(i);
-            // delete enemies and players if necessary (check if HP <= 0)
-            if (battleAction.skill.delay == 0) {
-                battleAction.skill.use(battleAction.caster, battleAction.target);
+            // execute actions
+            for (int i = 0; i < actionOrder.size(); i++) {
+                BattleAction battleAction = actionOrder.get(i);
+                // delete enemies and players if necessary (check if HP <= 0)
+                if (battleAction.skill.delay == 0) {
+                    battleAction.skill.use(battleAction.caster, battleAction.target);
+                }
+                updateDead();
             }
-            updateDead();
+            // consume skill effects for entity that just moved
+            currMove.consumeSkillEffects();
+            // rotate turnOrder:
+            turnOrder.add(turnOrder.remove(0));
+            // check whose move it is
+            isPlayerTurn = turnOrder.get(0) instanceof Ally;
+            currMove = turnOrder.get(0);
+            // clear all the selection things
+            isSelectingItem = false;
+            isSelectingTarget = false;
+            isSelectingSkill = false;
+            isFinishedTurn = false;
         }
-        // consume skill effects for entity that just moved
-        currMove.consumeSkillEffects();
 
         // if all enemies or all players are dead, exit back to the world map
         updateWin(game);
 
-        // rotate turnOrder:
-        turnOrder.add(turnOrder.remove(0));
+
     }
 
     public void updateDead() {
