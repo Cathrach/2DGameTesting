@@ -1,6 +1,7 @@
 import org.newdawn.slick.*;
 
 import java.util.ArrayList;
+import java.util.Dictionary;
 
 /**
  * Created by serinahu on 5/9/17.
@@ -19,6 +20,10 @@ public class Resources {
     static Item[] item_db;
     static Skill[] skill_db;
     static SkillEffect[] skilleffect_db;
+    static Dialogue[] dialogue_db;
+    static Dialogue currDialogue;
+
+    static Dictionary<String, Boolean> triggers;
 
     public static void init() throws SlickException {
         map_db = new Map[2];

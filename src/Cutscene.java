@@ -17,16 +17,19 @@ public class Cutscene extends BasicGameState {
 
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
-
+        Resources.currDialogue.reset();
     }
 
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-
+        Resources.currDialogue.render(g);
     }
 
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-
+        Input input = container.getInput();
+        if (input.isKeyPressed(Input.KEY_ENTER) || input.isKeyPressed(Input.KEY_SPACE)) {
+            Resources.currDialogue.nextLine(game);
+        }
     }
 }

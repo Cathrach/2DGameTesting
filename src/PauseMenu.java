@@ -10,6 +10,10 @@ import org.newdawn.slick.state.StateBasedGame;
 public class PauseMenu extends BasicGameState {
 
     private int id;
+    private int selectedItemID;
+    private boolean isUsingMenu;
+    private boolean isEquippingMenu;
+    private int selectedUnitID;
 
     public PauseMenu(int id) {
         this.id = id;
@@ -27,11 +31,15 @@ public class PauseMenu extends BasicGameState {
 
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-
+        // render inventory: items, then equips
+        // put box around highlighted item
+        // render use menu if needed
+        // render the equip/use menu
     }
 
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-
+        // if in the equip menu: select the party member
+        // if in the 
     }
 }

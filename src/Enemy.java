@@ -8,6 +8,7 @@ public class Enemy extends BattleEntity {
     int goldDropped;
 
     public BattleAction decideAction() {
+        // default: just attack
         return new BattleAction(this, skills.get(0), Resources.party[0].battleEntity);
     }
 

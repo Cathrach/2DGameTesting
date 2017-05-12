@@ -33,7 +33,7 @@ public class MapState extends BasicGameState {
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
         Input input = container.getInput();
         if (input.isKeyPressed(Input.KEY_ESCAPE)) {
-            game.enterState(TestingGame.MAIN_MENU);
+            game.enterState(TestingGame.PAUSE_MENU);
         }
         leader.update(container, game, delta, this);
         // if the tile is an entry, change the current map ID and current map
@@ -46,6 +46,10 @@ public class MapState extends BasicGameState {
         }
         // if trigger (NPC, chest), do something
         // if there's a random encounter, change state to combat
+        if (currentMap.isEncounter(leader.xPos, leader.yPos)) {
+            currentMap.encounter(leader.xPos, leader.yPos);
+            game.enterState(TestingGame.COMBAT);
+        }
     }
 
     public void changeMap(int newMapID) {
