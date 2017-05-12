@@ -10,6 +10,7 @@ public class TestingGame extends StateBasedGame {
     public static final String name = "Testing";
     public static final int MAIN_MENU = 0;
     public static final int MAP = 1;
+    public static final int CUTSCENE = 2;
     public static final int PAUSE_MENU = 3;
     public static final int COMBAT = 4;
 
@@ -21,6 +22,7 @@ public class TestingGame extends StateBasedGame {
         super(name);
         this.addState(new MainMenu(MAIN_MENU));
         this.addState(new MapState(MAP));
+        this.addState(new Cutscene(CUTSCENE));
         this.addState(new PauseMenu(PAUSE_MENU));
         this.addState(new Combat(COMBAT));
         this.enterState(MAIN_MENU);
@@ -31,6 +33,7 @@ public class TestingGame extends StateBasedGame {
         Resources.init();
         getState(MAIN_MENU).init(container, this);
         getState(MAP).init(container, this);
+        getState(CUTSCENE).init(container, this);
         getState(PAUSE_MENU).init(container, this);
         getState(COMBAT).init(container, this);
     }
