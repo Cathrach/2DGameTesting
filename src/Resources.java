@@ -28,15 +28,21 @@ public class Resources {
         Resources.party = new Entity[4];
         Resources.party[0] = new Entity(0, 0, new BattleEntity("square", true));
         // similarly for other databases
+        skilleffect_db = new SkillEffect[1];
+        skilleffect_db[0] = new SkillEffect(0,0, 0, 0, 0, 0, 0, 0, 1.5f, 0, 0, 0);
 
-        skill_db = new Skill[1];
-        skill_db[0] = new Skill("Attack", new Image(""),
+        skill_db = new Skill[2];
+        skill_db[0] = new Skill("Attack", new Image("skills/attack.png"),
                 0, 0, 0, 1, 0, 0, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{}, new TargetType[]{});
+        skill_db[1] = new Skill("Defend", new Image("skills/defend.png"),
+                0, 0, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
+                new SkillEffect[]{skilleffect_db[0]}, new TargetType[]{});
 
         item_db = new Item[1];
         // check if save; if not, inventory is empty (will contain a weapon later?)
         consumableInven = new ArrayList<>();
         equipInven = new ArrayList<>();
+        currEnemies = new ArrayList<>();
     }
 }

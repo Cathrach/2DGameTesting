@@ -16,6 +16,7 @@ public class Combat extends BasicGameState {
     private boolean isSelectingItem;
     private boolean isSelectingSkill;
     private boolean isFinishedTurn;
+    private BattleEntity currMove;
     private final int ATTACK = 0;
     private final int DEFEND = 1;
     private final int ITEM = 2;
@@ -48,15 +49,25 @@ public class Combat extends BasicGameState {
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         // should be done whenever combat is entered.....
+        turnOrder = new ArrayList<>();
         highlightedActionID = 0;
         highlightedItemID = 0;
-        highlightedSkillID = 0;
+        highlightedSkillID = 2;
         turnOrder.clear();
         actionOrder.clear();
+        // might change for ambushes, etc.
         for (Entity entity : Resources.party) {
-            turnOrder.add(entity.battleEntity);
+            if (entity != null) {
+                turnOrder.add(entity.battleEntity);
+            }
         }
         turnOrder.addAll(Resources.currEnemies);
+        currMove = turnOrder.get(0);
+        isPlayerTurn = turnOrder.get(0) instanceof Ally;
+        isSelectingItem = false;
+        isSelectingTarget = false;
+        isSelectingSkill = false;
+        isFinishedTurn = false;
     }
 
     @Override
@@ -71,7 +82,7 @@ public class Combat extends BasicGameState {
                 // draw part of the item menu, rectangle around highlighted menu
                 // move the "part" of the item menu based on the highlighted id
             } else if (isSelectingSkill) {
-                // draw skill menu, rectangle around highlighted menu
+                // draw skill menu starting from 3rd element, rectangle around highlighted menu
             } else {
                 // draw skill menu: attack, defend, item, skill, flee
                 // draw a rectangle around the highlighted action
@@ -82,14 +93,6 @@ public class Combat extends BasicGameState {
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
         Input input = container.getInput();
-        // check whose move it is
-        isPlayerTurn = turnOrder.get(0) instanceof Ally;
-        BattleEntity currMove = turnOrder.get(0);
-        // clear all the selection things
-        isSelectingItem = false;
-        isSelectingTarget = false;
-        isSelectingSkill = false;
-        isFinishedTurn = false;
         if (isPlayerTurn) {
             // if selecting a target, different things apply....
             if (isSelectingSkill) {
@@ -98,7 +101,7 @@ public class Combat extends BasicGameState {
                         highlightedSkillID++;
                     }
                 } else if (input.isKeyPressed(Input.KEY_UP)) {
-                    if (highlightedSkillID > 0) {
+                    if (highlightedSkillID > 2) {
                         highlightedSkillID--;
                     }
                 } else if (input.isKeyPressed(Input.KEY_ESCAPE)) {
@@ -191,6 +194,7 @@ public class Combat extends BasicGameState {
                         // use item on target: immediate use!
                         for (BattleEntity target : selectedTargets) {
                             selectedItem.use(target);
+                            updateDead();
                         }
                         break;
                     case SKILL:

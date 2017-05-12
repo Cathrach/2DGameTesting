@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 
 public class BattleEntity {
-    private String name;
+    String name;
     int currHP;
     int baseHP;
     int currMP;
@@ -21,7 +21,7 @@ public class BattleEntity {
     float ratioSkillATK;
     int fixSkillDEF;
     float ratioSkillDEF;
-    private boolean isPlayer;
+    boolean isPlayer;
 
     // skills here
     ArrayList<Skill> skills;
@@ -97,7 +97,4 @@ public class BattleEntity {
         }
     }
 
-    public BattleAction decideAction() {
-        return new BattleAction(this, skills.get(0), Resources.currEnemies.get(0));
-    }
 }

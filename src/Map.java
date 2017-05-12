@@ -42,7 +42,6 @@ public class Map {
             return true;
         }
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Blocked"));
-        System.out.println(map.getTileProperty(tileID, "Blocked", "false"));
         return map.getTileProperty(tileID, "Blocked", "false").equals("true");
     }
 
@@ -59,5 +58,23 @@ public class Map {
         String[] data = map.getTileProperty(tileID, "entryInfo", "").split("_");
         int[] new_data = {parseInt(data[0]), parseInt(data[1]), parseInt(data[2])};
         return new_data;
+    }
+
+    public boolean isEncounter(float xPos, float yPos) {
+        if (xPos < 0 || yPos < 0 || xPos > pixelWidth || yPos > pixelHeight) {
+            return false;
+        }
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Entrances"));
+        float encounterChance = Float.parseFloat(map.getTileProperty(tileID, "encounterChance", "0"));
+        return Math.random() < encounterChance;
+    }
+
+    public void encounter(float xPos, float yPos) {
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Encounters"));
+        String[] data = map.getTileProperty(tileID, "encounterInfo", "").split("_");
+        Resources.currEnemies.clear();
+        for (String index : data) {
+            Resources.currEnemies.add(new Enemy(Resources.enemy_db[Integer.parseInt(index)]));
+        }
     }
 }
