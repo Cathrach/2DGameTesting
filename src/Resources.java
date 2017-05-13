@@ -49,5 +49,6 @@ public class Resources {
         consumableInven = new ArrayList<>();
         equipInven = new ArrayList<>();
         currEnemies = new ArrayList<>();
+        currDialogue = new Dialogue(new DialogueLine[]{});
     }
 }

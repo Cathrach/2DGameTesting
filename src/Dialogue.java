@@ -11,6 +11,11 @@ public class Dialogue {
     String condition;
     int startLineIDIfCondition;
 
+    public Dialogue(DialogueLine[] lines) {
+        this.lines = lines;
+        this.condition = "";
+    }
+
     public Dialogue(DialogueLine[] lines, String condition, int startLineIDIfCondition) {
         this.lines = lines;
         this.condition = condition;
@@ -23,8 +28,12 @@ public class Dialogue {
     }
 
     public void reset() {
-        if (Resources.triggers.get(condition)) {
-            currLineID = startLineIDIfCondition;
+        if (!condition.equals("")) {
+            if (Resources.triggers.get(condition)) {
+                currLineID = startLineIDIfCondition;
+            } else {
+                currLineID = 0;
+            }
         } else {
             currLineID = 0;
         }
