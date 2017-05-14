@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Enemy extends BattleEntity {
     EnemyDrop[] drops;
     int goldDropped;
+    boolean isDead;
 
     public BattleAction decideAction() {
         // default: just attack
@@ -27,6 +28,7 @@ public class Enemy extends BattleEntity {
         this.baseDEF = baseDEF;
         this.currHP = baseHP;
         this.currMP = baseMP;
+        this.isDead = false;
     }
 
     public Enemy(Enemy anotherEnemy) {

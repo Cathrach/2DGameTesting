@@ -261,19 +261,29 @@ public class Combat extends BasicGameState {
                 Resources.party[j] = null;
             }
         }
-        for (int j = 0; j < Resources.currEnemies.size(); j++) {
-            if (Resources.currEnemies.get(j).currHP <= 0) {
-                Resources.currEnemies.remove(j);
+        for (Enemy enemy : Resources.currEnemies) {
+            if (enemy.currHP == 0) {
+                enemy.isDead = true;
             }
         }
     }
 
     public void updateWin(StateBasedGame game) {
         boolean alliesDead = true;
-        boolean enemiesDead = Resources.currEnemies.size() == 0;
+        boolean enemiesDead = true;
         for (Entity entity : Resources.party) {
             if (entity.battleEntity != null) {
                 alliesDead = false;
+            }
+        }
+        for (Enemy enemy : Resources.currEnemies) {
+            if (!enemy.isDead) {
+                enemiesDead = false;
+            }
+        }
+        if (enemiesDead) {
+            for (Enemy enemy : Resources.currEnemies) {
+                enemy.getDrops();
             }
         }
         if (alliesDead || enemiesDead) {
