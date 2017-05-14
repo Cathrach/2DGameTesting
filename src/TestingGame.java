@@ -4,6 +4,7 @@
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
+import sun.net.ProgressSource;
 
 public class TestingGame extends StateBasedGame {
 

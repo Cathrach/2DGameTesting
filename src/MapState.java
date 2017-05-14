@@ -45,9 +45,11 @@ public class MapState extends BasicGameState {
             leader.yPos = currentMap.tileHeight * entryData[2];
         }
         // if trigger (NPC, chest), do something
+
         // if there's a random encounter, change state to combat
         if (currentMap.isEncounter(leader.xPos, leader.yPos)) {
             currentMap.encounter(leader.xPos, leader.yPos);
+            game.getState(TestingGame.COMBAT).init(container, game);
             game.enterState(TestingGame.COMBAT);
         }
     }

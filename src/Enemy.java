@@ -4,7 +4,7 @@ import java.util.ArrayList;
  * Created by serinahu on 5/8/17.
  */
 public class Enemy extends BattleEntity {
-    Item[] drops;
+    EnemyDrop[] drops;
     int goldDropped;
 
     public BattleAction decideAction() {
@@ -16,7 +16,7 @@ public class Enemy extends BattleEntity {
         super();
     }
 
-    public Enemy(String name, int baseHP, int baseMP, int baseATK, int baseDEF, Item[] drops, int goldDropped) {
+    public Enemy(String name, int baseHP, int baseMP, int baseATK, int baseDEF, EnemyDrop[] drops, int goldDropped) {
         this.name = name;
         this.isPlayer = false;
         this.drops = drops;
@@ -41,5 +41,18 @@ public class Enemy extends BattleEntity {
         ratioSkillATK = 1;
         ratioSkillDEF = 1;
         skills = anotherEnemy.skills;
+    }
+
+    public void getDrops() {
+        Resources.money += goldDropped;
+        for (EnemyDrop drop : drops) {
+            if (Math.random() < drop.chance) {
+                if (drop.getClass().getName().equals("Consumable")) {
+                    Resources.consumableInven.add((Consumable) drop.item);
+                } else if (drop.getClass().getName().equals("Equipment")) {
+                    Resources.equipInven.add((Equipment) drop.item);
+                }
+            }
+        }
     }
 }
