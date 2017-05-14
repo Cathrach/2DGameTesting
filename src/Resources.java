@@ -9,8 +9,6 @@ public class Resources {
     static Entity[] party;
     static ArrayList<Enemy> currEnemies; // when making enemies, PLEASE clone the enemy! don't just add an element from the database!
     static Enemy[] enemy_db;
-    static ArrayList<Consumable> consumableInven; // when displaying the inventory in the pause, show them both
-    static ArrayList<Equipment> equipInven;
     // everything has an ID which corresponds to their position in this array!
     static Map[] map_db;
     static Item[] item_db;
@@ -25,7 +23,7 @@ public class Resources {
         map_db[1] = new Map("maps/next.tmx");
         // check if there's a "save"; if not, make a new entity
         Resources.party = new Entity[4];
-        Resources.party[0] = new Entity(0, 0, 1, 0, new BattleEntity("square", true));
+        Resources.party[0] = new Entity(0, 0, 1, 0, new Ally("square", true));
         // similarly for other databases
         skilleffect_db = new SkillEffect[1];
         skilleffect_db[0] = new SkillEffect(0,0, 0, 0, 0, 0, 0, 0, 1.5f, 0, 0, 0);
@@ -38,9 +36,10 @@ public class Resources {
                 new SkillEffect[]{skilleffect_db[0]}, new TargetType[]{});
         item_db = new Item[1];
         // check if save; if not, inventory is empty (will contain a weapon later?)
-        consumableInven = new ArrayList<>();
-        equipInven = new ArrayList<>();
         currEnemies = new ArrayList<>();
         currDialogue = new Dialogue(new DialogueLine[]{});
+
+        Inventory.items.add(new Equipment("pencil", 50, 1, Equipment.EquipType.WEAPON, 0, 0, 0, 0, 0, 0));
+        System.out.println(Inventory.items.get(0) instanceof Equipment);
     }
 }

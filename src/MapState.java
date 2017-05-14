@@ -21,7 +21,6 @@ public class MapState extends BasicGameState {
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         currentMap.render(0, 0);
         leader.render(container, game, g);
-        Inventory.render(g);
     }
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
         Input input = container.getInput();

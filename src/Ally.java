@@ -22,6 +22,11 @@ public class Ally extends BattleEntity {
         ratioEquipDEF = 1;
     }
 
+    public Ally(String name, boolean isPlayer) {
+        this.name = name;
+        this.isPlayer = isPlayer;
+    }
+
     // equips here
     ArrayList<Equipment> equips;
 

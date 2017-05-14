@@ -10,8 +10,14 @@ public class Consumable extends Item {
     private int fixHP;
     private int fixATK;
     private int fixDEF;
-    public Consumable(String n, int v, int q){  //
+    public Consumable(String n, int v, int q, int fixDamage, int fixHeal, int ratioHeal, int fixHP, int fixATK, int fixDEF) {  //
         super(n, v, q);
+        this.fixDamage = fixDamage;
+        this.fixHeal = fixHeal;
+        this.ratioHeal = ratioHeal;
+        this.fixHP = fixHP;
+        this.fixATK = fixATK;
+        this.fixDEF = fixDEF;
     }
     public void use(BattleEntity target) {
         target.currHP -= fixDamage;

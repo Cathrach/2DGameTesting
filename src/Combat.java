@@ -31,6 +31,7 @@ public class Combat extends BasicGameState {
     private Consumable selectedItem;
     private Skill selectedSkill;
     private int highlightedTargetID;
+    private List<Consumable> consumablesOnly;
     private List<BattleEntity> selectedTargets;
     private List<BattleEntity> turnOrder;
     private List<BattleAction> actionOrder;
@@ -48,6 +49,11 @@ public class Combat extends BasicGameState {
 
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
+        for (Item item : Inventory.items) {
+            if (item instanceof Consumable) {
+                consumablesOnly.add((Consumable) item);
+            }
+        }
         // should be done whenever combat is entered.....
         turnOrder = new ArrayList<>();
         highlightedActionID = 0;
@@ -80,6 +86,7 @@ public class Combat extends BasicGameState {
                 // stick arrow on top of target
             } else if (isSelectingItem) {
                 // draw part of the item menu, rectangle around highlighted menu
+                // make sure to draw only the consumables!
                 // move the "part" of the item menu based on the highlighted id
             } else if (isSelectingSkill) {
                 // draw skill menu starting from 3rd element, rectangle around highlighted menu
@@ -113,7 +120,7 @@ public class Combat extends BasicGameState {
                 }
             } else if (isSelectingItem) {
                 if (input.isKeyPressed(Input.KEY_DOWN)) {
-                    if (highlightedItemID < Resources.consumableInven.size() - 1) {
+                    if (highlightedItemID < consumablesOnly.size() - 1) {
                         highlightedItemID++;
                     }
                 } else if (input.isKeyPressed(Input.KEY_UP)) {
@@ -123,7 +130,7 @@ public class Combat extends BasicGameState {
                 } else if (input.isKeyPressed(Input.KEY_ESCAPE)) {
                     isSelectingItem = false;
                 } else if (input.isKeyPressed(Input.KEY_ENTER)) {
-                    selectedItem = Resources.consumableInven.get(highlightedItemID);
+                    selectedItem = consumablesOnly.get(highlightedItemID);
                     isSelectingItem = false;
                     isSelectingTarget = true;
                 }
@@ -145,6 +152,7 @@ public class Combat extends BasicGameState {
                     isSelectingTarget = false;
                 } else if (input.isKeyPressed(Input.KEY_ENTER)) {
                     selectedTargets.add(Resources.currEnemies.get(highlightedTargetID));
+                    isSelectingTarget = false;
                 }
             } else if (!isSelectingTarget && selectedTargets.size() == 0) { // if a target hasn't been selected yet
                 // process input

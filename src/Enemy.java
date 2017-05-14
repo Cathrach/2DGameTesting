@@ -49,11 +49,7 @@ public class Enemy extends BattleEntity {
         Resources.money += goldDropped;
         for (EnemyDrop drop : drops) {
             if (Math.random() < drop.chance) {
-                if (drop.getClass().getName().equals("Consumable")) {
-                    Resources.consumableInven.add((Consumable) drop.item);
-                } else if (drop.getClass().getName().equals("Equipment")) {
-                    Resources.equipInven.add((Equipment) drop.item);
-                }
+                Inventory.addItem(drop.item.getName(), 1);
             }
         }
     }
