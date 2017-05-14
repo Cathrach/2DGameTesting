@@ -4,9 +4,8 @@
 public class EnemyDrop {
     Item item;
     float chance;
-
     public EnemyDrop(Item item, float chance) {
-        this.item = new Consumable();
+        this.item = new Consumable("health potion", 0, 1);  //
         this.chance = chance;
     }
 }
