@@ -1,59 +1,63 @@
 /**
  * Created by serinahu on 5/4/17.
  */
-
 import org.newdawn.slick.*;
 import org.newdawn.slick.geom.*;
-
 import java.util.ArrayList;
-
 public class Inventory {
-
-    // a button for highlighting
-    Rectangle button;
+    // buttons for highlighting
+    static Rectangle hoverButton;
+    static Rectangle equippedItem;
     // button location (x, y)
-    int buttonXPos;
-    int buttonYPos;
+    static int buttonXPos;
+    static int buttonYPos;
+    // currently equipped item's index in the inventory
+    static int equipIndex;
     // contains consumables and equips: array list of items
-    ArrayList<Item> items;
+    static ArrayList<Item> items = new ArrayList<Item>();
     // index in array list?
-
-    public Inventory() {
-
+    public static void init() {
     }
-
-    public void init() {
-
+    public static void render(Graphics g) {
+        // temporary! Will add GUI & fix up later
+        g.drawString("INVENTORY", 20, 70);
+        for (int i = 0; i<items.size(); i++){
+            g.drawString(items.get(i).getName() + " x " + items.get(i).getQuantity(), 20, 70+(i+1)*15);
+        }
     }
-
-    public void render(Graphics g) {
-        // show a table of items: render each item
-        // by default first item is highlighted by the button (should probably handle this in init)
-    }
-
-    public void update(GameContainer container, int delta) {
+    public static void update(GameContainer container, int delta) {
         Input input = container.getInput();
         // check if keys pressed and move buttons around
         // also, check for using/equipping
         if (input.isKeyPressed(Input.KEY_ENTER)) {
             // use the item
-
         }
-
     }
-
     // increase the amount of item by some quantity; should also check if quantity goes over 99
-    public void addItem(String itemName, int quantity) {
-        for (Item item : items) {
-
+    public static int containsItem(String itemName){
+        for (int i=0; i<items.size(); i++){
+            if (items.get(i).getName().equals(itemName)){
+                return i;
+            }
+        }
+        return -1;
+    }
+    public static void addItem(String itemName, int quantity) {
+        int index = containsItem(itemName);
+        if (index >= 0){
+            items.get(index).addQuantity(1);
+        }
+        else{
+            items.add(new Item(itemName, 0, 1));
         }
     }
-
-    public void removeItem(String itemName, int quantity) {
-
+    public static void removeItem(String itemName, int quantity) {
+        int index = containsItem(itemName);
+        if (index >= 0){
+            items.get(index).removeQuantity(1);
+        }
     }
-
-    public int getQuantity(String itemName) {
+    public static int getQuantity(String itemName) {
         return 0;
     }
 }

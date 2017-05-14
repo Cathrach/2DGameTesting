@@ -1,12 +1,9 @@
 /**
  * Created by serinahu on 5/8/17.
  */
-
 import org.newdawn.slick.*;
 import org.newdawn.slick.tiled.*;
-
 import static java.lang.Integer.parseInt;
-
 public class Map {
     private TiledMap map;
     // dimensions in tiles
@@ -18,11 +15,9 @@ public class Map {
     int pixelHeight;
     int pixelWidth;
     // list of trigger-able things
-
     public Map() throws SlickException {
         this("maps/sample.tmx");
     }
-
     public Map(String filePath) throws SlickException {
         map = new TiledMap(filePath);
         height = map.getHeight();
@@ -32,19 +27,17 @@ public class Map {
         pixelHeight = height * tileHeight;
         pixelWidth = width * tileWidth;
     }
-
     public void render(int xPos, int yPos) {
         map.render(xPos, yPos);
     }
-
     public boolean isBlocked(float xPos, float yPos) {
+        // check if touching the bounds of the screen
         if (xPos < 0 || yPos < 0 || xPos > pixelWidth || yPos > pixelHeight) {
             return true;
         }
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Blocked"));
         return map.getTileProperty(tileID, "Blocked", "false").equals("true");
     }
-
     public boolean isEntry(float xPos, float yPos) {
         if (xPos < 0 || yPos < 0 || xPos > pixelWidth || yPos > pixelHeight) {
             return false;
@@ -52,14 +45,12 @@ public class Map {
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Entrances"));
         return !map.getTileProperty(tileID, "entryInfo", "").equals("");
     }
-
     public int[] getEntry(float xPos, float yPos) {
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Entrances"));
         String[] data = map.getTileProperty(tileID, "entryInfo", "").split("_");
         int[] new_data = {parseInt(data[0]), parseInt(data[1]), parseInt(data[2])};
         return new_data;
     }
-
     public boolean isEncounter(float xPos, float yPos) {
         if (xPos < 0 || yPos < 0 || xPos > pixelWidth || yPos > pixelHeight) {
             return false;
@@ -68,7 +59,6 @@ public class Map {
         float encounterChance = Float.parseFloat(map.getTileProperty(tileID, "encounterChance", "0"));
         return Math.random() < encounterChance;
     }
-
     public void encounter(float xPos, float yPos) {
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Encounters"));
         String[] data = map.getTileProperty(tileID, "encounterInfo", "").split("_");
@@ -76,5 +66,13 @@ public class Map {
         for (String index : data) {
             Resources.currEnemies.add(new Enemy(Resources.enemy_db[Integer.parseInt(index)]));
         }
+    }
+    public boolean isContainer(float xPos, float yPos){
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Containers"));
+        return map.getTileProperty(tileID, "isContainer", "false").equals("true");
+    }
+    public String getItem(float xPos, float yPos){
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Containers"));
+        return map.getTileProperty(tileID, "item", "gold");
     }
 }
