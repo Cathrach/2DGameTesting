@@ -25,8 +25,8 @@ public class MapState extends BasicGameState {
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
         Input input = container.getInput();
         if (input.isKeyPressed(Input.KEY_ESCAPE)) {
-                PauseMenu.inInventory = true;
-                game.enterState(TestingGame.PAUSE_MENU);
+            PauseMenu.inMenu = PauseMenu.NONE;
+            game.enterState(TestingGame.PAUSE_MENU);
         }
         leader.update(container, game, delta, this);
         // if the tile is an entry, change the current map ID and current map
