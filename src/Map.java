@@ -72,7 +72,20 @@ public class Map {
         return map.getTileProperty(tileID, "isContainer", "false").equals("true");
     }
     public String getItem(float xPos, float yPos){
-        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Containers"));
-        return map.getTileProperty(tileID, "item", "gold");
+        int x = (int) xPos / tileWidth;
+        int y = (int) yPos / tileHeight;
+
+        // retrieve the tileID of the container.
+        int tileID = map.getTileId(x, y, map.getLayerIndex("Containers"));
+        String itemName = map.getTileProperty(tileID, "item", "gold");
+
+        // set the container tileID to 23, which is the empty container.
+        map.setTileId(x, y, map.getLayerIndex("Containers"), 23);
+
+        // increment the Blocked tileID by 1 (closed chest -> open chest, etc)
+        tileID = map.getTileId(x, y, map.getLayerIndex("Blocked"));
+        map.setTileId(x, y, map.getLayerIndex("Blocked"), tileID+1);
+
+        return itemName;
     }
 }

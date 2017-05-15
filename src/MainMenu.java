@@ -45,6 +45,7 @@ public class MainMenu extends BasicGameState {
 
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
+
         Input input = container.getInput();
         if (input.isKeyPressed(Input.KEY_DOWN)) {
             if (selectedButton != BUTTONS - 1) {

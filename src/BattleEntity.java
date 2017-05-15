@@ -1,3 +1,5 @@
+import org.newdawn.slick.Image;
+
 import java.util.ArrayList;
 
 /**
@@ -22,6 +24,7 @@ public class BattleEntity {
     int fixSkillDEF;
     float ratioSkillDEF;
     boolean isPlayer;
+    Image battler;
 
     // skills here
     ArrayList<Skill> skills;
@@ -96,5 +99,4 @@ public class BattleEntity {
             }
         }
     }
-
 }

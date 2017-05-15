@@ -37,6 +37,8 @@ public class TestingGame extends StateBasedGame {
         getState(CUTSCENE).init(container, this);
         getState(PAUSE_MENU).init(container, this);
         getState(COMBAT).init(container, this);
+        Inventory.initListener(container);
+        Combat.initListener(container);
     }
 
     public static void main(String[] args)

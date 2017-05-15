@@ -36,7 +36,6 @@ public class Entity {
     // render: draw the character
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         g.drawString("X: " + xPos + " Y: " + yPos, 20, 25);
-        g.drawString("frame: "+frame, 20, 40);
         sprite.getSubImage(imgWidth*((int)frame), imgHeight*dir, imgWidth, imgHeight).draw(xPos, yPos-(imgHeight-hitHeight));
     }
     @Override

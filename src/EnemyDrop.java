@@ -1,3 +1,5 @@
+import java.lang.annotation.Target;
+
 /**
  * Created by serinahu on 5/13/17.
  */
@@ -5,7 +7,7 @@ public class EnemyDrop {
     Item item;
     float chance;
     public EnemyDrop(Item item, float chance) {
-        this.item = new Consumable("health potion", 0, 1, 0, 0, 0, 0, 0, 0);  //
+        this.item = Resources.item_db[1];
         this.chance = chance;
     }
 }

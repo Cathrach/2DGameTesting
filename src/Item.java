@@ -31,6 +31,7 @@ public class Item {
     public int getQuantity(){
         return quantity;
     }
+
     public void addQuantity(int quantity) {
         this.quantity = Math.min(99, this.quantity + quantity);
     }

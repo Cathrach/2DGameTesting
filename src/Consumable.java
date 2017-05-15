@@ -1,3 +1,5 @@
+import java.lang.annotation.Target;
+
 /**
  * Created by serinahu on 5/8/17.
  */
@@ -10,7 +12,8 @@ public class Consumable extends Item {
     private int fixHP;
     private int fixATK;
     private int fixDEF;
-    public Consumable(String n, int v, int q, int fixDamage, int fixHeal, int ratioHeal, int fixHP, int fixATK, int fixDEF) {  //
+    private TargetType targetType;
+    public Consumable(String n, int v, int q, TargetType targetType, int fixDamage, int fixHeal, int ratioHeal, int fixHP, int fixATK, int fixDEF) {  //
         super(n, v, q);
         this.fixDamage = fixDamage;
         this.fixHeal = fixHeal;
@@ -18,6 +21,7 @@ public class Consumable extends Item {
         this.fixHP = fixHP;
         this.fixATK = fixATK;
         this.fixDEF = fixDEF;
+        this.targetType = targetType;
     }
     public void use(BattleEntity target) {
         target.currHP -= fixDamage;
@@ -26,5 +30,9 @@ public class Consumable extends Item {
         target.baseHP += fixHP;
         target.baseATK += fixATK;
         target.baseDEF += fixDEF;
+    }
+
+    public TargetType getTargetType() {
+        return targetType;
     }
 }
