@@ -194,7 +194,7 @@ class CombatKeyboard implements KeyListener {
 
     @Override
     public void keyPressed(int key, char c) {
-        
+
     }
 
     @Override

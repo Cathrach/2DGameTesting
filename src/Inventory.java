@@ -37,11 +37,16 @@ public class Inventory {
         highlightedUnitID = 0;
     }
     public static void render(Graphics g) {
-        // temporary! Will add GUI & fix up later
-        g.drawString("INVENTORY", 20, 70);
+        // temporary! Will add GUI etc. later
+        g.drawString("Press ESC to return to main menu", 20, 70);
+        g.drawString("INVENTORY", 20, 100);
         for (int i = 0; i<items.size(); i++){
-            g.drawString(items.get(i).getName() + " x " + items.get(i).getQuantity(), 20, 70+(i+1)*15);
+            g.drawString(items.get(i).getName() + " x " + items.get(i).getQuantity(), 30, 100+(i+1)*20);
         }
+
+        g.drawString("EXAMINING: [highlighted item + description", 20, 380);
+        g.drawString("EQUIPPED: [selectedItem.name]", 20, 410);
+
         if (isSelectingTarget) {
             // render targets somehow?
         }
@@ -58,15 +63,16 @@ public class Inventory {
         return -1;
     }
     public static void addItem(String itemName, int quantity) {
-        int index = containsItem(itemName);
-        if (index >= 0){
-            items.get(index).addQuantity(quantity);
-        }
-        else {
-            int itemID = Resources.getItemID(itemName);
-            if (itemID >= 0) {
-                Resources.item_db[itemID].addQuantity(quantity);
-                items.add(Resources.item_db[itemID]);
+        if (!itemName.equals("empty")) {
+            int index = containsItem(itemName);
+            if (index >= 0) {
+                items.get(index).addQuantity(quantity);
+            } else {
+                int itemID = Resources.getItemID(itemName);
+                if (itemID >= 0) {
+                    Resources.item_db[itemID].addQuantity(quantity);
+                    items.add(Resources.item_db[itemID]);
+                }
             }
         }
     }
@@ -140,7 +146,7 @@ class InventoryKeyboard implements KeyListener {
     }
 
     public boolean isAcceptingInput() {
-        return PauseMenu.inInventory;
+        return PauseMenu.inMenu == PauseMenu.NONE;
     }
 
     public void inputEnded() {
