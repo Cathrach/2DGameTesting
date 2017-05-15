@@ -42,9 +42,7 @@ public class MapState extends BasicGameState {
         // if there's a random encounter, change state to combat
         if (currentMap.isEncounter(leader.xPos, leader.yPos)) {
             currentMap.encounter(leader.xPos, leader.yPos);
-            game.getState(TestingGame.COMBAT).init(container, game);
-            Combat.isCombat = true;
-            game.enterState(TestingGame.COMBAT);
+            Combat.enter(game);
         }
     }
     public void changeMap(int newMapID) {

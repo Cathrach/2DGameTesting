@@ -10,6 +10,7 @@ import java.util.List;
 
 public class Combat extends BasicGameState {
     static CombatKeyboard listener;
+    static List<Enemy> currEnemies;
     static boolean isCombat;
     private int id;
     static boolean isPlayerTurn;
@@ -34,6 +35,7 @@ public class Combat extends BasicGameState {
     static int highlightedTargetID;
     static List<Consumable> consumablesOnly;
     static List<BattleEntity> selectedTargets;
+    static List<BattleEntity> possibleTargets;
     static List<BattleEntity> turnOrder;
     static List<BattleAction> actionOrder;
 
@@ -56,6 +58,11 @@ public class Combat extends BasicGameState {
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         isCombat = false;
+
+    }
+
+    public static void enter(StateBasedGame game) {
+        isCombat = true;
         for (Item item : Inventory.items) {
             if (item instanceof Consumable) {
                 consumablesOnly.add((Consumable) item);
@@ -74,13 +81,14 @@ public class Combat extends BasicGameState {
                 turnOrder.add(entity.battleEntity);
             }
         }
-        turnOrder.addAll(Resources.currEnemies);
+        turnOrder.addAll(Combat.currEnemies);
         currMove = turnOrder.get(0);
         isPlayerTurn = turnOrder.get(0) instanceof Ally;
         isSelectingItem = false;
         isSelectingTarget = false;
         isSelectingSkill = false;
         isFinishedTurn = false;
+        game.enterState(TestingGame.COMBAT);
     }
 
     @Override
@@ -106,7 +114,6 @@ public class Combat extends BasicGameState {
 
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-        Input input = container.getInput();
         // this should be handled in the Ally/Enemy things.
         // if player move:
         // change selected skill w/arrow keys
@@ -138,6 +145,10 @@ public class Combat extends BasicGameState {
             isPlayerTurn = turnOrder.get(0) instanceof Ally;
             currMove = turnOrder.get(0);
             // clear all the selection things
+            selectedItem = null;
+            selectedSkill = null;
+            selectedAction = null;
+            selectedTargets.clear();
             isSelectingItem = false;
             isSelectingTarget = false;
             isSelectingSkill = false;
@@ -156,7 +167,7 @@ public class Combat extends BasicGameState {
                 Resources.party[j] = null;
             }
         }
-        for (Enemy enemy : Resources.currEnemies) {
+        for (Enemy enemy : Combat.currEnemies) {
             if (enemy.currHP == 0) {
                 turnOrder.remove(enemy);
                 enemy.isDead = true;
@@ -172,14 +183,14 @@ public class Combat extends BasicGameState {
                 alliesDead = false;
             }
         }
-        for (Enemy enemy : Resources.currEnemies) {
+        for (Enemy enemy : Combat.currEnemies) {
             if (!enemy.isDead) {
                 enemiesDead = false;
             }
         }
         // modify inventory with loot
         if (enemiesDead) {
-            for (Enemy enemy : Resources.currEnemies) {
+            for (Enemy enemy : Combat.currEnemies) {
                 enemy.getDrops();
             }
         }
@@ -211,6 +222,7 @@ class CombatKeyboard implements KeyListener {
                         Combat.highlightedSkillID--;
                     }
                 } else if (key == Input.KEY_DELETE || key == Input.KEY_BACK) {
+                    Combat.selectedSkill = null;
                     Combat.isSelectingSkill = false;
                 } else if (key == Input.KEY_ENTER) {
                     Combat.selectedSkill = Combat.currMove.skills.get(Combat.highlightedSkillID);
@@ -227,20 +239,47 @@ class CombatKeyboard implements KeyListener {
                         Combat.highlightedItemID--;
                     }
                 } else if (key == Input.KEY_DELETE || key == Input.KEY_BACK) {
+                    Combat.selectedItem = null;
                     Combat.isSelectingItem = false;
                 } else if (key == Input.KEY_ENTER) {
                     Combat.selectedItem = Combat.consumablesOnly.get(Combat.highlightedItemID);
+                    Combat.possibleTargets.clear();
+                    switch (Combat.selectedItem.getTargetType()) {
+                        case SELF:
+                            Combat.possibleTargets.add(Combat.currMove);
+                            break;
+                        case SINGLE_ALLY:
+                            for (Entity entity : Resources.party) {
+                                Combat.possibleTargets.add(entity.battleEntity);
+                            }
+                            break;
+                        case SINGLE_ENEMY:
+                            for (Enemy enemy : Combat.currEnemies) {
+                                if (!enemy.isDead) {
+                                    Combat.possibleTargets.add(enemy);
+                                }
+                            }
+                            break;
+                        case ALL_ALLIES:
+                            for (Entity entity : Resources.party) {
+                                Combat.possibleTargets.add(entity.battleEntity);
+                            }
+                            break;
+                        case ALL_ENEMIES:
+                            for (Enemy enemy : Combat.currEnemies) {
+                                if (!enemy.isDead) {
+                                    Combat.possibleTargets.add(enemy);
+                                }
+                            }
+                            break;
+                    }
                     Combat.isSelectingItem = false;
                     Combat.isSelectingTarget = true;
                 }
             } else if (Combat.isSelectingTarget) {
-                // TODO: casework: if target is self, only option is target
-                // if target is all enemies, only option is all enemies
-                // similarly for all allies
-                // if target is single enemy, go through enemy list
-                // if target is single ally, go through ally list
+
                 if (key == Input.KEY_DOWN) {
-                    if (Combat.highlightedTargetID < Resources.currEnemies.size() - 1) {
+                    if (Combat.highlightedTargetID < Combat.currEnemies.size() - 1) {
                         Combat.highlightedTargetID++;
                     }
                 } else if (key == Input.KEY_UP) {
@@ -250,7 +289,7 @@ class CombatKeyboard implements KeyListener {
                 } else if (key == Input.KEY_DELETE || key == Input.KEY_BACK) {
                     Combat.isSelectingTarget = false;
                 } else if (key == Input.KEY_ENTER) {
-                    Combat.selectedTargets.add(Resources.currEnemies.get(Combat.highlightedTargetID));
+                    Combat.selectedTargets.add(Combat.currEnemies.get(Combat.highlightedTargetID));
                     Combat.isSelectingTarget = false;
                 }
             } else if (!Combat.isSelectingTarget && Combat.selectedTargets.size() == 0) { // if a target hasn't been selected yet

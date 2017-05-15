@@ -68,7 +68,7 @@ public class Skill {
                     }
                     break;
                 case ALL_ENEMIES:
-                    for (Enemy enemy : Resources.currEnemies) {
+                    for (Enemy enemy : Combat.currEnemies) {
                         enemy.addSkillEffect(skillEffect);
                     }
                     break;

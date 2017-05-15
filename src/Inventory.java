@@ -44,7 +44,7 @@ public class Inventory {
             g.drawString(items.get(i).getName() + " x " + items.get(i).getQuantity(), 30, 100+(i+1)*20);
         }
 
-        g.drawString("EXAMINING: [highlighted item + description", 20, 380);
+        g.drawString("EXAMINING: [highlighted item + description]git", 20, 380);
         g.drawString("EQUIPPED: [selectedItem.name]", 20, 410);
 
         if (isSelectingTarget) {

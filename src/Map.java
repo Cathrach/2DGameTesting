@@ -62,9 +62,9 @@ public class Map {
     public void encounter(float xPos, float yPos) {
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Encounters"));
         String[] data = map.getTileProperty(tileID, "encounterInfo", "").split("_");
-        Resources.currEnemies.clear();
+        Combat.currEnemies.clear();
         for (String index : data) {
-            Resources.currEnemies.add(new Enemy(Resources.enemy_db[Integer.parseInt(index)]));
+            Combat.currEnemies.add(new Enemy(Resources.enemy_db[Integer.parseInt(index)]));
         }
     }
     public boolean isContainer(float xPos, float yPos){

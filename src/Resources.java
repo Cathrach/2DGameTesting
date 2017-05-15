@@ -7,7 +7,6 @@ import java.util.Dictionary;
 public class Resources {
     static int money;
     static Entity[] party;
-    static ArrayList<Enemy> currEnemies; // when making enemies, PLEASE clone the enemy! don't just add an element from the database!
     static Enemy[] enemy_db;
     // everything has an ID which corresponds to their position in this array!
     static Map[] map_db;
@@ -39,7 +38,6 @@ public class Resources {
         item_db[1] = new Consumable("health potion", 10, 0, TargetType.SINGLE_ALLY, 5, 0, 0, 0, 0, 0);
         item_db[2] = new Equipment("iron sword", 100, 0, Equipment.EquipType.WEAPON, 0, 10, 0, 0, 0, 0);
         // check if save; if not, inventory is empty (will contain a weapon later?)
-        currEnemies = new ArrayList<>();
         currDialogue = new Dialogue(new DialogueLine[]{});
 
         Inventory.addItem("pencil", 1);
