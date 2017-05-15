@@ -45,7 +45,7 @@
   </tile>
  </tileset>
  <tileset firstgid="257" name="objects" tilewidth="32" tileheight="32" tilecount="12" columns="3">
-  <image source="../../Downloads/RPG Resources/FantasyRPG DLC Pack/arabian-nights/!$AN-Crates.png" width="96" height="128"/>
+  <image source="../tilesets/!$AN-Crates.png" width="96" height="128"/>
   <tile id="2">
    <properties>
     <property name="Blocked" value="true"/>
@@ -53,7 +53,7 @@
   </tile>
  </tileset>
  <tileset firstgid="269" name="items" tilewidth="32" tileheight="32" tilecount="24" columns="4">
-  <image source="../../Pictures/itemTileset.png" width="128" height="192"/>
+  <image source="../tilesets/itemTileset.png" width="128" height="192"/>
   <tile id="0">
    <properties>
     <property name="isContainer" value="true"/>

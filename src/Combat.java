@@ -111,7 +111,7 @@ public class Combat extends BasicGameState {
                     if (highlightedSkillID > 2) {
                         highlightedSkillID--;
                     }
-                } else if (input.isKeyPressed(Input.KEY_ESCAPE)) {
+                } else if (input.isKeyPressed(Input.KEY_DELETE) || input.isKeyPressed(Input.KEY_BACK)) {
                     isSelectingSkill = false;
                 } else if (input.isKeyPressed(Input.KEY_ENTER)) {
                     selectedSkill = currMove.skills.get(highlightedSkillID);
@@ -127,7 +127,7 @@ public class Combat extends BasicGameState {
                     if (highlightedItemID > 0) {
                         highlightedItemID--;
                     }
-                } else if (input.isKeyPressed(Input.KEY_ESCAPE)) {
+                } else if (input.isKeyPressed(Input.KEY_DELETE) || input.isKeyPressed(Input.KEY_BACK)) {
                     isSelectingItem = false;
                 } else if (input.isKeyPressed(Input.KEY_ENTER)) {
                     selectedItem = consumablesOnly.get(highlightedItemID);
@@ -148,7 +148,7 @@ public class Combat extends BasicGameState {
                     if (highlightedTargetID > 0) {
                         highlightedTargetID--;
                     }
-                } else if (input.isKeyPressed(Input.KEY_ESCAPE)) {
+                } else if (input.isKeyPressed(Input.KEY_DELETE) || input.isKeyPressed(Input.KEY_BACK)) {
                     isSelectingTarget = false;
                 } else if (input.isKeyPressed(Input.KEY_ENTER)) {
                     selectedTargets.add(Resources.currEnemies.get(highlightedTargetID));
@@ -202,6 +202,10 @@ public class Combat extends BasicGameState {
                         // use item on target: immediate use!
                         for (BattleEntity target : selectedTargets) {
                             selectedItem.use(target);
+                            Inventory.removeItem(selectedItem.getName(), 1);
+                            if (selectedItem.getQuantity() == 0) {
+                                consumablesOnly.remove(highlightedItemID);
+                            }
                             updateDead();
                         }
                         break;
@@ -263,14 +267,16 @@ public class Combat extends BasicGameState {
     }
 
     public void updateDead() {
-        // assuming no resurrection
+        // assuming no resurrection; remove dead from turn order list
         for (int j = 0; j < Resources.party.length; j++) {
             if (Resources.party[j].battleEntity.currHP <= 0) {
+                turnOrder.remove(Resources.party[j].battleEntity);
                 Resources.party[j] = null;
             }
         }
         for (Enemy enemy : Resources.currEnemies) {
             if (enemy.currHP == 0) {
+                turnOrder.remove(enemy);
                 enemy.isDead = true;
             }
         }
@@ -289,6 +295,7 @@ public class Combat extends BasicGameState {
                 enemiesDead = false;
             }
         }
+        // modify inventory with loot
         if (enemiesDead) {
             for (Enemy enemy : Resources.currEnemies) {
                 enemy.getDrops();
@@ -297,6 +304,5 @@ public class Combat extends BasicGameState {
         if (alliesDead || enemiesDead) {
             game.enterState(TestingGame.MAP);
         }
-        // TODO: modify the inventory with loot
     }
 }

@@ -47,7 +47,7 @@ public class Inventory {
                 if (highlightedUnitID > 0) {
                     highlightedUnitID--;
                 }
-            } else if (input.isKeyPressed(Input.KEY_ESCAPE)) {
+            } else if (input.isKeyPressed(Input.KEY_DELETE) || input.isKeyPressed(Input.KEY_BACK)) {
                 isSelectingTarget = false;
             } else if (input.isKeyPressed(Input.KEY_ENTER)) {
                 selectedUnit = Resources.party[highlightedUnitID].battleEntity;
@@ -73,7 +73,6 @@ public class Inventory {
                 isSelectingTarget = true;
             }
         }
-        // handle leaving the inventory somehow?
     }
     // increase the amount of item by some quantity; should also check if quantity goes over 99
     public static int containsItem(String itemName){
@@ -97,6 +96,9 @@ public class Inventory {
         int index = containsItem(itemName);
         if (index >= 0){
             items.get(index).removeQuantity(quantity);
+        }
+        if (items.get(index).getQuantity() == 0) {
+            items.remove(index);
         }
     }
     public static int getQuantity(String itemName) {
