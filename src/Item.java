@@ -8,7 +8,6 @@ public class Item {
     //private int imgIndex;
     private int value;
     private int quantity;
-    private TargetType targetType;
     public Item(String n, int v, int q){
         name = n;
         value = v;
@@ -32,6 +31,7 @@ public class Item {
     public int getQuantity(){
         return quantity;
     }
+
     public void addQuantity(int quantity) {
         this.quantity = Math.min(99, this.quantity + quantity);
     }

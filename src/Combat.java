@@ -9,32 +9,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Combat extends BasicGameState {
-
+    static CombatKeyboard listener;
+    static boolean isCombat;
     private int id;
-    private boolean isPlayerTurn;
-    private boolean isSelectingTarget;
-    private boolean isSelectingItem;
-    private boolean isSelectingSkill;
-    private boolean isFinishedTurn;
-    private BattleEntity currMove;
-    private final int ATTACK = 0;
-    private final int DEFEND = 1;
-    private final int ITEM = 2;
-    private final int SKILL = 3;
-    private final int FLEE = 4;
-    private final String[] skillMenu = {"Attack", "Defend", "Item", "Skill", "Flee"};
-    private int highlightedActionID;
-    private int selectedActionID;
-    private BattleAction selectedAction;
-    private int highlightedSkillID;
-    private int highlightedItemID;
-    private Consumable selectedItem;
-    private Skill selectedSkill;
-    private int highlightedTargetID;
-    private List<Consumable> consumablesOnly;
-    private List<BattleEntity> selectedTargets;
-    private List<BattleEntity> turnOrder;
-    private List<BattleAction> actionOrder;
+    static boolean isPlayerTurn;
+    static boolean isSelectingTarget;
+    static boolean isSelectingItem;
+    static boolean isSelectingSkill;
+    static boolean isFinishedTurn;
+    static BattleEntity currMove;
+    static final int ATTACK = 0;
+    static final int DEFEND = 1;
+    static final int ITEM = 2;
+    static final int SKILL = 3;
+    static final int FLEE = 4;
+    static final String[] skillMenu = {"Attack", "Defend", "Item", "Skill", "Flee"};
+    static int highlightedActionID;
+    static int selectedActionID;
+    static BattleAction selectedAction;
+    static int highlightedSkillID;
+    static int highlightedItemID;
+    static Consumable selectedItem;
+    static Skill selectedSkill;
+    static int highlightedTargetID;
+    static List<Consumable> consumablesOnly;
+    static List<BattleEntity> selectedTargets;
+    static List<BattleEntity> turnOrder;
+    static List<BattleAction> actionOrder;
 
     public Combat(int id) {
         this.id = id;
@@ -47,8 +48,14 @@ public class Combat extends BasicGameState {
         return id;
     }
 
+    public static void initListener(GameContainer container) {
+        listener = new CombatKeyboard();
+        container.getInput().addKeyListener(listener);
+    }
+
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
+        isCombat = false;
         for (Item item : Inventory.items) {
             if (item instanceof Consumable) {
                 consumablesOnly.add((Consumable) item);
@@ -100,128 +107,6 @@ public class Combat extends BasicGameState {
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
         Input input = container.getInput();
-        if (isPlayerTurn) {
-            // if selecting a target, different things apply....
-            if (isSelectingSkill) {
-                if (input.isKeyPressed(Input.KEY_DOWN)) {
-                    if (highlightedSkillID < currMove.skills.size() - 1) {
-                        highlightedSkillID++;
-                    }
-                } else if (input.isKeyPressed(Input.KEY_UP)) {
-                    if (highlightedSkillID > 2) {
-                        highlightedSkillID--;
-                    }
-                } else if (input.isKeyPressed(Input.KEY_DELETE) || input.isKeyPressed(Input.KEY_BACK)) {
-                    isSelectingSkill = false;
-                } else if (input.isKeyPressed(Input.KEY_ENTER)) {
-                    selectedSkill = currMove.skills.get(highlightedSkillID);
-                    isSelectingSkill = false;
-                    isSelectingTarget = true;
-                }
-            } else if (isSelectingItem) {
-                if (input.isKeyPressed(Input.KEY_DOWN)) {
-                    if (highlightedItemID < consumablesOnly.size() - 1) {
-                        highlightedItemID++;
-                    }
-                } else if (input.isKeyPressed(Input.KEY_UP)) {
-                    if (highlightedItemID > 0) {
-                        highlightedItemID--;
-                    }
-                } else if (input.isKeyPressed(Input.KEY_DELETE) || input.isKeyPressed(Input.KEY_BACK)) {
-                    isSelectingItem = false;
-                } else if (input.isKeyPressed(Input.KEY_ENTER)) {
-                    selectedItem = consumablesOnly.get(highlightedItemID);
-                    isSelectingItem = false;
-                    isSelectingTarget = true;
-                }
-            } else if (isSelectingTarget) {
-                // TODO: casework: if target is self, only option is target
-                // if target is all enemies, only option is all enemies
-                // similarly for all allies
-                // if target is single enemy, go through enemy list
-                // if target is single ally, go through ally list
-                if (input.isKeyPressed(Input.KEY_DOWN)) {
-                    if (highlightedTargetID < Resources.currEnemies.size() - 1) {
-                        highlightedTargetID++;
-                    }
-                } else if (input.isKeyPressed(Input.KEY_UP)) {
-                    if (highlightedTargetID > 0) {
-                        highlightedTargetID--;
-                    }
-                } else if (input.isKeyPressed(Input.KEY_DELETE) || input.isKeyPressed(Input.KEY_BACK)) {
-                    isSelectingTarget = false;
-                } else if (input.isKeyPressed(Input.KEY_ENTER)) {
-                    selectedTargets.add(Resources.currEnemies.get(highlightedTargetID));
-                    isSelectingTarget = false;
-                }
-            } else if (!isSelectingTarget && selectedTargets.size() == 0) { // if a target hasn't been selected yet
-                // process input
-                if (input.isKeyPressed(Input.KEY_DOWN)) {
-                    if (highlightedActionID < skillMenu.length - 1) {
-                        highlightedActionID++;
-                    }
-                } else if (input.isKeyPressed(Input.KEY_UP)) {
-                    if (highlightedActionID > 0) {
-                        highlightedActionID--;
-                    }
-                } else if (input.isKeyPressed(Input.KEY_ENTER)) {
-                    selectedActionID = highlightedActionID;
-                    switch (selectedActionID) {
-                        // attack
-                        case ATTACK:
-                            selectedSkill = currMove.skills.get(0);
-                            isSelectingTarget = true;
-                            break;
-                        case DEFEND:
-                            // cast defend on self: immediate use
-                            currMove.use(currMove.skills.get(1), currMove);
-                            break;
-                        case ITEM:
-                            // select item to use
-                            isSelectingItem = true;
-                            break;
-                        case SKILL:
-                            // select skill to use
-                            isSelectingSkill = true;
-                            break;
-                        case FLEE:
-                            // flee somehow
-                            break;
-                        default:
-                            // shouldn't happen but
-                            System.out.println("Error: selectedActionID is not in array bounds");
-                    }
-                }
-            } else {
-                switch (selectedActionID) {
-                    case ATTACK:
-                        // attack target: first element of target list
-                        selectedAction = new BattleAction(currMove, selectedSkill, selectedTargets.get(0));
-                        break;
-                    case ITEM:
-                        // use item on target: immediate use!
-                        for (BattleEntity target : selectedTargets) {
-                            selectedItem.use(target);
-                            Inventory.removeItem(selectedItem.getName(), 1);
-                            if (selectedItem.getQuantity() == 0) {
-                                consumablesOnly.remove(highlightedItemID);
-                            }
-                            updateDead();
-                        }
-                        break;
-                    case SKILL:
-                        // use skill on all targets in target list
-                        for (BattleEntity target : selectedTargets) {
-                            selectedAction = new BattleAction(currMove, selectedSkill, target);
-                        }
-                        break;
-                    default:
-                        // should not occur
-                        System.out.println("Error: selected a target when there was no need to");
-                }
-                isFinishedTurn = true;
-            }
-        }
         // this should be handled in the Ally/Enemy things.
         // if player move:
         // change selected skill w/arrow keys
@@ -244,7 +129,6 @@ public class Combat extends BasicGameState {
                 if (battleAction.skill.delay == 0) {
                     battleAction.skill.use(battleAction.caster, battleAction.target);
                 }
-                updateDead();
             }
             // consume skill effects for entity that just moved
             currMove.consumeSkillEffects();
@@ -259,11 +143,9 @@ public class Combat extends BasicGameState {
             isSelectingSkill = false;
             isFinishedTurn = false;
         }
-
+        updateDead();
         // if all enemies or all players are dead, exit back to the world map
         updateWin(game);
-
-
     }
 
     public void updateDead() {
@@ -302,7 +184,161 @@ public class Combat extends BasicGameState {
             }
         }
         if (alliesDead || enemiesDead) {
+            isCombat = false;
             game.enterState(TestingGame.MAP);
         }
+    }
+}
+
+class CombatKeyboard implements KeyListener {
+
+    @Override
+    public void keyPressed(int key, char c) {
+        
+    }
+
+    @Override
+    public void keyReleased(int key, char c) {
+        if (Combat.isPlayerTurn) {
+            // if selecting a target, different things apply....
+            if (Combat.isSelectingSkill) {
+                if (key == Input.KEY_DOWN) {
+                    if (Combat.highlightedSkillID < Combat.currMove.skills.size() - 1) {
+                        Combat.highlightedSkillID++;
+                    }
+                } else if (key == Input.KEY_UP) {
+                    if (Combat.highlightedSkillID > 2) {
+                        Combat.highlightedSkillID--;
+                    }
+                } else if (key == Input.KEY_DELETE || key == Input.KEY_BACK) {
+                    Combat.isSelectingSkill = false;
+                } else if (key == Input.KEY_ENTER) {
+                    Combat.selectedSkill = Combat.currMove.skills.get(Combat.highlightedSkillID);
+                    Combat.isSelectingSkill = false;
+                    Combat.isSelectingTarget = true;
+                }
+            } else if (Combat.isSelectingItem) {
+                if (key == Input.KEY_DOWN) {
+                    if (Combat.highlightedItemID < Combat.consumablesOnly.size() - 1) {
+                        Combat.highlightedItemID++;
+                    }
+                } else if (key == Input.KEY_UP) {
+                    if (Combat.highlightedItemID > 0) {
+                        Combat.highlightedItemID--;
+                    }
+                } else if (key == Input.KEY_DELETE || key == Input.KEY_BACK) {
+                    Combat.isSelectingItem = false;
+                } else if (key == Input.KEY_ENTER) {
+                    Combat.selectedItem = Combat.consumablesOnly.get(Combat.highlightedItemID);
+                    Combat.isSelectingItem = false;
+                    Combat.isSelectingTarget = true;
+                }
+            } else if (Combat.isSelectingTarget) {
+                // TODO: casework: if target is self, only option is target
+                // if target is all enemies, only option is all enemies
+                // similarly for all allies
+                // if target is single enemy, go through enemy list
+                // if target is single ally, go through ally list
+                if (key == Input.KEY_DOWN) {
+                    if (Combat.highlightedTargetID < Resources.currEnemies.size() - 1) {
+                        Combat.highlightedTargetID++;
+                    }
+                } else if (key == Input.KEY_UP) {
+                    if (Combat.highlightedTargetID > 0) {
+                        Combat.highlightedTargetID--;
+                    }
+                } else if (key == Input.KEY_DELETE || key == Input.KEY_BACK) {
+                    Combat.isSelectingTarget = false;
+                } else if (key == Input.KEY_ENTER) {
+                    Combat.selectedTargets.add(Resources.currEnemies.get(Combat.highlightedTargetID));
+                    Combat.isSelectingTarget = false;
+                }
+            } else if (!Combat.isSelectingTarget && Combat.selectedTargets.size() == 0) { // if a target hasn't been selected yet
+                // process input
+                if (key == Input.KEY_DOWN) {
+                    if (Combat.highlightedActionID < 4) {
+                        Combat.highlightedActionID++;
+                    }
+                } else if (key == Input.KEY_UP) {
+                    if (Combat.highlightedActionID > 0) {
+                        Combat.highlightedActionID--;
+                    }
+                } else if (key == Input.KEY_ENTER) {
+                    Combat.selectedActionID = Combat.highlightedActionID;
+                    switch (Combat.selectedActionID) {
+                        // Combat.ATTACK
+                        case Combat.ATTACK:
+                            Combat.selectedSkill = Combat.currMove.skills.get(0);
+                            Combat.isSelectingTarget = true;
+                            break;
+                        case Combat.DEFEND:
+                            // cast Combat.DEFEND on self: immediate use
+                            Combat.currMove.use(Combat.currMove.skills.get(1), Combat.currMove);
+                            break;
+                        case Combat.ITEM:
+                            // select item to use
+                            Combat.isSelectingItem = true;
+                            break;
+                        case Combat.SKILL:
+                            // select skill to use
+                            Combat.isSelectingSkill = true;
+                            break;
+                        case Combat.FLEE:
+                            // flee somehow
+                            break;
+                        default:
+                            // shouldn't happen but
+                            System.out.println("Error: Combat.selectedActionID is not in array bounds");
+                    }
+                }
+            } else {
+                switch (Combat.selectedActionID) {
+                    case Combat.ATTACK:
+                        // Combat.ATTACK target: first element of target list
+                        Combat.selectedAction = new BattleAction(Combat.currMove, Combat.selectedSkill, Combat.selectedTargets.get(0));
+                        break;
+                    case Combat.ITEM:
+                        // use item on target: immediate use!
+                        for (BattleEntity target : Combat.selectedTargets) {
+                            Combat.selectedItem.use(target);
+                            Inventory.removeItem(Combat.selectedItem.getName(), 1);
+                            if (Combat.selectedItem.getQuantity() == 0) {
+                                Combat.consumablesOnly.remove(Combat.highlightedItemID);
+                            }
+                        }
+                        break;
+                    case Combat.SKILL:
+                        // use skill on all targets in target list
+                        for (BattleEntity target : Combat.selectedTargets) {
+                            Combat.selectedAction = new BattleAction(Combat.currMove, Combat.selectedSkill, target);
+                        }
+                        break;
+                    default:
+                        // should not occur
+                        System.out.println("Error: selected a target when there was no need to");
+                }
+                Combat.isFinishedTurn = true;
+            }
+        }
+    }
+
+    @Override
+    public void setInput(Input input) {
+
+    }
+
+    @Override
+    public boolean isAcceptingInput() {
+        return Combat.isCombat;
+    }
+
+    @Override
+    public void inputEnded() {
+
+    }
+
+    @Override
+    public void inputStarted() {
+
     }
 }

@@ -34,12 +34,23 @@ public class Resources {
         skill_db[1] = new Skill("Defend", new Image("skills/defend.png"),
                 0, 0, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{skilleffect_db[0]}, new TargetType[]{});
-        item_db = new Item[1];
+        item_db = new Item[3];
+        item_db[0] = new Equipment("pencil", 50, 0, Equipment.EquipType.WEAPON, 0, 5, 0, 0, 0, 0);
+        item_db[1] = new Consumable("health potion", 10, 0, TargetType.SINGLE_ALLY, 5, 0, 0, 0, 0, 0);
+        item_db[2] = new Equipment("iron sword", 100, 0, Equipment.EquipType.WEAPON, 0, 10, 0, 0, 0, 0);
         // check if save; if not, inventory is empty (will contain a weapon later?)
         currEnemies = new ArrayList<>();
         currDialogue = new Dialogue(new DialogueLine[]{});
 
-        Inventory.items.add(new Equipment("pencil", 50, 1, Equipment.EquipType.WEAPON, 0, 0, 0, 0, 0, 0));
-        System.out.println(Inventory.items.get(0) instanceof Equipment);
+        Inventory.addItem("pencil", 1);
+    }
+
+    public static int getItemID(String itemName) {
+        for (int i = 0; i < item_db.length; i++) {
+            if (item_db[i].getName().equals(itemName)) {
+                return i;
+            }
+        }
+        return -1;
     }
 }

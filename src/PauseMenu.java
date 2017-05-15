@@ -7,7 +7,7 @@ import org.newdawn.slick.state.*;
 public class PauseMenu extends BasicGameState {
 
     private int id;
-    private boolean inInventory;
+    static boolean inInventory;
 
     public PauseMenu(int id) {
         this.id = id;
@@ -20,7 +20,7 @@ public class PauseMenu extends BasicGameState {
 
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
-        inInventory = true;
+        inInventory = false;
     }
 
     @Override
@@ -36,6 +36,7 @@ public class PauseMenu extends BasicGameState {
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
         Input input = container.getInput();
         if (input.isKeyPressed(Input.KEY_I)) {
+            Inventory.init();
             inInventory = true;
         } else if (input.isKeyPressed(Input.KEY_S)) {
             inInventory = false;
