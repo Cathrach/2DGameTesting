@@ -5,10 +5,11 @@ import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 public class MapState extends BasicGameState {
     private int id;
-    int currentMapID;
-    Map currentMap;
+    static int currentMapID;
+    static Map currentMap;
     private Entity leader;
     public MapState(int id) {
+        currentMapID = 0;
         this.id = id;
     }
     public int getID() {
@@ -45,7 +46,7 @@ public class MapState extends BasicGameState {
             Combat.enter(game);
         }
     }
-    public void changeMap(int newMapID) {
+    public static void changeMap(int newMapID) {
         currentMapID = newMapID;
         currentMap = Resources.map_db[currentMapID];
     }

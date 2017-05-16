@@ -1,4 +1,8 @@
 import org.newdawn.slick.*;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Dictionary;
 /**
@@ -14,18 +18,36 @@ public class Resources {
     static Skill[] skill_db;
     static SkillEffect[] skilleffect_db;
     static Dialogue[] dialogue_db;
-    static Dialogue currDialogue;
     static Dictionary<String, Boolean> triggers;
-    public static void init() throws SlickException {
-        map_db = new Map[2];
-        map_db[0] = new Map("maps/sample.tmx");
-        map_db[1] = new Map("maps/next.tmx");
+    public static void init() throws SlickException, IOException {
+        BufferedReader mapReader = new BufferedReader(new FileReader("db/maps.txt"));
+        int numMaps = Integer.parseInt(mapReader.readLine());
+        map_db = new Map[numMaps];
+        for (int i = 0; i < numMaps; i++) {
+            map_db[i] = new Map("maps/" + mapReader.readLine() + ".tmx");
+        }
         // check if there's a "save"; if not, make a new entity
         Resources.party = new Entity[4];
-        Resources.party[0] = new Entity(0, 0, 1, 0, new Ally("square", true));
+        Resources.party[0] = new Entity(0, 0, 1, 0, new Ally("heroine"));
         // similarly for other databases
-        skilleffect_db = new SkillEffect[1];
-        skilleffect_db[0] = new SkillEffect(0,0, 0, 0, 0, 0, 0, 0, 1.5f, 0, 0, 0);
+        BufferedReader skillEffectReader = new BufferedReader(new FileReader("db/skilleffects.txt"));
+        int numSkillEffects = Integer.parseInt(skillEffectReader.readLine());
+        skilleffect_db = new SkillEffect[numSkillEffects];
+        for (int i = 0; i < numSkillEffects; i++) {
+            String[] effectData = skillEffectReader.readLine().split(" ");
+            skilleffect_db[i] = new SkillEffect(Integer.parseInt(effectData[0]), // turns
+                    Integer.parseInt(effectData[1]), // fix HP
+                    Integer.parseInt(effectData[2]), // fix MP
+                    Integer.parseInt(effectData[3]), // fix ATK
+                    Integer.parseInt(effectData[4]), // fix DEF
+                    Float.parseFloat(effectData[5]), // ratio HP
+                    Float.parseFloat(effectData[6]), // ratio MP
+                    Float.parseFloat(effectData[7]), // ratio ATK
+                    Float.parseFloat(effectData[8]), // ratio DEF
+                    Integer.parseInt(effectData[9]), // fix heal
+                    Float.parseFloat(effectData[10]), // ratio heal
+                    Integer.parseInt(effectData[11])); // poison damage
+        }
         skill_db = new Skill[2];
         skill_db[0] = new Skill("Attack", new Image("skills/attack.png"),
                 0, 0, 0, 1, 0, 0, TargetType.SINGLE_ENEMY,
@@ -38,7 +60,15 @@ public class Resources {
         item_db[1] = new Consumable("health potion", 10, 0, TargetType.SINGLE_ALLY, 5, 0, 0, 0, 0, 0);
         item_db[2] = new Equipment("iron sword", 100, 0, Equipment.EquipType.WEAPON, 0, 10, 0, 0, 0, 0);
         // check if save; if not, inventory is empty (will contain a weapon later?)
-        currDialogue = new Dialogue(new DialogueLine[]{});
+        dialogue_db = new Dialogue[1];
+        dialogue_db[0] = new Dialogue(
+                new DialogueLine[]{
+                        new DialogueLine("It is Tuesday Morning, May 9th.", new Image("sprites/heroine.png"), false, -1),
+                        new DialogueLine("You will be taking the AP BC Calculus Exam.", new Image("sprites/heroine.png"), true, -1)
+                },
+                new String[]{},
+                new int[]{}
+        );
 
         Inventory.addItem("pencil", 1);
     }

@@ -8,40 +8,41 @@ public class Dialogue {
     // an array of lines
     DialogueLine[] lines;
     int currLineID;
-    String condition;
-    int startLineIDIfCondition;
+    String[] conditions;
+    int[] startLineIDsIfCondition;
 
     public Dialogue(DialogueLine[] lines) {
         this.lines = lines;
-        this.condition = "";
+        this.conditions = new String[]{};
     }
 
-    public Dialogue(DialogueLine[] lines, String condition, int startLineIDIfCondition) {
+    public Dialogue(DialogueLine[] lines, String[] conditions, int[] startLineIDsIfCondition) {
         this.lines = lines;
-        this.condition = condition;
-        this.startLineIDIfCondition = startLineIDIfCondition;
-        if (Resources.triggers.get(condition)) {
-            currLineID = startLineIDIfCondition;
-        } else {
-            currLineID = 0;
+        this.conditions = conditions;
+        this.startLineIDsIfCondition = startLineIDsIfCondition;
+        this.currLineID = 0;
+        for (int i = 0; i < conditions.length; i++) {
+            if (Resources.triggers.get(conditions[i])) {
+                currLineID = startLineIDsIfCondition[i];
+            }
         }
     }
 
     public void reset() {
-        if (!condition.equals("")) {
-            if (Resources.triggers.get(condition)) {
-                currLineID = startLineIDIfCondition;
-            } else {
-                currLineID = 0;
+        this.currLineID = 0;
+        for (int i = 0; i < conditions.length; i++) {
+            if (Resources.triggers.get(conditions[i])) {
+                currLineID = startLineIDsIfCondition[i];
             }
-        } else {
-            currLineID = 0;
         }
     }
 
     // go to next line
     public void nextLine(StateBasedGame game) {
         if (lines[currLineID].isLast) {
+            if (lines[currLineID].mapID >= 0) {
+                MapState.changeMap(lines[currLineID].mapID);
+            }
             game.enterState(TestingGame.MAP);
         } else {
             currLineID++;
@@ -50,7 +51,6 @@ public class Dialogue {
 
     // render dialogue
     public void render(Graphics g) {
-        // draw the current line's speaker
-        // draw the current line in a rectangle
+        lines[currLineID].render(g);
     }
 }

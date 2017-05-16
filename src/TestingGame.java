@@ -4,7 +4,8 @@
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
-import sun.net.ProgressSource;
+
+import java.io.IOException;
 
 public class TestingGame extends StateBasedGame {
 
@@ -31,14 +32,19 @@ public class TestingGame extends StateBasedGame {
 
     @Override
     public void initStatesList(GameContainer container) throws SlickException {
-        Resources.init();
-        getState(MAIN_MENU).init(container, this);
-        getState(MAP).init(container, this);
-        getState(CUTSCENE).init(container, this);
-        getState(PAUSE_MENU).init(container, this);
-        getState(COMBAT).init(container, this);
-        Inventory.initListener(container);
-        Combat.initListener(container);
+        try {
+            Resources.init();
+            getState(MAIN_MENU).init(container, this);
+            getState(MAP).init(container, this);
+            getState(CUTSCENE).init(container, this);
+            getState(PAUSE_MENU).init(container, this);
+            getState(COMBAT).init(container, this);
+            Inventory.initListener(container);
+            Combat.initListener(container);
+        }
+        catch (IOException e) {
+            System.out.println("bad file path");
+        }
     }
 
     public static void main(String[] args)

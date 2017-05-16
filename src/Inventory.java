@@ -121,6 +121,8 @@ class InventoryKeyboard implements KeyListener {
                         ((Consumable) Inventory.selectedItem).use(Inventory.selectedUnit);
                     }
                 } else {
+                    System.out.println(Inventory.selectedUnit);
+                    System.out.println(Inventory.selectedItem);
                     Inventory.selectedUnit.equip((Equipment) Inventory.selectedItem);
                 }
                 Inventory.isSelectingTarget = false;
@@ -146,7 +148,7 @@ class InventoryKeyboard implements KeyListener {
     }
 
     public boolean isAcceptingInput() {
-        return PauseMenu.inMenu == PauseMenu.NONE;
+        return PauseMenu.inMenu == PauseMenu.INVENTORY;
     }
 
     public void inputEnded() {

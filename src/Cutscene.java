@@ -6,6 +6,10 @@ import org.newdawn.slick.state.*;
  */
 public class Cutscene extends BasicGameState {
     private int id;
+    static boolean isCutscene;
+    static Dialogue currDialogue;
+    private static int timeElapsedSinceLastPress;
+    private final int timeToWait = 100;
 
     public Cutscene(int id) {
         this.id = id;
@@ -17,19 +21,36 @@ public class Cutscene extends BasicGameState {
 
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
-        Resources.currDialogue.reset();
+        isCutscene = false;
+        timeElapsedSinceLastPress = 0;
     }
 
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-        Resources.currDialogue.render(g);
+        currDialogue.render(g);
     }
 
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
         Input input = container.getInput();
-        if (input.isKeyPressed(Input.KEY_ENTER) || input.isKeyPressed(Input.KEY_SPACE)) {
-            Resources.currDialogue.nextLine(game);
+        if (timeElapsedSinceLastPress == 0) {
+            if (input.isKeyPressed(Input.KEY_ENTER) || input.isKeyPressed(Input.KEY_SPACE)) {
+                System.out.println("key pressed");
+                currDialogue.nextLine(game);
+            }
+            timeElapsedSinceLastPress += delta;
+        } else if (timeElapsedSinceLastPress > 0 && timeElapsedSinceLastPress < timeToWait) {
+            timeElapsedSinceLastPress += delta;
+        } else if (timeElapsedSinceLastPress >= timeToWait) {
+            timeElapsedSinceLastPress = 0;
         }
+
     }
+
+    public static void changeDialogue(int dialogueID) {
+        timeElapsedSinceLastPress = 0;
+        currDialogue = Resources.dialogue_db[dialogueID];
+        currDialogue.reset();
+    }
+
 }

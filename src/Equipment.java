@@ -15,6 +15,20 @@ public class Equipment extends Item {
     float ratioHP;
     float ratioATK;
     float ratioDEF;
+
+    @Override
+    public String toString() {
+        return "Equipment{" +
+                "type=" + type +
+                ", fixHP=" + fixHP +
+                ", fixATK=" + fixATK +
+                ", fixDEF=" + fixDEF +
+                ", ratioHP=" + ratioHP +
+                ", ratioATK=" + ratioATK +
+                ", ratioDEF=" + ratioDEF +
+                '}';
+    }
+
     public Equipment(String n, int v, int q, EquipType type, int fixHP, int fixATK, int fixDEF, float ratioHP, float ratioATK, float ratioDEF) {
         //
         super(n, v, q);

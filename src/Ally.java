@@ -12,19 +12,15 @@ public class Ally extends BattleEntity {
     int fixEquipDEF;
     float ratioEquipDEF;
 
-    public Ally() {
-        super("player", true);
+    public Ally(String name) {
+        super(name, true);
         fixEquipHP = 0;
         fixEquipATK = 0;
         fixEquipDEF = 0;
         ratioEquipHP = 1;
         ratioEquipATK = 1;
         ratioEquipDEF = 1;
-    }
-
-    public Ally(String name, boolean isPlayer) {
-        this.name = name;
-        this.isPlayer = isPlayer;
+        equips = new ArrayList<>();
     }
 
     // equips here
@@ -72,5 +68,18 @@ public class Ally extends BattleEntity {
     @Override
     public int getDEF() {
         return (int) Math.floor((baseDEF + fixEquipDEF + fixSkillDEF) * (ratioEquipDEF * ratioSkillDEF));
+    }
+
+    @Override
+    public String toString() {
+        return "Ally{" +
+                "fixEquipHP=" + fixEquipHP +
+                ", ratioEquipHP=" + ratioEquipHP +
+                ", fixEquipATK=" + fixEquipATK +
+                ", ratioEquipATK=" + ratioEquipATK +
+                ", fixEquipDEF=" + fixEquipDEF +
+                ", ratioEquipDEF=" + ratioEquipDEF +
+                ", equips=" + equips +
+                '}';
     }
 }
