@@ -8,10 +8,13 @@ public class Item {
     //private int imgIndex;
     private int value;
     private int quantity;
-    public Item(String n, int v, int q){
+    private String description;
+
+    public Item(String n, int v, int q, String d){
         name = n;
         value = v;
         quantity = q;
+        description = d;
     }
     public void init() {
     }
@@ -30,6 +33,9 @@ public class Item {
     }
     public int getQuantity(){
         return quantity;
+    }
+    public String getDescription() {
+        return description;
     }
 
     public void addQuantity(int quantity) {

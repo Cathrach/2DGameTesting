@@ -7,6 +7,7 @@ public class Enemy extends BattleEntity {
     EnemyDrop[] drops;
     int goldDropped;
     boolean isDead;
+    int timesKilled;
 
     public BattleAction decideAction() {
         // default: just attack
@@ -29,6 +30,7 @@ public class Enemy extends BattleEntity {
         this.currHP = baseHP;
         this.currMP = baseMP;
         this.isDead = false;
+        this.timesKilled = 0;
     }
 
     public Enemy(Enemy anotherEnemy) {

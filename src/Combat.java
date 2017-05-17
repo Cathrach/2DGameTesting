@@ -192,6 +192,11 @@ public class Combat extends BasicGameState {
         if (enemiesDead) {
             for (Enemy enemy : Combat.currEnemies) {
                 enemy.getDrops();
+                for (int i = 0; i < Resources.enemy_db.length; i++) {
+                    if (Resources.enemy_db[i].name.equals(enemy.name)) {
+                        Resources.enemy_db[i].timesKilled++;
+                    }
+                }
             }
         }
         if (alliesDead || enemiesDead) {

@@ -35,7 +35,6 @@ public class Cutscene extends BasicGameState {
         Input input = container.getInput();
         if (timeElapsedSinceLastPress == 0) {
             if (input.isKeyPressed(Input.KEY_ENTER) || input.isKeyPressed(Input.KEY_SPACE)) {
-                System.out.println("key pressed");
                 currDialogue.nextLine(game);
             }
             timeElapsedSinceLastPress += delta;

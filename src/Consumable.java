@@ -13,8 +13,8 @@ public class Consumable extends Item {
     private int fixATK;
     private int fixDEF;
     private TargetType targetType;
-    public Consumable(String n, int v, int q, TargetType targetType, int fixDamage, int fixHeal, int ratioHeal, int fixHP, int fixATK, int fixDEF) {  //
-        super(n, v, q);
+    public Consumable(String n, int v, int q, String d, TargetType targetType, int fixDamage, int fixHeal, int ratioHeal, int fixHP, int fixATK, int fixDEF) {  //
+        super(n, v, q, d);
         this.fixDamage = fixDamage;
         this.fixHeal = fixHeal;
         this.ratioHeal = ratioHeal;

@@ -4,6 +4,7 @@
 import org.newdawn.slick.*;
 import org.newdawn.slick.state.*;
 public class Entity {
+
     // image representing character
     private Image sprite;
     private Image hitbox;
@@ -87,5 +88,8 @@ public class Entity {
                 Inventory.addItem(mapState.getItem(xPos + hitWidth/2, yPos - hitHeight), 1);
             }
         }
+    }
+    public Image getSprite() {
+        return sprite;
     }
 }

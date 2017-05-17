@@ -16,9 +16,9 @@ public class BattleEntity {
     int baseATK;
     int baseDEF;
     int fixSkillHP;
-    int ratioSkillHP;
+    float ratioSkillHP;
     int fixSkillMP;
-    int ratioSkillMP;
+    float ratioSkillMP;
     int fixSkillATK;
     float ratioSkillATK;
     int fixSkillDEF;
@@ -44,6 +44,7 @@ public class BattleEntity {
         baseATK = 5;
         baseDEF = 3;
         ratioSkillHP = 1;
+        ratioSkillMP = 1;
         ratioSkillATK = 1;
         ratioSkillDEF = 1;
         this.isPlayer = isPlayer;
@@ -61,6 +62,10 @@ public class BattleEntity {
 
     public int getDEF() {
         return (int) Math.floor((baseDEF + fixSkillDEF) * ratioSkillDEF);
+    }
+
+    public int getMP() {
+        return (int) Math.floor((baseMP + fixSkillMP) * ratioSkillMP);
     }
 
     public String getName() {

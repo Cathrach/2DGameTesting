@@ -39,6 +39,10 @@ public class Dialogue {
 
     // go to next line
     public void nextLine(StateBasedGame game) {
+        if (lines[currLineID].triggerChange != "") {
+            String triggerChange = lines[currLineID].triggerChange; // things like completing quests, etc.
+            Resources.triggers.put(triggerChange, !Resources.triggers.get(triggerChange));
+        }
         if (lines[currLineID].isLast) {
             if (lines[currLineID].mapID >= 0) {
                 MapState.changeMap(lines[currLineID].mapID);

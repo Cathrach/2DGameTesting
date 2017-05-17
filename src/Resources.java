@@ -56,15 +56,15 @@ public class Resources {
                 0, 0, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{skilleffect_db[0]}, new TargetType[]{});
         item_db = new Item[3];
-        item_db[0] = new Equipment("pencil", 50, 0, Equipment.EquipType.WEAPON, 0, 5, 0, 0, 0, 0);
-        item_db[1] = new Consumable("health potion", 10, 0, TargetType.SINGLE_ALLY, 5, 0, 0, 0, 0, 0);
-        item_db[2] = new Equipment("iron sword", 100, 0, Equipment.EquipType.WEAPON, 0, 10, 0, 0, 0, 0);
+        item_db[0] = new Equipment("#2 Pencil", 50, 0, "A #2 Pencil: No other marks will be accepted~", Equipment.EquipType.WEAPON, 0, 0, 5, 0, 1, 1, 1, 1);
+        item_db[1] = new Consumable("Water", 10, 0, "Rather scarce since potatoes keep boiling it.", TargetType.SINGLE_ALLY, 5, 0, 0, 0, 0, 0);
+        item_db[2] = new Equipment("Pen", 100, 0, "Blue or black pens will make your free response easier to read!", Equipment.EquipType.WEAPON, 0, 0, 10, 0, 1, 1, 1, 1);
         // check if save; if not, inventory is empty (will contain a weapon later?)
         dialogue_db = new Dialogue[1];
         dialogue_db[0] = new Dialogue(
                 new DialogueLine[]{
-                        new DialogueLine("It is Tuesday Morning, May 9th.", new Image("sprites/heroine.png"), false, -1),
-                        new DialogueLine("You will be taking the AP BC Calculus Exam.", new Image("sprites/heroine.png"), true, -1)
+                        new DialogueLine("It is Tuesday Morning, May 9th.", new Image("sprites/heroine.png")),
+                        new DialogueLine("You will be taking the AP BC Calculus Exam.", new Image("sprites/heroine.png"), true, -1, "")
                 },
                 new String[]{},
                 new int[]{}

@@ -8,9 +8,18 @@ public class DialogueLine {
     String line;
     Image speaker;
     boolean isLast;
+    String triggerChange;
     int mapID;
 
-    public DialogueLine(String line, Image speaker, boolean isLast, int mapID) {
+    public DialogueLine(String line, Image speaker) {
+        this.line = line;
+        this.speaker = speaker;
+        this.isLast = false;
+        this.mapID = -1;
+        this.triggerChange = "";
+    }
+
+    public DialogueLine(String line, Image speaker, boolean isLast, int mapID, String triggerChange) {
         this.line = line;
         this.speaker = speaker;
         this.isLast = isLast;
@@ -19,7 +28,7 @@ public class DialogueLine {
         } else {
             this.mapID = -1; // -1 for old map
         }
-
+        this.triggerChange = triggerChange;
     }
 
     public void render(Graphics g) {
