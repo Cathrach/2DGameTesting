@@ -82,7 +82,7 @@
   <tile id="0">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="Health Potion"/>
+    <property name="item" value="Water"/>
    </properties>
   </tile>
   <tile id="1">
@@ -106,7 +106,7 @@
   <tile id="4">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="Iron Sword"/>
+    <property name="item" value="Pen"/>
    </properties>
   </tile>
   <tile id="5">

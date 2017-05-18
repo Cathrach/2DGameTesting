@@ -1,6 +1,6 @@
 
-*.class
+out/production/2DGameTesting/*.class
 
 *.xml
 
-*.log
+
