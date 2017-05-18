@@ -135,7 +135,7 @@ class InventoryKeyboard implements KeyListener {
             }
         } else {
             if (key == Input.KEY_DOWN) {
-                if (Inventory.highlightedItemID < Inventory.items.size()) {
+                if (Inventory.highlightedItemID < Inventory.items.size() - 1) {
                     Inventory.highlightedItemID++;
                 }
             } else if (key == Input.KEY_UP) {

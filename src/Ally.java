@@ -39,6 +39,8 @@ public class Ally extends BattleEntity {
                 unequip(i);
             }
         }
+        equips.add(equip);
+        System.out.println(equips);
         // add this equip to array list
         fixEquipHP += equip.fixHP;
         fixEquipMP += equip.fixMP;
