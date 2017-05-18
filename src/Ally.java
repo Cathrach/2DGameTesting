@@ -7,6 +7,8 @@ public class Ally extends BattleEntity {
 
     int fixEquipHP;
     float ratioEquipHP;
+    int fixEquipMP;
+    float ratioEquipMP;
     int fixEquipATK;
     float ratioEquipATK;
     int fixEquipDEF;
@@ -15,9 +17,11 @@ public class Ally extends BattleEntity {
     public Ally(String name) {
         super(name, true);
         fixEquipHP = 0;
+        fixEquipMP = 0;
         fixEquipATK = 0;
         fixEquipDEF = 0;
         ratioEquipHP = 1;
+        ratioEquipMP = 1;
         ratioEquipATK = 1;
         ratioEquipDEF = 1;
         equips = new ArrayList<>();
@@ -35,11 +39,15 @@ public class Ally extends BattleEntity {
                 unequip(i);
             }
         }
+        equips.add(equip);
+        System.out.println(equips);
         // add this equip to array list
         fixEquipHP += equip.fixHP;
+        fixEquipMP += equip.fixMP;
         fixEquipATK += equip.fixATK;
         fixEquipDEF += equip.fixDEF;
         ratioEquipHP *= equip.ratioHP;
+        ratioEquipMP *= equip.ratioMP;
         ratioEquipATK *= equip.ratioATK;
         ratioEquipDEF *= equip.ratioDEF;
     }
@@ -47,9 +55,11 @@ public class Ally extends BattleEntity {
     public void unequip(int equip_index) {
         Equipment currEquip = equips.get(equip_index);
         fixEquipHP -= currEquip.fixHP;
+        fixEquipMP -= currEquip.fixMP;
         fixEquipATK -= currEquip.fixATK;
         fixEquipDEF -= currEquip.fixDEF;
         ratioEquipHP /= currEquip.ratioHP;
+        ratioEquipMP /= currEquip.ratioMP;
         ratioEquipATK /= currEquip.ratioATK;
         ratioEquipDEF /= currEquip.ratioDEF;
         equips.remove(equip_index);
@@ -68,6 +78,10 @@ public class Ally extends BattleEntity {
     @Override
     public int getDEF() {
         return (int) Math.floor((baseDEF + fixEquipDEF + fixSkillDEF) * (ratioEquipDEF * ratioSkillDEF));
+    }
+
+    public int getMP() {
+        return (int) Math.floor((baseMP + fixEquipMP + fixSkillMP) * (ratioEquipMP * ratioSkillMP));
     }
 
     @Override

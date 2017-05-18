@@ -46,6 +46,7 @@ public class Map {
         return !map.getTileProperty(tileID, "entryInfo", "").equals("");
     }
     public int[] getEntry(float xPos, float yPos) {
+        // TODO: add a trigger that needs to be true in order to unlock a map
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Entrances"));
         String[] data = map.getTileProperty(tileID, "entryInfo", "").split("_");
         int[] new_data = {parseInt(data[0]), parseInt(data[1]), parseInt(data[2])};

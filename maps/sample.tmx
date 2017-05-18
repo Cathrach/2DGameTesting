@@ -82,49 +82,49 @@
   <tile id="0">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="health potion"/>
+    <property name="item" value="Health Potion"/>
    </properties>
   </tile>
   <tile id="1">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="damage potion"/>
+    <property name="item" value="Damage Potion"/>
    </properties>
   </tile>
   <tile id="2">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="mana potion"/>
+    <property name="item" value="Mana Potion"/>
    </properties>
   </tile>
   <tile id="3">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="buff potion"/>
+    <property name="item" value="Buff Potion"/>
    </properties>
   </tile>
   <tile id="4">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="iron sword"/>
+    <property name="item" value="Iron Sword"/>
    </properties>
   </tile>
   <tile id="5">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="gold sword"/>
+    <property name="item" value="Gold Sword"/>
    </properties>
   </tile>
   <tile id="6">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="fire sword"/>
+    <property name="item" value="Fire Sword"/>
    </properties>
   </tile>
   <tile id="7">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="poison sword"/>
+    <property name="item" value="Poison Sword"/>
    </properties>
   </tile>
   <tile id="8">

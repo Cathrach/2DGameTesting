@@ -20,6 +20,7 @@ public class Inventory {
     static Ally selectedUnit;
     // contains consumables and equips: array list of items
     static ArrayList<Item> items = new ArrayList<Item>();
+    private static int xPos, yPos;
     // index in array list?
 
     public static void getFromSave() {
@@ -38,13 +39,17 @@ public class Inventory {
     }
     public static void render(Graphics g) {
         // temporary! Will add GUI etc. later
-        g.drawString("Press ESC to return to main menu", 20, 70);
+        g.drawString("X: " + xPos + " Y: " + yPos, 20, 70);
+        g.drawString("Press ESC to return to main menu", 0, 0);
         g.drawString("INVENTORY", 20, 100);
         for (int i = 0; i<items.size(); i++){
             g.drawString(items.get(i).getName() + " x " + items.get(i).getQuantity(), 30, 100+(i+1)*20);
         }
 
-        g.drawString("EXAMINING: [highlighted item + description]git", 20, 380);
+        if (highlightedItemID < items.size()) {
+            g.drawString(items.get(highlightedItemID).getName() + ": " + items.get(highlightedItemID).getDescription(), 20, 380);
+
+        }
         g.drawString("EQUIPPED: [selectedItem.name]", 20, 410);
 
         if (isSelectingTarget) {
@@ -52,6 +57,9 @@ public class Inventory {
         }
     }
     public static void update(GameContainer container, int delta) {
+        Input input = container.getInput();
+        xPos = input.getMouseX();
+        yPos = input.getMouseY();
     }
     // increase the amount of item by some quantity; should also check if quantity goes over 99
     public static int containsItem(String itemName){
@@ -121,15 +129,13 @@ class InventoryKeyboard implements KeyListener {
                         ((Consumable) Inventory.selectedItem).use(Inventory.selectedUnit);
                     }
                 } else {
-                    System.out.println(Inventory.selectedUnit);
-                    System.out.println(Inventory.selectedItem);
                     Inventory.selectedUnit.equip((Equipment) Inventory.selectedItem);
                 }
                 Inventory.isSelectingTarget = false;
             }
         } else {
             if (key == Input.KEY_DOWN) {
-                if (Inventory.highlightedItemID < Inventory.items.size()) {
+                if (Inventory.highlightedItemID < Inventory.items.size() - 1) {
                     Inventory.highlightedItemID++;
                 }
             } else if (key == Input.KEY_UP) {
