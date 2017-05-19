@@ -45,8 +45,8 @@ public class MapState extends BasicGameState {
 
         // if there's a random encounter, change state to combat
         if (sinceLastEncounter >= timeToWait) {
-            sinceLastEncounter = 0;
             if (currentMap.isEncounter(leader.xPos, leader.yPos)) {
+                sinceLastEncounter = 0;
                 currentMap.encounter(leader.xPos, leader.yPos);
                 Combat.enter(game);
             }
