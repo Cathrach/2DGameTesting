@@ -40,6 +40,7 @@ public class Combat extends BasicGameState {
     static List<BattleAction> actionOrder;
 
     public Combat(int id) {
+        currEnemies = new ArrayList<>();
         this.id = id;
         turnOrder = new ArrayList<>();
         actionOrder = new ArrayList<>();
@@ -63,6 +64,7 @@ public class Combat extends BasicGameState {
 
     public static void enter(StateBasedGame game) {
         isCombat = true;
+        consumablesOnly = new ArrayList<>();
         for (Item item : Inventory.items) {
             if (item instanceof Consumable) {
                 consumablesOnly.add((Consumable) item);
@@ -70,6 +72,7 @@ public class Combat extends BasicGameState {
         }
         // should be done whenever combat is entered.....
         turnOrder = new ArrayList<>();
+        actionOrder = new ArrayList<>();
         highlightedActionID = 0;
         highlightedItemID = 0;
         highlightedSkillID = 2;
@@ -88,6 +91,7 @@ public class Combat extends BasicGameState {
         isSelectingTarget = false;
         isSelectingSkill = false;
         isFinishedTurn = false;
+        selectedTargets = new ArrayList<>();
         game.enterState(TestingGame.COMBAT);
     }
 
@@ -95,6 +99,16 @@ public class Combat extends BasicGameState {
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         // draw background
         // display enemies on one side and players on another
+        for (Enemy enemy : currEnemies) {
+            if (!enemy.isDead) {
+                enemy.battler.draw(50, 50);
+            }
+        }
+        for (Entity entity : Resources.party) {
+            if (entity != null && entity.battleEntity.currHP > 0) {
+                entity.battleEntity.battler.draw(400, 50);
+            }
+        }
         // if player turn, render the skill menu
         if (isPlayerTurn) {
             if (isSelectingTarget) {
@@ -107,7 +121,13 @@ public class Combat extends BasicGameState {
                 // draw skill menu starting from 3rd element, rectangle around highlighted menu
             } else {
                 // draw skill menu: attack, defend, item, skill, flee
+                g.drawString("ATTACK", 25, 450);
+                g.drawString("DEFEND", 100, 450);
+                g.drawString("ITEM", 175, 450);
+                g.drawString("SKILL", 250, 450);
+                g.drawString("FLEE", 325, 450);
                 // draw a rectangle around the highlighted action
+                g.drawRect(15 + 75 * highlightedActionID, 440, 75, 35);
             }
         }
     }
@@ -120,22 +140,36 @@ public class Combat extends BasicGameState {
         // get selected skill w/enter key
         // else:
         // choose an skill from the AI
+        if (!isPlayerTurn) {
+            selectedAction = ((Enemy) turnOrder.get(0)).decideAction();
+            isPlayerTurn = turnOrder.get(0) instanceof Ally;
+            isFinishedTurn = true;
+        }
         if (isFinishedTurn) {
             // move around actions in the actionOrder list
             if (selectedAction != null) {
                 int i = 0;
-                while (i < actionOrder.size() || actionOrder.get(i).skill.delay < selectedAction.skill.delay) {
+                while (i < actionOrder.size() && actionOrder.get(i).skill.delay < selectedAction.skill.delay) {
                     i++;
                 }
-                actionOrder.add(i - 1, selectedAction);
+                actionOrder.add(i, selectedAction);
+                System.out.println("action order: " + actionOrder);
             }
             // execute actions
             for (int i = 0; i < actionOrder.size(); i++) {
                 BattleAction battleAction = actionOrder.get(i);
                 // delete enemies and players if necessary (check if HP <= 0)
                 if (battleAction.skill.delay == 0) {
+                    System.out.println(battleAction.skill.getName());
                     battleAction.skill.use(battleAction.caster, battleAction.target);
+                    actionOrder.remove(i);
+                    i--;
+                    updateDead();
+                    updateWin(game);
                 }
+            }
+            for (BattleAction battleAction : actionOrder) {
+                battleAction.delay--;
             }
             // consume skill effects for entity that just moved
             currMove.consumeSkillEffects();
@@ -162,13 +196,13 @@ public class Combat extends BasicGameState {
     public void updateDead() {
         // assuming no resurrection; remove dead from turn order list
         for (int j = 0; j < Resources.party.length; j++) {
-            if (Resources.party[j].battleEntity.currHP <= 0) {
+            if (Resources.party[j] != null && Resources.party[j].battleEntity.currHP <= 0) {
                 turnOrder.remove(Resources.party[j].battleEntity);
                 Resources.party[j] = null;
             }
         }
         for (Enemy enemy : Combat.currEnemies) {
-            if (enemy.currHP == 0) {
+            if (enemy.currHP <= 0) {
                 turnOrder.remove(enemy);
                 enemy.isDead = true;
             }
@@ -179,7 +213,7 @@ public class Combat extends BasicGameState {
         boolean alliesDead = true;
         boolean enemiesDead = true;
         for (Entity entity : Resources.party) {
-            if (entity.battleEntity != null) {
+            if (entity != null) {
                 alliesDead = false;
             }
         }
@@ -282,7 +316,6 @@ class CombatKeyboard implements KeyListener {
                     Combat.isSelectingTarget = true;
                 }
             } else if (Combat.isSelectingTarget) {
-
                 if (key == Input.KEY_DOWN) {
                     if (Combat.highlightedTargetID < Combat.currEnemies.size() - 1) {
                         Combat.highlightedTargetID++;
@@ -295,7 +328,34 @@ class CombatKeyboard implements KeyListener {
                     Combat.isSelectingTarget = false;
                 } else if (key == Input.KEY_ENTER) {
                     Combat.selectedTargets.add(Combat.currEnemies.get(Combat.highlightedTargetID));
+                    System.out.println(Combat.selectedTargets);
+                    switch (Combat.selectedActionID) {
+                        case Combat.ATTACK:
+                            // Combat.ATTACK target: first element of target list
+                            Combat.selectedAction = new BattleAction(Combat.currMove, Combat.selectedSkill, Combat.selectedTargets.get(0));
+                            break;
+                        case Combat.ITEM:
+                            // use item on target: immediate use!
+                            for (BattleEntity target : Combat.selectedTargets) {
+                                Combat.selectedItem.use(target);
+                                Inventory.removeItem(Combat.selectedItem.getName(), 1);
+                                if (Combat.selectedItem.getQuantity() == 0) {
+                                    Combat.consumablesOnly.remove(Combat.highlightedItemID);
+                                }
+                            }
+                            break;
+                        case Combat.SKILL:
+                            // use skill on all targets in target list
+                            for (BattleEntity target : Combat.selectedTargets) {
+                                Combat.selectedAction = new BattleAction(Combat.currMove, Combat.selectedSkill, target);
+                            }
+                            break;
+                        default:
+                            // should not occur
+                            System.out.println("Error: selected a target when there was no need to");
+                    }
                     Combat.isSelectingTarget = false;
+                    Combat.isFinishedTurn = true;
                 }
             } else if (!Combat.isSelectingTarget && Combat.selectedTargets.size() == 0) { // if a target hasn't been selected yet
                 // process input
@@ -335,33 +395,6 @@ class CombatKeyboard implements KeyListener {
                             System.out.println("Error: Combat.selectedActionID is not in array bounds");
                     }
                 }
-            } else {
-                switch (Combat.selectedActionID) {
-                    case Combat.ATTACK:
-                        // Combat.ATTACK target: first element of target list
-                        Combat.selectedAction = new BattleAction(Combat.currMove, Combat.selectedSkill, Combat.selectedTargets.get(0));
-                        break;
-                    case Combat.ITEM:
-                        // use item on target: immediate use!
-                        for (BattleEntity target : Combat.selectedTargets) {
-                            Combat.selectedItem.use(target);
-                            Inventory.removeItem(Combat.selectedItem.getName(), 1);
-                            if (Combat.selectedItem.getQuantity() == 0) {
-                                Combat.consumablesOnly.remove(Combat.highlightedItemID);
-                            }
-                        }
-                        break;
-                    case Combat.SKILL:
-                        // use skill on all targets in target list
-                        for (BattleEntity target : Combat.selectedTargets) {
-                            Combat.selectedAction = new BattleAction(Combat.currMove, Combat.selectedSkill, target);
-                        }
-                        break;
-                    default:
-                        // should not occur
-                        System.out.println("Error: selected a target when there was no need to");
-                }
-                Combat.isFinishedTurn = true;
             }
         }
     }

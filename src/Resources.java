@@ -20,16 +20,6 @@ public class Resources {
     static Dialogue[] dialogue_db;
     static Dictionary<String, Boolean> triggers;
     public static void init() throws SlickException, IOException {
-        BufferedReader mapReader = new BufferedReader(new FileReader("db/maps.txt"));
-        int numMaps = Integer.parseInt(mapReader.readLine());
-        map_db = new Map[numMaps];
-        for (int i = 0; i < numMaps; i++) {
-            map_db[i] = new Map("maps/" + mapReader.readLine() + ".tmx");
-        }
-        // check if there's a "save"; if not, make a new entity
-        Resources.party = new Entity[4];
-        Resources.party[0] = new Entity(0, 0, 1, 0, new Ally("heroine"));
-        // similarly for other databases
         BufferedReader skillEffectReader = new BufferedReader(new FileReader("db/skilleffects.txt"));
         int numSkillEffects = Integer.parseInt(skillEffectReader.readLine());
         skilleffect_db = new SkillEffect[numSkillEffects];
@@ -69,7 +59,18 @@ public class Resources {
                 new String[]{},
                 new int[]{}
         );
-
+        enemy_db = new Enemy[1];
+        enemy_db[0] = new Enemy("TESTING_0", "battlers/testing_0.png", 10, 0, 3, 3, new EnemyDrop[]{new EnemyDrop(item_db[1], 0.5f)}, 10);
+        BufferedReader mapReader = new BufferedReader(new FileReader("db/maps.txt"));
+        int numMaps = Integer.parseInt(mapReader.readLine());
+        map_db = new Map[numMaps];
+        for (int i = 0; i < numMaps; i++) {
+            map_db[i] = new Map("maps/" + mapReader.readLine() + ".tmx");
+        }
+        // check if there's a "save"; if not, make a new entity
+        Resources.party = new Entity[4];
+        Resources.party[0] = new Entity(0, 0, 1, 0, new Ally("Heroine", "battlers/testing_player.png"));
+        // similarly for other databases
         Inventory.addItem("pencil", 1);
     }
 

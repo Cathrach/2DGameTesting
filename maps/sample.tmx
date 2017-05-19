@@ -5,6 +5,12 @@
  </properties>
  <tileset firstgid="1" name="ground" tilewidth="32" tileheight="32" tilecount="128" columns="8">
   <image source="../tilesets/ground.png" width="256" height="512"/>
+  <tile id="53">
+   <properties>
+    <property name="encounterChance" value="1"/>
+    <property name="encounterInfo" value="0"/>
+   </properties>
+  </tile>
   <tile id="125">
    <properties>
     <property name="entryInfo" value="1_3_3"/>
@@ -227,6 +233,11 @@
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NgwA/qgLgeiBsIqBsFo2AUjAJaAwAPG0i2sAQAAA==
+  </data>
+ </layer>
+ <layer name="Encounters" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAXUAGYD7YBRMApGAAAA/MGxD7AEAAA=
   </data>
  </layer>
 </map>

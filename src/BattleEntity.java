@@ -1,4 +1,5 @@
 import org.newdawn.slick.Image;
+import org.newdawn.slick.SlickException;
 
 import java.util.ArrayList;
 
@@ -32,10 +33,10 @@ public class BattleEntity {
     ArrayList<SkillEffect> currSkillEffects;
 
     public BattleEntity() {
-        this("default", true);
+        this("default", true, "battlers/testing_0.png");
     }
 
-    public BattleEntity(String name, boolean isPlayer) {
+    public BattleEntity(String name, boolean isPlayer, String battlerPath) {
         this.name = name;
         currHP = 20;
         baseHP = 20;
@@ -49,7 +50,14 @@ public class BattleEntity {
         ratioSkillDEF = 1;
         this.isPlayer = isPlayer;
         skills = new ArrayList<>();
-
+        currSkillEffects = new ArrayList<>();
+        try {
+            this.battler = new Image(battlerPath);
+        } catch (SlickException e) {
+            e.printStackTrace();
+        }
+        addSkill(0);
+        addSkill(1);
     }
 
     public int getHP() {
@@ -98,6 +106,7 @@ public class BattleEntity {
             // elapse turn for each skill
             // if skill has no turns left, remove from list
             SkillEffect skillEffect = currSkillEffects.get(i);
+            System.out.println(skillEffect);
             skillEffect.elapseTurn(this);
             if (skillEffect.turns <= 0) {
                 currSkillEffects.remove(i);

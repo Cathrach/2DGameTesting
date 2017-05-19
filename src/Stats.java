@@ -34,6 +34,12 @@ public class Stats {
         }
         RoundedRectangle skillFrame = new RoundedRectangle(365, 30, 275, 420, 10);
         g.draw(skillFrame);
+        g.drawString("SKILLS", 380, 35);
+        for (int i = 0; i < Resources.party[0].battleEntity.skills.size(); i++) {
+            Skill skill = Resources.party[0].battleEntity.skills.get(i);
+            skill.getIcon().getScaledCopy(20, 20).draw(380, 60 + 25 * i);
+            g.drawString(skill.getName(), 410, 60 + 25 * i);
+        }
         g.drawString("Press ESC to return to menu", 10, 10);
     }
     public static void update(GameContainer container, int delta) {

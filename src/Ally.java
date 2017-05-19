@@ -14,8 +14,8 @@ public class Ally extends BattleEntity {
     int fixEquipDEF;
     float ratioEquipDEF;
 
-    public Ally(String name) {
-        super(name, true);
+    public Ally(String name, String battlerPath) {
+        super(name, true, battlerPath);
         fixEquipHP = 0;
         fixEquipMP = 0;
         fixEquipATK = 0;

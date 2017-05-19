@@ -8,6 +8,8 @@ public class MapState extends BasicGameState {
     static int currentMapID;
     static Map currentMap;
     private Entity leader;
+    private static int sinceLastEncounter;
+    private final int timeToWait = 4000;
     public MapState(int id) {
         currentMapID = 0;
         this.id = id;
@@ -18,6 +20,7 @@ public class MapState extends BasicGameState {
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         currentMap = Resources.map_db[currentMapID];
         leader = Resources.party[0];
+        sinceLastEncounter = 0;
     }
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         currentMap.render(0, 0);
@@ -41,9 +44,14 @@ public class MapState extends BasicGameState {
         // if trigger (NPC, chest), do something
 
         // if there's a random encounter, change state to combat
-        if (currentMap.isEncounter(leader.xPos, leader.yPos)) {
-            currentMap.encounter(leader.xPos, leader.yPos);
-            Combat.enter(game);
+        if (sinceLastEncounter >= timeToWait) {
+            sinceLastEncounter = 0;
+            if (currentMap.isEncounter(leader.xPos, leader.yPos)) {
+                currentMap.encounter(leader.xPos, leader.yPos);
+                Combat.enter(game);
+            }
+        } else {
+            sinceLastEncounter += delta;
         }
     }
     public static void changeMap(int newMapID) {

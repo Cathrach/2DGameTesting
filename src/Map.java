@@ -56,8 +56,9 @@ public class Map {
         if (xPos < 0 || yPos < 0 || xPos > pixelWidth || yPos > pixelHeight) {
             return false;
         }
-        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Entrances"));
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Encounters"));
         float encounterChance = Float.parseFloat(map.getTileProperty(tileID, "encounterChance", "0"));
+        System.out.println(encounterChance);
         return Math.random() < encounterChance;
     }
     public void encounter(float xPos, float yPos) {
