@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Created by serinahu on 5/8/17.
@@ -18,9 +19,8 @@ public class Enemy extends BattleEntity {
         super();
     }
 
-    public Enemy(String name, int baseHP, int baseMP, int baseATK, int baseDEF, EnemyDrop[] drops, int goldDropped) {
-        this.name = name;
-        this.isPlayer = false;
+    public Enemy(String name, String battlerPath, int baseHP, int baseMP, int baseATK, int baseDEF, EnemyDrop[] drops, int goldDropped) {
+        super(name, false, battlerPath);
         this.drops = drops;
         this.goldDropped = goldDropped;
         this.baseHP = baseHP;
@@ -34,7 +34,8 @@ public class Enemy extends BattleEntity {
     }
 
     public Enemy(Enemy anotherEnemy) {
-        this.name = name;
+        this.name = anotherEnemy.name;
+        drops = anotherEnemy.drops;
         baseHP = anotherEnemy.baseHP;
         baseMP = anotherEnemy.baseMP;
         baseATK = anotherEnemy.baseATK;
@@ -54,5 +55,22 @@ public class Enemy extends BattleEntity {
                 Inventory.addItem(drop.item.getName(), 1);
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Enemy{" +
+                "drops=" + Arrays.toString(drops) +
+                ", goldDropped=" + goldDropped +
+                ", isDead=" + isDead +
+                ", timesKilled=" + timesKilled +
+                ", currHP=" + currHP +
+                ", baseHP=" + baseHP +
+                ", currMP=" + currMP +
+                ", baseMP=" + baseMP +
+                ", baseATK=" + baseATK +
+                ", baseDEF=" + baseDEF +
+                ", skills=" + skills +
+                '}';
     }
 }

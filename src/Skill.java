@@ -77,4 +77,13 @@ public class Skill {
             }
         }
     }
+
+    public Image getIcon() {
+        return icon;
+    }
+
+    public String getName() {
+
+        return name;
+    }
 }

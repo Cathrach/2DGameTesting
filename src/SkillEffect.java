@@ -61,4 +61,22 @@ public class SkillEffect {
             target.ratioSkillDEF /= ratioDEF;
         }
     }
+
+    @Override
+    public String toString() {
+        return "SkillEffect{" +
+                "turns=" + turns +
+                ", fixHP=" + fixHP +
+                ", fixMP=" + fixMP +
+                ", fixATK=" + fixATK +
+                ", fixDEF=" + fixDEF +
+                ", ratioHP=" + ratioHP +
+                ", ratioMP=" + ratioMP +
+                ", ratioATK=" + ratioATK +
+                ", ratioDEF=" + ratioDEF +
+                ", fixHeal=" + fixHeal +
+                ", ratioHeal=" + ratioHeal +
+                ", poisonDmg=" + poisonDmg +
+                '}';
+    }
 }
