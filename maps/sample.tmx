@@ -11,6 +11,12 @@
     <property name="encounterInfo" value="0"/>
    </properties>
   </tile>
+  <tile id="76">
+   <properties>
+    <property name="encounterChance" value="1"/>
+    <property name="encounterInfo" value="0"/>
+   </properties>
+  </tile>
   <tile id="125">
    <properties>
     <property name="entryInfo" value="1_3_3"/>
@@ -222,7 +228,12 @@
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgHMWjeBSP4iGAATEAE1WwBAAA
+   H4sIAAAAAAAAA2NkYGBgHMVUx9o48HA1D93cgQ7/UTw8MQBY4zhZsAQAAA==
+  </data>
+ </layer>
+ <layer name="Encounters" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAXUAL4D7QA6A7OBdsAoGJEAAP3FulywBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
@@ -233,11 +244,6 @@
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NgwA/qgLgeiBsIqBsFo2AUjAJaAwAPG0i2sAQAAA==
-  </data>
- </layer>
- <layer name="Encounters" width="20" height="15">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAXUAGYD7YBRMApGAAAA/MGxD7AEAAA=
   </data>
  </layer>
 </map>

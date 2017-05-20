@@ -45,11 +45,56 @@ public class Resources {
         skill_db[1] = new Skill("Defend", new Image("skills/defend.png"),
                 0, 0, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{skilleffect_db[0]}, new TargetType[]{});
-        item_db = new Item[3];
+
+        // items
+        /*item_db = new Item[3];
         item_db[0] = new Equipment("#2 Pencil", 50, 0, "A #2 Pencil: No other marks will be accepted~", Equipment.EquipType.WEAPON, 0, 0, 5, 0, 1, 1, 1, 1);
         item_db[1] = new Consumable("Water", 10, 0, "Rather scarce since potatoes keep boiling it.", TargetType.SINGLE_ALLY, 5, 0, 0, 0, 0, 0);
         item_db[2] = new Equipment("Pen", 100, 0, "Blue or black pens will make your free response easier to read!", Equipment.EquipType.WEAPON, 0, 0, 10, 0, 1, 1, 1, 1);
         // check if save; if not, inventory is empty (will contain a weapon later?)
+        */
+        BufferedReader equipmentReader = new BufferedReader(new FileReader("db/equipment.txt"));
+        BufferedReader consumableReader = new BufferedReader(new FileReader("db/consumables.txt"));
+        int numEquips = Integer.parseInt(equipmentReader.readLine());
+        int numConsum = Integer.parseInt(consumableReader.readLine());
+        int numItems = numEquips + numConsum;
+        item_db = new Item[numItems];
+        for (int i=0; i<numEquips; i++) {
+            String[] itemData = equipmentReader.readLine().split(" >> ");
+            item_db[i] = new Equipment(
+                    itemData[0],                                // name
+                    Integer.parseInt(itemData[1]),              // value
+                    0,                                          // quantity
+                    itemData[2],                                // description
+                    Equipment.EquipType.valueOf(itemData[3]),   // equipment type
+                    Integer.parseInt(itemData[4]),              // fixHP
+                    Integer.parseInt(itemData[5]),              // fixMP
+                    Integer.parseInt(itemData[6]),              // fixATK
+                    Integer.parseInt(itemData[7]),              // fixDEF
+                    Float.parseFloat(itemData[8]),              // ratioHP
+                    Float.parseFloat(itemData[9]),              // ratioMP
+                    Float.parseFloat(itemData[10]),              // ratioATK
+                    Float.parseFloat(itemData[11])              // ratioDEF
+            );
+        }
+        for (int i=0; i<numConsum; i++) {
+            String[] itemData = consumableReader.readLine().split(" >> ");
+            item_db[i + numEquips] = new Consumable(
+                    itemData[0],                                // name
+                    Integer.parseInt(itemData[1]),              // value
+                    0,                                          // quantity
+                    itemData[2],                                // description
+                    TargetType.valueOf(itemData[3]),            // target type
+                    Integer.parseInt(itemData[4]),              // fixDamage
+                    Integer.parseInt(itemData[5]),              // fixHeal
+                    Integer.parseInt(itemData[6]),              // ratioHeal
+                    Integer.parseInt(itemData[7]),              // fixHP
+                    Integer.parseInt(itemData[8]),              // fixATK
+                    Integer.parseInt(itemData[9])               // fixDEF
+            );
+        }
+
+        // dialogue
         dialogue_db = new Dialogue[1];
         dialogue_db[0] = new Dialogue(
                 new DialogueLine[]{
@@ -59,8 +104,12 @@ public class Resources {
                 new String[]{},
                 new int[]{}
         );
+
+        // enemies
         enemy_db = new Enemy[1];
-        enemy_db[0] = new Enemy("TESTING_0", "battlers/testing_0.png", 10, 0, 3, 3, new EnemyDrop[]{new EnemyDrop(item_db[1], 0.5f)}, 10);
+        enemy_db[0] = new Enemy("Slime", "sprites/enemies/03_slime.png", 10, 0, 3, 3, new EnemyDrop[]{new EnemyDrop(item_db[1], 0.5f)}, 10);
+
+        // maps
         BufferedReader mapReader = new BufferedReader(new FileReader("db/maps.txt"));
         int numMaps = Integer.parseInt(mapReader.readLine());
         map_db = new Map[numMaps];
@@ -69,9 +118,9 @@ public class Resources {
         }
         // check if there's a "save"; if not, make a new entity
         Resources.party = new Entity[4];
-        Resources.party[0] = new Entity(0, 0, 1, 0, new Ally("Heroine", "battlers/testing_player.png"));
+        Resources.party[0] = new Entity(0, 0, 1, 0, new Ally("Heroine", "sprites/testing_player.png"));
         // similarly for other databases
-        Inventory.addItem("pencil", 1);
+        Inventory.addItem("#2 Pencil", 1);
     }
 
     public static int getItemID(String itemName) {

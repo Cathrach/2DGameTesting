@@ -34,7 +34,6 @@ public class Equipment extends Item {
     }
 
     public Equipment(String n, int v, int q, String d, EquipType type, int fixHP, int fixMP, int fixATK, int fixDEF, float ratioHP, float ratioMP, float ratioATK, float ratioDEF) {
-        //
         super(n, v, q, d);
         this.type = type;
         this.fixHP = fixHP;
@@ -45,5 +44,6 @@ public class Equipment extends Item {
         this.ratioMP = ratioMP;
         this.ratioATK = ratioATK;
         this.ratioDEF = ratioDEF;
+        itemType = String.valueOf(type);
     }
 }

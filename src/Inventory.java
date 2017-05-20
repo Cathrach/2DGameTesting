@@ -48,9 +48,9 @@ public class Inventory {
 
         if (highlightedItemID < items.size()) {
             g.drawString(items.get(highlightedItemID).getName() + ": " + items.get(highlightedItemID).getDescription(), 20, 380);
-
+            g.drawString(items.get(highlightedItemID).getType(), 20, 410);
+            g.drawLine(30, 120+(highlightedItemID+1)*20, 100, 120+(highlightedItemID+1)*20);
         }
-        g.drawString("EQUIPPED: [selectedItem.name]", 20, 410);
 
         if (isSelectingTarget) {
             // render targets somehow?
