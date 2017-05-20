@@ -11,6 +11,12 @@
     <property name="encounterInfo" value="0"/>
    </properties>
   </tile>
+  <tile id="76">
+   <properties>
+    <property name="encounterChance" value="1"/>
+    <property name="encounterInfo" value="0"/>
+   </properties>
+  </tile>
   <tile id="125">
    <properties>
     <property name="entryInfo" value="1_3_3"/>
@@ -94,19 +100,19 @@
   <tile id="1">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="damage potion"/>
+    <property name="item" value="Damage Potion"/>
    </properties>
   </tile>
   <tile id="2">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="mana potion"/>
+    <property name="item" value="Mana Potion"/>
    </properties>
   </tile>
   <tile id="3">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="buff potion"/>
+    <property name="item" value="Buff Potion"/>
    </properties>
   </tile>
   <tile id="4">
@@ -118,19 +124,19 @@
   <tile id="5">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="gold sword"/>
+    <property name="item" value="Gold Sword"/>
    </properties>
   </tile>
   <tile id="6">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="fire sword"/>
+    <property name="item" value="Fire Sword"/>
    </properties>
   </tile>
   <tile id="7">
    <properties>
     <property name="isContainer" value="true"/>
-    <property name="item" value="poison sword"/>
+    <property name="item" value="Poison Sword"/>
    </properties>
   </tile>
   <tile id="8">
@@ -222,7 +228,12 @@
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgHMWjeBSP4iGAATEAE1WwBAAA
+   H4sIAAAAAAAAA2NkYGBgHMVUx9o48HA1D93cgQ7/UTw8MQBY4zhZsAQAAA==
+  </data>
+ </layer>
+ <layer name="Encounters" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAXUAL4D7QA6A7OBdsAoGJEAAP3FulywBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
@@ -233,11 +244,6 @@
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NgwA/qgLgeiBsIqBsFo2AUjAJaAwAPG0i2sAQAAA==
-  </data>
- </layer>
- <layer name="Encounters" width="20" height="15">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAXUAGYD7YBRMApGAAAA/MGxD7AEAAA=
   </data>
  </layer>
 </map>

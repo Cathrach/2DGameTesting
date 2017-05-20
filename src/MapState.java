@@ -48,6 +48,7 @@ public class MapState extends BasicGameState {
             if (currentMap.isEncounter(leader.xPos, leader.yPos)) {
                 sinceLastEncounter = 0;
                 currentMap.encounter(leader.xPos, leader.yPos);
+                game.enterState(TestingGame.COMBAT);
                 Combat.enter(game);
             }
         } else {

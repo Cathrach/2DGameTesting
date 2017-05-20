@@ -5,10 +5,10 @@ import org.newdawn.slick.*;
 public class Item {
     private String name;
     private Image item;
-    //private int imgIndex;
     private int value;
     private int quantity;
     private String description;
+    public String itemType;
 
     public Item(String n, int v, int q, String d){
         name = n;
@@ -37,6 +37,8 @@ public class Item {
     public String getDescription() {
         return description;
     }
+    public int getValue() { return value; }
+    public String getType() { return itemType; }
 
     public void addQuantity(int quantity) {
         this.quantity = Math.min(99, this.quantity + quantity);

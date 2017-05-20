@@ -22,6 +22,7 @@ public class Consumable extends Item {
         this.fixATK = fixATK;
         this.fixDEF = fixDEF;
         this.targetType = targetType;
+        itemType = "CONSUMABLE - " + String.valueOf(targetType);
     }
     public void use(BattleEntity target) {
         target.currHP -= fixDamage;

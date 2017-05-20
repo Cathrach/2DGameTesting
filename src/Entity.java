@@ -56,25 +56,29 @@ public class Entity {
     public void update(GameContainer container, StateBasedGame game, int delta, MapState mapState) throws SlickException {
         Input input = container.getInput();
         float moveDist = delta * SPEED;
-        if (input.isKeyDown(Input.KEY_DOWN) && !(mapState.isBlocked(xPos, yPos + hitHeight + moveDist) || mapState.isBlocked(xPos + hitWidth, yPos + hitHeight + moveDist))) {
-            dir = 0;
-            frame = (frame + frameSpeed)%3;
-            yPos += moveDist;
+        if (input.isKeyDown(Input.KEY_DOWN)) {
+            dir = 0; frame = (frame + frameSpeed)%3;
+            if (!(mapState.isBlocked(xPos, yPos + hitHeight + moveDist) || mapState.isBlocked(xPos + hitWidth, yPos + hitHeight + moveDist))) {
+                yPos += moveDist;
+            }
         }
-        if (input.isKeyDown(Input.KEY_LEFT) && !(mapState.isBlocked(xPos - moveDist, yPos) || mapState.isBlocked(xPos - moveDist, yPos + hitWidth))) {
-            dir = 1;
-            frame = (frame + frameSpeed)%3;
-            xPos -= moveDist;
+        if (input.isKeyDown(Input.KEY_LEFT)) {
+            dir = 1; frame = (frame + frameSpeed)%3;
+            if (!(mapState.isBlocked(xPos - moveDist, yPos) || mapState.isBlocked(xPos - moveDist, yPos + hitWidth))) {
+                xPos -= moveDist;
+            }
         }
-        if (input.isKeyDown(Input.KEY_RIGHT) && !(mapState.isBlocked(xPos + hitWidth + moveDist, yPos) || mapState.isBlocked(xPos + hitWidth + moveDist, yPos + hitWidth))) {
-            dir = 2;
-            frame = (frame + frameSpeed)%3;
-            xPos += moveDist;
+        if (input.isKeyDown(Input.KEY_RIGHT)) {
+            dir = 2; frame = (frame + frameSpeed)%3;
+            if (!(mapState.isBlocked(xPos + hitWidth + moveDist, yPos) || mapState.isBlocked(xPos + hitWidth + moveDist, yPos + hitWidth))) {
+                xPos += moveDist;
+            }
         }
-        if (input.isKeyDown(Input.KEY_UP) && !(mapState.isBlocked(xPos, yPos - moveDist) || mapState.isBlocked(xPos + hitWidth, yPos - moveDist))) {
-            dir = 3;
-            frame = (frame + frameSpeed)%3;
-            yPos -= moveDist;
+        if (input.isKeyDown(Input.KEY_UP)) {
+            dir = 3; frame = (frame + frameSpeed)%3;
+            if (!(mapState.isBlocked(xPos, yPos - moveDist) || mapState.isBlocked(xPos + hitWidth, yPos - moveDist))) {
+                yPos -= moveDist;
+            }
         }
         // check if player presses SPACE while facing & next to a container (i.e. chest, barrel, crate, etc)
         if (input.isKeyDown(Input.KEY_SPACE)){

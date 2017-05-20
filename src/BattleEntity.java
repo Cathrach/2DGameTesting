@@ -33,7 +33,7 @@ public class BattleEntity {
     ArrayList<SkillEffect> currSkillEffects;
 
     public BattleEntity() {
-        this("default", true, "battlers/testing_0.png");
+        this("default", true, "sprites/enemies/03_slime.png");
     }
 
     public BattleEntity(String name, boolean isPlayer, String battlerPath) {

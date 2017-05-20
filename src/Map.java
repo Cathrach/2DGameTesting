@@ -58,8 +58,8 @@ public class Map {
         }
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Encounters"));
         float encounterChance = Float.parseFloat(map.getTileProperty(tileID, "encounterChance", "0"));
-        System.out.println(encounterChance);
-        return Math.random() < encounterChance;
+        //return Math.random() < encounterChance;
+        return 0 < encounterChance;
     }
     public void encounter(float xPos, float yPos) {
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Encounters"));
@@ -89,5 +89,9 @@ public class Map {
         map.setTileId(x, y, map.getLayerIndex("Blocked"), tileID+1);
 
         return itemName;
+    }
+    public boolean isDialogue(float xPos, float yPos) {
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Dialogue"));
+        return map.getTileProperty(tileID, "isDialogue", "false").equals("true");
     }
 }
