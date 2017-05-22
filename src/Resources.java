@@ -3,7 +3,6 @@ import org.newdawn.slick.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Dictionary;
 /**
  * Created by serinahu on 5/9/17.
@@ -39,13 +38,27 @@ public class Resources {
                     Float.parseFloat(effectData[10]), // ratio heal
                     Integer.parseInt(effectData[11])); // poison damage
         }
-        skill_db = new Skill[2];
-        skill_db[0] = new Skill("Attack", new Image("skills/attack.png"),
+        skill_db = new Skill[7];
+        skill_db[0] = new Skill("Solve for X", new Image("skills/attack.png"),
                 0, 0, 0, 1, 0, 1, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{}, new TargetType[]{});
-        skill_db[1] = new Skill("Defend", new Image("skills/defend.png"),
+        skill_db[1] = new Skill("Simplify", new Image("skills/defend.png"),
                 0, 0, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
-                new SkillEffect[]{skilleffect_db[0]}, new TargetType[]{});
+                new SkillEffect[]{skilleffect_db[0]}, new TargetType[]{TargetType.SELF});
+        skill_db[2] = new Skill("Derive", new Image("skills/attack.png"), 0, 10, 0, 1.5f, 0, 1, TargetType.SINGLE_ENEMY,
+                new SkillEffect[]{}, new TargetType[]{});
+        skill_db[3] = new Skill("Integrate", new Image("skills/attack.png"), 0, 20, 0, 2, 0, 1, TargetType.SINGLE_ENEMY,
+                new SkillEffect[]{}, new TargetType[]{});
+        skill_db[4] = new Skill("Bash", new Image("skills/attack.png"), 0, 50, 50, 0, 0, 1, TargetType.SINGLE_ENEMY,
+                new SkillEffect[]{skilleffect_db[1]}, new TargetType[]{TargetType.SELF});
+        skill_db[5] = new Skill("+C", new Image("skills/defend.png"), 1, 15, 0, 0, 0, 0, TargetType.ALL_ALLIES,
+                new SkillEffect[]{skilleffect_db[2]}, new TargetType[]{TargetType.ALL_ALLIES});
+        skill_db[6] = new Skill("Get Triggy", new Image("skills/attack.png"), 0, 20, 0, 1, 0, 0.5f, TargetType.SINGLE_ENEMY,
+                new SkillEffect[]{}, new TargetType[]{});
+        skill_db[7] = new Skill("Go on a Tangent", new Image("skills/attack.png"), 0, 20, 0, 0, 0, 0, TargetType.ALL_ENEMIES,
+                new SkillEffect[]{skilleffect_db[3]}, new TargetType[]{TargetType.ALL_ENEMIES});
+        skill_db[8] = new Skill("Hint Hint Hint", new Image("skills/defend.png"), 1, 30, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
+                new SkillEffect[]{}, new TargetType[]{});
 
         // read items from text file; initialize list of items with quantity 0 each
         BufferedReader equipmentReader = new BufferedReader(new FileReader("db/equipment.txt"));
