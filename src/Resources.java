@@ -20,6 +20,7 @@ public class Resources {
     static Dialogue[] dialogue_db;
     static Dictionary<String, Boolean> triggers;
     public static void init() throws SlickException, IOException {
+        // read skills from text file
         BufferedReader skillEffectReader = new BufferedReader(new FileReader("db/skilleffects.txt"));
         int numSkillEffects = Integer.parseInt(skillEffectReader.readLine());
         skilleffect_db = new SkillEffect[numSkillEffects];
@@ -46,19 +47,14 @@ public class Resources {
                 0, 0, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{skilleffect_db[0]}, new TargetType[]{});
 
-        // items
-        /*item_db = new Item[3];
-        item_db[0] = new Equipment("#2 Pencil", 50, 0, "A #2 Pencil: No other marks will be accepted~", Equipment.EquipType.WEAPON, 0, 0, 5, 0, 1, 1, 1, 1);
-        item_db[1] = new Consumable("Water", 10, 0, "Rather scarce since potatoes keep boiling it.", TargetType.SINGLE_ALLY, 5, 0, 0, 0, 0, 0);
-        item_db[2] = new Equipment("Pen", 100, 0, "Blue or black pens will make your free response easier to read!", Equipment.EquipType.WEAPON, 0, 0, 10, 0, 1, 1, 1, 1);
-        // check if save; if not, inventory is empty (will contain a weapon later?)
-        */
+        // read items from text file; initialize list of items with quantity 0 each
         BufferedReader equipmentReader = new BufferedReader(new FileReader("db/equipment.txt"));
         BufferedReader consumableReader = new BufferedReader(new FileReader("db/consumables.txt"));
         int numEquips = Integer.parseInt(equipmentReader.readLine());
         int numConsum = Integer.parseInt(consumableReader.readLine());
         int numItems = numEquips + numConsum;
         item_db = new Item[numItems];
+        // read list of Equipment objects
         for (int i=0; i<numEquips; i++) {
             String[] itemData = equipmentReader.readLine().split(" >> ");
             item_db[i] = new Equipment(
@@ -77,6 +73,7 @@ public class Resources {
                     Float.parseFloat(itemData[11])              // ratioDEF
             );
         }
+        // read list of Consumable objects
         for (int i=0; i<numConsum; i++) {
             String[] itemData = consumableReader.readLine().split(" >> ");
             item_db[i + numEquips] = new Consumable(
@@ -94,7 +91,7 @@ public class Resources {
             );
         }
 
-        // dialogue
+        // read dialogue from text file
         dialogue_db = new Dialogue[1];
         dialogue_db[0] = new Dialogue(
                 new DialogueLine[]{
@@ -116,9 +113,10 @@ public class Resources {
         for (int i = 0; i < numMaps; i++) {
             map_db[i] = new Map("maps/" + mapReader.readLine() + ".tmx");
         }
+
         // check if there's a "save"; if not, make a new entity
         Resources.party = new Entity[4];
-        Resources.party[0] = new Entity(0, 0, 1, 0, new Ally("Heroine", "sprites/testing_player.png"));
+        Resources.party[0] = new Entity(337, 254, 1, 0, new Ally("Heroine", "sprites/testing_player.png"));
         // similarly for other databases
         Inventory.addItem("#2 Pencil", 1);
     }

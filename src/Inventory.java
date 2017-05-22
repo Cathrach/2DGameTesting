@@ -6,14 +6,9 @@ import org.newdawn.slick.geom.*;
 import java.util.ArrayList;
 public class Inventory {
     static InventoryKeyboard listener;
-    // buttons for highlighting
-    static Rectangle hoverButton;
-    static Rectangle equippedItem;
-    // button location (x, y)
-    static int buttonXPos;
-    static int buttonYPos;
     // currently equipped item's index in the inventory
     static int highlightedItemID;
+    static int selectedItemID;
     static Item selectedItem;
     static boolean isSelectingTarget;
     static int highlightedUnitID;
@@ -34,6 +29,7 @@ public class Inventory {
 
     public static void init() {
         highlightedItemID = 0;
+        selectedItemID = 0;
         isSelectingTarget = false;
         highlightedUnitID = 0;
     }
@@ -46,10 +42,16 @@ public class Inventory {
             g.drawString(items.get(i).getName() + " x " + items.get(i).getQuantity(), 30, 100+(i+1)*20);
         }
 
+        // draw box around highlighted item, display item info
         if (highlightedItemID < items.size()) {
             g.drawString(items.get(highlightedItemID).getName() + ": " + items.get(highlightedItemID).getDescription(), 20, 380);
             g.drawString(items.get(highlightedItemID).getType(), 20, 410);
-            g.drawLine(30, 120+(highlightedItemID+1)*20, 100, 120+(highlightedItemID+1)*20);
+            g.drawRect(25, 100+(highlightedItemID+1)*20, 200, 20);
+        }
+
+        // draw box around equipped item
+        if (selectedItemID < items.size()){
+            g.drawRect(25, 100+(selectedItemID+1)*20, 200, 20);
         }
 
         if (isSelectingTarget) {
@@ -143,8 +145,9 @@ class InventoryKeyboard implements KeyListener {
                     Inventory.highlightedItemID--;
                 }
             } else if (key == Input.KEY_ENTER) {
+                Inventory.selectedItemID = Inventory.highlightedItemID;
                 Inventory.selectedItem = Inventory.items.get(Inventory.highlightedItemID);
-                Inventory.isSelectingTarget = true;
+                //Inventory.isSelectingTarget = true;
             }
         }
     }

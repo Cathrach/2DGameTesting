@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" source="../tilesets/ground.tsx"/>
+ <tileset firstgid="129" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="321" source="../tilesets/walls.tsx"/>
+ <tileset firstgid="449" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="705" name="objects" tilewidth="32" tileheight="32" tilecount="28" columns="7">
+  <image source="../tilesets/objects.png" width="224" height="128"/>
+  <tile id="4">
+   <properties>
+    <property name="entryInfo" value="map_5_-16_0"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="entryInfo" value="map_3_0_11"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Encounters" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+  </data>
+ </layer>
+ <layer name="Entrances" width="20" height="15">
+  <properties>
+   <property name="entryInfo" value="map_"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgwA0uMxGHiQXUNm8gwVEmCB41b9S84WDeUAEAk4mXdbAEAAA=
+  </data>
+ </layer>
+ <layer name="Containers" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+  </data>
+ </layer>
+ <layer name="Background" width="20" height="15" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NkYGBgRMPPsYixQTG6ODreTqQaZPOw2Ueq2djcR4xbCJmHDZNqPj6ziA1XUswi1kxSzCLGTGqYt50C8wilJWx6wugQH7RIe/gwvvxLibsI2UEPDABKtcPVsAQAAA==
+  </data>
+ </layer>
+ <layer name="Blocked" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA52TzQ3CMAyF45wyZi6wAayAmAAVugCwAdwpBwbIACB1ASSOOKJWXCdNUp701LSpP738WCmlHCj1QXM58S7V6jC2OphqjR7/V+JJLue9sPYu6nuIc5TkeXv0QY/z9GL9j8qsXidknRmPWGZGLq4L1l0HnhOsObmkiDeVawOxU+LnSWu2CeYOYk/pDb99y92RBc4t0VsI4ynRvuV4K5xboxsI4xzPsDNu/zgPfk+Jw/PZSmZqPsWryUnfb/jsBvsa3m+y70ryrIb1GYkzO6j3E33Uoc++FCxRRLAEAAA=
+  </data>
+ </layer>
+</map>
