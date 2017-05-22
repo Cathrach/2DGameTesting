@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" source="../tilesets/ground.tsx"/>
+ <tileset firstgid="129" source="../tilesets/walls.tsx"/>
+ <tileset firstgid="257" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="513" source="../tilesets/objects2.tsx"/>
+ <tileset firstgid="769" name="objects" tilewidth="32" tileheight="32" tilecount="28" columns="7">
+  <image source="../tilesets/objects.png" width="224" height="128"/>
+  <tile id="0">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="entryInfo" value="house_0_11_6"/>
+   </properties>
+  </tile>
+  <tile id="7">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Containers" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+  </data>
+ </layer>
+ <layer name="Entrances" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBQMJsDGDMGD1byBBAB3JX6usAQAAA==
+  </data>
+ </layer>
+ <layer name="Encounters" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+  </data>
+ </layer>
+ <layer name="Background" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+NgYGDgGMWjmIrYBooH2h2jePhhADSASCKwBAAA
+  </data>
+ </layer>
+ <layer name="Blocked" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA0tnZGBIH8VUxY8ZGBieMBCmiTXvM1DtFwbCNLHmEQsG2rwWJkwzNJnIN2+w+heX+dRKj9Q2byAxALOzNx+wBAAA
+  </data>
+ </layer>
+</map>

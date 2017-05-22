@@ -35,11 +35,25 @@ public class MapState extends BasicGameState {
         leader.update(container, game, delta, this);
         // if the tile is an entry, change the current map ID and current map
         if (currentMap.isEntry(leader.xPos, leader.yPos)) {
-            int[] entryData = currentMap.getEntry(leader.xPos, leader.yPos);
-            changeMap(entryData[0]);
+            //int[] entryData = currentMap.getEntry(leader.xPos, leader.yPos);
+            //changeMap(entryData[0]);
             // place the player in the new position
-            leader.xPos = currentMap.tileWidth * entryData[1];
-            leader.yPos = currentMap.tileHeight * entryData[2];
+            //leader.xPos = currentMap.tileWidth * entryData[1];
+            //leader.yPos = currentMap.tileHeight * entryData[2];
+            String[] data = currentMap.getEntry(leader.xPos, leader.yPos);
+            changeMap(Integer.parseInt(data[1]));
+            // to reduce the # of individual Entrance tiles needed:
+            if (data[0].equals("map")) {
+                // the leader will only be changing which side of the screen they...
+                // ...are on, so we only change the xPos or only change the yPos.
+                // data[2] can be 0, 16, or -16 (16 is slightly less than the screen tileWidth)
+                // data[3] can be 0, 11, or -11 (11 is slightly less than the screen tileHeight)
+                leader.xPos += currentMap.tileWidth * Integer.parseInt(data[2]);
+                leader.yPos += currentMap.tileHeight * Integer.parseInt(data[3]);
+            } else if (data[0].equals("house")) {
+                leader.xPos = currentMap.tileWidth * Integer.parseInt(data[2]);
+                leader.yPos = currentMap.tileHeight * Integer.parseInt(data[3]);
+            }
         }
         // if trigger (NPC, chest), do something
 

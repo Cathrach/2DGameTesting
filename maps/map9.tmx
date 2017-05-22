@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" source="../tilesets/ground.tsx"/>
+ <tileset firstgid="129" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="385" source="../tilesets/walls.tsx"/>
+ <tileset firstgid="513" source="../tilesets/objects2.tsx"/>
+ <tileset firstgid="769" name="objects" tilewidth="32" tileheight="32" tilecount="28" columns="7">
+  <image source="../tilesets/objects.png" width="224" height="128"/>
+  <tile id="5">
+   <properties>
+    <property name="entryInfo" value="house_3_11_11"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Containers" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+  </data>
+ </layer>
+ <layer name="Entrances" width="20" height="15">
+  <properties>
+   <property name="entryInfo" value="house_3_"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBQMJsDGDMGD1byBBAB3JX6usAQAAA==
+  </data>
+ </layer>
+ <layer name="Encounters" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+  </data>
+ </layer>
+ <layer name="Background" width="20" height="15" visible="0">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA9NhYGDQGcWjeBSP4iGAAYRXReWwBAAA
+  </data>
+ </layer>
+ <layer name="Blocked" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA3vOwMDwfBRTFa9mZGBYw0iYJta8mUwMDLOYEPRuoN49jJg0seatBJqxiglB4wLEmmcDNMMWiO2YEGx0PohNrHnNeNwEAykkmLeWCPNKqGxeCwnmoWMYoFZ6pLZ5A4kBzw37EbAEAAA=
+  </data>
+ </layer>
+</map>
