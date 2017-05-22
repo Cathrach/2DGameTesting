@@ -14,7 +14,7 @@ public class Inventory {
     static int highlightedUnitID;
     static Ally selectedUnit;
     // contains consumables and equips: array list of items
-    static ArrayList<Item> items = new ArrayList<Item>();
+    static ArrayList<Item> items = new ArrayList<>();
     private static int xPos, yPos;
     // index in array list?
 

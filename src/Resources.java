@@ -41,7 +41,7 @@ public class Resources {
         }
         skill_db = new Skill[2];
         skill_db[0] = new Skill("Attack", new Image("skills/attack.png"),
-                0, 0, 0, 1, 0, 0, TargetType.SINGLE_ENEMY,
+                0, 0, 0, 1, 0, 1, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{}, new TargetType[]{});
         skill_db[1] = new Skill("Defend", new Image("skills/defend.png"),
                 0, 0, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
