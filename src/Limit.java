@@ -14,6 +14,10 @@ public class Limit extends Enemy {
         this.addSkill(0);
     }
 
+    public Limit(Enemy anotherLimit) {
+        super(anotherLimit);
+    }
+
     @Override
     public BattleAction decideAction() {
         return new BattleAction(this, skills.get(0), Resources.party[0].battleEntity);

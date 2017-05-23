@@ -45,20 +45,22 @@ public class Resources {
         skill_db[1] = new Skill("Simplify", new Image("skills/defend.png"),
                 0, 0, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{skilleffect_db[0]}, new TargetType[]{TargetType.SELF});
-        skill_db[2] = new Skill("Derive", new Image("skills/attack.png"), 0, 10, 0, 1.5f, 0, 1, TargetType.SINGLE_ENEMY,
+        skill_db[2] = new Skill("Derive", new Image("skills/attack.png"), 0, 5, 0, 1.5f, 0, 1, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{}, new TargetType[]{});
-        skill_db[3] = new Skill("Integrate", new Image("skills/attack.png"), 0, 20, 0, 2, 0, 1, TargetType.SINGLE_ENEMY,
+        skill_db[3] = new Skill("Integrate", new Image("skills/attack.png"), 0, 10, 0, 2, 0, 1, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{}, new TargetType[]{});
-        skill_db[4] = new Skill("Bash", new Image("skills/attack.png"), 0, 50, 50, 0, 0, 1, TargetType.SINGLE_ENEMY,
+        skill_db[4] = new Skill("Bash", new Image("skills/attack.png"), 0, 25, 50, 0, 0, 1, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{skilleffect_db[1]}, new TargetType[]{TargetType.SELF});
         skill_db[5] = new Skill("+C", new Image("skills/defend.png"), 1, 15, 0, 0, 0, 0, TargetType.ALL_ALLIES,
                 new SkillEffect[]{skilleffect_db[2]}, new TargetType[]{TargetType.ALL_ALLIES});
-        skill_db[6] = new Skill("Get Triggy", new Image("skills/attack.png"), 0, 20, 0, 1, 0, 0.5f, TargetType.SINGLE_ENEMY,
+        skill_db[6] = new Skill("Get Triggy", new Image("skills/attack.png"), 0, 10, 0, 1, 0, 0.5f, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{}, new TargetType[]{});
-        skill_db[7] = new Skill("Go on a Tangent", new Image("skills/attack.png"), 0, 20, 0, 0, 0, 0, TargetType.ALL_ENEMIES,
+        skill_db[7] = new Skill("Go on a Tangent", new Image("skills/attack.png"), 0, 10, 0, 0, 0, 0, TargetType.ALL_ENEMIES,
                 new SkillEffect[]{skilleffect_db[3]}, new TargetType[]{TargetType.ALL_ENEMIES});
-        skill_db[8] = new Skill("Hint Hint Hint", new Image("skills/defend.png"), 1, 30, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
+        skill_db[8] = new Skill("Hint Hint Hint", new Image("skills/defend.png"), 1, 15, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{skilleffect_db[4], skilleffect_db[5]}, new TargetType[]{TargetType.SELF, TargetType.SINGLE_ENEMY});
+        skill_db[9] = new Skill("Integration by Parts", new Image("skills/attack.png"), 0, 20, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
+                new SkillEffect[]{skilleffect_db[6], skilleffect_db[7]}, new TargetType[]{TargetType.SINGLE_ENEMY, TargetType.SELF});
 
         // read items from text file; initialize list of items with quantity 0 each
         BufferedReader equipmentReader = new BufferedReader(new FileReader("db/equipment.txt"));
@@ -97,10 +99,13 @@ public class Resources {
                     TargetType.valueOf(itemData[3]),            // target type
                     Integer.parseInt(itemData[4]),              // fixDamage
                     Integer.parseInt(itemData[5]),              // fixHeal
-                    Integer.parseInt(itemData[6]),              // ratioHeal
-                    Integer.parseInt(itemData[7]),              // fixHP
-                    Integer.parseInt(itemData[8]),              // fixATK
-                    Integer.parseInt(itemData[9])               // fixDEF
+                    Float.parseFloat(itemData[6]),              // ratioHeal
+                    Integer.parseInt(itemData[7]),
+                    Float.parseFloat(itemData[8]),
+                    Integer.parseInt(itemData[9]),              // fixHP
+                    Integer.parseInt(itemData[10]),
+                    Integer.parseInt(itemData[11]),              // fixATK
+                    Integer.parseInt(itemData[12])               // fixDEF
             );
         }
 
@@ -116,7 +121,11 @@ public class Resources {
         );
 
         // enemies
-        enemy_db = new Enemy[1];
+        Limit limit = new Limit();
+        Derivative derivative = new Derivative();
+        enemy_db = new Enemy[2];
+        enemy_db[0] = limit;
+        enemy_db[1] = derivative;
 
         // maps
         BufferedReader mapReader = new BufferedReader(new FileReader("db/maps.txt"));
