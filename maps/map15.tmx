@@ -2,18 +2,17 @@
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
  <tileset firstgid="129" source="../tilesets/ground2.tsx"/>
- <tileset firstgid="321" source="../tilesets/walls.tsx"/>
- <tileset firstgid="449" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="705" name="objects" tilewidth="32" tileheight="32" tilecount="28" columns="7">
+ <tileset firstgid="321" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="577" name="objects" tilewidth="32" tileheight="32" tilecount="28" columns="7">
   <image source="../tilesets/objects.png" width="224" height="128"/>
-  <tile id="18">
+  <tile id="11">
    <properties>
-    <property name="entryInfo" value="map_7_0_11"/>
+    <property name="entryInfo" value="map_16_0_-11"/>
    </properties>
   </tile>
   <tile id="25">
    <properties>
-    <property name="entryInfo" value="map_5_16_0"/>
+    <property name="entryInfo" value="map_13_16_0"/>
    </properties>
   </tile>
  </tileset>
@@ -28,21 +27,23 @@
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
-  <properties>
-   <property name="entryInfo" value="map_7_0_18"/>
-  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgQAWXmUjDMMDIgB2Qax6twC0mCB41b9S8UfOGHgAATwtPubAEAAA=
+   H4sIAAAAAAAAA2NgGAXDGUQxQfCoeYPDvKEMfJgwMb3NAwDNa/uksAQAAA==
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgRMNsODC6OhQ9TDjECWBktdsJ2UEkxmcGqWahm4nuRlLNIeTOUfMGl3mUpBdc6Xk7iWZiM+M5mWYSk88owejuojYGABgGrIOwBAAA
+   H4sIAAAAAAAAA7XS0QnAIAwE0AiFdgAnd4NO4Ui6QfPZfigc4SKhtNCAWH2ewS4i/cc6ksjzubWnb5yoydZH1npmxFmd317eHfNE7zOtCmdXx+zO/DaqPJWHkcY4mxzV6RuaW6AK5PVysnMU9pzGXPVsZmf9U+gZmgX2MS+ZMc6peQ+YsTkey6fERG9aF/HsHP5DP4OXHWv1ppWY02MZrHcD3EHNZ7AEAAA=
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA6WTwRGCQAxFCV2pFahNbD12AFYAViDe1QNcqUD78O8AMzEkG9DM/NmFbF4+OyTkWbaBttAOSkVL83cFakroDPXIB6x76AAdHV6MTjAr1NTQhfG0vkt9XlHfQLeRJ/stDa2ud1gFVCby3GfI07zIOo2ymNKjxeOsFFPeu8WrFF79hz/J1FjSn3d/E9NiSX937F809Pjln2kVlpX3QvPlnVvji8/wA89P+j7fkb1qvvgMx3jTwF0j/o18hj8ynmQ2sAQAAA==
+   H4sIAAAAAAAAA42Ty1ECQRCGd7ghJICSABCBelcisAjAVwD4iGA1BSQCIAI0AjQCH4e9oiYgcvCj2Cl/unq3mKqvdran55vundpJSJJWJUna0IFtRln+E7594gdwmK9fEbtw6If1uua/EnuDd/iAl/Dvjp5LuHE4F2ccc94/4Qu+zfnRcwt3DteO84f5An5hac6PnnvJHzB/gCGk4oz9V+l5B2pQr2yer54maxnvIxjDJF+LzqL+i0Yzv5sp+Y9hfW9xpNL/SfD36VxjM/Kf5d5s/2U1Wrd3lu3fq7HMq7HV97T9pwW+TGIN9u7Cnul/9dT+4x71HYdNuiX/n/d9rc/W0nP+P+vS/CPyT8VnaznLa1SPumy+/XZeLdZZlJ85d/EH/q9IuLAEAAA=
+  </data>
+ </layer>
+ <layer name="Shade" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA4thYmCIGcWjeBSP4iGAAWrAsrywBAAA
   </data>
  </layer>
 </map>

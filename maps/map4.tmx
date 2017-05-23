@@ -35,7 +35,7 @@
    H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
   </data>
  </layer>
- <layer name="Background" width="20" height="15" visible="0">
+ <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NkYGBgRMPPsYixQTG6ODreTqQaZPOw2Ueq2djcR4xbCJmHDZNqPj6ziA1XUswi1kxSzCLGTGqYt50C8wilJWx6wugQH7RIe/gwvvxLibsI2UEPDABKtcPVsAQAAA==
   </data>

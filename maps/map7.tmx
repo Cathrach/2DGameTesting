@@ -6,6 +6,16 @@
  <tileset firstgid="449" source="../tilesets/walls2.tsx"/>
  <tileset firstgid="705" name="objects" tilewidth="32" tileheight="32" tilecount="28" columns="7">
   <image source="../tilesets/objects.png" width="224" height="128"/>
+  <tile id="4">
+   <properties>
+    <property name="entryInfo" value="map_12_-16_0"/>
+   </properties>
+  </tile>
+  <tile id="5">
+   <properties>
+    <property name="entryInfo" value="house_11_10_11"/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="entryInfo" value="map_6_0_-11"/>
@@ -24,12 +34,12 @@
  </layer>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NggABGJDwKRsEoGAUgcIaJNExr8wCg825psAQAAA==
+   H4sIAAAAAAAAA2NggABGJDwKaAOOMUHwYDUPHzjKBMEjxbxRAAFnmEjDtDYPANeMoFOwBAAA
   </data>
  </layer>
- <layer name="Background" width="20" height="15" visible="0">
+ <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgBGJ2JgRmZBg4/BwHG5caNgKYFDsImUXITEJmhUExuji6P9H5uNyByzx84UusH4n1O6XmkRP+hNz3nELzcKUXSs1CTyOkmkkoz5DiTkL5gpR4JkY/seFJSC8AsUyjXrAEAAA=
+   H4sIAAAAAAAAA2NkYGBgBGJ2JgRmZBg4/BwHG5caNgKYFDsImUXITEJmqTNBMLo4uj/R+bjcgcs8fOFLrB+J9Tul5pET/oTc95xC83ClF0rNQk8jpJpJKM+Q4k5C+YKUeCZGP7HhSUgvAEWgatOwBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
