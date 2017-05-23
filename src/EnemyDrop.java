@@ -7,7 +7,7 @@ public class EnemyDrop {
     Item item;
     float chance;
     public EnemyDrop(Item item, float chance) {
-        this.item = Resources.item_db[1];
+        this.item = item;
         this.chance = chance;
     }
 }

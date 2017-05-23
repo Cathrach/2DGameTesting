@@ -165,7 +165,6 @@ public class Combat extends BasicGameState {
                     actionOrder.remove(i);
                     i--;
                     updateDead();
-                    updateWin(game);
                 }
             }
             for (BattleAction battleAction : actionOrder) {
@@ -173,6 +172,7 @@ public class Combat extends BasicGameState {
             }
             // consume skill effects for entity that just moved
             currMove.consumeSkillEffects();
+            updateDead();
             // rotate turnOrder:
             turnOrder.add(turnOrder.remove(0));
             // check whose move it is
@@ -188,8 +188,6 @@ public class Combat extends BasicGameState {
             isSelectingSkill = false;
             isFinishedTurn = false;
         }
-        updateDead();
-        // if all enemies or all players are dead, exit back to the world map
         updateWin(game);
     }
 
@@ -229,6 +227,7 @@ public class Combat extends BasicGameState {
                 for (int i = 0; i < Resources.enemy_db.length; i++) {
                     if (Resources.enemy_db[i].name.equals(enemy.name)) {
                         Resources.enemy_db[i].timesKilled++;
+                        System.out.println(Resources.enemy_db[i].timesKilled);
                     }
                 }
             }

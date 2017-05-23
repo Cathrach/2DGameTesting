@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
- <tileset firstgid="129" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="385" source="../tilesets/walls.tsx"/>
- <tileset firstgid="513" source="../tilesets/objects2.tsx"/>
- <tileset firstgid="769" name="objects" tilewidth="32" tileheight="32" tilecount="28" columns="7">
-  <image source="../tilesets/objects.png" width="224" height="128"/>
+ <tileset firstgid="129" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="321" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="577" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+  <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="5">
    <properties>
-    <property name="entryInfo" value="house_3_11_11"/>
+    <property name="entryInfo" value="house_16_16_6"/>
    </properties>
   </tile>
  </tileset>
@@ -19,10 +18,10 @@
  </layer>
  <layer name="Entrances" width="20" height="15">
   <properties>
-   <property name="entryInfo" value="house_3_"/>
+   <property name="entryInfo" value="house_16_0_0"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBQMJsDGDMGD1byBBAB3JX6usAQAAA==
+   H4sIAAAAAAAAA2NgGAWjYBQMZ+DGBMGD1TxSAADmaTZRsAQAAA==
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
@@ -32,12 +31,12 @@
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA9NhYGDQGcWjeBSP4iGAAYRXReWwBAAA
+   H4sIAAAAAAAAA+NgYGDgGMWjeBSP4iGAAWoSN6uwBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA3vOwMDwfBRTFa9mZGBYw0iYJtY8ZyYGBhcmBL0bqHcPIyZNrHnBQDNCmBA0LkCseTZAM2yB2I4JwUbng9jEmteMx00wkEKCeWuJMK+Eyua1kGAeOoYBaqVHaps3kBgAWBrlgLAEAAA=
+   H4sIAAAAAAAAA7XSzwqAIAwHYHv1nqA/kB09VHbskNXRR2sehDE2s8LBj1bIxybZSilbOA5yCtk/OBekFnJk2o44nRDO5twVOT0kVoN6D33L2IvgRccjw6CeVrQl703huZ+8cHZ78A06I3lxz9SOtPzPfbm5OW+GjAnTV/z7AM9J+AeDqZFLDVopi3M1mXlA33WmlbpX7p5K5wZ7RGKKsAQAAA==
   </data>
  </layer>
 </map>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" source="../tilesets/ground.tsx"/>
+ <tileset firstgid="129" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="321" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="577" name="objects" tilewidth="32" tileheight="32" tilecount="28" columns="7">
+  <image source="../tilesets/objects.png" width="224" height="128"/>
+  <tile id="4">
+   <properties>
+    <property name="entryInfo" value="map_15_-16_0"/>
+   </properties>
+  </tile>
+  <tile id="11">
+   <properties>
+    <property name="entryInfo" value="map_14_0_-11"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="entryInfo" value="map_12_16_0"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Containers" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+  </data>
+ </layer>
+ <layer name="Entrances" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWDCUQxQfBgM8+VCYKpbR61wEgzbzAAHyYIpqd5AApRwhewBAAA
+  </data>
+ </layer>
+ <layer name="Encounters" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+  </data>
+ </layer>
+ <layer name="Background" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA62S0QnDMAxEZSi0A2SnztUVukGnyEjWBvFnHaKDwwhVNoU8MLbvdLKiIqKdRxHp3xL3cnnohJc6eJ4ZXYTnl9Ghh9rZhx6jPKxD3XNvJ011MoHNzqutef9mbHQvmoOSZoY31fc8QaMcyIpMZ7+fRK3xHZtpuTesX0ZUBx6jJ7yOH3NvyXv/YMy58l97nit+R+A9kzHzbjwP5lkuoll9Abo4VxywBAAA
+  </data>
+ </layer>
+ <layer name="Blocked" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA5WTzVECQRCFd/YmmoC6CSgRgPfVg2eKAAQMgL8I1BTUCNQI1AiACFQOXPlJgJ8Db8rt4m3bs5Sv6isGdvrt62amEkdRFVyAjouilsEt6Bk0QRt4veDzNVt7dQrq+uDeoEue7+BDZQjVPdB7WXeZZw0MwFBl8HXH6PsEnMa7uknATzyblEtnOIPPOSiDJM7XJvQbP+tSLq0K/T+J4am9JKPk0u8N1Vi+/5XV2771pfvlqmDmXtfu7zrk7VXP9kwKZsDic2DtaxgZH/H9CTwb2fkcsL6w9xv8gLHqXe7Qm/LzPfA5SN1ublMwA3OwcPne5Q59BmYrPjf0fIn1CqzBxuV7lzs0MvzSzEfP5AB5S+AQHNEsGtSDIOJMeiZbKc009bAEAAA=
+  </data>
+ </layer>
+ <layer name="Shade" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA4thYmCIGcWjeBSP4iGAAWrAsrywBAAA
+  </data>
+ </layer>
+</map>

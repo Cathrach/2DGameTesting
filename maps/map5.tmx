@@ -11,6 +11,11 @@
     <property name="entryInfo" value="map_6_-16_0"/>
    </properties>
   </tile>
+  <tile id="5">
+   <properties>
+    <property name="entryInfo" value="house_10_10_11"/>
+   </properties>
+  </tile>
   <tile id="18">
    <properties>
     <property name="entryInfo" value="map_2_0_11"/>
@@ -33,18 +38,21 @@
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
+  <properties>
+   <property name="entryInfo" value="map_10_10_10"/>
+  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgIB5cZoJgbICRBHNIMY8cc/GBW0wQTCk4ygTBo+aNmjeQ5lELUNs8WgEA2UxKKLAEAAA=
+   H4sIAAAAAAAAA2NgIB5cZoJgbICRBHNIMY8cc/GBW0wQTCk4ygTBo+YhwDEmCB6s5pEChop51ALUNo9WAACiOP/GsAQAAA==
   </data>
  </layer>
- <layer name="Background" width="20" height="15" visible="0">
+ <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgJBKzQTE2udVMxJtDjHm7oebtRDL3OZo+UjAhN1DDTErMQjeTGmYNBA6DYmr5l1TznhNh5kDFMTXTIKl5DTn/UEsdJfrJtQMAo+/E+7AEAAA=
+   H4sIAAAAAAAAA2NkYGBgJBKzQTE2udVMxJtDjHm7oebtRDL3OZo+UjAhN1DDTErMQjeTGmbRG6szITA1/EuOec8JmDmQcUzNNEhqXkPOP9RSR4l+cu0AAOSX1KOwBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA5vJxMAwC4hnAzEIJADplUC8CohXo7FhAJv8TKg5yHIJULwTiHcB8W40Ngxgk4eZk4BFPTkAZu5QBq2MqBgG2hlRMbFgKiMqhoHpjKiYWJCKpDaNEVUcxO9iRBUnBEqR1JYxooqD+LMYUcVpBeZA080ZGthFqZnHGSH4BNScOSSk8bOMuNU/ZUSYjY5PILkZn33H0PxGjl3I+AkQAwDYgmHgsAQAAA==
+   H4sIAAAAAAAAA5vJxMAwC4hnAzEIJADplUC8CohXo7FhAJv8TKg5yHIJULwTiHcB8W40Ngxgk4eZk4BFPTkAZu5QBa2MqBgG2hlRMbFgKiMqhoHpjKiYWJCKpDaNEVUcxO9kRBUnBEqR1JYxooqD+DMZUcVpCeZA080ZGthHqZnHGSH4BNScOSSk8bOMuNU/ZUSYjY5PILkZn33H0PxGjl3I+AkQAwCXkANGsAQAAA==
   </data>
  </layer>
 </map>
