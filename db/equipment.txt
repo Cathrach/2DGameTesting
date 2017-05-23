@@ -1,5 +1,5 @@
 17
-#2 Pencil >> 50 >> No other pencils will be accepted~ >> WEAPON >> 0 >> 0 >> 5 >> 0 >> 1 >> 1 >> 1 >> 1
+#2 Pencil >> 50 >> No other pencils will be accepted. >> WEAPON >> 0 >> 0 >> 5 >> 0 >> 1 >> 1 >> 1 >> 1
 Pen >> 100 >> Blue or black ink will make your free response easier to read. >> WEAPON >> 0 >> 0 >> 10 >> 0 >> 1 >> 1 >> 1 >> 1
 Four-function Calculator >> 50 >> A calculator for simple arithmetic. >> WEAPON >> 0 >> 0 >> 15 >> 0 >> 1 >> 1 >> 1 >> 1
 Scientific Calculator >> 300 >> Now supports trig and log functions! >> WEAPON >> 0 >> 0 >> 30 >> 0 >> 1 >> 1 >> 1 >> 1
@@ -7,12 +7,12 @@ Graphing Calculator >> 400 >> You can graph functions with this! >> WEAPON >> 0 
 TI-NSpire >> 700 >> Your ultimate inanimate sidekick. >> WEAPON >> 0 >> 0 >> 70 >> 0 >> 1 >> 1 >> 1 >> 1
 Wolfram Alpha >> 1000 >> Math problem? What math problem? >> WEAPON >> 0 >> 0 >> 1000 >> 0 >> 1 >> 1 >> 1 >> 1
 Eraser >> 1000 >> Don't want to do that problem? Make it disappear! >> WEAPON >> 0 >> 0 >> 1000 >> 0 >> 1 >> 1 >> 1 >> 1
-Cardioid Shield >> 100 >> A hearty shield. >> SHIELD >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
-Limacon Shield >> 200 >> A loopy shield. >> SHIELD >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
-Rose Shield >> 300 >> A lovely shield. >> SHIELD >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
-Lemniscate Shield >> 400 >> The eternity shield. >> SHIELD >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
-Circular Armor >> 100 >> Armor inscribed with circles. >> ARMOR >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
-Elliptical Armor >> 200 >> Armor inscribed with ellipses. >> ARMOR >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
-Parabolic Armor >> 300 >> Armor inscribed with parabolas. >> ARMOR >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
-Hyperbolic Armor >> 400 >> Armor inscribed with hyperbolas. >> ARMOR >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
-Cycloid Rings >> 100 >> Boost your magic. >> ACCESSORY >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
+Cardioid Shield >> 100 >> A hearty shield. >> SHIELD >> 10 >> 0 >> 0 >> 10 >> 1 >> 1 >> 1 >> 1
+Limacon Shield >> 200 >> A loopy shield. >> SHIELD >> 15 >> 5 >> 0 >> 15 >> 1 >> 1 >> 1 >> 1
+Rose Shield >> 300 >> A lovely shield. >> SHIELD >> 50 >> 25 >> 0 >> 30 >> 1 >> 1 >> 1 >> 1
+Lemniscate Shield >> 400 >> The eternity shield. >> SHIELD >> 100 >> 50 >> 10 >> 75 >> 1 >> 1 >> 1 >> 1
+Circular Armor >> 100 >> Armor inscribed with circles. >> ARMOR >> 0 >> 0 >> 0 >> 0 >> 1.1 >> 1 >> 1 >> 1.1
+Elliptical Armor >> 200 >> Armor inscribed with ellipses. >> ARMOR >> 0 >> 0 >> 0 >> 0 >> 1.2 >> 1 >> 1.1 >> 1.2
+Parabolic Armor >> 300 >> Armor inscribed with parabolas. >> ARMOR >> 10 >> 10 >> 10 >> 10 >> 1.4 >> 1.1 >> 1.2 >> 1.4
+Hyperbolic Armor >> 400 >> Armor inscribed with hyperbolas. >> ARMOR >> 50 >> 20 >> 20 >> 50 >> 1.8 >> 1.2 >> 1.4 >> 1.8
+Cycloid Rings >> 100 >> Boost your magic. >> ACCESSORY >> 0 >> 20 >> 0 >> 0 >> 1 >> 1 >> 1 >> 1

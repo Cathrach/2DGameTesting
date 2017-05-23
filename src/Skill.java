@@ -61,15 +61,29 @@ public class Skill {
                     target.addSkillEffect(skillEffect);
                     break;
                 case ALL_ALLIES:
-                    for (Entity entity : Resources.party) {
-                        if (!entity.battleEntity.equals(caster)) {
+                    if (caster.isPlayer) {
+                        for (Entity entity : Resources.party) {
                             entity.battleEntity.addSkillEffect(skillEffect);
+                        }
+                    } else {
+                        for (Enemy enemy : Combat.currEnemies) {
+                            if (!enemy.isDead) {
+                                enemy.addSkillEffect(skillEffect);
+                            }
                         }
                     }
                     break;
                 case ALL_ENEMIES:
-                    for (Enemy enemy : Combat.currEnemies) {
-                        enemy.addSkillEffect(skillEffect);
+                    if (caster.isPlayer) {
+                        for (Enemy enemy : Combat.currEnemies) {
+                            if (!enemy.isDead) {
+                                enemy.addSkillEffect(skillEffect);
+                            }
+                        }
+                    } else {
+                        for (Entity entity : Resources.party) {
+                            entity.battleEntity.addSkillEffect(skillEffect);
+                        }
                     }
                     break;
                 default:
