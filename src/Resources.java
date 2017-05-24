@@ -115,7 +115,13 @@ public class Resources {
         dialogue_db[0] = new Dialogue(
                 new DialogueLine[]{
                         new DialogueLine("It is Tuesday Morning, May 9th.", new Image("sprites/heroine.png")),
-                        new DialogueLine("You will be taking the AP BC Calculus Exam.", new Image("sprites/heroine.png"), true, -1, "")
+                        new DialogueLine("You will be taking the AP BC Calculus Exam.", new Image("sprites/heroine.png")),
+                        new DialogueLine("In a moment, you will open the packet that contains your exam materials", new Image("sprites/heroine.png")),
+                        new DialogueLine("Zzzz Zzzz", new Image("sprites/heroine.png")),
+                        new DialogueLine("Calculators are not allowed in part A. Please put your calculators under your chairs.", new Image("sprites/heroine.png")),
+                        new DialogueLine("Zzzz Zzzz......", new Image("sprites/heroine.png")),
+                        new DialogueLine("Open your Section I booklet and begin.", new Image("sprites/heroine.png")),
+                        new DialogueLine("*opens booklet sleepily* !?", new Image("sprites/heroine.png"), true, -1, "") // TODO: Map ID
                 },
                 new String[]{},
                 new int[]{}
