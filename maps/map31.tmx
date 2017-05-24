@@ -6,17 +6,22 @@
  <tileset firstgid="449" source="../tilesets/walls2.tsx"/>
  <tileset firstgid="705" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
-  <tile id="4">
+  <tile id="11">
    <properties>
-    <property name="entryInfo" value="map_5_-16_0"/>
+    <property name="entryInfo" value="map_24_0_-11"/>
    </properties>
   </tile>
   <tile id="18">
    <properties>
-    <property name="entryInfo" value="map_3_0_11"/>
+    <property name="entryInfo" value="map_32_0_11"/>
    </properties>
   </tile>
  </tileset>
+ <layer name="Containers" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+  </data>
+ </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
@@ -24,25 +29,20 @@
  </layer>
  <layer name="Entrances" width="20" height="15">
   <properties>
-   <property name="entryInfo" value="map_"/>
+   <property name="entryInfo" value="map_32_0_11"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgwA0uMxGHiQXUNm8gwVEmCB41b9S84WDeUAEAk4mXdbAEAAA=
-  </data>
- </layer>
- <layer name="Containers" width="20" height="15">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgYGC4zIQfIwNK1JBr3igYBaNg4MEZJsKY1uYBAL4O7FywBAAA
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgRMPPsYixQTG6ODreTqQaZPOw2Ueq2djcR4xbCJmHDZNqPj6ziA1XUswi1kxSzCLGTGqYt50C8wilJWx6wugQH7RIe/gwvvxLibsI2UEPDABKtcPVsAQAAA==
+   H4sIAAAAAAAAA2NmYGBgphDLMlJuBjK2BponTWUzqe3GUfMGp3mMVDDLFmiINpJ5lJiJbBY1zEMPt8Fg3lQgnkamea1YzGpDwujmAQAkXFajsAQAAA==
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA52TzQ3CMAyF45wyZi6wAayAmAAVugCwAdwpBwbIACB1ASSOOKJWXCdNUp701LSpP738WCmlHCj1QXM58S7V6jC2OphqjR7/V+JJLue9sPYu6nuIc5TkeXv0QY/z9GL9j8qsXidknRmPWGZGLq4L1l0HnhOsObmkiDeVawOxU+LnSWu2CeYOYk/pDb99y92RBc4t0VsI4ynRvuV4K5xboxsI4xzPsDNu/zgPfk+Jw/PZSmZqPsWryUnfb/jsBvsa3m+y70ryrIb1GYkzO6j3E33Uoc++FCxRRLAEAAA=
+   H4sIAAAAAAAAA73T4Q1AMBAF4NZkFsEEmAA/+IsJsE43aBewh5cgqknbu0i85EUk8uXaHCNFNE0iRIt2if8bLc8agjfCmdA54N0mxVvgrOjmes471aOG46WRs3I9SrhehhlztPDMyvVKOBVaB7wdVUTT3UP3TvXlUM3YHmrL+LSH4vk/OJ4vt8X2Auf8Y74eHawnJUq+vQOqeKbXsAQAAA==
   </data>
  </layer>
 </map>
