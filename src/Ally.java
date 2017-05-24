@@ -25,6 +25,7 @@ public class Ally extends BattleEntity {
         ratioEquipATK = 1;
         ratioEquipDEF = 1;
         equips = new ArrayList<>();
+        System.out.println(this.skills);
     }
 
     // equips here

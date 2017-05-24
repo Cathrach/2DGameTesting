@@ -52,19 +52,29 @@ public class Map {
         return data;
     }
     public boolean isEncounter(float xPos, float yPos) {
+        double rng = Math.random();
         if (xPos < 0 || yPos < 0 || xPos > pixelWidth || yPos > pixelHeight) {
             return false;
         }
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Encounters"));
         float encounterChance = Float.parseFloat(map.getTileProperty(tileID, "encounterChance", "0"));
-        //return Math.random() < encounterChance;
-        return 0 < encounterChance;
+        return rng < encounterChance;
     }
     public void encounter(float xPos, float yPos) {
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Encounters"));
         String[] data = map.getTileProperty(tileID, "encounterInfo", "").split("_");
         Combat.currEnemies.clear();
         for (String index : data) {
+            switch (Integer.parseInt(index)) {
+                case 0:
+                    Combat.currEnemies.add(new Limit(Resources.enemy_db[Integer.parseInt(index)]));
+                    break;
+                case 1:
+                    Combat.currEnemies.add(new Derivative(Resources.enemy_db[Integer.parseInt(index)]));
+                    break;
+                default:
+                    break;
+            }
             Combat.currEnemies.add(new Enemy(Resources.enemy_db[Integer.parseInt(index)]));
         }
     }
