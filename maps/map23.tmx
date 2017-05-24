@@ -7,17 +7,12 @@
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="4">
    <properties>
-    <property name="entryInfo" value="map_23_-16_0"/>
-   </properties>
-  </tile>
-  <tile id="18">
-   <properties>
-    <property name="entryInfo" value="map_19_0_11"/>
+    <property name="entryInfo" value="map_24_-16_0"/>
    </properties>
   </tile>
   <tile id="25">
    <properties>
-    <property name="entryInfo" value="map_21_16_0"/>
+    <property name="entryInfo" value="map_20_16_0"/>
    </properties>
   </tile>
  </tileset>
@@ -26,24 +21,24 @@
    H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
   </data>
  </layer>
- <layer name="Entrances" width="20" height="15">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgIB0EM6FiSgG1zRsF1AeuTBAcBcWD1TxqgcFu3kgFAIGUxmewBAAA
-  </data>
- </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
   </data>
  </layer>
+ <layer name="Entrances" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAXkAFcmCB7s5kVB8ah5g8M8aoHBbh6tAABY76dBsAQAAA==
+  </data>
+ </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgJAOzQDE5etHxcxqa95xKZg5G94Uz0sZ9E5HMm4TmRkMSMAsR2JIETIx55MQFMv87EL8A4h8Uxi+yWS/INDOMEdNdyJjctMKIw5zvFPgZ3RxS3IjuNnx+BgAJUFVfsAQAAA==
+   H4sIAAAAAAAAA6WTQQ5AMBBF25BwYUdwAQl7C67GEbpUYpKfb1pTEm/FvJk/2sY710bic7Er4PtS/tZbqArQatC1fvTx/s7MVtcYmcDXeH3/vdG3QA6Za7u94krN9tajJgZwYQ4r7BM4R2pfPDf+ixl8vfKtti/m3H8gp3VXufPCXskj2VJuzs5nL7jnmdygx0i9uD/Xdr48Y+5+lN5X5gCc1kh9sAQAAA==
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA/vEyMDwCYg/AzETEwIzM6HyQZgRiMOA6mSANDIAicEALv0gvhAahpmHDtKAYulQjEu/MBCHM6JiQRzmlTMiMD792DC6eSC/I5tHjBn4zEN3HylmuWExC+S+NqB4OxST4zb0+EU2e7ADSuICm/9INY9QGJFi3kwgngXEs7HEMyju3UlMKyuBeBUQr2bENCeFkTT3gfy6E4h3AfFuRkxzSPEvLB2fBNKngPg0jnwCAgBjm73usAQAAA==
+   H4sIAAAAAAAAA2NggIBSRgaGDCBuh+IORgYUIMMEUZNOJAaZVYFkBja9IDVNBHA5FFdA3VSKRy9IzSQCGNk8mDkwfjua2sloYYANlDOiYpg56OFHLICFP654wAdAcUQOIFcftc2gpnnI+mFsYs0kpA4kj0sNIb3ujBDsQWb6QAeSQPukgFiaCdVMcsNPE6hPC4i1gTgV6k5i8zw2bAk0xwqIraHuiQCKfaIAAwC9GsWTsAQAAA==
   </data>
  </layer>
 </map>

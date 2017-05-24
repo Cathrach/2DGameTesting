@@ -4,8 +4,8 @@
  <tileset firstgid="129" source="../tilesets/ground2.tsx"/>
  <tileset firstgid="321" source="../tilesets/walls.tsx"/>
  <tileset firstgid="449" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="705" name="objects" tilewidth="32" tileheight="32" tilecount="28" columns="7">
-  <image source="../tilesets/objects.png" width="224" height="128"/>
+ <tileset firstgid="705" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+  <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="11">
    <properties>
     <property name="entryInfo" value="map_5_0_-11"/>

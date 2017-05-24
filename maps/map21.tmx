@@ -34,12 +34,12 @@
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgHMVUw01MpImTYxYbGWYiq1VngmBk89iINAcbxmUeCBsSwOj+IoQtCWBsYYULk+tfapgxisnDAJB6xXewBAAA
+   H4sIAAAAAAAAA2NkYGBgHMVUw01M2MWvM1LPLDYyzERWq84EwcjmsRFpDjaMyzwQNiSA0f1FCFsSwNjCChcm17/UMGMUk4cBT9s2QbAEAAA=
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2tiYmBoIgIXAnEREZgYswYL7mVkYOhjxKTJNW8uUO88Rkz6OBCfIMPcRKCeJEZMGgSekmjmMTT9IIDOv0GCedeAaguBuAhJPzqfGIBsHjUAzLxnQPO+EDCTFP8W4jDzK5D/HIpfkBjHMDOfo5kBy0vFZKRB9HxKjhmDGQMAstvKvrAEAAA=
+   H4sIAAAAAAAAA63T0Q2CMBDGceimugEwAeVZE+RZx1EnABdQHEDf/Rq5cF4u4c7Q5J+mCf01JG0MWRYNFag0dJha8mrjuUP+rWW2ltdL7dBemS3nUdw7opMyX9A1//3W0gZtlTmNu9M8i/1pyPXN4fWoQCXbL9eWwb01BnkP9FowPf+b7r9mvrEep54Orw6zOQqD3lIVfB6Z/D1W7O43Dq8NsxmF8Y/HTenRW+oM3gds+BacsAQAAA==
   </data>
  </layer>
 </map>
