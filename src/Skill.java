@@ -43,7 +43,7 @@ public class Skill {
     public void use(BattleEntity caster, BattleEntity target) {
         // TODO: Critical hits
         caster.currMP -= MPCost;
-        int damage = (int) (fixDamage + caster.getATK() * ratioDamage - target.getDEF() * ignoreDefense);
+        int damage = (int) (fixDamage + caster.getATK() - target.getDEF() * ignoreDefense) * (int) ratioDamage;
         target.currHP -= damage;
         caster.currHP = Math.min(caster.getHP(), caster.currHP + damage * (int) ratioRecover);
         // apply each skill effect: check target of skill with the parameters and add a skill effect on them

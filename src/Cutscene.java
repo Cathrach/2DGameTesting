@@ -43,7 +43,6 @@ public class Cutscene extends BasicGameState {
         } else if (timeElapsedSinceLastPress >= timeToWait) {
             timeElapsedSinceLastPress = 0;
         }
-
     }
 
     public static void changeDialogue(int dialogueID) {

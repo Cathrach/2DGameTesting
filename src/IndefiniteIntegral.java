@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * Created by serinahu on 5/23/17.
@@ -8,7 +8,7 @@ public class IndefiniteIntegral extends Enemy {
     public IndefiniteIntegral() {
         super("Indefinite Integral",
                 "sprites/enemies/04_dwarf.png",
-                80, 90, 25, 10,
+                90, 35, 35, 15,
                 new EnemyDrop[]{
                         new EnemyDrop(Resources.item_db[1], 0.5f)
                 },
@@ -23,28 +23,28 @@ public class IndefiniteIntegral extends Enemy {
 
     @Override
     public BattleAction decideAction() {
-        int index = (int) (Math.random() * 4);
-        Entity[] temp = Arrays.copyOf(Resources.party, Resources.party.length);
-        if (this.currMP >= 50 && !firstTurnC) {
+        int index = (int) (Math.random() * Resources.party.size());
+        ArrayList<Entity> temp = new ArrayList<>(Resources.party);
+        if (this.currMP >= 15 && !firstTurnC) {
             firstTurnC = true;
             return new BattleAction(this, skills.get(2), this);
         }
-        if (this.currMP >= 20 && this.currHP <= this.getHP() * 0.5) {
+        if (this.currMP >= 10 && this.currHP <= this.getHP() * 0.5) {
             // hit enemy with lowest def
-            Arrays.sort(temp, (a, b) -> a.battleEntity.getDEF() - b.battleEntity.getDEF());
+            temp.sort(new BattleEntityComparator(SortOrder.ASC, Stat.DEF));
             if (!usedIntegrate) {
                 usedIntegrate = true;
-                return new BattleAction(this, skills.get(1), temp[0].battleEntity);
+                return new BattleAction(this, skills.get(1), temp.get(0).battleEntity);
             } else {
                 double rng = Math.random();
                 if (rng < 0.5) {
-                    return new BattleAction(this, skills.get(1), temp[0].battleEntity);
+                    return new BattleAction(this, skills.get(1), temp.get(0).battleEntity);
                 } else {
-                    return new BattleAction(this, skills.get(0), temp[index].battleEntity);
+                    return new BattleAction(this, skills.get(0), temp.get(index).battleEntity);
                 }
             }
         }
-        return new BattleAction(this, skills.get(0), temp[index].battleEntity);
+        return new BattleAction(this, skills.get(0), temp.get(index).battleEntity);
     }
 
     public IndefiniteIntegral(Enemy anotherIntegral) {

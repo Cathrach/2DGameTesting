@@ -108,7 +108,7 @@ class InventoryKeyboard implements KeyListener {
     public void keyReleased(int key, char c) {
         if (Inventory.isSelectingTarget) {
             if (key == Input.KEY_DOWN) {
-                if (Inventory.highlightedUnitID < Resources.party.length && Resources.party[Inventory.highlightedUnitID + 1] != null) {
+                if (Inventory.highlightedUnitID < Resources.party.size() && Resources.party.get(Inventory.highlightedUnitID + 1) != null) {
                     Inventory.highlightedUnitID++;
                 }
             } else if (key == Input.KEY_UP) {
@@ -118,7 +118,7 @@ class InventoryKeyboard implements KeyListener {
             } else if (key == Input.KEY_DELETE || key == Input.KEY_BACK) {
                 Inventory.isSelectingTarget = false;
             } else if (key == Input.KEY_ENTER) {
-                Inventory.selectedUnit = Resources.party[Inventory.highlightedUnitID].battleEntity;
+                Inventory.selectedUnit = Resources.party.get(Inventory.highlightedUnitID).battleEntity;
                 if (Inventory.selectedItem instanceof Consumable) {
                     // handle target types here :(
                     if (((Consumable) Inventory.selectedItem).getTargetType() == TargetType.ALL_ALLIES) {
