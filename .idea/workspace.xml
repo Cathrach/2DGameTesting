@@ -2,42 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="879bada7-3ef8-4932-bbc3-19fc35ada0d8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map23.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map24.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map25.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map26.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map27.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map28.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map29.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map30.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map31.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map32.tmx" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tilesets/water.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DGameTesting/InventoryKeyboard.class" afterPath="$PROJECT_DIR$/out/production/2DGameTesting/InventoryKeyboard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tilesets/ground2.png" afterPath="$PROJECT_DIR$/tilesets/ground2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tilesets/walls2.png" afterPath="$PROJECT_DIR$/tilesets/walls2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/maps.txt" afterPath="$PROJECT_DIR$/db/maps.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map0.tmx" afterPath="$PROJECT_DIR$/maps/map0.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map1.tmx" afterPath="$PROJECT_DIR$/maps/map1.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map10.tmx" afterPath="$PROJECT_DIR$/maps/map10.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map11.tmx" afterPath="$PROJECT_DIR$/maps/map11.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map12.tmx" afterPath="$PROJECT_DIR$/maps/map12.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map13.tmx" afterPath="$PROJECT_DIR$/maps/map13.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map14.tmx" afterPath="$PROJECT_DIR$/maps/map14.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map15.tmx" afterPath="$PROJECT_DIR$/maps/map15.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map2.tmx" afterPath="$PROJECT_DIR$/maps/map2.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map20.tmx" afterPath="$PROJECT_DIR$/maps/map20.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map21.tmx" afterPath="$PROJECT_DIR$/maps/map21.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map3.tmx" afterPath="$PROJECT_DIR$/maps/map3.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map4.tmx" afterPath="$PROJECT_DIR$/maps/map4.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map5.tmx" afterPath="$PROJECT_DIR$/maps/map5.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map6.tmx" afterPath="$PROJECT_DIR$/maps/map6.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map7.tmx" afterPath="$PROJECT_DIR$/maps/map7.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map8.tmx" afterPath="$PROJECT_DIR$/maps/map8.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map9.tmx" afterPath="$PROJECT_DIR$/maps/map9.tmx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Inventory.java" afterPath="$PROJECT_DIR$/src/Inventory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tilesets/walls2.tsx" afterPath="$PROJECT_DIR$/tilesets/walls2.tsx" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,7 +14,18 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
+      <file leaf-file-name="Inventory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Inventory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="381">
+              <caret line="149" column="18" lean-forward="false" selection-start-line="149" selection-start-column="18" selection-end-line="149" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -118,8 +94,8 @@
         <option value="$PROJECT_DIR$/src/Skill.java" />
         <option value="$PROJECT_DIR$/src/Limit.java" />
         <option value="$PROJECT_DIR$/src/Derivative.java" />
-        <option value="$PROJECT_DIR$/src/Inventory.java" />
         <option value="$PROJECT_DIR$/db/maps.txt" />
+        <option value="$PROJECT_DIR$/src/Inventory.java" />
       </list>
     </option>
   </component>
@@ -159,6 +135,38 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="2DGameTesting" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2DGameTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2DGameTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2DGameTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="2DGameTesting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Inventory.java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -442,7 +450,8 @@
     <option name="totallyTimeSpent" value="10098000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1922" height="1030" extended-state="7" />
+    <frame x="-1" y="0" width="1922" height="1030" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -459,7 +468,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.203125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.203125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -791,14 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="149" column="16" lean-forward="false" selection-start-line="149" selection-start-column="16" selection-end-line="149" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="564">
@@ -814,6 +815,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="149" column="18" lean-forward="false" selection-start-line="149" selection-start-column="18" selection-end-line="149" selection-end-column="18" />
           <folding />
         </state>
       </provider>
