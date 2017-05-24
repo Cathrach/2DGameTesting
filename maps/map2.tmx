@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
- <tileset firstgid="129" source="../tilesets/ground2.tsx"/>
- <tileset firstgid="321" source="../tilesets/walls.tsx"/>
- <tileset firstgid="449" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="705" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="241" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="433" source="../tilesets/walls.tsx"/>
+ <tileset firstgid="561" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="817" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="11">
    <properties>
@@ -24,7 +24,7 @@
  </tileset>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgwA4uMxGPiQHUNo8cwAjEt5ggmFpg1LxR8wbSvIECZ5hQMTXNxAcAJddrMbAEAAA=
+   H4sIAAAAAAAAA2NgwA6cmYnHxABqm0cOYARiL2YIphYYNW/UvIE0b6CADTMqpqaZ+AAA3t4SibAEAAA=
   </data>
  </layer>
  <layer name="Containers" width="20" height="15">
@@ -39,7 +39,7 @@
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgJAIvBGIWKF5EQO13RgRGl3uOxIaZh0sehtmZEBhdbjse82BmseHRj8veiUjmTSIyjNDdg24WGxSTYia6u9gIYGz6sbmJGLNwmYnNr8SahW4mqfrobR4uTKl512kQH+S4k1DaJcZsYtMuueYhuwsAjNNqtLAEAAA=
+   H4sIAAAAAAAAA2NkYGBgJAILAgkWBggWYsSvNp0JgdHlwpH0wszDJQ/D5UwIjC6njsc8mFllePTjtBfJv0wE/IvLPehmsUExKWaiu4uNAMamH6ubiDALl5nY/EqsWehmkqqP3ubhwpSa544lTqjlNnLTC650QshsovMUmeYhuwsAUMjIFrAEAAA=
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
@@ -47,7 +47,7 @@
    <property name="Blocked" value="true"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA52SwQ3CMAxFk1xgBWACYAJgAugSucAGsAJiAlTYjzIBcOyPitVPKiQ7T3qqo8pfluXGO9dkPqGFB/W+4SQ4N4Wz0L0/xrzXNyc5QsYcLuAydO9xsOXxPIkVvmu4MeYIPE9ii+8OVoV5mnmiIbtknrMfysgOtVz9UEZ2qGWP/gO8+L5mZIdajug/wdr3NSM7ZPI70vKvL78jLdzHd1F619wXKZPvqPT+YpaZqFHf4D381pr/LT0+bTSwBAAA
+   H4sIAAAAAAAAA52SwQkCMRBFs9mDrPbnWoHagbagVqBWoFagNpGLdrC2IN78gQz7zSLM5MEjCWE+wzCtd67NnEELU6pdwA3cwl16L41581QXXcE9PMBjeq+NedxP5ITzDC/GHIH7iVxx3uC9ME/TTzBkl/TzroYyMkMtIz+UkRlqeaCfJ/xU/Z2RGWrpUP+Cje/vjMyQyfdIy7+6fI+0cB3vRelec12gTN6j0v0LWWakqZ0bw0n9e9f8fwHWmoyesAQAAA==
   </data>
  </layer>
 </map>

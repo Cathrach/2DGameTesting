@@ -2,13 +2,11 @@
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
  <tileset firstgid="241" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="497" source="../tilesets/walls.tsx"/>
- <tileset firstgid="625" source="../tilesets/objects2.tsx"/>
- <tileset firstgid="881" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="497" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
-  <tile id="5">
+  <tile id="18">
    <properties>
-    <property name="entryInfo" value="house_3_11_11"/>
+    <property name="entryInfo" value="house_35_15_9"/>
    </properties>
   </tile>
  </tileset>
@@ -18,26 +16,23 @@
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
-  <properties>
-   <property name="entryInfo" value="house_3_"/>
-  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBQMJlDGDMGD1byBBAAUPHc0sAQAAA==
+   H4sIAAAAAAAAA2NgGJmAmQmBB6N5o2AUjAJMAAD2xldzsAQAAA==
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGJmAHQmPglEwCoYGAAB4GT0MsAQAAA==
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA/NnYGDwH8WjeBSP4iGAAXwwScWwBAAA
+   H4sIAAAAAAAAA+3ROQoCMQBG4aQK7oWN29i6Niq4t+PaiV5FPYF6bJ+YgRCjxsHCwuJj0vyPkFFCCPVGAkmkkEYGWeRQQBEllD1ayrGpIEAVNdTRQNPY7KUQBxzlY8/etNDW/T4GGGJkbE50zrgYvbw+25sxJpgixMzReyXazLHAEiusscXOs/PMJ2/vY+N447/f1OVfdeT9G+lpcXp2yxbnft9q3VwBUvXvy7AEAAA=
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAwtnZGAIH8VUxdJMDAwyTIRpYs3bDFS7hQlBawOxDhaaWPMOA9UeYULQuACx5q0BmrEWiNcxIdjo/HUkuO8zHjfBwBUSzJNlJmzeEyqb94UE89AxqeFPb/MGEgMA74HJhbAEAAA=
+   H4sIAAAAAAAAA53TwQ2DMAwFUFyxAOoELYeeEyYobNBuUDbo7AyALWLJWHZIEukLKUFPn5BE6LroZML8MF9M6fAs6a0NnjVH3j+ltOMMR6y5RXTNdQRcu6Xkxl141PGjerKzlVU/eVHtJVQ4nsd72WJZHuWFGSr+txxjg/dw1sZ0Xmo9eofMpwhblsfv945J68G4FzkviA7afcORGc7neLnwQvp27QbHm9T98Dztasu6ayUeP3dLBDUvsAQAAA==
   </data>
  </layer>
 </map>

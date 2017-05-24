@@ -59,8 +59,8 @@ public class Resources {
                 new SkillEffect[]{skilleffect_db[3]}, new TargetType[]{TargetType.ALL_ENEMIES});
         skill_db[8] = new Skill("Hint Hint Hint", new Image("skills/defend.png"), 1, 15, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{skilleffect_db[4], skilleffect_db[5]}, new TargetType[]{TargetType.SELF, TargetType.SINGLE_ENEMY});
-        skill_db[9] = new Skill("Integration by Parts", new Image("skills/attack.png"), 0, 20, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
-                new SkillEffect[]{skilleffect_db[6], skilleffect_db[7]}, new TargetType[]{TargetType.SINGLE_ENEMY, TargetType.SELF});
+        //skill_db[9] = new Skill("Integration by Parts", new Image("skills/attack.png"), 0, 20, 0, 0, 0, 0, TargetType.SINGLE_ENEMY,
+        //        new SkillEffect[]{skilleffect_db[6], skilleffect_db[7]}, new TargetType[]{TargetType.SINGLE_ENEMY, TargetType.SELF});
 
         // read items from text file; initialize list of items with quantity 0 each
         BufferedReader equipmentReader = new BufferedReader(new FileReader("db/equipment.txt"));

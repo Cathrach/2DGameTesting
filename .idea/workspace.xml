@@ -2,7 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="879bada7-3ef8-4932-bbc3-19fc35ada0d8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Inventory.java" afterPath="$PROJECT_DIR$/src/Inventory.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map33.tmx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map34.tmx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map35.tmx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/maps/map36.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DGameTesting/Ally.class" afterPath="$PROJECT_DIR$/out/production/2DGameTesting/Ally.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DGameTesting/Consumable.class" afterPath="$PROJECT_DIR$/out/production/2DGameTesting/Consumable.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DGameTesting/InventoryKeyboard.class" afterPath="$PROJECT_DIR$/out/production/2DGameTesting/InventoryKeyboard.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DGameTesting/Map.class" afterPath="$PROJECT_DIR$/out/production/2DGameTesting/Map.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DGameTesting/Resources.class" afterPath="$PROJECT_DIR$/out/production/2DGameTesting/Resources.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tilesets/ground.png" afterPath="$PROJECT_DIR$/tilesets/ground.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tilesets/objects.png" afterPath="$PROJECT_DIR$/tilesets/objects.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/maps.txt" afterPath="$PROJECT_DIR$/db/maps.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map0.tmx" afterPath="$PROJECT_DIR$/maps/map0.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map1.tmx" afterPath="$PROJECT_DIR$/maps/map1.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map10.tmx" afterPath="$PROJECT_DIR$/maps/map10.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map11.tmx" afterPath="$PROJECT_DIR$/maps/map11.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map12.tmx" afterPath="$PROJECT_DIR$/maps/map12.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map13.tmx" afterPath="$PROJECT_DIR$/maps/map13.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map14.tmx" afterPath="$PROJECT_DIR$/maps/map14.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map15.tmx" afterPath="$PROJECT_DIR$/maps/map15.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map16.tmx" afterPath="$PROJECT_DIR$/maps/map16.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map17.tmx" afterPath="$PROJECT_DIR$/maps/map17.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map18.tmx" afterPath="$PROJECT_DIR$/maps/map18.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map19.tmx" afterPath="$PROJECT_DIR$/maps/map19.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map2.tmx" afterPath="$PROJECT_DIR$/maps/map2.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map20.tmx" afterPath="$PROJECT_DIR$/maps/map20.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map21.tmx" afterPath="$PROJECT_DIR$/maps/map21.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map22.tmx" afterPath="$PROJECT_DIR$/maps/map22.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map23.tmx" afterPath="$PROJECT_DIR$/maps/map23.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map24.tmx" afterPath="$PROJECT_DIR$/maps/map24.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map25.tmx" afterPath="$PROJECT_DIR$/maps/map25.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map26.tmx" afterPath="$PROJECT_DIR$/maps/map26.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map27.tmx" afterPath="$PROJECT_DIR$/maps/map27.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map28.tmx" afterPath="$PROJECT_DIR$/maps/map28.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map29.tmx" afterPath="$PROJECT_DIR$/maps/map29.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map3.tmx" afterPath="$PROJECT_DIR$/maps/map3.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map30.tmx" afterPath="$PROJECT_DIR$/maps/map30.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map31.tmx" afterPath="$PROJECT_DIR$/maps/map31.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map32.tmx" afterPath="$PROJECT_DIR$/maps/map32.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map4.tmx" afterPath="$PROJECT_DIR$/maps/map4.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map5.tmx" afterPath="$PROJECT_DIR$/maps/map5.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map6.tmx" afterPath="$PROJECT_DIR$/maps/map6.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map7.tmx" afterPath="$PROJECT_DIR$/maps/map7.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map8.tmx" afterPath="$PROJECT_DIR$/maps/map8.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map9.tmx" afterPath="$PROJECT_DIR$/maps/map9.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/next.tmx" afterPath="$PROJECT_DIR$/maps/next.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/sample.tmx" afterPath="$PROJECT_DIR$/maps/sample.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Resources.java" afterPath="$PROJECT_DIR$/src/Resources.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +63,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="Inventory.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Inventory.java">
+      <file leaf-file-name="maps.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/db/maps.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="149" column="18" lean-forward="false" selection-start-line="149" selection-start-column="18" selection-end-line="149" selection-end-column="18" />
+            <state relative-caret-position="0">
+              <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Resources.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Resources.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1482">
+              <caret line="62" column="10" lean-forward="false" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -90,12 +148,12 @@
         <option value="$PROJECT_DIR$/src/EnemyDrop.java" />
         <option value="$PROJECT_DIR$/db/skilleffects.txt" />
         <option value="$PROJECT_DIR$/db/equipment.txt" />
-        <option value="$PROJECT_DIR$/src/Resources.java" />
         <option value="$PROJECT_DIR$/src/Skill.java" />
         <option value="$PROJECT_DIR$/src/Limit.java" />
         <option value="$PROJECT_DIR$/src/Derivative.java" />
-        <option value="$PROJECT_DIR$/db/maps.txt" />
         <option value="$PROJECT_DIR$/src/Inventory.java" />
+        <option value="$PROJECT_DIR$/src/Resources.java" />
+        <option value="$PROJECT_DIR$/db/maps.txt" />
       </list>
     </option>
   </component>
@@ -125,6 +183,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -147,7 +208,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="maps" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -161,19 +222,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Inventory.java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -462,7 +516,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14938684" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21627648" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12820514" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -761,6 +815,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Limit.java" />
+    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_131/src.zip!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1790">
+          <caret line="149" column="8" lean-forward="false" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Derivative.java" />
+    <entry file="file://$PROJECT_DIR$/src/Skill.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1716">
+          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="150" column="16" lean-forward="false" selection-start-line="150" selection-start-column="16" selection-end-line="150" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/equipment.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -775,39 +860,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Limit.java" />
-    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_131/src.zip!/java/util/Comparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1790">
-          <caret line="149" column="8" lean-forward="false" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Derivative.java" />
-    <entry file="file://$PROJECT_DIR$/src/Skill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1716">
-          <caret line="103" column="0" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Resources.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3588">
-          <caret line="143" column="1" lean-forward="false" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+        <state relative-caret-position="1482">
+          <caret line="62" column="10" lean-forward="false" selection-start-line="62" selection-start-column="10" selection-end-line="62" selection-end-column="10" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
-          <folding>
-            <element signature="e#4471#4472#0" expanded="true" />
-            <element signature="e#4500#4501#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -815,14 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="149" column="18" lean-forward="false" selection-start-line="149" selection-start-column="18" selection-end-line="149" selection-end-column="18" />
           <folding />
         </state>
       </provider>

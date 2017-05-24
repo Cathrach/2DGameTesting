@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
- <tileset firstgid="129" source="../tilesets/ground2.tsx"/>
- <tileset firstgid="321" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="577" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="241" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="433" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="689" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="4">
    <properties>
@@ -28,17 +28,17 @@
  </layer>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAXkAFcmCB7s5kVB8ah5g8M8aoHBbh6tAABY76dBsAQAAA==
+   H4sIAAAAAAAAA2NgGAXkgK1MEDzYzTsFxaPmDQ7zqAUGu3m0AgBvnVEgsAQAAA==
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA6WTQQ5AMBBF25BwYUdwAQl7C67GEbpUYpKfb1pTEm/FvJk/2sY710bic7Er4PtS/tZbqArQatC1fvTx/s7MVtcYmcDXeH3/vdG3QA6Za7u94krN9tajJgZwYQ4r7BM4R2pfPDf+ixl8vfKtti/m3H8gp3VXufPCXskj2VJuzs5nL7jnmdygx0i9uD/Xdr48Y+5+lN5X5gCc1kh9sAQAAA==
+   H4sIAAAAAAAAA6WTyxGAIAxEjb+7B21NS7ADbdgSvAs6DOsKEnTGPUneJhtYpChWI/OdmuQp/J+rv/UaVRkK1SBrkG88zs/OrGU15lwrnrdE8t+VPfXg7foa5eI6Vqy3lEdNKsEL59CKeU48Rywv7ht30Ynn7YGzobxYNv9Z7kxtVm/3hbktZRhj8+x895CJu3ceWN8E/Ll2y9xn6n3kvlfWAZ+YME2wBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NggIBSRgaGDCBuh+IORgYUIMMEUZNOJAaZVYFkBja9IDVNBHA5FFdA3VSKRy9IzSQCGNk8mDkwfjua2sloYYANlDOiYpg56OFHLICFP654wAdAcUQOIFcftc2gpnnI+mFsYs0kpA4kj0sNIb3ujBDsQWb6QAeSQPukgFiaCdVMcsNPE6hPC4i1gTgV6k5i8zw2bAk0xwqIraHuiQCKfaIAAwC9GsWTsAQAAA==
+   H4sIAAAAAAAAA2NggICnjAwMN4D4OxT/YGRAAT1MEDXXicQgs14gmYFNL0jNJwL4ORS/gLrpKR69IDVMTPgxsnkwc2D872j6mZkYCILnjKgYZg56+BELYOGPKx7wgR4i3EtNfdQ2g5rmIeuHsYk1k5A6kDwuNYT0bmeE4B1kpg900Am0rwuIu5lQzSQ3/GYC9c0C4tlAfBXqTmLzPDa8EmjOKiBeDXXPCaBYEhP5GABvr43JsAQAAA==
   </data>
  </layer>
 </map>

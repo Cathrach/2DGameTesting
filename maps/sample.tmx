@@ -3,37 +3,37 @@
  <properties>
   <property name="Blocked" value="true"/>
  </properties>
- <tileset firstgid="1" name="ground" tilewidth="32" tileheight="32" tilecount="128" columns="8">
-  <image source="../tilesets/ground.png" width="256" height="512"/>
-  <tile id="53">
+ <tileset firstgid="1" name="ground" tilewidth="32" tileheight="32" tilecount="240" columns="15">
+  <image source="../tilesets/ground.png" width="506" height="512"/>
+  <tile id="95">
    <properties>
     <property name="encounterChance" value="1"/>
     <property name="encounterInfo" value="0"/>
    </properties>
   </tile>
-  <tile id="76">
+  <tile id="139">
    <properties>
     <property name="encounterChance" value="1"/>
     <property name="encounterInfo" value="0"/>
    </properties>
   </tile>
-  <tile id="125">
+  <tile id="230">
    <properties>
     <property name="entryInfo" value="1_3_3"/>
    </properties>
   </tile>
-  <tile id="126">
+  <tile id="231">
    <properties>
     <property name="entryInfo" value="1_3_3"/>
    </properties>
   </tile>
-  <tile id="127">
+  <tile id="232">
    <properties>
     <property name="entryInfo" value="1_3_3"/>
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="129" name="walls" tilewidth="32" tileheight="32" tilecount="128" columns="16">
+ <tileset firstgid="241" name="walls" tilewidth="32" tileheight="32" tilecount="128" columns="16">
   <image source="../tilesets/walls.png" width="512" height="256"/>
   <tile id="2">
    <properties>
@@ -56,7 +56,7 @@
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="257" name="objects" tilewidth="32" tileheight="32" tilecount="16" columns="4">
+ <tileset firstgid="369" name="objects" tilewidth="32" tileheight="32" tilecount="16" columns="4">
   <image source="../tilesets/!$AN-Crates.png" width="128" height="128"/>
   <tile id="0">
    <properties>
@@ -89,7 +89,7 @@
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="273" name="items" tilewidth="32" tileheight="32" tilecount="24" columns="4">
+ <tileset firstgid="385" name="items" tilewidth="32" tileheight="32" tilecount="24" columns="4">
   <image source="../tilesets/itemTileset.png" width="128" height="192"/>
   <tile id="0">
    <properties>
@@ -223,27 +223,27 @@
  </tileset>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAW0BoKMA+2CwQFER8NhFFAIAJLjO7CwBAAA
+   H4sIAAAAAAAAA2NgGAW0Bo2MA+2CwQFaR8NhFFAIACGlHcewBAAA
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgHMVUx9o48HA1D93cgQ7/UTw8MQBY4zhZsAQAAA==
+   H4sIAAAAAAAAA2NkYGBgHMVUx3448HA1D93cgQ7/UTw8MQDUlDyksAQAAA==
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAXUAL4D7QA6A7OBdsAoGJEAAP3FulywBAAA
+   H4sIAAAAAAAAA2NgGAXUAD0D7QA6g4SBdsAoGJEAABQg9w2wBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAXNBDCpYAoan5kRwZ5Mhnn49AwW82AYnxhyOIyCUUAOAAB92EKAsAQAAA==
+   H4sIAAAAAAAAA2NgGAWfCWBSAQsjKr8Yic+MJkcMwKdnsJgHw/jEiskwexSMAmQAAAzony6wBAAA
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgwA/qgLgeiBsIqBsFo2AUjAJaAwAPG0i2sAQAAA==
+   H4sIAAAAAAAAA2NgwA+eA/ELIH5JQN0oGAWjYBTQGgAAQ68wu7AEAAA=
   </data>
  </layer>
 </map>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
- <tileset firstgid="129" source="../tilesets/ground2.tsx"/>
- <tileset firstgid="321" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="577" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="241" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="433" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="689" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="11">
    <properties>
@@ -28,22 +28,22 @@
  </layer>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAXDGUQxQfCoeYPDvKEMfJgwMb3NAwDNa/uksAQAAA==
+   H4sIAAAAAAAAA2NgGAXDGZxiguBR8waHeUMZ7GHCxPQ2DwAtV/iPsAQAAA==
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA7XS0QnAIAwE0AiFdgAnd4NO4Ui6QfPZfigc4SKhtNCAWH2ewS4i/cc6ksjzubWnb5yoydZH1npmxFmd317eHfNE7zOtCmdXx+zO/DaqPJWHkcY4mxzV6RuaW6AK5PVysnMU9pzGXPVsZmf9U+gZmgX2MS+ZMc6peQ+YsTkey6fERG9aF/HsHP5DP4OXHWv1ppWY02MZrHcD3EHNZ7AEAAA=
+   H4sIAAAAAAAAA7WS0Q2DMAxE46gLdIX8MFLYoN4AxieoWFzD2URVK3ESMs67y4lZUpr/qLWpPa6WH3FGmWx/ZNdjjnAi//rl3ZeAecea5PSexL8jmz/SW7m9l4Ox75RDmGNns96QabxIGfJ6OZmPynnm2XlFnVl21p9CZ8jMcI7xbMZ8FeZVPjNWh8fyqVyZyDPWi/TXz/Ab8gt0WBxW9E8rYRqPZeh5G7J4AH2wBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA42Ty1ECQRCGd7ghJICSABCBelcisAjAVwD4iGA1BSQCIAI0AjQCH4e9oiYgcvCj2Cl/unq3mKqvdran55vundpJSJJWJUna0IFtRln+E7594gdwmK9fEbtw6If1uua/EnuDd/iAl/Dvjp5LuHE4F2ccc94/4Qu+zfnRcwt3DteO84f5An5hac6PnnvJHzB/gCGk4oz9V+l5B2pQr2yer54maxnvIxjDJF+LzqL+i0Yzv5sp+Y9hfW9xpNL/SfD36VxjM/Kf5d5s/2U1Wrd3lu3fq7HMq7HV97T9pwW+TGIN9u7Cnul/9dT+4x71HYdNuiX/n/d9rc/W0nP+P+vS/CPyT8VnaznLa1SPumy+/XZeLdZZlJ85d/EH/q9IuLAEAAA=
+   H4sIAAAAAAAAA42Ty00DMRCG174BFUAqACoAKghwyDWBBng0wKMBQhoAKgDuIRUgCuCRAsKjgoUj3ypr6d9hvMLSp7Xs8TcztrYTi+IKruEG/jPa4tdZu4U7uK/330NRvDnMwnxf47uwDTuwC1uSI3mm8OnwKs40+pwfwB7sx2b+5PmCb4cPx3mA4xCO4Dg28yfPj8QvELMIS1CKM/V/wvopnMF5bOZXz4i9HizDCnTqe0nOXP+5MarPr/Jdi/N3S6OU/h+Df07nurbBfFPezfbfVqN1e7ls/16NbV5dq+7T9l9mfD1xXDAfwqXpv/pq/+mM+h5Ck0nI/0/e/VqfreUp/P3/rEvjx8Q/i8/W8lLXqB512Xh7d14t1pmLr+7P+n4BjrZG4rAEAAA=
   </data>
  </layer>
  <layer name="Shade" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA4thYmCIGcWjeBSP4iGAAWrAsrywBAAA
+   H4sIAAAAAAAAAzvDxMBwZhSP4lE8iocABgCT0QpesAQAAA==
   </data>
  </layer>
 </map>

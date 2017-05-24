@@ -2,13 +2,16 @@
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
  <tileset firstgid="241" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="497" source="../tilesets/walls.tsx"/>
- <tileset firstgid="625" source="../tilesets/objects2.tsx"/>
- <tileset firstgid="881" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="497" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
-  <tile id="5">
+  <tile id="4">
    <properties>
-    <property name="entryInfo" value="house_3_11_11"/>
+    <property name="entryInfo" value="map_33_-16_0"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="entryInfo" value="map_35_0_11"/>
    </properties>
   </tile>
  </tileset>
@@ -18,11 +21,8 @@
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
-  <properties>
-   <property name="entryInfo" value="house_3_"/>
-  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBQMJlDGDMGD1byBBAAUPHc0sAQAAA==
+   H4sIAAAAAAAAA2NgQABmJkxMCaC2eaNg+ICvjBA8UswbBdQBAD9+ltCwBAAA
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
@@ -32,12 +32,12 @@
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA/NnYGDwH8WjeBSP4iGAAXwwScWwBAAA
+   H4sIAAAAAAAAA+NgYGDgGMWjeBSP4iGAAWoSN6uwBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAwtnZGAIH8VUxdJMDAwyTIRpYs3bDFS7hQlBawOxDhaaWPMOA9UeYULQuACx5q0BmrEWiNcxIdjo/HUkuO8zHjfBwBUSzJNlJmzeEyqb94UE89AxqeFPb/MGEgMA74HJhbAEAAA=
+   H4sIAAAAAAAAA62SOw6EMAxEyZGAC/CRli0p+JUUwG65969wBBHRyPaGiJFeE+SXifBokmQkJoLLcH6/i+Tb6Hx5yPejs9Qczg+g3bESX6FfeTozYFO8tlturk6cswJS8Dpct1roJ6UEr8PvFhPsPind/LcXgXdKe4Jphf//zxfaQwr6uB5SlxnOXsoeh8Y5rasjeuId8UY733h03j5rTpzj5jn6yDlkB1vhiQywBAAA
   </data>
  </layer>
 </map>

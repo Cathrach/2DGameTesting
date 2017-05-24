@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
- <tileset firstgid="129" source="../tilesets/ground2.tsx"/>
- <tileset firstgid="321" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="577" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="241" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="433" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="689" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="4">
    <properties>
@@ -28,17 +28,17 @@
  </layer>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgwA6CmVAxpYDa5o2CUYAMXJkgeNS84WkeDAAALiLHwLAEAAA=
+   H4sIAAAAAAAAA2NgwA4OM6FiSgG1zRsFowAZbGWC4FHzhqd5MAAAwJuR6bAEAAA=
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA9WSQQqAMAwEtyCoL9erfsYntT/wqqUphqVpVbx4GEJTMtE0AUBQDA5wEjskesnFGNAm1nqkmsyCy7dKbidn7r0LTuWYjtB3sXYr1NQYiSe1f/TV5qfR7/rEZzl5h6bzPN98Y8u5KTfneA9bTl/wWviGtzVbT5H71Zwlt/W9PIOa+80u8X9YPb/gADPYKRuwBAAA
+   H4sIAAAAAAAAA9WT0Q2AIAwFwTCAWzgSbMAIsLl+CormUaiA8cfEi0mh16aAkUIYwAfCd/yVOHEp5shejpirU84N+Ka0ZmXu9BC30EfmSSgCrsXchcnjmAkjuX/0Pc0PwXMd8XFOeofWwNZ5xpzzOmsnyxi9hy2nrjg4cG/N25qtJj3Sek/Ompvrt3iLL3rtmQPWqdX8gh37oub3sAQAAA==
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA71TwQ3CMAysOweLAHugPngXBigpEwAzwAawAWxQpoEJaitEda5O2hcnnZpYvrs0cjoqijdTo/rtF+VQ20CPxpL7Vsx1GddFL6woruX8dGZYH7h3p7g3tDXXGor1qGuUvlU8Gn6OvCfmal2t9HP8WqNP792f/Bz4yZ2l/M6KLlG/wL0LTjT2xP+Qnivzlpkt7MfcLWjvvH9k/PCcKQTfJ39fNK7PQZh/jc54bzn9FPRsI3Jntd6Z4EueOPtIK8/KpdLzQ4O3xam8wB5oLBFGsAQAAA==
+   H4sIAAAAAAAAA72TwQ3CMAxF6xxhA9gANijTwAbswSLAHqgHzoUBSsoEpUdsRRHur5P2xJe+2lr+z2mUlK4odmytisLzpOo3KpI6c9+FfQWO5MUVDWs5np4Z31/c+1B+Gtmaaw0N85hrVL5Vfhs8T4GJc3WuVvk5vNbo09/+TzwPPNmzFO+j7BP1HvZd1NGYif8hPQvOLSGbUmfMvQNzxax1hofrTClyN9y/deP6HMXzr1Ua9y2Xn5I+26jcWq17Jjq4YDz7aGueNffogvfux7Y8NS/6C2Fv1aewBAAA
   </data>
  </layer>
 </map>
