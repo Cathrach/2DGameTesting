@@ -3,16 +3,16 @@
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
  <tileset firstgid="129" source="../tilesets/walls.tsx"/>
  <tileset firstgid="257" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="513" name="objects" tilewidth="32" tileheight="32" tilecount="28" columns="7">
-  <image source="../tilesets/objects.png" width="224" height="128"/>
+ <tileset firstgid="513" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+  <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="5">
    <properties>
     <property name="entryInfo" value="house_7_12_7"/>
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="541" source="../tilesets/objects2.tsx"/>
- <tileset firstgid="797" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="548" source="../tilesets/objects2.tsx"/>
+ <tileset firstgid="804" source="../tilesets/ground2.tsx"/>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
@@ -35,7 +35,7 @@
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA0tnZGBIHyL4PQMDwwcG0mlc5v0HyjGQQeMyj1wwkOZtZ2Jg2AHFO5kGn/uGs3mE7KFWvqG2eQOJAZZ5fnSwBAAA
+   H4sIAAAAAAAAA0tnZGBIHyL4PQMDwwcG0mlc5v0HyjGQQeMyj1wwkObtY2Jg2A/FB5gGn/uGs3mE7KFWvqG2eQOJAb/YKR+wBAAA
   </data>
  </layer>
 </map>
