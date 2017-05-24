@@ -127,7 +127,8 @@ public class Resources {
         DefiniteIntegral definite = new DefiniteIntegral();
         IndefiniteIntegral indefinite = new IndefiniteIntegral();
         ImproperIntegral improper = new ImproperIntegral();
-        enemy_db = new Enemy[]{limit, derivative, definite, indefinite, improper};
+        SolidRevolution solid = new SolidRevolution();
+        enemy_db = new Enemy[]{limit, derivative, definite, indefinite, improper, solid};
 
         // maps
         BufferedReader mapReader = new BufferedReader(new FileReader("db/maps.txt"));
@@ -139,9 +140,12 @@ public class Resources {
 
         // check if there's a "save"; if not, make a new entity
         Resources.party = new ArrayList<>();
-        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Heroine", "sprites/testing_player.png")));
+        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Heroine", "sprites/heroine.png")));
+        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend A", "sprites/heroine.png")));
+        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend B", "sprites/heroine.png")));
+        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend C", "sprites/heroine.png")));
         // similarly for other databases
-        Inventory.addItem("#2 Pencil", 1);
+        Inventory.addItem("#2 Pencil", 4);
     }
 
     public static int getItemID(String itemName) {

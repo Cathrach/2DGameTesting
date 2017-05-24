@@ -3,6 +3,7 @@
  */
 
 import org.newdawn.slick.*;
+import org.newdawn.slick.geom.Polygon;
 import org.newdawn.slick.state.*;
 
 import java.util.ArrayList;
@@ -99,20 +100,29 @@ public class Combat extends BasicGameState {
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         // draw background
         // display enemies on one side and players on another
-        for (Enemy enemy : currEnemies) {
+        for (int i = 0; i < currEnemies.size(); i++) {
+            Enemy enemy = currEnemies.get(i);
             if (!enemy.isDead) {
-                enemy.battler.draw(50, 50);
+                enemy.battler.draw(50, 50 + i * 100);
             }
         }
-        for (Entity entity : Resources.party) {
+        for (int i = 0; i < Resources.party.size(); i++) {
+            Entity entity = Resources.party.get(i);
             if (entity != null && entity.battleEntity.currHP > 0) {
-                entity.battleEntity.battler.draw(400, 50);
+                entity.battleEntity.battler.draw(400, 50 + i * 100);
             }
         }
         // if player turn, render the skill menu
         if (isPlayerTurn) {
             if (isSelectingTarget) {
+                int x_value;
+                if (possibleTargets.get(0) instanceof Enemy) {
+                    x_value = 50;
+                } else {
+                    x_value = 400;
+                }
                 // stick arrow on top of target
+                g.draw(new Polygon(new float[]{x_value, 40 + 100 * highlightedTargetID, x_value + 10, 40 + 100 * highlightedTargetID, x_value + 5, 45 + 100 * highlightedTargetID}));
             } else if (isSelectingItem) {
                 // draw part of the item menu, rectangle around highlighted menu
                 // make sure to draw only the consumables!
@@ -373,6 +383,11 @@ class CombatKeyboard implements KeyListener {
                         // Combat.ATTACK
                         case Combat.ATTACK:
                             Combat.selectedSkill = Combat.currMove.skills.get(0);
+                            for (Enemy enemy : Combat.currEnemies) {
+                                if (!enemy.isDead) {
+                                    Combat.possibleTargets.add(enemy);
+                                }
+                            }
                             Combat.isSelectingTarget = true;
                             break;
                         case Combat.DEFEND:

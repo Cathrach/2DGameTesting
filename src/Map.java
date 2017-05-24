@@ -67,11 +67,22 @@ public class Map {
         for (String index : data) {
             switch (Integer.parseInt(index)) {
                 case 0:
-                    Combat.currEnemies.add(new Limit(Resources.enemy_db[Integer.parseInt(index)]));
+                    Combat.currEnemies.add(new Limit(Resources.enemy_db[0]));
                     break;
                 case 1:
-                    Combat.currEnemies.add(new Derivative(Resources.enemy_db[Integer.parseInt(index)]));
+                    Combat.currEnemies.add(new Derivative(Resources.enemy_db[1]));
                     break;
+                case 2:
+                    Combat.currEnemies.add(new DefiniteIntegral(Resources.enemy_db[2]));
+                    break;
+                case 3:
+                    Combat.currEnemies.add(new IndefiniteIntegral(Resources.enemy_db[3]));
+                    break;
+                case 4:
+                    Combat.currEnemies.add(new ImproperIntegral(Resources.enemy_db[4]));
+                    break;
+                case 5:
+                    Combat.currEnemies.add(new SolidRevolution(Resources.enemy_db[5]));
                 default:
                     break;
             }
