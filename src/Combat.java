@@ -193,10 +193,11 @@ public class Combat extends BasicGameState {
 
     public void updateDead() {
         // assuming no resurrection; remove dead from turn order list
-        for (int j = 0; j < Resources.party.length; j++) {
-            if (Resources.party[j] != null && Resources.party[j].battleEntity.currHP <= 0) {
-                turnOrder.remove(Resources.party[j].battleEntity);
-                Resources.party[j] = null;
+        for (int j = 0; j < Resources.party.size(); j++) {
+            if (Resources.party.get(j) != null && Resources.party.get(j).battleEntity.currHP <= 0) {
+                turnOrder.remove(Resources.party.get(j).battleEntity);
+                Resources.party.remove(j);
+                j--;
             }
         }
         for (Enemy enemy : Combat.currEnemies) {

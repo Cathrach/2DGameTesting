@@ -13,7 +13,7 @@ public class Enemy extends BattleEntity {
 
     public BattleAction decideAction() {
         // default: just attack
-        return new BattleAction(this, skills.get(0), Resources.party[0].battleEntity);
+        return new BattleAction(this, skills.get(0), Resources.party.get(0).battleEntity);
     }
 
     public Enemy() {

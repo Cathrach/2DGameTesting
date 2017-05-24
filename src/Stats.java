@@ -35,8 +35,8 @@ public class Stats {
         RoundedRectangle skillFrame = new RoundedRectangle(365, 30, 275, 420, 10);
         g.draw(skillFrame);
         g.drawString("SKILLS", 380, 35);
-        for (int i = 0; i < Resources.party[0].battleEntity.skills.size(); i++) {
-            Skill skill = Resources.party[0].battleEntity.skills.get(i);
+        for (int i = 0; i < Resources.party.get(0).battleEntity.skills.size(); i++) {
+            Skill skill = Resources.party.get(0).battleEntity.skills.get(i);
             skill.getIcon().getScaledCopy(20, 20).draw(380, 60 + 25 * i);
             g.drawString(skill.getName(), 410, 60 + 25 * i);
         }

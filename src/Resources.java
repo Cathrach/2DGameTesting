@@ -3,13 +3,14 @@ import org.newdawn.slick.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Dictionary;
 /**
  * Created by serinahu on 5/9/17.
  */
 public class Resources {
     static int money;
-    static Entity[] party;
+    static ArrayList<Entity> party;
     static Enemy[] enemy_db;
     // everything has an ID which corresponds to their position in this array!
     static Map[] map_db;
@@ -38,7 +39,7 @@ public class Resources {
                     Float.parseFloat(effectData[10]), // ratio heal
                     Integer.parseInt(effectData[11])); // poison damage
         }
-        skill_db = new Skill[9];
+        skill_db = new Skill[10];
         skill_db[0] = new Skill("Solve for X", new Image("skills/attack.png"),
                 0, 0, 0, 1, 0, 1, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{}, new TargetType[]{});
@@ -123,9 +124,10 @@ public class Resources {
         // enemies
         Limit limit = new Limit();
         Derivative derivative = new Derivative();
-        enemy_db = new Enemy[2];
-        enemy_db[0] = limit;
-        enemy_db[1] = derivative;
+        DefiniteIntegral definite = new DefiniteIntegral();
+        IndefiniteIntegral indefinite = new IndefiniteIntegral();
+        ImproperIntegral improper = new ImproperIntegral();
+        enemy_db = new Enemy[]{limit, derivative, definite, indefinite, improper};
 
         // maps
         BufferedReader mapReader = new BufferedReader(new FileReader("db/maps.txt"));
@@ -136,8 +138,8 @@ public class Resources {
         }
 
         // check if there's a "save"; if not, make a new entity
-        Resources.party = new Entity[4];
-        Resources.party[0] = new Entity(337, 254, 1, 0, new Ally("Heroine", "sprites/testing_player.png"));
+        Resources.party = new ArrayList<>();
+        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Heroine", "sprites/testing_player.png")));
         // similarly for other databases
         Inventory.addItem("#2 Pencil", 1);
     }

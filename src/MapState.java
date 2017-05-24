@@ -19,7 +19,7 @@ public class MapState extends BasicGameState {
     }
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         currentMap = Resources.map_db[currentMapID];
-        leader = Resources.party[0];
+        leader = Resources.party.get(0);
         sinceLastEncounter = 0;
     }
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {

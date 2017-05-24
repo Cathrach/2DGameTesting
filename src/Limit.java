@@ -20,6 +20,6 @@ public class Limit extends Enemy {
 
     @Override
     public BattleAction decideAction() {
-        return new BattleAction(this, skills.get(0), Resources.party[0].battleEntity);
+        return new BattleAction(this, skills.get(0), Resources.party.get(0).battleEntity);
     }
 }
