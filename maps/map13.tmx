@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
- <tileset firstgid="129" source="../tilesets/ground2.tsx"/>
- <tileset firstgid="321" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="577" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="241" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="433" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="689" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="4">
    <properties>
@@ -28,7 +28,7 @@
  </layer>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWDCUQxQfBgM8+VCYKpbR61wEgzbzAAHyYIpqd5AApRwhewBAAA
+   H4sIAAAAAAAAA2NgGAWDCZxiguDBZt5WJgimtnnUAiPNvMEA9jBBMD3NAwCfiT2tsAQAAA==
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
@@ -38,17 +38,17 @@
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA62S0QnDMAxEZSi0A2SnztUVukGnyEjWBvFnHaKDwwhVNoU8MLbvdLKiIqKdRxHp3xL3cnnohJc6eJ4ZXYTnl9Ghh9rZhx6jPKxD3XNvJ011MoHNzqutef9mbHQvmoOSZoY31fc8QaMcyIpMZ7+fRK3xHZtpuTesX0ZUBx6jJ7yOH3NvyXv/YMy58l97nit+R+A9kzHzbjwP5lkuoll9Abo4VxywBAAA
+   H4sIAAAAAAAAA62SAQqAIAxFXXSBrhBBR8ob1A3qZp2rG6S0T2vJUgl6IeneNpcn53xgC4SnipUdvsDl6U3KmRNnkfLlxKGHKbxGevZo1SPjkHdjB2Lknvb1vB/p1feWGcQ5aw6R1pXTiPwpJ1jorgO1oqbYb5eRX9/jwncle8P6YKw8cGgnXPPH3HH269wf6Dpr/uuUs8Y3G+6SGnPuTc5DstOFNasTNQ4kR7AEAAA=
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA5WTzVECQRCFd/YmmoC6CSgRgPfVg2eKAAQMgL8I1BTUCNQI1AiACFQOXPlJgJ8Db8rt4m3bs5Sv6isGdvrt62amEkdRFVyAjouilsEt6Bk0QRt4veDzNVt7dQrq+uDeoEue7+BDZQjVPdB7WXeZZw0MwFBl8HXH6PsEnMa7uknATzyblEtnOIPPOSiDJM7XJvQbP+tSLq0K/T+J4am9JKPk0u8N1Vi+/5XV2771pfvlqmDmXtfu7zrk7VXP9kwKZsDic2DtaxgZH/H9CTwb2fkcsL6w9xv8gLHqXe7Qm/LzPfA5SN1ublMwA3OwcPne5Q59BmYrPjf0fIn1CqzBxuV7lzs0MvzSzEfP5AB5S+AQHNEsGtSDIOJMeiZbKc009bAEAAA=
+   H4sIAAAAAAAAA5WTwVXCQBCGd/emVABWgFSgVgByyBWwAZQGFBpA04BSQeAePXDmWYCJFmACFahH/n1mdHadxcf/3veySWb+zEx2E6PUHCxAoZV6FXgDa4EcvAOrOvIbRv2o2JG3AZ8CJfNswuvYuDWE8r60EvVRea7ACbxOjVuDzZvi2S24Y7VHRvYjz5zNxq/hHrkPYAZizydmz/i7ks3GV8L+Tyx4+l5UI9XlfzeUI/nuK6m3/9aP+punwD8kLfXfdcjb6rmKiVhNu3rk+0CKy4QaDxB3CGpCPN8HXG3cd8A56Bq3dzpDR16O7YHvg1T/zq2H+z4YgAvj9k5nqBXom3xeWF9DxF6CKzAybu90hs4Ev7Ty8WdyjesNGIMJy8tYDwSJ1+TPZAtxu7zmsAQAAA==
   </data>
  </layer>
  <layer name="Shade" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA4thYmCIGcWjeBSP4iGAAWrAsrywBAAA
+   H4sIAAAAAAAAAzvDxMBwZhSP4lE8iocABgCT0QpesAQAAA==
   </data>
  </layer>
 </map>

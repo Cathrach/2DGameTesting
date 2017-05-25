@@ -2,13 +2,16 @@
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
  <tileset firstgid="241" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="497" source="../tilesets/walls.tsx"/>
- <tileset firstgid="625" source="../tilesets/objects2.tsx"/>
- <tileset firstgid="881" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="497" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
-  <tile id="5">
+  <tile id="18">
    <properties>
-    <property name="entryInfo" value="house_3_11_11"/>
+    <property name="entryInfo" value="map_40_0_11"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="entryInfo" value="map_38_16_0"/>
    </properties>
   </tile>
  </tileset>
@@ -18,11 +21,8 @@
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
-  <properties>
-   <property name="entryInfo" value="house_3_"/>
-  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBQMJlDGDMGD1byBBAAUPHc0sAQAAA==
+   H4sIAAAAAAAAA2NgIAyYmSCYWoDa5o2CUTBSARcTBI8U8wD3ENX+sAQAAA==
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
@@ -32,12 +32,12 @@
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA/NnYGDwH8WjeBSP4iGAAXwwScWwBAAA
+   H4sIAAAAAAAAA6WTTw/BQBTEl0tTlIMLRa8IwUkVV/9vvv+HMY038bJ50i2HX95mJzPp20kT51wXtEAssw06IBGtL1harGapj8EEZGAAhiAFI6Uxz9IymfQuwFL0KZiBOXg2nGu6N+XZR/tS5d2Dg9xtQQ527pP1DfqOMum9g0L0E7gIV3DzdO7ta4XK19oD9OS9z0Yu8yyNXt0BZ9WuxOrP6iM0L7SP0Lw6ffCtLP2XPqwuqYf2Ue4QCcyLKuDu7GMNNuq+6r/w0e/JLlfqTp/rkovf/8Z/eAGFhGl9sAQAAA==
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAwtnZGAIH8VUxdJMDAwyTIRpYs3bDFS7hQlBawOxDhaaWPMOA9UeYULQuACx5q0BmrEWiNcxIdjo/HUkuO8zHjfBwBUSzJNlJmzeEyqb94UE89AxqeFPb/MGEgMA74HJhbAEAAA=
+   H4sIAAAAAAAAA7VSiQmAMAw0I/kNok5QnECdpDqpG9hggjHUmoIeHDS0OXK5FkUaDq7zCM/v3rATZ6GB513cWdGRRp+YZ8iY1Rne5nif4PQmucD9fjHqodcysFKsRX9JtcUzevWBq+Imej3VFs+W3THe9NBrrl7KM2rpXceykRk9zYizNXDtmhHLRmbUqhnxz/akxf05eoiWNGLeOTtZ66xjmfM+v8QfegdU4somsAQAAA==
   </data>
  </layer>
 </map>

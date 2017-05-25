@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
- <tileset firstgid="129" source="../tilesets/ground2.tsx"/>
- <tileset firstgid="321" source="../tilesets/walls.tsx"/>
- <tileset firstgid="449" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="705" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="241" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="433" source="../tilesets/walls.tsx"/>
+ <tileset firstgid="561" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="817" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="11">
    <properties>
@@ -32,17 +32,17 @@
    <property name="entryInfo" value="map_32_0_11"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgYGC4zIQfIwNK1JBr3igYBaNg4MEZJsKY1uYBAL4O7FywBAAA
+   H4sIAAAAAAAAA2NgYGBwZsaPkQElasg1bxSMglEw8MCGmTCmtXkAtptkY7AEAAA=
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NmYGBgphDLMlJuBjK2BponTWUzqe3GUfMGp3mMVDDLFmiINpJ5lJiJbBY1zEMPt8Fg3lQgnkamea1YzGpDwujmAQAkXFajsAQAAA==
+   H4sIAAAAAAAAA2NmYGBgphD3MlJuBjJeDTSvm8pmUtuNo+YNTvMYqWDWWqAhs5HMo8RMZLOoYR56uA0G81iBGtgYyTPvKxazvjEgMLp5AOPTpqmwBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA73T4Q1AMBAF4NZkFsEEmAA/+IsJsE43aBewh5cgqknbu0i85EUk8uXaHCNFNE0iRIt2if8bLc8agjfCmdA54N0mxVvgrOjmes471aOG46WRs3I9SrhehhlztPDMyvVKOBVaB7wdVUTT3UP3TvXlUM3YHmrL+LSH4vk/OJ4vt8X2Auf8Y74eHawnJUq+vQOqeKbXsAQAAA==
+   H4sIAAAAAAAAA/NgYiAI3gLVvAPi93jUujNBsAcR5v0FqvkHxP8JqCXWPF5mBgY+IOZnRhUvQNNLrHnEAlLM20CEuoF0HwicBao9B8Tncegh1by7QLX3gPg+HvNCgdiCSDPR0yF6mLpD+cSaSSgduiOJU5IOYWaRah4uADOLVPPQ8wOl5pHqvs+MDAxfGBE0McCCCdU8AJdaT7GwBAAA
   </data>
  </layer>
 </map>

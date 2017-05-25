@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
- <tileset firstgid="129" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="385" source="../tilesets/objects2.tsx"/>
- <tileset firstgid="641" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="241" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="497" source="../tilesets/objects2.tsx"/>
+ <tileset firstgid="753" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="0">
    <properties>
@@ -108,17 +108,17 @@
  </layer>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGNmglwmBB6N5o2DkgTYmCB6s5g0kAAATRXSXsAQAAA==
+   H4sIAAAAAAAAA2NgGNngLxMCD0bzRsHIA9+YIHiwmjeQAACNN/5TsAQAAA==
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA3NgYGBwGME4CYgTgTh51LxBYV4W1LxsKpk3iocXBgAMPBXKsAQAAA==
+   H4sIAAAAAAAAAytkYGAoHMF4GxBvBeLto+YNCvOOQs07Rqf4H8VDCwMAVReok7AEAAA=
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA3vOwMDwfARjZBDOSBgPpHmNTBCczoiJYXLkmIcNsJJpHgsO82CAFPOeMGLqXwkUOw/EFxghbFLMwwZAZtwH4gdUMg8dUJImqZ3GBzqvUQMDAEnEXXuwBAAA
+   H4sIAAAAAAAAAwtnZGAIH8EYGRxnJIwH0ryPTBB8nRETw+TIMQ8bKCXTvBIc5sEAKeaFYDFLEihmD8QOTBA2KeZhAyAz/IE4gErmkepffHZQO40PdF6jBgYAKHIadrAEAAA=
   </data>
  </layer>
 </map>

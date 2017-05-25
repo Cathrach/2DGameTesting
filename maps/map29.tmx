@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
- <tileset firstgid="129" source="../tilesets/objects2.tsx"/>
- <tileset firstgid="385" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="641" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="241" source="../tilesets/objects2.tsx"/>
+ <tileset firstgid="497" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="753" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="0">
    <properties>
@@ -103,22 +103,22 @@
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAVDDThA8SgYBSMNAACuMG3lsAQAAA==
+   H4sIAAAAAAAAA2NgGAVDDRRC8SgYBSMNAABIw83KsAQAAA==
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWEQC8TAg9G80YBbtDGhMCD0bxRQBoAAB84nx6wBAAA
+   H4sIAAAAAAAAA2NgGAWEwF8mBB6M5o0C3OAbEwIPRvNGAWkAAAsTvSCwBAAA
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA3NgYGBwGMV4cRIQJwJx8iAxL50Jgger+9BxFtS8bCqZN5B+obZ5o5g0DADaifIIsAQAAA==
+   H4sIAAAAAAAAAytkYGAoHMV48TYg3grE2weJedeZIHiwug8dH4Wad2w07kYxhRgAkn02vrAEAAA=
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA3vOyMDwfATjcCbCGBnQ27x0Jkz8BKjvCxA3AtlNJJqHC4DMZGWknnkwwIymhlLz0AEp5oH89oXK5sEwuj+JNW8Uk4YBTWt5j7AEAAA=
+   H4sIAAAAAAAAAwtnYmAIH8H4OBEYGdDbvOtYcAgjA0MKEH8Esj+RaB4uADKzlJF65sFAMSN1zUMHpJgH8lsKI3ZzyDUPhtH9Sax5o5g0DAB7zyYZsAQAAA==
   </data>
  </layer>
 </map>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
- <tileset firstgid="129" source="../tilesets/ground2.tsx"/>
- <tileset firstgid="321" source="../tilesets/walls.tsx"/>
- <tileset firstgid="449" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="705" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="241" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="433" source="../tilesets/walls.tsx"/>
+ <tileset firstgid="561" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="817" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="4">
    <properties>
@@ -29,17 +29,17 @@
  </layer>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAUjDRxjguCBNO8oEwRTC1DbvFEwOAEAh9SuJrAEAAA=
+   H4sIAAAAAAAAA2NgGAUjDZgxQ/BAmmfKDMHUAtQ2bxQMTgAAgRHiM7AEAAA=
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgHMVUw01M2MWvM1LPLDYyzERWq84EwcjmsRFpDjaMyzwQNiSA0f1FCFsSwNjCChcm17/UMGMUk4cBT9s2QbAEAAA=
+   H4sIAAAAAAAAA2NkYGBgHMVUw5+YsIu74xAnxyw2MsxEVjudCYKRzWMj0hxsGJd5IBxNAKP7ixAmxTxCZpLrX2qYMYrJwwAfW2ULsAQAAA==
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA63T0Q2CMBDGceimugEwAeVZE+RZx1EnABdQHEDf/Rq5cF4u4c7Q5J+mCf01JG0MWRYNFag0dJha8mrjuUP+rWW2ltdL7dBemS3nUdw7opMyX9A1//3W0gZtlTmNu9M8i/1pyPXN4fWoQCXbL9eWwb01BnkP9FowPf+b7r9mvrEep54Orw6zOQqD3lIVfB6Z/D1W7O43Dq8NsxmF8Y/HTenRW+oM3gds+BacsAQAAA==
+   H4sIAAAAAAAAA63TwQ3CMAwF0Dg+wzjABMACUAaAgWGDhgkaziActVaNWxQbYekr8sHPrZTkGEI2pKUkQyL2qXmdce9uCOBoz8XrlTwhhBdMT8s+jvQWlOXMuaZs1G5LrvQtN5iepQ5OcxU/50vpfu/wtuVO0GwS87q3lPT+UewdKeeK6fnf9ot5ob4ZcnJ4nTAbZfBbujs9NpMy+O4/HB7gaGZl/OJJU3v8lhDrxhscN0/MsAQAAA==
   </data>
  </layer>
 </map>

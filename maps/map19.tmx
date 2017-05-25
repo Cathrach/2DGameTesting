@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
- <tileset firstgid="129" source="../tilesets/ground2.tsx"/>
- <tileset firstgid="321" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="577" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="241" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="433" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="689" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="11">
    <properties>
@@ -23,7 +23,7 @@
  </layer>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYOBAFBMEj5o3dM3zYULFlAJ85gEA7qFslrAEAAA=
+   H4sIAAAAAAAAA2NgGAWjYODAKSYIHjVv6Jq3hwkVUwrwmQcAI0TtA7AEAAA=
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
@@ -33,12 +33,12 @@
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA53SSwrAIAwE0AiF9v6XNDeoyypVGoIzjS4G/PHERBURrSk1KZAzvedHrjrP8mWsRyxmlu61vTZf8Zi74zDX76nLqokcFGYqsGwdfI2Yy5zU++XHkVpZJ4O7WV/tuj13BMPMFYeZyPJv8+9HZhsX4PzVcGba/xLpATJn/28n3ru79wCaZ+PEsAQAAA==
+   H4sIAAAAAAAAA53TiwnAIAwEUIXuqBvUDXT8RlAIaXImQg+sn1eMtuaUKqVR6Dmmr/k7g1JYdr/HQmZbXl/vEQ+5Nw5y5VgV34yalmMFmXtcruF1kDVCLnJmSv63PbUayrrIufJ+Pu9xBpkRB5mWJfcm92+Zsz3/Ec051VAz+X3xnIFlavfvJtJ7174/0PRRubAEAAA=
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA5WTzQ3CMAyF3WzBzwLABMCdESoOPaLSASB0gpZ1gQVwpUS4T3YsLL2L8/zl1WqIfnWviK6gW0XFWgSiJWsV5v2J1bEeoNbhbpizZe2Ad2Z/r/AicJG9Z86BdUy87OkcXoTMVt7s6ZNGkMaLhT1I3lO5cwBu5uEeMlfySjVAZsxdp/nskdnWQWdKtsWzqnH4uIf6jzxe1lHwGienVZjB+170a/dKj8aT59ZbtnaDPJyf3ssb1BrME/cuiWfNf1ghzPUy/gvZ+wLYLj9NsAQAAA==
+   H4sIAAAAAAAAA5WTzQ3CMAyF3WwKbMAW/CwATADcGaHi0CMqHQBKJ2h7xJUS4T7ZsbD0Ls7zlxdLIfrVuyB6gl4FZWsTiLasXZj3J1bD+oBqh3tgzpF1At6d/Z3Ca4GL7DNzLqxr5CVP4/BayGzlTZ4uagBpvDazB8kblTt74CYe7iFxJS9XPWTG3GWcTx6ZbR90pmRbPKsqh497KP/I42UdBK9yclqFGbz3ol+7V3o0njy3/rK1G+Th/PRflmGu2mDeuPeIPGt+xVqDFkF/l+x9ATkdfiKwBAAA
   </data>
  </layer>
 </map>

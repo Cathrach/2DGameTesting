@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" source="../tilesets/ground.tsx"/>
- <tileset firstgid="241" source="../tilesets/ground2.tsx"/>
- <tileset firstgid="433" source="../tilesets/walls.tsx"/>
- <tileset firstgid="561" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="817" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+ <tileset firstgid="241" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="497" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="4">
    <properties>
-    <property name="entryInfo" value="map_12_-16_0"/>
+    <property name="entryInfo" value="house_37_7_2"/>
    </properties>
   </tile>
   <tile id="5">
    <properties>
-    <property name="entryInfo" value="house_11_10_11"/>
+    <property name="entryInfo" value="house_36_3_5"/>
    </properties>
   </tile>
   <tile id="11">
    <properties>
-    <property name="entryInfo" value="map_6_0_-11"/>
+    <property name="entryInfo" value="map_34_0_-11"/>
    </properties>
   </tile>
  </tileset>
@@ -29,22 +27,25 @@
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGAWjYBRQG3BA8SigLgAAthKs3rAEAAA=
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
+  <properties>
+   <property name="entryInfo" value="map_34_0_-11"/>
+  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NggABGJDwKaAPMmCF4sJqHD5gyQ/BIMW8UQIANM2mY1uYBABDabUqwBAAA
+   H4sIAAAAAAAAA2NgGAWjgDD4ygjBg9U8SsE3RggerOYNBPjDiIkH2jwAt5rccrAEAAA=
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgBOJyJgRmZBg4HM6InY1LDRsBTIodhMwiZCYhs6YzQTC6OLo/0fm43IHLPHzhS6wfifU7peaRE/6E3Aczk1p+pMQ8fGmEVDMJ5RlS3EkoX5ASz8ToJzY8CekFAKbbrvGwBAAA
+   H4sIAAAAAAAAA+NgYGDgGMWjeBRTFbszQvBAu2O4YQBXp65PsAQAAA==
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA62USw6CMBCGS1n53KvRvRofK72BR1APYJQTIHfwBMoJlBOoJ1A3bH1cReM/SRuaUhIB/+TLMDCd/rSFOWfMAVuwAz5Yp2QJJqBsM7ZC9MAeHEAAdL2tOB8reu6KfiRPxCPiCZxFTnNJVXicqjIv1Up/6j3TNamJ2haPfMlcrZ8in/H4WD0n9VDX58k5idaQ1m6jzWPSADVDnpyTXLE3vmG98igwvHMemfYzj/7VZwRfY8PZTaMCvBRByY7OM4k8ZvFZw5g6aGj9sqqNPh3QVfpdEK/gxtP5lHWh6EPfxwLcwQM8wetHz+qc1C9U/jFfWIdNxrAEAAA=
+   H4sIAAAAAAAAA62TvQ5AQBCEeSS8gJ8EpQKnVPgrvX9lEyfZbHZYYZKvIDez4+64MAgcYCZWwHTjQ/6NiAHLQ/as+BMiB0QiW2YOir8gpFL/LhPZV1/eTfNLNcqajPXl3b7o6ou6pUr+bpiJumnfhcTnDMZ9s6j0e/dXVkt0RG3MHMPTV7H1lX9uxd2zzJc+BO+onWFpzJH/B1L/Musu7223Az3KWRawBAAA
   </data>
  </layer>
 </map>
