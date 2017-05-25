@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" source="../tilesets/ground.tsx"/>
+ <tileset firstgid="241" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="433" source="../tilesets/walls.tsx"/>
+ <tileset firstgid="561" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+  <image source="../tilesets/objects.png" width="224" height="160"/>
+  <tile id="11">
+   <properties>
+    <property name="entryInfo" value="map_41_0_-11"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="596" source="../tilesets/objects2.tsx"/>
+ <layer name="Containers" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+  </data>
+ </layer>
+ <layer name="Entrances" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMAgiwYRrcGAAe1SJIsAQAAA==
+  </data>
+ </layer>
+ <layer name="Encounters" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+  </data>
+ </layer>
+ <layer name="Background" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+tjYGDow4HjGRkYEhhx8/FhGSBWRxOrB+ptYMTNB2FNINbCYp4UEJvhsOsS0IyLONxlAcSWWMStgNgVid9JAMPUuQOxBxbzvIDYmwzz+IHYjYjwJNY8cvA2IN5Ohr58YJj3QzEh82DqCvCkH1D6ioNi5LiFmYccxzB1+NIjNvMeIZn3kETzQOl1PZKZMHwUKHeMAVN8A5b0jc3MCUh4PZp+ZDlCZhEKA2Lz7mA2DwAk2iGKsAQAAA==
+  </data>
+ </layer>
+ <layer name="Blocked" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA7vIyMBwCYgvYqFhABcfHz2fiYFhIRPp5mHTB6LXA8U2YhEH0XLMDAzyzNjdgUsfujgy0AOapc+MKkaJedgAMf5Cpok1D51+CMSPsNAweWSzLxKhj5D9uMwjFcD0sSDFA4hNrnkw94sgmQdiE/IXIaDCjJ09CmgDALwm4XKwBAAA
+  </data>
+ </layer>
+</map>

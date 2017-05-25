@@ -4,14 +4,14 @@
  <tileset firstgid="241" source="../tilesets/walls2.tsx"/>
  <tileset firstgid="497" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
-  <tile id="4">
-   <properties>
-    <property name="entryInfo" value="map_37_-16_0"/>
-   </properties>
-  </tile>
   <tile id="18">
    <properties>
-    <property name="entryInfo" value="house_35_15_9"/>
+    <property name="entryInfo" value="map_40_0_11"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="entryInfo" value="map_38_16_0"/>
    </properties>
   </tile>
  </tileset>
@@ -22,22 +22,22 @@
  </layer>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGBqAmQmBB6N5o2AUjAIE+MoIwdQ2DwBGluL6sAQAAA==
+   H4sIAAAAAAAAA2NgIAyYmSCYWoDa5o2CUTBSARcTBI8U8wD3ENX+sAQAAA==
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGJmAHQmPglEwCoYGAAB4GT0MsAQAAA==
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3RuQ4BQQCH8RnNxF1oHEvrbJA4t3V3wqvgCfDYPjGbjLEYG4VC8ctO8/8ymVVCCPVGHAkkkUIaGWSRRwFFlBxaKmTjoYwKqqihjoax2Ukh9jjIx569aaKl+z30McDQ2BzpnHA2ejl9tjcjjOFjgili8r73SrCZYY4Fllhhg61j55lP3t7FOuSN/35Th3/VlrdvoKtF6dktW5T7fat1dQFQmb+zsAQAAA==
+   H4sIAAAAAAAAA6WTTw/BQBTEl0tTlIMLRa8IwUkVV/9vvv+HMY038bJ50i2HX95mJzPp20kT51wXtEAssw06IBGtL1harGapj8EEZGAAhiAFI6Uxz9IymfQuwFL0KZiBOXg2nGu6N+XZR/tS5d2Dg9xtQQ527pP1DfqOMum9g0L0E7gIV3DzdO7ta4XK19oD9OS9z0Yu8yyNXt0BZ9WuxOrP6iM0L7SP0Lw6ffCtLP2XPqwuqYf2Ue4QCcyLKuDu7GMNNuq+6r/w0e/JLlfqTp/rkovf/8Z/eAGFhGl9sAQAAA==
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA52T7Q2CQAyGqXEBdQLkh7/vbgE+FiC6ANEFDLM7gG1sY7m0HNrkzUE5Ht6WXoSqio4S6o66obaGx9K8xx88K0e8mbXFI+CenqVDcoPyuuaROKRj4ZsnxSOP18wnMXaoF14fcH2u8OiZ5sWsl8CcCdcWVaP2P/gTjzN8WRIj3gf4eBQvW3iki3pPR3Dymt2s8NrMS8c11463hufF442Ox8jMs5KwLJ7st3ovvJDtTwVeMOqiujulHpZzPBR4Vv8nzlu8BMvzYfGkbv0Pc5Z11jyeNTtvLUd7iLAEAAA=
+   H4sIAAAAAAAAA7VSiQmAMAw0I/kNok5QnECdpDqpG9hggjHUmoIeHDS0OXK5FkUaDq7zCM/v3rATZ6GB513cWdGRRp+YZ8iY1Rne5nif4PQmucD9fjHqodcysFKsRX9JtcUzevWBq+Imej3VFs+W3THe9NBrrl7KM2rpXceykRk9zYizNXDtmhHLRmbUqhnxz/akxf05eoiWNGLeOTtZ66xjmfM+v8QfegdU4somsAQAAA==
   </data>
  </layer>
 </map>

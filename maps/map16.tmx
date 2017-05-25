@@ -28,7 +28,7 @@
  </layer>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgwA0OM2FiSgC1zaM32MaEwIPRPGQzR8EooBbYw4SJB8o8AMIaGiOwBAAA
+   H4sIAAAAAAAAA2NgwA0OM2FiSgC1zaM32MaEwIPRvFEwCmgB9jBh4oEyDwCdn04ksAQAAA==
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">

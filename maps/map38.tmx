@@ -6,12 +6,12 @@
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="4">
    <properties>
-    <property name="entryInfo" value="map_37_-16_0"/>
+    <property name="entryInfo" value="map_39_-16_0"/>
    </properties>
   </tile>
-  <tile id="18">
+  <tile id="25">
    <properties>
-    <property name="entryInfo" value="house_35_15_9"/>
+    <property name="entryInfo" value="map_37_16_0"/>
    </properties>
   </tile>
  </tileset>
@@ -21,23 +21,26 @@
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
+  <properties>
+   <property name="entryInfo" value="map_37_16_0"/>
+  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGBqAmQmBB6N5o2AUjAIE+MoIwdQ2DwBGluL6sAQAAA==
+   H4sIAAAAAAAAA2NgGAWUAC4mCB41bxQMZfCVEYIHu3kAV8wiXLAEAAA=
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGJmAHQmPglEwCoYGAAB4GT0MsAQAAA==
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3RuQ4BQQCH8RnNxF1oHEvrbJA4t3V3wqvgCfDYPjGbjLEYG4VC8ctO8/8ymVVCCPVGHAkkkUIaGWSRRwFFlBxaKmTjoYwKqqihjoax2Ukh9jjIx569aaKl+z30McDQ2BzpnHA2ejl9tjcjjOFjgili8r73SrCZYY4Fllhhg61j55lP3t7FOuSN/35Th3/VlrdvoKtF6dktW5T7fat1dQFQmb+zsAQAAA==
+   H4sIAAAAAAAAA63Ruw6CMBiG4calQQVXRHFV8Dh5XvF4//fjO7RJ07QVtMMTEt74xfCnQogMfSTqOcAQqWpZoCVWn6LEDDnGKDDp0EqjL7FSfY4FKtQdWmH0My7q3R4HHHEyWh1oV/XUXRoa3HDHA0+8jN83nmbuSwff7hujL821Z8s993C9a7MnA/dYW/dquycD96g892jD9d30fvXDns3e7in/7sa2ifi/9FaMPb2zxQ4fKheNsLAEAAA=
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA52T7Q2CQAyGqXEBdQLkh7/vbgE+FiC6ANEFDLM7gG1sY7m0HNrkzUE5Ht6WXoSqio4S6o66obaGx9K8xx88K0e8mbXFI+CenqVDcoPyuuaROKRj4ZsnxSOP18wnMXaoF14fcH2u8OiZ5sWsl8CcCdcWVaP2P/gTjzN8WRIj3gf4eBQvW3iki3pPR3Dymt2s8NrMS8c11463hufF442Ox8jMs5KwLJ7st3ovvJDtTwVeMOqiujulHpZzPBR4Vv8nzlu8BMvzYfGkbv0Pc5Z11jyeNTtvLUd7iLAEAAA=
+   H4sIAAAAAAAAA2NgGAWUACZGVMzMSF3zE2hgJgjQ0s0gQKyZQUB1wUSqJcbMJKCaZCLUFUDVEAqHIqBYMSPEnaS4FQSwxd0kIH8yI8Sd6G51INJsmHtB7ilCw8VIZgSQEa9GjKjYGMnv6JiYsMBmXhIejG5mARofAPELUXywBAAA
   </data>
  </layer>
 </map>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="15" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" source="../tilesets/ground.tsx"/>
+ <tileset firstgid="241" source="../tilesets/walls.tsx"/>
+ <tileset firstgid="369" source="../tilesets/walls2.tsx"/>
+ <tileset firstgid="625" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
+  <image source="../tilesets/objects.png" width="224" height="160"/>
+  <tile id="11">
+   <properties>
+    <property name="entryInfo" value="map_39_0_-11"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="entryInfo" value="map_41_0_9"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Containers" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3Ruw6CMBSA4a6owKoorFzU1Ssrgvr+7+NvcpqcNNCE4MDg8KVJ/7TDOaExJsICgZxLrBBKizwtcPoOKTKssUGC7YiWqr7HQXqOAiWqES1R/Ya73J1wxgVX1SpPq+W0/aV6g1Z0eA50t+n/dXsjlnk/et7a7mt6zu68bRvaR9/dfx/z2sd3pscJ+3Df2pmWE/ah3/56Hx8fNLZFsAQAAA==
+  </data>
+ </layer>
+ <layer name="Entrances" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGPqgmQmCB6t5o2AUDCdQwwTBA2EeADys/umwBAAA
+  </data>
+ </layer>
+ <layer name="Encounters" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+  </data>
+ </layer>
+ <layer name="Background" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGPrgOiMEkwqYyDAPlx58cgVQTI555GB8AJv6AjLNImQHtQDMjdQC+OKDHDAU/EsN9x2C5glk/x4iI9+hA2EoJgYAAN5zJOewBAAA
+  </data>
+ </layer>
+ <layer name="Blocked" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA53P0Q2AIAwFwFYn0A1g/y+dgDCJcQJ1ATXS0NQWkZc0BAsnBXiyIMCQamTryPZWf0V4peT5q1yD54zzFM3zBY/u/PHulDzH5vOpKA7ffcvblG+1OZS72LWZt9V3ukfmzmph/1hFjyzNC5jNCXNJj/fIisZcZP7xLEvOXet9Rb7R8mreppmaN2O9xc2geLHB4pHeV05TYgVHsAQAAA==
+  </data>
+ </layer>
+</map>

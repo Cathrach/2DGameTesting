@@ -6,7 +6,7 @@
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="4">
    <properties>
-    <property name="entryInfo" value="house_37_0_0"/>
+    <property name="entryInfo" value="house_37_7_2"/>
    </properties>
   </tile>
   <tile id="5">
