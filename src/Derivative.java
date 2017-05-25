@@ -8,7 +8,7 @@ public class Derivative extends Enemy {
 
     public Derivative() {
         super("Derivative",
-                "sprites/enemies/04_dwarf.png",
+                "images/sprites/enemies/04_dwarf.png",
                 60, 10, 15, 10,
                 new EnemyDrop[]{
                         new EnemyDrop(Resources.item_db[1], 0.5f)

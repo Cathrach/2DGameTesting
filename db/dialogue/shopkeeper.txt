@@ -1,3 +1,2 @@
 Shopkeeper: What would you like to buy?
-    > Shopkeeper: Thank you for your business.
-    > Shopkeeper: ...Just looking around, eh?
+>Shopkeeper: Thank you for visiting.

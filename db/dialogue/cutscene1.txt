@@ -1,0 +1,8 @@
+Proctor: It is Tuesday morning, May 9.
+Proctor: You will be taking the AP Calculus BC Exam.
+Proctor: In a moment, you will open the packet that contains your exam materials.
+You: Zzz...
+Proctor: Calculators are not allowed in Part A. Please put your calculators under your chairs.
+You: Zzz...
+Proctor: Open your section 1 booklet and begin!
+You: ...s
