@@ -92,6 +92,7 @@ public class Combat extends BasicGameState {
         isSelectingTarget = false;
         isSelectingSkill = false;
         isFinishedTurn = false;
+        possibleTargets = new ArrayList<>();
         selectedTargets = new ArrayList<>();
         game.enterState(TestingGame.COMBAT);
     }
@@ -163,14 +164,13 @@ public class Combat extends BasicGameState {
                     i++;
                 }
                 actionOrder.add(i, selectedAction);
-                System.out.println("action order: " + actionOrder);
             }
             // execute actions
             for (int i = 0; i < actionOrder.size(); i++) {
                 BattleAction battleAction = actionOrder.get(i);
                 // delete enemies and players if necessary (check if HP <= 0)
                 if (battleAction.skill.delay == 0) {
-                    System.out.println(battleAction.skill.getName());
+                    System.out.println(battleAction.caster.getName() + " used " + battleAction.skill.getName());
                     battleAction.skill.use(battleAction.caster, battleAction.target);
                     actionOrder.remove(i);
                     i--;
@@ -189,9 +189,14 @@ public class Combat extends BasicGameState {
             isPlayerTurn = turnOrder.get(0) instanceof Ally;
             currMove = turnOrder.get(0);
             // clear all the selection things
+            highlightedTargetID = 0;
+            highlightedItemID = 0;
+            highlightedSkillID = 0;
+            highlightedActionID = 0;
             selectedItem = null;
             selectedSkill = null;
             selectedAction = null;
+            possibleTargets.clear();
             selectedTargets.clear();
             isSelectingItem = false;
             isSelectingTarget = false;
@@ -238,10 +243,13 @@ public class Combat extends BasicGameState {
                 for (int i = 0; i < Resources.enemy_db.length; i++) {
                     if (Resources.enemy_db[i].name.equals(enemy.name)) {
                         Resources.enemy_db[i].timesKilled++;
-                        System.out.println(Resources.enemy_db[i].timesKilled);
                     }
                 }
             }
+        }
+        if (Resources.triggers.get("killingLimits") && Resources.enemy_db[0].timesKilled >= 5) {
+            Resources.triggers.put("killingLimits", false);
+            Resources.triggers.put("killedLimits", true);
         }
         if (alliesDead || enemiesDead) {
             isCombat = false;
@@ -338,7 +346,6 @@ class CombatKeyboard implements KeyListener {
                     Combat.isSelectingTarget = false;
                 } else if (key == Input.KEY_ENTER) {
                     Combat.selectedTargets.add(Combat.currEnemies.get(Combat.highlightedTargetID));
-                    System.out.println(Combat.selectedTargets);
                     switch (Combat.selectedActionID) {
                         case Combat.ATTACK:
                             // Combat.ATTACK target: first element of target list

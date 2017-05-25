@@ -15,20 +15,21 @@ public class Stats {
     public static void render(Graphics g) {
         // temporary! Will add GUI & fix up later
         // TODO: draw stats GUI
-        for (Entity entity : Resources.party) {
+        for (int i = 0; i < Resources.party.size(); i++) {
+            Entity entity = Resources.party.get(i);
             // just one for now
-            RoundedRectangle frame = new RoundedRectangle(10, 30, 350, 100, 10);
+            RoundedRectangle frame = new RoundedRectangle(10, 30 + 100 * i, 350, 100, 10);
             g.draw(frame);
             if (entity != null) {
-                g.drawString(entity.battleEntity.name, 25, 35);
-                entity.getSprite().getSubImage(0, 0, 32, 45).draw(25, 60);
-                g.drawString("HP: " + entity.battleEntity.currHP + "/" + entity.battleEntity.getHP(), 70, 60);
-                g.drawString("MP: " + entity.battleEntity.currMP + "/" + entity.battleEntity.getMP(), 70, 85);
-                g.drawString("ATK: " + entity.battleEntity.getATK(), 170, 60);
-                g.drawString("DEF: " + entity.battleEntity.getDEF(), 170, 85);
-                for (int i = 0; i < entity.battleEntity.equips.size(); i++) {
-                    Equipment equipment = entity.battleEntity.equips.get(i);
-                    g.drawString(equipment.getName(), 270, 35 + 25 * i);
+                g.drawString(entity.battleEntity.name, 25, 35 + 100 * i);
+                entity.getSprite().getSubImage(0, 0, 32, 45).draw(25, 60 + 100 * i);
+                g.drawString("HP: " + entity.battleEntity.currHP + "/" + entity.battleEntity.getHP(), 70, 60 + 100 * i);
+                g.drawString("MP: " + entity.battleEntity.currMP + "/" + entity.battleEntity.getMP(), 70, 85 + 100 * i);
+                g.drawString("ATK: " + entity.battleEntity.getATK(), 170, 60 + 100 * i);
+                g.drawString("DEF: " + entity.battleEntity.getDEF(), 170, 85 + 100 * i);
+                for (int j = 0; j < entity.battleEntity.equips.size(); j++) {
+                    Equipment equipment = entity.battleEntity.equips.get(j);
+                    g.drawString(equipment.getName(), 270, 35 + 25 * j);
                 }
             }
         }

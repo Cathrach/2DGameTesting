@@ -27,6 +27,11 @@ public class MapState extends BasicGameState {
         leader.render(container, game, g);
     }
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
+        if (Resources.triggers.get("justArrived")) {
+            Cutscene.currDialogue = Resources.dialogue_db[1];
+            Resources.triggers.put("justArrived", false);
+            game.enterState(TestingGame.CUTSCENE);
+        }
         Input input = container.getInput();
         if (input.isKeyPressed(Input.KEY_ESCAPE)) {
             PauseMenu.inMenu = PauseMenu.NONE;

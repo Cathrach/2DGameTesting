@@ -5,6 +5,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Dictionary;
+import java.util.Enumeration;
+import java.util.Hashtable;
+
 /**
  * Created by serinahu on 5/9/17.
  */
@@ -18,7 +21,7 @@ public class Resources {
     static Skill[] skill_db;
     static SkillEffect[] skilleffect_db;
     static Dialogue[] dialogue_db;
-    static Dictionary<String, Boolean> triggers;
+    static Hashtable<String, Boolean> triggers;
     public static void init() throws SlickException, IOException {
         // read skills from text file
         BufferedReader skillEffectReader = new BufferedReader(new FileReader("db/skilleffects.txt"));
@@ -111,7 +114,7 @@ public class Resources {
         }
 
         // read dialogue from text file
-        dialogue_db = new Dialogue[1];
+        dialogue_db = new Dialogue[2];
         dialogue_db[0] = new Dialogue(
                 new DialogueLine[]{
                         new DialogueLine("It is Tuesday Morning, May 9th.", new Image("sprites/heroine.png")),
@@ -126,6 +129,35 @@ public class Resources {
                 new String[]{},
                 new int[]{}
         );
+        dialogue_db[1] = new Dialogue(
+                new DialogueLine[]{
+                        new DialogueLine("Eh? Where are we?", new Image("sprites/heroine.png")),
+                        new DialogueLine("Definitely not in New York anymore.", new Image("sprites/heroine.png")),
+                        new DialogueLine("I can see some buildings in the distance, but all I have on me is my bag, which has...", new Image("sprites/heroine.png")),
+                        new DialogueLine("Pencils, pens, some food, my calc--huh?", new Image("sprites/heroine.png")),
+                        new DialogueLine("What happened?", new Image("sprites/heroine.png")),
+                        new DialogueLine("We had to put our calculators under our chairs, remember? Somehow it’s not with me anymore! My beautiful TI-Nspire--", new Image("sprites/heroine.png")),
+                        new DialogueLine("My wonderful students!", new Image("sprites/heroine.png")),
+                        new DialogueLine("Ms. Kuberska!?", new Image("sprites/heroine.png")),
+                        new DialogueLine("This is HABC Land, which Mr. Weinstein, Ms. Basias, Mr. Detchkov, and I used to preside over.", new Image("sprites/heroine.png")),
+                        new DialogueLine("But very recently, we were defeated by a boiling potato!", new Image("sprites/heroine.png")),
+                        new DialogueLine("Now he steals munchkins and sends tyrannical problems that terrorize the students here.", new Image("sprites/heroine.png")),
+                        new DialogueLine("We need your help to restore order to the land.", new Image("sprites/heroine.png")),
+                        new DialogueLine("We’ll do our best to prepare you to face the potato!!! You’ll have to learn how to solve problems all over again!!!", new Image("sprites/heroine.png")),
+                        new DialogueLine("Right now, all you have is a pencil and the ability to SOLVE FOR X and SIMPLIFY EXPRESSIONS!!! I hope you remember your basic algebra!!!", new Image("sprites/heroine.png")),
+                        new DialogueLine("As you improve, I’ll give you calculators when I deem you ready. But you only need pencil and paper, really, for simpler problems.", new Image("sprites/heroine.png")),
+                        new DialogueLine("To start off, try defeating some limits, my beautiful humans! Come back when you've done 5.", new Image("sprites/heroine.png")),
+                        new DialogueLine("So...we’re taking the AP. In some alternate world. By killing math problems.", new Image("sprites/heroine.png")),
+                        new DialogueLine("Exactly!", new Image("sprites/heroine.png"), true, -1, "killingLimits"),
+                },
+                new String[]{},
+                new int[]{}
+        );
+
+        triggers = new Hashtable<>();
+        triggers.put("justArrived", true);
+        triggers.put("killingLimits", false);
+        triggers.put("killedLimits", false);
 
         // enemies
         Limit limit = new Limit();
