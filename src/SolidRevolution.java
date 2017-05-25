@@ -4,7 +4,7 @@
 public class SolidRevolution extends Enemy {
     public SolidRevolution() {
         super("Solid of Revolution",
-                "sprites/enemies/04_dwarf.png",
+                "images/sprites/enemies/04_dwarf.png",
                 100, 40, 40, 15,
                 new EnemyDrop[]{
                         new EnemyDrop(Resources.item_db[1], 0.5f)
