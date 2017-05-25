@@ -158,6 +158,7 @@ public class Resources {
         triggers.put("justArrived", true);
         triggers.put("killingLimits", false);
         triggers.put("killedLimits", false);
+        triggers.put("finishedLimits", false);
 
         // enemies
         Limit limit = new Limit();

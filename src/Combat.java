@@ -248,7 +248,6 @@ public class Combat extends BasicGameState {
             }
         }
         if (Resources.triggers.get("killingLimits") && Resources.enemy_db[0].timesKilled >= 5) {
-            Resources.triggers.put("killingLimits", false);
             Resources.triggers.put("killedLimits", true);
         }
         if (alliesDead || enemiesDead) {
