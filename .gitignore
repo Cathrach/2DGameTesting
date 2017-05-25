@@ -1,4 +1,4 @@
 
 out/production/2DGameTesting/*.class
 
-*.xml
+.idea/*.xml
