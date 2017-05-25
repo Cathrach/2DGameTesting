@@ -7,7 +7,7 @@ public class ImproperIntegral extends Enemy {
     private boolean firstTurnParts, usedIntegrate;
     public ImproperIntegral() {
         super("Improper Integral",
-                "sprites/enemies/04_dwarf.png",
+                "images/sprites/enemies/04_dwarf.png",
                 100, 40, 40, 15,
                 new EnemyDrop[]{
                         new EnemyDrop(Resources.item_db[1], 0.5f)

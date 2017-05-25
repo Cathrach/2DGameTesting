@@ -39,6 +39,7 @@ public class Combat extends BasicGameState {
     static List<BattleEntity> possibleTargets;
     static List<BattleEntity> turnOrder;
     static List<BattleAction> actionOrder;
+    static Image background;
 
     public Combat(int id) {
         currEnemies = new ArrayList<>();
@@ -60,7 +61,7 @@ public class Combat extends BasicGameState {
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         isCombat = false;
-
+        background = new Image("images/backgrounds/backgroundSet.png");
     }
 
     public static void enter(StateBasedGame game) {
@@ -100,17 +101,35 @@ public class Combat extends BasicGameState {
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
         // draw background
+        if (MapState.currentMapID < 12) {
+            background.getSubImage(640, 960, 640, 480).draw(0,0);   // town
+        } else if (MapState.currentMapID < 17) {
+            background.getSubImage(2*640, 480, 640, 480).draw(0,0); // forest
+        } else if (MapState.currentMapID < 24) {
+            background.getSubImage(640, 480, 640, 480).draw(0,0);   // lake/field
+        } else if (MapState.currentMapID < 30) {
+            background.getSubImage(0, 480, 640, 480).draw(0,0);     // dunes
+        } else if (MapState.currentMapID < 33) {
+            background.getSubImage(0,0,640,480).draw(0,0);          // shore
+        } else if (MapState.currentMapID < 36) {
+            background.getSubImage(2*640, 0, 640, 480).draw(0,0);   // caves
+        } else if (MapState.currentMapID < 41) {
+            background.getSubImage(0, 2*480, 640, 480).draw(0,0);   // mountains
+        } else {
+            background.getSubImage(640, 0, 640, 480).draw(0,0);     // castle
+        }
+
         // display enemies on one side and players on another
         for (int i = 0; i < currEnemies.size(); i++) {
             Enemy enemy = currEnemies.get(i);
             if (!enemy.isDead) {
-                enemy.battler.draw(50, 50 + i * 100);
+                enemy.battler.draw(400, 50 + i * 100);
             }
         }
         for (int i = 0; i < Resources.party.size(); i++) {
             Entity entity = Resources.party.get(i);
             if (entity != null && entity.battleEntity.currHP > 0) {
-                entity.battleEntity.battler.draw(400, 50 + i * 100);
+                entity.battleEntity.battler.draw(50, 50 + i * 100);
             }
         }
         // if player turn, render the skill menu

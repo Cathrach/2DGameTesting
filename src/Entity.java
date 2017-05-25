@@ -18,8 +18,8 @@ public class Entity {
     Ally battleEntity;
     // constructor: make character at some position
     public Entity(float xPos, float yPos, int dir, int frame, Ally  battleEntity) throws SlickException {
-        sprite = new Image("sprites/heroine.png");
-        hitbox = new Image("sprites/hitbox.png");
+        sprite = new Image("images/sprites/heroine.png");
+        hitbox = new Image("images/sprites/hitbox.png");
         this.xPos = xPos;
         this.yPos = yPos;
         this.dir = dir;         // 0=down, 1=left, 2=right, 3=up
