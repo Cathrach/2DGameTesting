@@ -114,7 +114,27 @@ public class Resources {
         }
 
         // read dialogue from text file
-        dialogue_db = new Dialogue[2];
+        BufferedReader dialogueReader = new BufferedReader(new FileReader("db/dialogue/cutscenes.txt"));
+        int numScenes = Integer.parseInt(dialogueReader.readLine());
+        dialogue_db = new Dialogue[numScenes];
+        for (int i=0; i<numScenes; i++) {
+            BufferedReader sceneReader = new BufferedReader(new FileReader("db/dialogue/" + dialogueReader.readLine().split(" >> ") + ".txt"));
+            int numLines = Integer.parseInt(sceneReader.readLine());
+            DialogueLine[] scene = new DialogueLine[numLines];
+            for (int j=0; j<numLines; j++) {
+                String[] lineData = sceneReader.readLine().split(" >> ");
+                if (lineData.length == 2) {
+                    scene[j] = new DialogueLine(lineData[0], new Image(lineData[1]));
+                } else if (lineData.length == 5) {
+                    scene[j] = new DialogueLine(lineData[0], new Image(lineData[1]), Boolean.parseBoolean(lineData[2]), Integer.parseInt(lineData[3]), lineData[4]);
+                } else {
+                    scene[j] = new DialogueLine("default", new Image("images/sprites/heroine.png"));
+                }
+            }
+            dialogue_db[i] = new Dialogue(scene, new String[]{}, new int[]{});
+        }
+
+        /*dialogue_db = new Dialogue[2];
         dialogue_db[0] = new Dialogue(
                 new DialogueLine[]{
                         new DialogueLine("It is Tuesday Morning, May 9th.", new Image("images/sprites/heroine.png")),
@@ -152,7 +172,7 @@ public class Resources {
                 },
                 new String[]{},
                 new int[]{}
-        );
+        );*/
 
         triggers = new Hashtable<>();
         triggers.put("justArrived", true);

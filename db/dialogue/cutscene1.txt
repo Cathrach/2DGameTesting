@@ -1,8 +1,9 @@
-Proctor: It is Tuesday morning, May 9.
-Proctor: You will be taking the AP Calculus BC Exam.
-Proctor: In a moment, you will open the packet that contains your exam materials.
-You: Zzz...
-Proctor: Calculators are not allowed in Part A. Please put your calculators under your chairs.
-You: Zzz...
-Proctor: Open your section 1 booklet and begin!
-You: ...s
+8
+Proctor: It is Tuesday morning, May 9. >> images/sprites/heroine.png
+Proctor: You will be taking the AP Calculus BC Exam. >> images/sprites/heroine.png
+Proctor: In a moment, you will open the packet that contains your\nexam materials. >> images/sprites/heroine.png
+You: Zzz... >> images/sprites/heroine.png
+Proctor: Calculators are not allowed in Part A. Please put your\ncalculators under your chairs. >> images/sprites/heroine.png
+You: Zzz... >> images/sprites/heroine.png
+Proctor: Open your section 1 booklet and begin! >> images/sprites/heroine.png
+You: ... >> images/sprites/heroine.png >> true >> 0 >>  >>
