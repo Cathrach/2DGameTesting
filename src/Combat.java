@@ -40,6 +40,8 @@ public class Combat extends BasicGameState {
     static List<BattleEntity> turnOrder;
     static List<BattleAction> actionOrder;
     static Image background;
+    static int map;
+    static String message;
 
     public Combat(int id) {
         currEnemies = new ArrayList<>();
@@ -62,11 +64,14 @@ public class Combat extends BasicGameState {
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         isCombat = false;
         background = new Image("images/backgrounds/backgroundSet.png");
+        message = "";
     }
 
     public static void enter(StateBasedGame game) {
         isCombat = true;
         consumablesOnly = new ArrayList<>();
+        message = "";
+        map = MapState.currentMapID;
         for (Item item : Inventory.items) {
             if (item instanceof Consumable) {
                 consumablesOnly.add((Consumable) item);
@@ -100,20 +105,22 @@ public class Combat extends BasicGameState {
 
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-        // draw background
-        if (MapState.currentMapID < 12) {
+        // draw background depending on the map
+        if (map < 12) {
             background.getSubImage(640, 960, 640, 480).draw(0,0);   // town
-        } else if (MapState.currentMapID < 17) {
+        } else if (map < 17) {
             background.getSubImage(2*640, 480, 640, 480).draw(0,0); // forest
-        } else if (MapState.currentMapID < 24) {
+        } else if (map < 22) {
             background.getSubImage(640, 480, 640, 480).draw(0,0);   // lake/field
-        } else if (MapState.currentMapID < 30) {
+        } else if (map == 22 || (map >= 28 && map <= 30)) {
+            background.getSubImage(2*640, 2*480, 640, 480).draw(0,0);// building
+        } else if (map < 25) {
             background.getSubImage(0, 480, 640, 480).draw(0,0);     // dunes
-        } else if (MapState.currentMapID < 33) {
+        } else if (map < 33) {
             background.getSubImage(0,0,640,480).draw(0,0);          // shore
-        } else if (MapState.currentMapID < 36) {
+        } else if (map < 36) {
             background.getSubImage(2*640, 0, 640, 480).draw(0,0);   // caves
-        } else if (MapState.currentMapID < 41) {
+        } else if (map < 41) {
             background.getSubImage(0, 2*480, 640, 480).draw(0,0);   // mountains
         } else {
             background.getSubImage(640, 0, 640, 480).draw(0,0);     // castle
@@ -123,30 +130,72 @@ public class Combat extends BasicGameState {
         for (int i = 0; i < currEnemies.size(); i++) {
             Enemy enemy = currEnemies.get(i);
             if (!enemy.isDead) {
-                enemy.battler.draw(400, 50 + i * 100);
+                enemy.battler.draw(400 + (i%2)*100, 150 + i*50);
+                // draw name label for the enemy
+                g.setColor(new Color(0, 0, 0, 70));
+                g.fillRect(400 + (i%2)*100, 125 + i*50, 100, 25);
+                g.setColor(Color.white);
+                g.drawString(enemy.getName(), 405 + (i%2)*100, 125 + i*50);
             }
         }
         for (int i = 0; i < Resources.party.size(); i++) {
             Entity entity = Resources.party.get(i);
             if (entity != null && entity.battleEntity.currHP > 0) {
-                entity.battleEntity.battler.draw(50, 50 + i * 100);
+                entity.battleEntity.battler.draw(50 + (i%2)*100, 150 + i*50);
+                // draw name label for entity
+                g.setColor(new Color(0, 0, 0, 70));
+                g.fillRect(45 + (i%2)*100, 120 + i*50, 100, 25);
+                g.setColor(Color.white);
+                g.drawString(entity.battleEntity.getName(), 50 + (i%2)*100, 125 + i*50);
+                // draw HUD for entity
+                g.setColor(new Color(0, 0, 0, 70));
+                g.fillRect(i*100, 35, 100, 65);
+                g.setColor(Color.white);
+                g.drawString(entity.battleEntity.getName(), 5+i*100, 40);
+                g.drawString("HP " + String.valueOf(entity.battleEntity.currHP) + "/" + String.valueOf(entity.battleEntity.baseHP), 5+i*100, 60);
+                g.drawString("MP " + String.valueOf(entity.battleEntity.currMP) + "/" + String.valueOf(entity.battleEntity.baseMP), 5+i*100, 80);
             }
         }
-        // if player turn, render the skill menu
+
+        // draw a shaded transparent background for the selection menu
+        g.setColor(new Color(0, 0, 0, 70));
+        g.fillRect(0, 430, 640, 80);
+        g.setColor(Color.white);
+
+        // if player's turn, render the skill menu
         if (isPlayerTurn) {
             if (isSelectingTarget) {
                 int x_value;
                 if (possibleTargets.get(0) instanceof Enemy) {
-                    x_value = 50;
+                    x_value = 400 + (highlightedTargetID%2)*100;
                 } else {
-                    x_value = 400;
+                    x_value = 50 + (highlightedTargetID%2)*100;
                 }
-                // stick arrow on top of target
-                g.draw(new Polygon(new float[]{x_value, 40 + 100 * highlightedTargetID, x_value + 10, 40 + 100 * highlightedTargetID, x_value + 5, 45 + 100 * highlightedTargetID}));
+                // draw arrow above target
+                g.fill(new Polygon(new float[]{x_value+25, 115+highlightedTargetID*50, x_value+75, 115 + highlightedTargetID*50, x_value + 50, 140 + highlightedTargetID*50}));
+                g.drawString("SELECT A TARGET", 25, 450);
+
             } else if (isSelectingItem) {
-                // draw part of the item menu, rectangle around highlighted menu
-                // make sure to draw only the consumables!
-                // move the "part" of the item menu based on the highlighted id
+                // draws menu of consumable items, draws rect around selected item
+                consumablesOnly.clear();
+                g.setColor(new Color(0, 0, 0, 150));
+                g.fillRect(120, 100, 400, 280);
+                g.setColor(Color.white);
+                for (Item item : Inventory.items) {
+                    if (item instanceof Consumable) {
+                        consumablesOnly.add((Consumable) item);
+                        g.drawString(item.getName() + " x " + item.getQuantity(), 125, 105+consumablesOnly.indexOf(item)*20);
+                    }
+                }
+                g.drawRect(125, 105+highlightedItemID*20, 400, 20);
+
+                // if there are none, tell the player and exit the item menu; resume player's turn
+                if (consumablesOnly.size() == 0) {
+                    message = "No items to display";
+                    isSelectingItem = false;
+                } else {
+                    g.drawString("SELECT AN ITEM", 25, 450);
+                }
             } else if (isSelectingSkill) {
                 // draw skill menu starting from 3rd element, rectangle around highlighted menu
             } else {
@@ -160,6 +209,12 @@ public class Combat extends BasicGameState {
                 g.drawRect(15 + 75 * highlightedActionID, 440, 75, 35);
             }
         }
+
+        // draw message (tells the player about how the battle is progressing)
+        g.setColor(new Color(0, 0, 0, 70));
+        g.fillRect(0, 390, 640, 25);
+        g.setColor(Color.white);
+        g.drawString(message, 25, 395);
     }
 
     @Override
@@ -189,7 +244,7 @@ public class Combat extends BasicGameState {
                 BattleAction battleAction = actionOrder.get(i);
                 // delete enemies and players if necessary (check if HP <= 0)
                 if (battleAction.skill.delay == 0) {
-                    System.out.println(battleAction.caster.getName() + " used " + battleAction.skill.getName());
+                    message = battleAction.caster.getName() + " used " + battleAction.skill.getName() + ". ";
                     battleAction.skill.use(battleAction.caster, battleAction.target);
                     actionOrder.remove(i);
                     i--;
@@ -207,6 +262,7 @@ public class Combat extends BasicGameState {
             // check whose move it is
             isPlayerTurn = turnOrder.get(0) instanceof Ally;
             currMove = turnOrder.get(0);
+            message += currMove.getName() + "'s turn.";
             // clear all the selection things
             highlightedTargetID = 0;
             highlightedItemID = 0;

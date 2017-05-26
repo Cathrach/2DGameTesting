@@ -17,8 +17,8 @@ public class Entity {
     private final double frameSpeed = 0.1;
     Ally battleEntity;
     // constructor: make character at some position
-    public Entity(float xPos, float yPos, int dir, int frame, Ally  battleEntity) throws SlickException {
-        sprite = new Image("images/sprites/heroine.png");
+    public Entity(float xPos, float yPos, int dir, int frame, Ally battleEntity, String spritePath) throws SlickException {
+        sprite = new Image(spritePath);
         hitbox = new Image("images/sprites/hitbox.png");
         this.xPos = xPos;
         this.yPos = yPos;

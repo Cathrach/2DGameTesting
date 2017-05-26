@@ -7,7 +7,7 @@ public class IndefiniteIntegral extends Enemy {
     private boolean firstTurnC, usedIntegrate;
     public IndefiniteIntegral() {
         super("Indefinite Integral",
-                "images/sprites/enemies/04_dwarf.png",
+                "images/sprites/enemies/IndefiniteIntegral.png",
                 90, 35, 35, 15,
                 new EnemyDrop[]{
                         new EnemyDrop(Resources.item_db[1], 0.5f)

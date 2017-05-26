@@ -114,45 +114,27 @@ public class Resources {
         }
 
         // read dialogue from text file
-        dialogue_db = new Dialogue[2];
-        dialogue_db[0] = new Dialogue(
-                new DialogueLine[]{
-                        new DialogueLine("It is Tuesday Morning, May 9th.", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("You will be taking the AP BC Calculus Exam.", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("In a moment, you will open the packet that contains your exam materials", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("Zzzz Zzzz", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("Calculators are not allowed in part A. Please put your calculators under your chairs.", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("Zzzz Zzzz......", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("Open your Section I booklet and begin.", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("*opens booklet sleepily* !?", new Image("images/sprites/heroine.png"), true, -1, "") // TODO: Map ID
-                },
-                new String[]{},
-                new int[]{}
-        );
-        dialogue_db[1] = new Dialogue(
-                new DialogueLine[]{
-                        new DialogueLine("Eh? Where are we?", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("Definitely not in New York anymore.", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("I can see some buildings in the distance, but all I have on me is my bag, which has...", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("Pencils, pens, some food, my calc--huh?", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("What happened?", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("We had to put our calculators under our chairs, remember? Somehow it’s not with me anymore! My beautiful TI-Nspire--", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("My wonderful students!", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("Ms. Kuberska!?", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("This is HABC Land, which Mr. Weinstein, Ms. Basias, Mr. Detchkov, and I used to preside over.", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("But very recently, we were defeated by a boiling potato!", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("Now he steals munchkins and sends tyrannical problems that terrorize the students here.", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("We need your help to restore order to the land.", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("We’ll do our best to prepare you to face the potato!!! You’ll have to learn how to solve problems all over again!!!", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("Right now, all you have is a pencil and the ability to SOLVE FOR X and SIMPLIFY EXPRESSIONS!!! I hope you remember your basic algebra!!!", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("As you improve, I’ll give you calculators when I deem you ready. But you only need pencil and paper, really, for simpler problems.", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("To start off, try defeating some limits, my beautiful humans! Come back when you've done 5.", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("So...we’re taking the AP. In some alternate world. By killing math problems.", new Image("images/sprites/heroine.png")),
-                        new DialogueLine("Exactly!", new Image("images/sprites/heroine.png"), true, -1, "killingLimits"),
-                },
-                new String[]{},
-                new int[]{}
-        );
+        BufferedReader dialogueReader = new BufferedReader(new FileReader("db/dialogue/cutscenes.txt"));
+        int numScenes = Integer.parseInt(dialogueReader.readLine());
+        dialogue_db = new Dialogue[numScenes];
+        for (int i=0; i<numScenes; i++) {
+            BufferedReader sceneReader = new BufferedReader(new FileReader("db/dialogue/" + dialogueReader.readLine() + ".txt"));
+            int numLines = Integer.parseInt(sceneReader.readLine());
+            DialogueLine[] scene = new DialogueLine[numLines];
+            for (int j=0; j<numLines; j++) {
+                String[] lineData = sceneReader.readLine().split(" >> ");
+                if (lineData.length == 2) {
+                    scene[j] = new DialogueLine(lineData[0], new Image(lineData[1]));
+                } else if (lineData.length == 4) {
+                    scene[j] = new DialogueLine(lineData[0], new Image(lineData[1]), Boolean.parseBoolean(lineData[2]), Integer.parseInt(lineData[3]), "");
+                } else if (lineData.length == 5) {
+                    scene[j] = new DialogueLine(lineData[0], new Image(lineData[1]), Boolean.parseBoolean(lineData[2]), Integer.parseInt(lineData[3]), lineData[4]);
+                } else {
+                    scene[j] = new DialogueLine("default", new Image("images/sprites/you.png"));
+                }
+            }
+            dialogue_db[i] = new Dialogue(scene, new String[]{}, new int[]{});
+        }
 
         triggers = new Hashtable<>();
         triggers.put("justArrived", true);
@@ -182,10 +164,10 @@ public class Resources {
 
         // check if there's a "save"; if not, make a new entity
         Resources.party = new ArrayList<>();
-        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Heroine", "images/sprites/heroine.png")));
-        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend A", "images/sprites/heroine.png")));
-        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend B", "images/sprites/heroine.png")));
-        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend C", "images/sprites/heroine.png")));
+        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("You", "images/sprites/allies/you.png"), "images/sprites/heroine.png"));
+        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend A", "images/sprites/allies/friendA.png"), "images/sprites/sheetFriendA.png"));
+        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend B", "images/sprites/allies/friendB.png"), "images/sprites/sheetFriendB.png"));
+        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend C", "images/sprites/allies/friendC.png"), "images/sprites/sheetFriendC.png"));
         // similarly for other databases
         Inventory.addItem("#2 Pencil", 4);
     }

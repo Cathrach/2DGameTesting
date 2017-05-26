@@ -7,7 +7,7 @@ public class DefiniteIntegral extends Enemy {
     private boolean firstTurnBash, usedIntegrate;
     public DefiniteIntegral() {
         super("Definite Integral",
-                "images/sprites/enemies/04_dwarf.png",
+                "images/sprites/enemies/DefiniteIntegral.png",
                 80, 45, 25, 10,
                 new EnemyDrop[]{
                         new EnemyDrop(Resources.item_db[1], 0.5f)

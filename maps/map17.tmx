@@ -5,15 +5,96 @@
  <tileset firstgid="433" source="../tilesets/walls2.tsx"/>
  <tileset firstgid="689" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
+  <tile id="0">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
   <tile id="5">
    <properties>
     <property name="entryInfo" value="house_16_16_6"/>
    </properties>
   </tile>
+  <tile id="7">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="8">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="9">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="10">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="21">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="22">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="23">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="24">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
  </tileset>
+ <tileset firstgid="724" source="../tilesets/items.tsx"/>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGAX0ANeZBtoFo2AUDH0AALYGeACwBAAA
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
@@ -36,7 +117,7 @@
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA7XSSQqAMAwFUI1gXbpwWrpwWvb+x/IExkU1hJ86YeDTWMqjKbaUJO3PGTmzkeGFs3DWFGe6aY/KIcJBNnI7Op2Mc5ToPfcpsBvDC44XRiltVcG2vEclzl963PcXfinOWF6YMzajLv9xXnRv5NWcImJ6wt85r5XxD+6mE642dMUs5Dp151zsu5tW7F3RO/2dDfjKpa2wBAAA
+   H4sIAAAAAAAAA7XSTQqDMBAFYDOCcelCq0sXarvM3b1ZT9ApmDoMb6JVMvDID+EjE9JTUfSZM3OeRqYLzovzdjjLSXtWDhEOspE70O6UnF9t85XHwHHAfhhedILwGmmrirbl/VXi/KHH8/HAb8QZy4t9pnrUFW72i+6NvI5TJ8xAeF3x2Bp/8Gt64WpDV8pCrld3rsS+P2ml3hW9U+58AIJeGIawBAAA
   </data>
  </layer>
 </map>

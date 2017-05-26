@@ -101,7 +101,7 @@ public class Map {
 
         // retrieve the tileID of the container.
         int tileID = map.getTileId(x, y, map.getLayerIndex("Containers"));
-        String itemName = map.getTileProperty(tileID, "item", "gold");
+        String itemName = map.getTileProperty(tileID, "item", "#2 Pencil");
 
         // set the container tileID to 23, which is the empty container.
         map.setTileId(x, y, map.getLayerIndex("Containers"), 23);
