@@ -161,10 +161,10 @@ public class Resources {
 
         // check if there's a "save"; if not, make a new entity
         Resources.party = new ArrayList<>();
-        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Heroine", "images/sprites/allies/you.png")));
-        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend A", "images/sprites/allies/friendA.png")));
-        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend B", "images/sprites/allies/friendB.png")));
-        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend C", "images/sprites/allies/friendC.png")));
+        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("You", "images/sprites/allies/you.png"), "images/sprites/heroine.png"));
+        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend A", "images/sprites/allies/friendA.png"), "images/sprites/sheetFriendA.png"));
+        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend B", "images/sprites/allies/friendB.png"), "images/sprites/sheetFriendB.png"));
+        Resources.party.add(new Entity(337, 254, 1, 0, new Ally("Friend C", "images/sprites/allies/friendC.png"), "images/sprites/sheetFriendC.png"));
         // similarly for other databases
         Inventory.addItem("#2 Pencil", 4);
     }
