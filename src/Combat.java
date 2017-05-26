@@ -176,19 +176,19 @@ public class Combat extends BasicGameState {
                 g.drawString("SELECT A TARGET", 25, 450);
 
             } else if (isSelectingItem) {
-                // draws menu of consumable items
+                // draws menu of consumable items, draws rect around selected item
                 consumablesOnly.clear();
-                Item item;
-                for (int i=0; i<Inventory.items.size(); i++) {
-                    item = Inventory.items.get(i);
+                g.setColor(new Color(0, 0, 0, 150));
+                g.fillRect(120, 100, 400, 280);
+                g.setColor(Color.white);
+                for (Item item : Inventory.items) {
                     if (item instanceof Consumable) {
                         consumablesOnly.add((Consumable) item);
-                        g.setColor(new Color(0, 0, 0, 70));
-                        g.fillRect(175, 430-i*20, 200, 20);
-                        g.setColor(Color.white);
-                        g.drawString(item.getName() + " x " + item.getQuantity(), 170, 435-(i+1)*20);
+                        g.drawString(item.getName() + " x " + item.getQuantity(), 125, 105+consumablesOnly.indexOf(item)*20);
                     }
                 }
+                g.drawRect(125, 105+highlightedItemID*20, 400, 20);
+
                 // if there are none, tell the player and exit the item menu; resume player's turn
                 if (consumablesOnly.size() == 0) {
                     message = "No items to display";
