@@ -4,7 +4,7 @@
 public class Limit extends Enemy {
     public Limit() {
         super("Limit",
-                "images/sprites/enemies/02_goblin.png",
+                "images/sprites/enemies/Limit.png",
                 40, 0, 5, 3,
                 new EnemyDrop[]{
                     new EnemyDrop(Resources.item_db[1], 0.5f)
