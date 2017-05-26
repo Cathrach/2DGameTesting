@@ -300,7 +300,11 @@ class CombatKeyboard implements KeyListener {
                     Combat.selectedSkill = null;
                     Combat.isSelectingSkill = false;
                 } else if (key == Input.KEY_ENTER) {
-                    Combat.selectedSkill = Combat.currMove.skills.get(Combat.highlightedSkillID);
+                    if (Combat.selectedSkill.MPCost > Combat.currMove.currMP) {
+                        System.out.println("Not enough MP!");
+                    } else {
+                        Combat.selectedSkill = Combat.currMove.skills.get(Combat.highlightedSkillID);
+                    }
                     Combat.isSelectingSkill = false;
                     Combat.isSelectingTarget = true;
                 }
