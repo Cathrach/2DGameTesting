@@ -41,6 +41,7 @@ public class Ally extends BattleEntity {
             }
         }
         equips.add(equip);
+        Inventory.removeItem(equip.getName(), 1);
         System.out.println("Equipped: " + equip.getName());
         // add this equip to array list
         fixEquipHP += equip.fixHP;
@@ -55,6 +56,7 @@ public class Ally extends BattleEntity {
 
     public void unequip(int equip_index) {
         Equipment currEquip = equips.get(equip_index);
+        Inventory.addItem(currEquip.getName(), 1);
         fixEquipHP -= currEquip.fixHP;
         fixEquipMP -= currEquip.fixMP;
         fixEquipATK -= currEquip.fixATK;

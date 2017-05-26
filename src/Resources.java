@@ -53,7 +53,7 @@ public class Resources {
                 new SkillEffect[]{}, new TargetType[]{});
         skill_db[3] = new Skill("Integrate", new Image("images/skills/attack.png"), 0, 10, 0, 2, 0, 1, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{}, new TargetType[]{});
-        skill_db[4] = new Skill("Bash", new Image("images/skills/attack.png"), 0, 25, 50, 0, 0, 1, TargetType.SINGLE_ENEMY,
+        skill_db[4] = new Skill("Bash", new Image("images/skills/attack.png"), 0, 25, 50, 0.5f, 0, 1, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{skilleffect_db[1]}, new TargetType[]{TargetType.SELF});
         skill_db[5] = new Skill("+C", new Image("images/skills/defend.png"), 1, 15, 0, 0, 0, 0, TargetType.ALL_ALLIES,
                 new SkillEffect[]{skilleffect_db[2]}, new TargetType[]{TargetType.ALL_ALLIES});
@@ -149,7 +149,10 @@ public class Resources {
         IndefiniteIntegral indefinite = new IndefiniteIntegral();
         ImproperIntegral improper = new ImproperIntegral();
         SolidRevolution solid = new SolidRevolution();
-        enemy_db = new Enemy[]{limit, derivative, definite, indefinite, improper, solid};
+        DifferentialEquation equation = new DifferentialEquation();
+        MaclaurinSeries maclaurin = new MaclaurinSeries();
+        TaylorSeries taylor = new TaylorSeries();
+        enemy_db = new Enemy[]{limit, derivative, definite, indefinite, improper, solid, equation, maclaurin, taylor};
 
         // maps
         BufferedReader mapReader = new BufferedReader(new FileReader("db/maps.txt"));

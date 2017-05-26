@@ -83,6 +83,8 @@ public class Map {
                     break;
                 case 5:
                     Combat.currEnemies.add(new SolidRevolution(Resources.enemy_db[5]));
+                case 6:
+                    Combat.currEnemies.add(new DifferentialEquation(Resources.enemy_db[6]));
                 default:
                     break;
             }
