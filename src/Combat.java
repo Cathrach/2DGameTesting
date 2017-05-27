@@ -305,38 +305,24 @@ public class Combat extends BasicGameState {
                 j--;
             }
         }
-        for (Enemy enemy : Combat.currEnemies) {
+        for (int i = 0; i < currEnemies.size(); i++) {
+            Enemy enemy = Combat.currEnemies.get(i);
             if (enemy.currHP <= 0) {
+                enemy.getDrops();
+                for (int j = 0; j < Resources.enemy_db.length; j++) {
+                    if (Resources.enemy_db[j].name.equals(enemy.name)) {
+                        Resources.enemy_db[j].timesKilled++;
+                    }
+                }
                 turnOrder.remove(enemy);
-                enemy.isDead = true;
+                currEnemies.remove(i);
             }
         }
     }
 
     public void updateWin(StateBasedGame game) {
-        boolean alliesDead = true;
-        boolean enemiesDead = true;
-        for (Entity entity : Resources.party) {
-            if (entity != null) {
-                alliesDead = false;
-            }
-        }
-        for (Enemy enemy : Combat.currEnemies) {
-            if (!enemy.isDead) {
-                enemiesDead = false;
-            }
-        }
-        // modify inventory with loot
-        if (enemiesDead) {
-            for (Enemy enemy : Combat.currEnemies) {
-                enemy.getDrops();
-                for (int i = 0; i < Resources.enemy_db.length; i++) {
-                    if (Resources.enemy_db[i].name.equals(enemy.name)) {
-                        Resources.enemy_db[i].timesKilled++;
-                    }
-                }
-            }
-        }
+        boolean alliesDead = Resources.party.size() == 0;
+        boolean enemiesDead = Combat.currEnemies.size() == 0;
         if (Resources.triggers.get("killingLimits") && Resources.enemy_db[0].timesKilled >= 5) {
             Resources.triggers.put("killedLimits", true);
         }
@@ -432,17 +418,33 @@ class CombatKeyboard implements KeyListener {
                 }
             } else if (Combat.isSelectingTarget) {
                 if (key == Input.KEY_DOWN) {
-                    if (Combat.highlightedTargetID < Combat.currEnemies.size() - 1) {
-                        Combat.highlightedTargetID++;
+                    if (Combat.possibleTargets.get(0) instanceof Ally) {
+                        if (Combat.highlightedTargetID < Resources.party.size() - 1) {
+                            Combat.highlightedTargetID++;
+                        }
+                    } else {
+                        if (Combat.highlightedTargetID < Combat.currEnemies.size() - 1) {
+                            Combat.highlightedTargetID++;
+                        }
                     }
                 } else if (key == Input.KEY_UP) {
-                    if (Combat.highlightedTargetID > 0) {
-                        Combat.highlightedTargetID--;
+                    if (Combat.possibleTargets.get(0) instanceof Ally) {
+                        if (Combat.highlightedTargetID > 0) {
+                            Combat.highlightedTargetID--;
+                        }
+                    } else {
+                        if (Combat.highlightedTargetID > 0) {
+                            Combat.highlightedTargetID--;
+                        }
                     }
                 } else if (key == Input.KEY_DELETE || key == Input.KEY_BACK) {
                     Combat.isSelectingTarget = false;
                 } else if (key == Input.KEY_ENTER) {
-                    Combat.selectedTargets.add(Combat.currEnemies.get(Combat.highlightedTargetID));
+                    if (Combat.possibleTargets.get(0) instanceof Ally) {
+                        Combat.selectedTargets.add(Resources.party.get(Combat.highlightedTargetID).battleEntity); // group selecion?
+                    } else {
+                        Combat.selectedTargets.add(Combat.currEnemies.get(Combat.highlightedTargetID));
+                    }
                     switch (Combat.selectedActionID) {
                         case Combat.ATTACK:
                             // Combat.ATTACK target: first element of target list
