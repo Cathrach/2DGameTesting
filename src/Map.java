@@ -104,7 +104,7 @@ public class Map {
         String itemName = map.getTileProperty(tileID, "item", "#2 Pencil");
 
         // set the container tileID to 23, which is the empty container.
-        map.setTileId(x, y, map.getLayerIndex("Containers"), 23);
+        map.setTileId(x, y, map.getLayerIndex("Containers"), 27);
 
         // increment the Blocked tileID by 1 (closed chest -> open chest, etc)
         tileID = map.getTileId(x, y, map.getLayerIndex("Blocked"));
@@ -112,8 +112,12 @@ public class Map {
 
         return itemName;
     }
-    public boolean isDialogue(float xPos, float yPos) {
-        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Dialogue"));
-        return map.getTileProperty(tileID, "isDialogue", "false").equals("true");
+    public boolean isCutscene(float xPos, float yPos) {
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Cutscene"));
+        return map.getTileProperty(tileID, "Cutscene", "false").equals("true");
+    }
+    public String getCutscene(float xPos, float yPos) {
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Cutscene"));
+        return map.getTileProperty(tileID, "Dialogue", "none");
     }
 }

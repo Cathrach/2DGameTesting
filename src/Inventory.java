@@ -8,7 +8,6 @@ public class Inventory {
     static InventoryKeyboard listener;
     // currently equipped item's index in the inventory
     static int highlightedItemID;
-    static int selectedItemID;
     static Item selectedItem;
     static boolean isSelectingTarget;
     static int highlightedUnitID;
@@ -29,39 +28,51 @@ public class Inventory {
 
     public static void init() {
         highlightedItemID = 0;
-        selectedItemID = 0;
         isSelectingTarget = false;
         highlightedUnitID = 0;
     }
     public static void render(Graphics g) {
-        // temporary! Will add GUI etc. later
-        g.drawString("X: " + xPos + " Y: " + yPos, 20, 70);
-        g.drawString("Press ESC to return to main menu", 0, 0);
-        g.drawString("INVENTORY", 20, 100);
+        g.drawString("Press ESC to return to main menu", 20, 440);
+        g.drawString("INVENTORY", 20, 35);
+
+        // draw list of items
         for (int i = 0; i<items.size(); i++){
-            g.drawString(items.get(i).getName() + " x " + items.get(i).getQuantity(), 30, 100+(i+1)*20);
+            //g.drawString(items.get(i).getName() + " x " + items.get(i).getQuantity(), 30, 55+i*20);
+            items.get(i).render(30, 55 + i*40, g);
+            g.drawString(String.valueOf("x " + items.get(i).getQuantity()), 270, 55 + i*40);
         }
 
         // draw box around highlighted item, display item info
         if (highlightedItemID < items.size()) {
             g.drawString(items.get(highlightedItemID).getName() + ": " + items.get(highlightedItemID).getDescription(), 20, 380);
-            g.drawString(items.get(highlightedItemID).getType(), 20, 410);
-            g.drawRect(25, 100+(highlightedItemID+1)*20, 200, 20);
+            g.drawString(items.get(highlightedItemID).getInfo(), 20, 410);
+            g.drawRect(25, 55+(highlightedItemID)*40, 280, 40);
         }
 
-        // draw box around equipped item
-        if (selectedItemID < items.size()){
-            g.drawRect(25, 100+(selectedItemID+1)*20, 200, 20);
+        // render targets (for using/equipping the selected item)
+        for (int i=0; i<Resources.party.size(); i++) {
+            Entity entity = Resources.party.get(i);
+            if (entity != null) {
+                g.drawString(entity.battleEntity.name, 325, 75 + 70*i);
+                g.drawString("Equips:", 420, 75 + 70*i);
+                entity.getSprite().getSubImage(0, 0, 32, 45).draw(325, 95 + 70*i);
+                for (int j = 0; j < entity.battleEntity.equips.size(); j++) {
+                    Equipment equipment = entity.battleEntity.equips.get(j);
+                    g.drawString(equipment.getName(), 400, 95 + 70*i + 15*j);
+                }
+            }
         }
-
         if (isSelectingTarget) {
-            // render targets somehow?
+            g.drawString("Member to use/equip this item:", 325, 35);
+            g.drawString("(Press BACKSPACE to cancel)", 325, 55);
+            g.drawRect(320, 75 + 70*highlightedUnitID, 300, 50);
+        } else {
+            g.drawString("Press [S] for Stats Menu", 325, 35);
+            g.drawString("Party Members:", 325, 55);
         }
     }
     public static void update(GameContainer container, int delta) {
-        Input input = container.getInput();
-        xPos = input.getMouseX();
-        yPos = input.getMouseY();
+        // nothing to do here
     }
     // increase the amount of item by some quantity; should also check if quantity goes over 99
     public static int containsItem(String itemName){
@@ -95,9 +106,6 @@ public class Inventory {
             items.remove(index);
         }
     }
-    public static int getQuantity(String itemName) {
-        return 0;
-    }
 }
 
 class InventoryKeyboard implements KeyListener {
@@ -108,7 +116,7 @@ class InventoryKeyboard implements KeyListener {
     public void keyReleased(int key, char c) {
         if (Inventory.isSelectingTarget) {
             if (key == Input.KEY_DOWN) {
-                if (Inventory.highlightedUnitID < Resources.party.size() && Resources.party.get(Inventory.highlightedUnitID + 1) != null) {
+                if (Inventory.highlightedUnitID < Resources.party.size()-1 && Resources.party.get(Inventory.highlightedUnitID + 1) != null) {
                     Inventory.highlightedUnitID++;
                 }
             } else if (key == Input.KEY_UP) {
@@ -130,6 +138,7 @@ class InventoryKeyboard implements KeyListener {
                     } else {
                         ((Consumable) Inventory.selectedItem).use(Inventory.selectedUnit);
                     }
+                    Inventory.removeItem(Inventory.selectedItem.getName(), 1);
                 } else {
                     Inventory.selectedUnit.equip((Equipment) Inventory.selectedItem);
                 }
@@ -145,7 +154,6 @@ class InventoryKeyboard implements KeyListener {
                     Inventory.highlightedItemID--;
                 }
             } else if (key == Input.KEY_ENTER) {
-                Inventory.selectedItemID = Inventory.highlightedItemID;
                 Inventory.selectedItem = Inventory.items.get(Inventory.highlightedItemID);
                 System.out.println(Inventory.selectedItem);
                 Inventory.isSelectingTarget = true;

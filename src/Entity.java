@@ -92,6 +92,18 @@ public class Entity {
                 Inventory.addItem(mapState.getItem(xPos + hitWidth/2, yPos - hitHeight), 1);
             }
         }
+        // check if player presses SPACE while facing & next to an NPC
+        /*if (input.isKeyDown(Input.KEY_SPACE)){
+            if (dir==0 && mapState.isCutscene(xPos + hitWidth/2, yPos + hitHeight + moveDist)){
+                mapState.getCutscene(xPos + hitWidth/2, yPos + hitHeight + moveDist);
+            } else if (dir==1 && mapState.isCutscene(xPos - hitWidth, yPos + hitHeight/2)){
+                mapState.getCutscene(xPos - hitWidth, yPos + hitHeight/2);
+            } else if (dir==2 && mapState.isCutscene(xPos + hitWidth + moveDist, yPos + hitHeight/2)){
+                mapState.getCutscene(xPos + hitWidth + moveDist, yPos + hitHeight/2);
+            } else if (dir==3 && mapState.isCutscene(xPos + hitWidth/2, yPos - hitHeight)){
+                mapState.getCutscene(xPos + hitWidth/2, yPos - hitHeight);
+            }
+        }*/
     }
     public Image getSprite() {
         return sprite;

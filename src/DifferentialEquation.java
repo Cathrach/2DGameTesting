@@ -9,7 +9,7 @@ public class DifferentialEquation extends Enemy {
 
     public DifferentialEquation() {
         super("Differential Equation",
-                "images/sprites/enemies/09_werewolf.png",
+                "images/sprites/enemies/DifferentialEquation.png",
                 120, 60, 15, 10,
                 new EnemyDrop[]{
                         new EnemyDrop(Resources.item_db[1], 0.5f)

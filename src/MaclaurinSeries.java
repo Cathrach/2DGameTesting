@@ -4,7 +4,7 @@
 public class MaclaurinSeries extends Enemy {
     public MaclaurinSeries() {
         super("Maclaurin Series",
-                "images/sprites/enemies/04_dwarf.png",
+                "images/sprites/enemies/MacLaurinSeries.png",
                 140, 30, 50, 10,
                 new EnemyDrop[]{
                         new EnemyDrop(Resources.item_db[1], 0.5f)

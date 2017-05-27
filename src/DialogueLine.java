@@ -1,3 +1,4 @@
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 
@@ -32,12 +33,14 @@ public class DialogueLine {
     }
 
     public void render(Graphics g) {
+        // render speaker
+        this.speaker.draw(0, 0);
         // render line in a rectangle
-        g.drawRect(0, 400, 640, 80);
+        g.setColor(new Color(0, 0, 0, 100));
+        g.fillRect(0, 400, 640, 80);
+        g.setColor(Color.white);
         for (int i=0; i<lineSplit.length; i++) {
             g.drawString(lineSplit[i], 20, 420+i*15);
         }
-        // render speaker
-        this.speaker.draw(0, 0);
     }
 }

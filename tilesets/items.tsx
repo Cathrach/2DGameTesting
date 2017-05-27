@@ -166,7 +166,7 @@
  <tile id="27">
   <properties>
    <property name="isContainer" value="true"/>
-   <property name="item" value=""/>
+   <property name="item" value="empty"/>
   </properties>
  </tile>
 </tileset>

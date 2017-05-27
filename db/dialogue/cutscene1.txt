@@ -1,9 +1,9 @@
 8
-Proctor: It is Tuesday morning, May 9. >> images/sprites/heroine.png
-Proctor: You will be taking the AP Calculus BC Exam. >> images/sprites/heroine.png
-Proctor: In a moment, you will open the packet that contains your//exam materials. >> images/sprites/heroine.png
-You: Zzz... >> images/sprites/heroine.png
-Proctor: Calculators are not allowed in Part A. Please put your//calculators under your chairs. >> images/sprites/heroine.png
-You: Zzz... >> images/sprites/heroine.png
-Proctor: Open your section 1 booklet and begin! >> images/sprites/heroine.png
-You: ... >> images/sprites/heroine.png >> true >> 0
+Proctor: It is Tuesday morning, May 9. >> images/backgrounds/scene1-0.png
+Proctor: You will be taking the AP Calculus BC Exam. >> images/backgrounds/scene1-0.png
+Proctor: In a moment, you will open the packet that contains your//exam materials. >> images/backgrounds/scene1-0.png
+You: Zzz... >> images/backgrounds/scene1-1.png
+Proctor: Calculators are not allowed in Part A. Please put your//calculators under your chairs. >> images/backgrounds/scene1-0.png
+You: Zzz... >> images/backgrounds/scene1-1.png
+Proctor: Open your section 1 booklet and begin! >> images/backgrounds/scene1-2.png
+You: *opens booklet sleepily*?! >> images/backgrounds/scene1-3.png >> true >> 0
