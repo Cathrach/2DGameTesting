@@ -4,7 +4,7 @@
 public class TaylorSeries extends Enemy {
     public TaylorSeries() {
         super("Taylor Series",
-                "images/sprites/enemies/Limit.png",
+                "images/sprites/enemies/TaylorSeries.png",
                 160, 50, 50, 10,
                 new EnemyDrop[]{
                         new EnemyDrop(Resources.item_db[1], 0.5f)
