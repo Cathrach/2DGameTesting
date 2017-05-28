@@ -8,20 +8,21 @@ public class Item {
     private int value;
     private int quantity;
     private String description;
-    public String itemType;
+    public String info;
 
-    public Item(String n, int v, int q, String d){
+    public Item(String n, int v, int q, String d) throws SlickException {
         name = n;
         value = v;
         quantity = q;
         description = d;
+        item = new Image("images/items/" + name + ".png");
     }
     public void init() {
     }
     public void render(float xPos, float yPos, Graphics g) {
         item.draw(xPos, yPos);
         g.drawString(name, xPos + item.getWidth() + 10, yPos);
-        g.drawString(value + "G", xPos + item.getWidth() + 10, yPos + 10);
+        g.drawString("Value: " + value + "munchkins", xPos + item.getWidth() + 10, yPos + 15);
     }
     public Image getImage(){
         return item;
@@ -38,7 +39,7 @@ public class Item {
         return description;
     }
     public int getValue() { return value; }
-    public String getType() { return itemType; }
+    public String getInfo() { return info; }
 
     public void addQuantity(int quantity) {
         this.quantity = Math.min(99, this.quantity + quantity);

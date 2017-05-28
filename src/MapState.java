@@ -40,11 +40,6 @@ public class MapState extends BasicGameState {
         leader.update(container, game, delta, this);
         // if the tile is an entry, change the current map ID and current map
         if (currentMap.isEntry(leader.xPos, leader.yPos)) {
-            //int[] entryData = currentMap.getEntry(leader.xPos, leader.yPos);
-            //changeMap(entryData[0]);
-            // place the player in the new position
-            //leader.xPos = currentMap.tileWidth * entryData[1];
-            //leader.yPos = currentMap.tileHeight * entryData[2];
             String[] data = currentMap.getEntry(leader.xPos, leader.yPos);
             changeMap(Integer.parseInt(data[1]));
             // to reduce the # of individual Entrance tiles needed:
@@ -83,6 +78,8 @@ public class MapState extends BasicGameState {
     }
     public boolean isContainer(float xPos, float yPos) { return currentMap.isContainer(xPos, yPos); }
     public String getItem(float xPos, float yPos) { return currentMap.getItem(xPos, yPos); }
+    public boolean isCutscene(float xPos, float yPos) { return currentMap.isCutscene(xPos, yPos); }
+    public String getCutscene(float xPos, float yPos) { return currentMap.getCutscene(xPos, yPos); }
     public int getHeight() {
         return currentMap.pixelHeight;
     }

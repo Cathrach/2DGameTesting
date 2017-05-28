@@ -176,28 +176,43 @@ public class Combat extends BasicGameState {
                 g.drawString("SELECT A TARGET", 25, 450);
 
             } else if (isSelectingItem) {
-                // draws menu of consumable items, draws rect around selected item
-                consumablesOnly.clear();
-                g.setColor(new Color(0, 0, 0, 150));
-                g.fillRect(120, 100, 400, 280);
-                g.setColor(Color.white);
-                for (Item item : Inventory.items) {
-                    if (item instanceof Consumable) {
-                        consumablesOnly.add((Consumable) item);
-                        g.drawString(item.getName() + " x " + item.getQuantity(), 125, 105+consumablesOnly.indexOf(item)*20);
-                    }
-                }
-                g.drawRect(125, 105+highlightedItemID*20, 400, 20);
-
-                // if there are none, tell the player and exit the item menu; resume player's turn
-                if (consumablesOnly.size() == 0) {
-                    message = "No items to display";
-                    isSelectingItem = false;
-                } else {
+                // if there are no items, tell the player and exit the item menu; resume player's turn
+                // otherwise, draw the item menu
+                if (consumablesOnly.size() > 0) {
                     g.drawString("SELECT AN ITEM", 25, 450);
+                    // draws menu of consumable items, draws rect around selected item
+                    g.setColor(new Color(0, 0, 0, 150));
+                    g.fillRect(120, 100, 400, 280);
+                    g.setColor(Color.white);
+                    g.drawString("Press DELETE or BACKSPACE to cancel", 125, 105);
+                    g.drawString("SELECT AN ITEM:", 125, 150);
+                    for (Consumable item : consumablesOnly) {
+                        g.drawString(item.getName() + " x " + item.getQuantity(), 125, 170 + consumablesOnly.indexOf(item) * 20);
+                    }
+                    g.drawRect(125, 170 + highlightedItemID * 20, 390, 20);
+                } else {
+                    message = "NO CONSUMABLE ITEMS TO DISPLAY";
+                    isSelectingItem = false;
                 }
             } else if (isSelectingSkill) {
-                // draw skill menu starting from 3rd element, rectangle around highlighted menu
+                if (currMove.skills.size() > 2) {
+                    g.drawString("SELECT A SKILL", 25, 450);
+                    // draw menu window
+                    g.setColor(new Color(0, 0, 0, 150));
+                    g.fillRect(120, 100, 400, 280);
+                    g.setColor(Color.white);
+                    g.drawString("Press DELETE or BACKSPACE to cancel", 125, 105);
+                    g.drawString("SELECT A SKILL:", 125, 150);
+                    // draw rectangle around highlighted skill
+                    g.drawRect(125, 170+(highlightedSkillID-2)*20, 390, 20);
+                    // draw each skill in the list (start from 3rd element bc the first 2 are the generic ATTACK & DEFEND skills in the menu)
+                    for (int i=2; i<Combat.currMove.skills.size(); i++) {
+                        g.drawString(Combat.currMove.skills.get(i).getName(), 125, 170+i*20);
+                    }
+                } else {
+                    message = "NO SPECIAL SKILLS TO DISPLAY";
+                    isSelectingSkill = false;
+                }
             } else {
                 // draw skill menu: attack, defend, item, skill, flee
                 g.drawString("ATTACK", 25, 450);
@@ -313,6 +328,8 @@ public class Combat extends BasicGameState {
         }
         if (alliesDead || enemiesDead) {
             isCombat = false;
+        }
+        if (!isCombat) {
             game.enterState(TestingGame.MAP);
         }
     }
@@ -348,6 +365,7 @@ class CombatKeyboard implements KeyListener {
                         Combat.selectedSkill = Combat.currMove.skills.get(Combat.highlightedSkillID);
                     }
                     Combat.isSelectingSkill = false;
+                    Combat.highlightedTargetID = 0;
                     Combat.isSelectingTarget = true;
                 }
             } else if (Combat.isSelectingItem) {
@@ -395,6 +413,7 @@ class CombatKeyboard implements KeyListener {
                             break;
                     }
                     Combat.isSelectingItem = false;
+                    Combat.highlightedTargetID = 0;
                     Combat.isSelectingTarget = true;
                 }
             } else if (Combat.isSelectingTarget) {
@@ -475,6 +494,7 @@ class CombatKeyboard implements KeyListener {
                                     Combat.possibleTargets.add(enemy);
                                 }
                             }
+                            Combat.highlightedTargetID = 0;
                             Combat.isSelectingTarget = true;
                             break;
                         case Combat.DEFEND:
@@ -483,14 +503,21 @@ class CombatKeyboard implements KeyListener {
                             break;
                         case Combat.ITEM:
                             // select item to use
+                            Combat.highlightedItemID = 0;
                             Combat.isSelectingItem = true;
                             break;
                         case Combat.SKILL:
                             // select skill to use
+                            Combat.highlightedSkillID = 0;
                             Combat.isSelectingSkill = true;
                             break;
                         case Combat.FLEE:
                             // flee somehow
+                            if (Combat.currEnemies.size() < Resources.party.size()/2) {
+                                Combat.isCombat = false;
+                            } else {
+                                Combat.message = "CANNOT FLEE, THERE ARE TOO MANY ENEMIES";
+                            }
                             break;
                         default:
                             // shouldn't happen but

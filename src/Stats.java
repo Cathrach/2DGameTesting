@@ -13,12 +13,10 @@ public class Stats {
         // list of current stats for each unit
     }
     public static void render(Graphics g) {
-        // temporary! Will add GUI & fix up later
-        // TODO: draw stats GUI
         for (int i = 0; i < Resources.party.size(); i++) {
             Entity entity = Resources.party.get(i);
             // just one for now
-            RoundedRectangle frame = new RoundedRectangle(10, 30 + 100 * i, 350, 100, 10);
+            RoundedRectangle frame = new RoundedRectangle(10, 30 + 100 * i, 390, 100, 10);
             g.draw(frame);
             if (entity != null) {
                 g.drawString(entity.battleEntity.name, 25, 35 + 100 * i);
@@ -29,19 +27,19 @@ public class Stats {
                 g.drawString("DEF: " + entity.battleEntity.getDEF(), 170, 85 + 100 * i);
                 for (int j = 0; j < entity.battleEntity.equips.size(); j++) {
                     Equipment equipment = entity.battleEntity.equips.get(j);
-                    g.drawString(equipment.getName(), 270, 35 + 25 * j);
+                    g.drawString(equipment.getName(), 250, 35 + 100*i + 25 * j);
                 }
             }
         }
-        RoundedRectangle skillFrame = new RoundedRectangle(365, 30, 275, 420, 10);
+        RoundedRectangle skillFrame = new RoundedRectangle(405, 30, 235, 420, 10);
         g.draw(skillFrame);
-        g.drawString("SKILLS", 380, 35);
+        g.drawString("SKILLS", 420, 35);
         for (int i = 0; i < Resources.party.get(0).battleEntity.skills.size(); i++) {
             Skill skill = Resources.party.get(0).battleEntity.skills.get(i);
-            skill.getIcon().getScaledCopy(20, 20).draw(380, 60 + 25 * i);
-            g.drawString(skill.getName(), 410, 60 + 25 * i);
+            skill.getIcon().getScaledCopy(20, 20).draw(420, 60 + 25 * i);
+            g.drawString(skill.getName(), 445, 60 + 25 * i);
         }
-        g.drawString("Press ESC to return to menu", 10, 10);
+        g.drawString("Press ESC to return to menu", 10, 450);
     }
     public static void update(GameContainer container, int delta) {
         // No need for updates because user can do these

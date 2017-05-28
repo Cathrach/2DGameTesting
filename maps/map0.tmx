@@ -116,14 +116,14 @@
    H4sIAAAAAAAAA2NgGBnAlBmCiQVmzBA8WM0jBEbNGzVvOAIAEvUqpbAEAAA=
   </data>
  </layer>
- <layer name="Background" width="20" height="15">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA7WUyw2EMAxE4y0FkFJS6AA6gE6ok61gibClkTUJ5rCHURR5ePFPSEpJ/qAi7/yzcNVYJiyMv+X1/HY/Prewnqrt0i79Gmf1lA4v2ivPsnO8NEFentXqGbLQMwRmNADHhO/7Ok795tT7V3O22NiY1eo4nlvzXtTnvYzn+7cK57K5MR7WbpzsmBth2X61eH5PS8DP5hThR3iZ9OLpDebtKfKfwH39AZpHuNiwBAAA
-  </data>
- </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NgGAWjABOYM0PwYDVvFIxMAAAVfDmwsAQAAA==
+  </data>
+ </layer>
+ <layer name="Background" width="20" height="15">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA7WUyw2EMAxE4y0FkFJS6AA6gE6ok61gibClkTUJ5rCHURR5ePFPSEpJ/qAi7/yzcNVYJiyMv+X1/HY/Prewnqrt0i79Gmf1lA4v2ivPsnO8NEFentXqGbLQMwRmNADHhO/7Ok795tT7V3O22NiY1eo4nlvzXtTnvYzn+7cK57K5MR7WbpzsmBth2X61eH5PS8DP5hThR3iZ9OLpDebtKfKfwH39AZpHuNiwBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
