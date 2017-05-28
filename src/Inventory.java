@@ -154,7 +154,6 @@ class InventoryKeyboard implements KeyListener {
                 }
             } else if (key == Input.KEY_ENTER) {
                 Inventory.selectedItem = Inventory.items.get(Inventory.highlightedItemID);
-                System.out.println(Inventory.selectedItem);
                 Inventory.isSelectingTarget = true;
             }
         }
