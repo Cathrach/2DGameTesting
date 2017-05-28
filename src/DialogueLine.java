@@ -33,7 +33,7 @@ public class DialogueLine {
     }
 
     public void render(Graphics g) {
-        // render speaker
+        // render speaker (or, in this case, the cutscene image)
         this.speaker.draw(0, 0);
         // render line in a rectangle
         g.setColor(new Color(0, 0, 0, 100));
@@ -42,5 +42,6 @@ public class DialogueLine {
         for (int i=0; i<lineSplit.length; i++) {
             g.drawString(lineSplit[i], 20, 420+i*15);
         }
+        g.drawString("<SPACE>", 560, 460);
     }
 }

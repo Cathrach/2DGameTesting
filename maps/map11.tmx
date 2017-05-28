@@ -5,6 +5,16 @@
  <tileset firstgid="369" source="../tilesets/walls2.tsx"/>
  <tileset firstgid="625" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
+  <tile id="2">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
   <tile id="5">
    <properties>
     <property name="entryInfo" value="house_7_12_7"/>
@@ -13,9 +23,27 @@
  </tileset>
  <tileset firstgid="660" source="../tilesets/objects2.tsx"/>
  <tileset firstgid="916" source="../tilesets/ground2.tsx"/>
+ <tileset firstgid="1108" source="../tilesets/items.tsx"/>
+ <tileset firstgid="1152" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
+  <image source="../tilesets/teachers.png" width="384" height="360"/>
+  <tile id="3">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="4"/>
+   </properties>
+  </tile>
+  <tile id="15">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="4"/>
+   </properties>
+  </tile>
+ </tileset>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGAWjgHognAUVj4JRQE0AANhIalWwBAAA
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
@@ -35,7 +63,7 @@
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA7vOyMBwfYjgeCBOIIPGZV4+EBeQQeMyj1wwkObpMTMw6EOxAfPgc99wNo+QPdTKN9Q2byAxAPzd3iqwBAAA
+   H4sIAAAAAAAAA7vOyMBwfYjgeCBOIIPGZV4+EBeQQeMyDx9oZsEtR455/VQyT4+ZgUEfig2YKTevmAkVU2oeMWComkfIHmrlG2qbN5AYANEq6cywBAAA
   </data>
  </layer>
 </map>

@@ -94,7 +94,7 @@
  <tileset firstgid="724" source="../tilesets/items.tsx"/>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAX0ANeZBtoFo2AUDH0AALYGeACwBAAA
+   H4sIAAAAAAAAA2NgGAX0AHeYBtoFo2AUDH0AAKesw7OwBAAA
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">

@@ -38,7 +38,7 @@
   </tile>
   <tile id="6">
    <properties>
-    <property name="encounterChance" value="1"/>
+    <property name="encounterChance" value="0.5"/>
     <property name="encounterInfo" value="0"/>
    </properties>
   </tile>
@@ -118,7 +118,7 @@
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjABOYM0PwYDVvFIxMAAAVfDmwsAQAAA==
+   H4sIAAAAAAAAA2NgGAWjABOYM0PwQJg3kHaPgsENANhzymewBAAA
   </data>
  </layer>
  <layer name="Background" width="20" height="15">

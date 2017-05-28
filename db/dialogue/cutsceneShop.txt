@@ -1,0 +1,2 @@
+1
+Shopkeeper: Anything you'd like to buy? >> images/backgrounds/blank.png

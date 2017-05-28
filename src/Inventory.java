@@ -14,8 +14,6 @@ public class Inventory {
     static Ally selectedUnit;
     // contains consumables and equips: array list of items
     static ArrayList<Item> items = new ArrayList<>();
-    private static int xPos, yPos;
-    // index in array list?
 
     public static void getFromSave() {
         // init items here
@@ -32,8 +30,9 @@ public class Inventory {
         highlightedUnitID = 0;
     }
     public static void render(Graphics g) {
-        g.drawString("Press ESC to return to main menu", 20, 440);
+        g.drawString("Press ESC to return to main menu", 20, 450);
         g.drawString("INVENTORY", 20, 35);
+        g.drawString("MONEY: " + String.valueOf(Resources.money) + " munchkins", 20,380);
 
         // draw list of items
         for (int i = 0; i<items.size(); i++){
@@ -44,8 +43,8 @@ public class Inventory {
 
         // draw box around highlighted item, display item info
         if (highlightedItemID < items.size()) {
-            g.drawString(items.get(highlightedItemID).getName() + ": " + items.get(highlightedItemID).getDescription(), 20, 380);
-            g.drawString(items.get(highlightedItemID).getInfo(), 20, 410);
+            g.drawString(items.get(highlightedItemID).getName() + ": " + items.get(highlightedItemID).getDescription(), 20, 400);
+            g.drawString(items.get(highlightedItemID).getInfo(), 20, 420);
             g.drawRect(25, 55+(highlightedItemID)*40, 280, 40);
         }
 
@@ -58,17 +57,17 @@ public class Inventory {
                 entity.getSprite().getSubImage(0, 0, 32, 45).draw(325, 95 + 70*i);
                 for (int j = 0; j < entity.battleEntity.equips.size(); j++) {
                     Equipment equipment = entity.battleEntity.equips.get(j);
-                    g.drawString(equipment.getName(), 400, 95 + 70*i + 15*j);
+                    g.drawString(equipment.getName(), 420, 95 + 70*i + 15*j);
                 }
             }
         }
         if (isSelectingTarget) {
             g.drawString("Member to use/equip this item:", 325, 35);
             g.drawString("(Press BACKSPACE to cancel)", 325, 55);
-            g.drawRect(320, 75 + 70*highlightedUnitID, 300, 50);
+            g.drawRect(320, 75 + 70*highlightedUnitID, 300, 70);
         } else {
-            g.drawString("Press [S] for Stats Menu", 325, 35);
-            g.drawString("Party Members:", 325, 55);
+            g.drawString("Press [ENTER] to select item", 325, 35);
+            g.drawString("Press [S] for Stats Menu", 325, 55);
         }
     }
     public static void update(GameContainer container, int delta) {

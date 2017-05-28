@@ -15,6 +15,7 @@ public class TestingGame extends StateBasedGame {
     public static final int CUTSCENE = 2;
     public static final int PAUSE_MENU = 3;
     public static final int COMBAT = 4;
+    public static final int SHOP = 5;
 
     public static final int WIDTH = 640;
     public static final int HEIGHT = 480;
@@ -27,6 +28,7 @@ public class TestingGame extends StateBasedGame {
         this.addState(new Cutscene(CUTSCENE));
         this.addState(new PauseMenu(PAUSE_MENU));
         this.addState(new Combat(COMBAT));
+        this.addState(new Combat(SHOP));
         this.enterState(MAIN_MENU);
     }
 
@@ -39,8 +41,10 @@ public class TestingGame extends StateBasedGame {
             getState(CUTSCENE).init(container, this);
             getState(PAUSE_MENU).init(container, this);
             getState(COMBAT).init(container, this);
+            getState(SHOP).init(container, this);
             Inventory.initListener(container);
             Combat.initListener(container);
+            Shop.initListener(container);
         }
         catch (IOException e) {
             System.out.println("bad file path");

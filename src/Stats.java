@@ -4,18 +4,15 @@
 
 import org.newdawn.slick.*;
 import org.newdawn.slick.geom.*;
-import java.util.ArrayList;
 public class Stats {
 
-    // I have no idea what I'm doing :)
-
     public static void init() {
-        // list of current stats for each unit
+        // nothing to do here
     }
     public static void render(Graphics g) {
+        // draw the stats for each party member inside a rectangular frame
         for (int i = 0; i < Resources.party.size(); i++) {
             Entity entity = Resources.party.get(i);
-            // just one for now
             RoundedRectangle frame = new RoundedRectangle(10, 30 + 100 * i, 390, 100, 10);
             g.draw(frame);
             if (entity != null) {
@@ -31,6 +28,7 @@ public class Stats {
                 }
             }
         }
+        // draw list of skills inside a frame
         RoundedRectangle skillFrame = new RoundedRectangle(405, 30, 235, 420, 10);
         g.draw(skillFrame);
         g.drawString("SKILLS", 420, 35);

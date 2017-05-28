@@ -1,4 +1,4 @@
-44
+43
 map0
 map1
 map2
@@ -42,5 +42,3 @@ map39
 map40
 map41
 map42
-sample
-next
