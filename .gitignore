@@ -4,3 +4,5 @@ out/production/2DGameTesting/*.class
 .idea/*.xml
 
 *.iml
+
+*.html
