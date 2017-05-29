@@ -2,46 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="879bada7-3ef8-4932-bbc3-19fc35ada0d8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dialogue/cutscene10.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dialogue/cutscene11.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dialogue/cutscene12.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dialogue/cutscene13.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dialogue/cutscene14.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dialogue/cutscene9.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DGameTesting/Combat.class" afterPath="$PROJECT_DIR$/out/production/2DGameTesting/Combat.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DGameTesting/CombatKeyboard.class" afterPath="$PROJECT_DIR$/out/production/2DGameTesting/CombatKeyboard.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DGameTesting/Map.class" afterPath="$PROJECT_DIR$/out/production/2DGameTesting/Map.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DGameTesting/Resources.class" afterPath="$PROJECT_DIR$/out/production/2DGameTesting/Resources.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dialogue/cutscenes.txt" afterPath="$PROJECT_DIR$/db/dialogue/cutscenes.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map17.tmx" afterPath="$PROJECT_DIR$/maps/map17.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map20.tmx" afterPath="$PROJECT_DIR$/maps/map20.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map22.tmx" afterPath="$PROJECT_DIR$/maps/map22.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map23.tmx" afterPath="$PROJECT_DIR$/maps/map23.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map24.tmx" afterPath="$PROJECT_DIR$/maps/map24.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map25.tmx" afterPath="$PROJECT_DIR$/maps/map25.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map26.tmx" afterPath="$PROJECT_DIR$/maps/map26.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map27.tmx" afterPath="$PROJECT_DIR$/maps/map27.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map28.tmx" afterPath="$PROJECT_DIR$/maps/map28.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map29.tmx" afterPath="$PROJECT_DIR$/maps/map29.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map30.tmx" afterPath="$PROJECT_DIR$/maps/map30.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map8.tmx" afterPath="$PROJECT_DIR$/maps/map8.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BattleEntity.java" afterPath="$PROJECT_DIR$/src/BattleEntity.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Combat.java" afterPath="$PROJECT_DIR$/src/Combat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DefiniteIntegral.java" afterPath="$PROJECT_DIR$/src/DefiniteIntegral.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Derivative.java" afterPath="$PROJECT_DIR$/src/Derivative.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DifferentialEquation.java" afterPath="$PROJECT_DIR$/src/DifferentialEquation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Enemy.java" afterPath="$PROJECT_DIR$/src/Enemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ImproperIntegral.java" afterPath="$PROJECT_DIR$/src/ImproperIntegral.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IndefiniteIntegral.java" afterPath="$PROJECT_DIR$/src/IndefiniteIntegral.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Inventory.java" afterPath="$PROJECT_DIR$/src/Inventory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Limit.java" afterPath="$PROJECT_DIR$/src/Limit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MaclaurinSeries.java" afterPath="$PROJECT_DIR$/src/MaclaurinSeries.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MapState.java" afterPath="$PROJECT_DIR$/src/MapState.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Resources.java" afterPath="$PROJECT_DIR$/src/Resources.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SolidRevolution.java" afterPath="$PROJECT_DIR$/src/SolidRevolution.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Stats.java" afterPath="$PROJECT_DIR$/src/Stats.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TaylorSeries.java" afterPath="$PROJECT_DIR$/src/TaylorSeries.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,26 +25,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Derivative.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Derivative.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Limit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Limit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -94,11 +35,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BattleEntity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BattleEntity.java">
+      <file leaf-file-name="DialogueLine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DialogueLine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="35" column="29" lean-forward="false" selection-start-line="35" selection-start-column="29" selection-end-line="35" selection-end-column="29" />
+            <state relative-caret-position="338">
+              <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Dialogue.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Dialogue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="579">
+              <caret line="44" column="9" lean-forward="true" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Combat.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Combat.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="508" column="138" lean-forward="false" selection-start-line="508" selection-start-column="138" selection-end-line="508" selection-end-column="138" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cutscene.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Cutscene.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -137,6 +108,10 @@
       <find>DEFEND</find>
       <find>money</find>
       <find>getDrops</find>
+      <find>message</find>
+      <find>actionOrder</find>
+      <find>selectedSkill</find>
+      <find>selectedAction</find>
     </findStrings>
     <replaceStrings>
       <replace>Inventory.highlightedItemID</replace>
@@ -180,7 +155,6 @@
         <option value="$PROJECT_DIR$/db/dialogue/cutscene5.txt" />
         <option value="$PROJECT_DIR$/db/dialogue/cutscene7.txt" />
         <option value="$PROJECT_DIR$/db/dialogue/cutscene6.txt" />
-        <option value="$PROJECT_DIR$/src/Dialogue.java" />
         <option value="$PROJECT_DIR$/db/dialogue/cutscene8.txt" />
         <option value="$PROJECT_DIR$/src/Stats.java" />
         <option value="$PROJECT_DIR$/src/Inventory.java" />
@@ -192,7 +166,6 @@
         <option value="$PROJECT_DIR$/src/MapState.java" />
         <option value="$PROJECT_DIR$/db/dialogue/cutscene13.txt" />
         <option value="$PROJECT_DIR$/db/dialogue/cutscene14.txt" />
-        <option value="$PROJECT_DIR$/src/Combat.java" />
         <option value="$PROJECT_DIR$/src/Enemy.java" />
         <option value="$PROJECT_DIR$/src/TaylorSeries.java" />
         <option value="$PROJECT_DIR$/src/SolidRevolution.java" />
@@ -207,6 +180,8 @@
         <option value="$PROJECT_DIR$/src/Map.java" />
         <option value="$PROJECT_DIR$/src/BattleEntity.java" />
         <option value="$PROJECT_DIR$/db/dialogue/cutscene3.txt" />
+        <option value="$PROJECT_DIR$/src/Dialogue.java" />
+        <option value="$PROJECT_DIR$/src/Combat.java" />
       </list>
     </option>
   </component>
@@ -276,38 +251,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2DGameTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2DGameTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2DGameTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2DGameTesting" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dialogue" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -780,7 +723,7 @@
           <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
             <element signature="e#555#556#0" expanded="false" />
             <element signature="e#592#593#0" expanded="false" />
             <element signature="e#2458#2459#0" expanded="false" />
@@ -818,26 +761,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DialogueLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Skill.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="104">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cutscene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -854,16 +781,8 @@
         <state relative-caret-position="335">
           <caret line="34" column="47" lean-forward="true" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dialogue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="44" column="9" lean-forward="true" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1058,18 +977,7 @@
         <state relative-caret-position="929">
           <caret line="66" column="34" lean-forward="false" selection-start-line="66" selection-start-column="34" selection-end-line="66" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Combat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="303" column="39" lean-forward="false" selection-start-line="303" selection-start-column="39" selection-end-line="303" selection-end-column="39" />
-          <folding>
-            <element signature="class#CombatKeyboard#0" expanded="false" />
-            <element signature="method#keyReleased#0;class#CombatKeyboard#0" expanded="false" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1100,6 +1008,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/dialogue/cutscene3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="61" lean-forward="false" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Derivative.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Limit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/BattleEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -1116,26 +1048,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Limit.java">
+    <entry file="file://$PROJECT_DIR$/src/Cutscene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="29" lean-forward="false" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        <state relative-caret-position="546">
+          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="36" selection-end-line="26" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/dialogue/cutscene3.txt">
+    <entry file="file://$PROJECT_DIR$/src/DialogueLine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="61" lean-forward="false" selection-start-line="2" selection-start-column="61" selection-end-line="2" selection-end-column="61" />
+        <state relative-caret-position="338">
+          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Derivative.java">
+    <entry file="file://$PROJECT_DIR$/src/Dialogue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        <state relative-caret-position="579">
+          <caret line="44" column="9" lean-forward="true" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Combat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="508" column="138" lean-forward="false" selection-start-line="508" selection-start-column="138" selection-end-line="508" selection-end-column="138" />
           <folding />
         </state>
       </provider>
