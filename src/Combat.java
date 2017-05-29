@@ -500,6 +500,7 @@ class CombatKeyboard implements KeyListener {
                         case Combat.DEFEND:
                             // cast Combat.DEFEND on self: immediate use
                             Combat.currMove.use(Combat.currMove.skills.get(1), Combat.currMove);
+                            Combat.isFinishedTurn = true;
                             break;
                         case Combat.ITEM:
                             // select item to use

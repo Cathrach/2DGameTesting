@@ -23,6 +23,7 @@ public class Resources {
     static Dialogue[] dialogue_db;
     static Hashtable<String, Boolean> triggers;
     public static void init() throws SlickException, IOException {
+        money = 0;
         // read skills from text file
         BufferedReader skillEffectReader = new BufferedReader(new FileReader("db/skilleffects.txt"));
         int numSkillEffects = Integer.parseInt(skillEffectReader.readLine());

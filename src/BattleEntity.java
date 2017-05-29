@@ -26,6 +26,7 @@ public class BattleEntity {
     float ratioSkillDEF;
     boolean isPlayer;
     Image battler;
+    String battlerPath;
 
     // skills here
     ArrayList<Skill> skills;
@@ -51,6 +52,7 @@ public class BattleEntity {
         this.isPlayer = isPlayer;
         skills = new ArrayList<>();
         currSkillEffects = new ArrayList<>();
+        this.battlerPath = battlerPath;
         try {
             this.battler = new Image(battlerPath);
         } catch (SlickException e) {
