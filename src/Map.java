@@ -16,7 +16,7 @@ public class Map {
     int pixelWidth;
     // list of trigger-able things
     public Map() throws SlickException {
-        this("maps/sample.tmx");
+        this("maps/map0.tmx");
     }
     public Map(String filePath) throws SlickException {
         map = new TiledMap(filePath);
@@ -113,11 +113,11 @@ public class Map {
         return itemName;
     }
     public boolean isCutscene(float xPos, float yPos) {
-        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Cutscene"));
-        return map.getTileProperty(tileID, "Cutscene", "false").equals("true");
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Blocked"));
+        return map.getTileProperty(tileID, "isCutscene", "false").equals("true");
     }
-    public String getCutscene(float xPos, float yPos) {
-        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Cutscene"));
-        return map.getTileProperty(tileID, "Dialogue", "none");
+    public int getCutscene(float xPos, float yPos) {
+        int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Blocked"));
+        return Integer.parseInt(map.getTileProperty(tileID, "scene", "none"));
     }
 }

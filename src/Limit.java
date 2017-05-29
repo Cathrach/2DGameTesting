@@ -3,7 +3,7 @@
  */
 public class Limit extends Enemy {
     public Limit() {
-        super("Limit",
+        super("Limit", false,
                 "images/sprites/enemies/Limit.png",
                 40, 0, 5, 3,
                 new EnemyDrop[]{

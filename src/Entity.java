@@ -93,17 +93,21 @@ public class Entity {
             }
         }
         // check if player presses SPACE while facing & next to an NPC
-        /*if (input.isKeyDown(Input.KEY_SPACE)){
+        if (input.isKeyDown(Input.KEY_SPACE)){
             if (dir==0 && mapState.isCutscene(xPos + hitWidth/2, yPos + hitHeight + moveDist)){
-                mapState.getCutscene(xPos + hitWidth/2, yPos + hitHeight + moveDist);
+                Cutscene.currDialogue = Resources.dialogue_db[mapState.getCutscene(xPos + hitWidth/2, yPos + hitHeight + moveDist)];
+                game.enterState(TestingGame.CUTSCENE);
             } else if (dir==1 && mapState.isCutscene(xPos - hitWidth, yPos + hitHeight/2)){
-                mapState.getCutscene(xPos - hitWidth, yPos + hitHeight/2);
+                Cutscene.currDialogue = Resources.dialogue_db[mapState.getCutscene(xPos - hitWidth, yPos + hitHeight/2)];
+                game.enterState(TestingGame.CUTSCENE);
             } else if (dir==2 && mapState.isCutscene(xPos + hitWidth + moveDist, yPos + hitHeight/2)){
-                mapState.getCutscene(xPos + hitWidth + moveDist, yPos + hitHeight/2);
+                Cutscene.currDialogue = Resources.dialogue_db[mapState.getCutscene(xPos + hitWidth + moveDist, yPos + hitHeight/2)];
+                game.enterState(TestingGame.CUTSCENE);
             } else if (dir==3 && mapState.isCutscene(xPos + hitWidth/2, yPos - hitHeight)){
-                mapState.getCutscene(xPos + hitWidth/2, yPos - hitHeight);
+                Cutscene.currDialogue = Resources.dialogue_db[mapState.getCutscene(xPos + hitWidth/2, yPos - hitHeight)];
+                game.enterState(TestingGame.CUTSCENE);
             }
-        }*/
+        }
     }
     public Image getSprite() {
         return sprite;

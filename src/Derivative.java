@@ -7,7 +7,7 @@ public class Derivative extends Enemy {
     private boolean usedDerive;
 
     public Derivative() {
-        super("Derivative",
+        super("Derivative", false,
                 "images/sprites/enemies/Derivative.png",
                 60, 10, 15, 10,
                 new EnemyDrop[]{

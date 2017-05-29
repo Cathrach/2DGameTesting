@@ -31,6 +31,12 @@
     <property name="entryInfo" value="house_21_6_9"/>
    </properties>
   </tile>
+  <tile id="6">
+   <properties>
+    <property name="encounterChance" value="1"/>
+    <property name="encounterInfo" value="0_0"/>
+   </properties>
+  </tile>
   <tile id="7">
    <properties>
     <property name="Blocked" value="true"/>
@@ -92,14 +98,19 @@
    </properties>
   </tile>
  </tileset>
+ <tileset firstgid="916" source="../tilesets/items.tsx"/>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGAW0BguYGRgWMlNmxhwK9SODFVQ0axSMAnoCAC8sT1WwBAAA
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
+  <properties>
+   <property name="encounterChance" value="1"/>
+   <property name="encounterInfo" value="0_1"/>
+  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGAWjYHCDcmYIHqzmjQL6AQBWppfOsAQAAA==
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
@@ -114,7 +125,7 @@
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA7vOyMBwfYhgQSAWIoPGZZ4iECuRQeMyr5CZgaGIGUKD8BMmCEYGMLkiJJqQeSBMDCBk3mcmCCYFFOIx7ysBs2YC5fcD8QEmCBsEQHooMe88EF9AMu8LHvMKSQg7GKCmeYTiAxeGAWrlG2qbN5AYAPEIgjmwBAAA
+   H4sIAAAAAAAAA7vOyMBwfYhgQSAWIoPGZZ4iECuRQeMyr5CZgaGIGUKD8BMmCC5mhmAQgMkVIdGEzCtC0o8PEDLvMxMEE2MWspm4zPvKhF/vTKD8fiA+wARhgwBIDyXmnQfiC0jmfcFjHiw8SAHUNI9QfODCMECtfENt8wYSAwBZK6fhsAQAAA==
   </data>
  </layer>
 </map>

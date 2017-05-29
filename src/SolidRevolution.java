@@ -3,7 +3,7 @@
  */
 public class SolidRevolution extends Enemy {
     public SolidRevolution() {
-        super("Solid of Revolution",
+        super("Solid of Revolution", false,
                 "images/sprites/enemies/SolidRevolution.png",
                 100, 40, 40, 15,
                 new EnemyDrop[]{

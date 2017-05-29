@@ -5,6 +5,12 @@
  <tileset firstgid="433" source="../tilesets/walls2.tsx"/>
  <tileset firstgid="689" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
+  <tile id="6">
+   <properties>
+    <property name="encounterChance" value="0.25"/>
+    <property name="encounterInfo" value="0"/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="entryInfo" value="map_16_0_-11"/>
@@ -23,7 +29,7 @@
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGAWjYPCC7UwQPFjNGwX0BQBg3Z+csAQAAA==
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">

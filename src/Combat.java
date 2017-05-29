@@ -108,7 +108,7 @@ public class Combat extends BasicGameState {
         // draw background depending on the map
         if (map < 12) {
             background.getSubImage(640, 960, 640, 480).draw(0,0);   // town
-        } else if (map < 17) {
+        } else if (map < 18) {
             background.getSubImage(2*640, 480, 640, 480).draw(0,0); // forest
         } else if (map < 22) {
             background.getSubImage(640, 480, 640, 480).draw(0,0);   // lake/field
@@ -204,10 +204,10 @@ public class Combat extends BasicGameState {
                     g.drawString("Press DELETE or BACKSPACE to cancel", 125, 105);
                     g.drawString("SELECT A SKILL:", 125, 150);
                     // draw rectangle around highlighted skill
-                    g.drawRect(125, 170+(highlightedSkillID-2)*20, 390, 20);
+                    g.drawRect(125, 170 + (highlightedSkillID-2)*20, 390, 20);
                     // draw each skill in the list (start from 3rd element bc the first 2 are the generic ATTACK & DEFEND skills in the menu)
                     for (int i=2; i<Combat.currMove.skills.size(); i++) {
-                        g.drawString(Combat.currMove.skills.get(i).getName(), 125, 170+i*20);
+                        g.drawString(Combat.currMove.skills.get(i).getName(), 125, 170+(i-2)*20);
                     }
                 } else {
                     message = "NO SPECIAL SKILLS TO DISPLAY";
@@ -359,14 +359,19 @@ class CombatKeyboard implements KeyListener {
                     Combat.selectedSkill = null;
                     Combat.isSelectingSkill = false;
                 } else if (key == Input.KEY_ENTER) {
+                    Combat.selectedSkill = Combat.currMove.skills.get(Combat.highlightedSkillID);
                     if (Combat.selectedSkill.MPCost > Combat.currMove.currMP) {
-                        System.out.println("Not enough MP!");
+                        Combat.message = "Not enough MP!";
                     } else {
-                        Combat.selectedSkill = Combat.currMove.skills.get(Combat.highlightedSkillID);
+                        Combat.highlightedTargetID = 0;
+                        Combat.isSelectingTarget = true;
+                        for (Enemy enemy : Combat.currEnemies) {
+                            if (!enemy.isDead) {
+                                Combat.possibleTargets.add(enemy);
+                            }
+                        }
                     }
                     Combat.isSelectingSkill = false;
-                    Combat.highlightedTargetID = 0;
-                    Combat.isSelectingTarget = true;
                 }
             } else if (Combat.isSelectingItem) {
                 if (key == Input.KEY_DOWN) {
@@ -500,6 +505,8 @@ class CombatKeyboard implements KeyListener {
                         case Combat.DEFEND:
                             // cast Combat.DEFEND on self: immediate use
                             Combat.currMove.use(Combat.currMove.skills.get(1), Combat.currMove);
+                            // temporary patch
+                            Combat.message = Combat.currMove.getName() + " defended with " + Combat.currMove.skills.get(1).getName() + ". ";
                             Combat.isFinishedTurn = true;
                             break;
                         case Combat.ITEM:
@@ -509,7 +516,7 @@ class CombatKeyboard implements KeyListener {
                             break;
                         case Combat.SKILL:
                             // select skill to use
-                            Combat.highlightedSkillID = 0;
+                            Combat.highlightedSkillID = 2;
                             Combat.isSelectingSkill = true;
                             break;
                         case Combat.FLEE:

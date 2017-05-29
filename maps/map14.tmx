@@ -5,15 +5,26 @@
  <tileset firstgid="433" source="../tilesets/walls2.tsx"/>
  <tileset firstgid="689" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
+  <tile id="2">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
   <tile id="18">
    <properties>
     <property name="entryInfo" value="map_13_0_11"/>
    </properties>
   </tile>
  </tileset>
+ <tileset firstgid="724" source="../tilesets/items.tsx"/>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGAWjYOSBW0wD7YJRQA4AADoXhKewBAAA
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
@@ -28,12 +39,12 @@
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA+3SzQ2AIAwFYHpxRdjAEXRC4yCaOIF6tCRUm0dBDh5NfCB/n2AI5FwwMqaanztdCkH6giEOzn/z4rqh0dBzxNPf13OXgrdxcXBOw0JPmxMXK+V7Oelpo2V5e6qjNxuedUaJh3+lI17tbLWgK57ua7Wss3/h+X9/2d1stfCOlTx59zCG/ejFNnqW25q45gLfX6wmsAQAAA==
+   H4sIAAAAAAAAA63S0Q2DIBAGYO7FheoGdQfZwBHqC+sZB7FJJ6g+9ki4evk9LKQm/iAIn5zRk3PeyJh6vr5pUggyZAxxcP0vL+57FBp6jXj6/XrtkvFe3KyczbDQ0+bEzZOOZ9loH6Nlee/UR282PKtGSQ/fSke8s9rOgq54eq7Usmov9W48H7hvM/XXekHlivPd0/m6i873z/ejCgv/sZwn9z08w3n04hg9yy1N3PMBXRy2jLAEAAA=
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA5WTwVECUQyG970bWoFYgVqBWoFAA6gNIDag0gCwDSxWsHC3BMcDZ7UAXK1g4cifITvvNz6Bzcw3GUJI/peEkU+SMYjZl0uSD+UTpH7DO8UX4ASxU3AGJuDZx+tIjW/lh+oVFJfa54hdgEswBTP/V0tVY6ms3KaX1CspXrigd0i63qinxEc6h7kLOanmc6x0QW+G7w990FT1zCJzSM1M5qav/C6HP/bhbZXlNIdtZvte6U7Et0Bb32e1xExybN+u7kT8NbgBt3vU4poNcKBz6+nbxd+BPrivUU/sCPlNnduDvl38I3gCg5r1+JZf3e+Zs/Z9jW9Z9t2hm2Ltu4x32NE9Zmb+rH2b5vSfHeZm/qxd+lnNfL+xHcr8BiZPjD+zZr5fu8MX/T+sASI6ryKwBAAA
+   H4sIAAAAAAAAA5WT3VECUQyF9943tQKwArUCsQKBBgQb8KcBkAbAbWClgoVHZyjB4YFntQBFKwAeORmycw/xLkJmvskQQnJuEgY+SZ5BzL5dknwonyD1G94p/gXOEDsHF+AFDH28jtT4UX6p3pziUvsSsRq4AiMw9n+1FDWWysptekm9BcXnLujtk64p9ZT4QOcwcyEn1XyOLVzQm+H7Ex80FT2zyBxSM5OZ6Su/y+FPfXhbYTnNYZfZvte6E/F10ND3WS0xkxzb90Z3Ir4F2uB2j1pc8wgc69zu9O3i78EDeDygnlgF+VWdW0ffLr4LnkCvpN5rSZxv+c1tz5y172t8y7LvJt0Ua//PeIdN3WNm5s/ad2lOS3aYm/mzdulnNfP9xnYo8+uZPDH+zJr5fu0OJ/p/WAOPfNwDsAQAAA==
   </data>
  </layer>
  <layer name="Shade" width="20" height="15">

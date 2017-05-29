@@ -1,0 +1,3 @@
+2
+???: It's dangerous to go alone... >> images/backgrounds/blank.png
+???: Take these! >> images/backgrounds/blank.png >> true >> 8

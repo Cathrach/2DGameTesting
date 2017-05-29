@@ -1,2 +1,0 @@
-Shopkeeper: What would you like to buy?
->Shopkeeper: Thank you for visiting.

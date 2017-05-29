@@ -6,7 +6,7 @@ import java.util.*;
 public class DefiniteIntegral extends Enemy {
     private boolean firstTurnBash, usedIntegrate;
     public DefiniteIntegral() {
-        super("Definite Integral",
+        super("Definite Integral", false,
                 "images/sprites/enemies/DefiniteIntegral.png",
                 80, 45, 25, 10,
                 new EnemyDrop[]{

@@ -1,7 +1,7 @@
 27
 You: Eh??? Where are we? >> images/backgrounds/scene2-0.png
 Friend A: Definitely not in New York anymore... >> images/backgrounds/scene2-0.png
-Friend B: Luckily I think I've still got my stuff - pencils,my calcu- wha?! >> images/backgrounds/scene2-0.png
+Friend B: Luckily I think I've still got my stuff - pencils,//my calcu- wha?! >> images/backgrounds/scene2-0.png
 You: What happened? >> images/backgrounds/scene2-0.png
 Friend B: My precious TI-Nspire! It's gone! >> images/backgrounds/scene2-0.png
 Friend C: We had to put our calculators under our chairs, remember? >> images/backgrounds/scene2-0.png

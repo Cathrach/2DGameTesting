@@ -30,6 +30,12 @@
     <property name="entryInfo" value="house_16_16_6"/>
    </properties>
   </tile>
+  <tile id="6">
+   <properties>
+    <property name="encounterChance" value="0.5"/>
+    <property name="encounterInfo" value="0"/>
+   </properties>
+  </tile>
   <tile id="7">
    <properties>
     <property name="Blocked" value="true"/>
@@ -94,7 +100,7 @@
  <tileset firstgid="724" source="../tilesets/items.tsx"/>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAX0ANeZBtoFo2AUDH0AALYGeACwBAAA
+   H4sIAAAAAAAAA2NgGAX0AHeYBtoFo2AUDH0AAKesw7OwBAAA
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
@@ -106,8 +112,12 @@
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
+  <properties>
+   <property name="encounterChance" value="0.5"/>
+   <property name="encounterInfo" value="0_1"/>
+  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGAWjYOSA7UyoeLCZNwrwAwDh3lLKsAQAAA==
   </data>
  </layer>
  <layer name="Background" width="20" height="15">

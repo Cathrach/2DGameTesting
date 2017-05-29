@@ -1,0 +1,2 @@
+1
+BRIDGE TO INTEGRATION ISLAND >> images/backgrounds/blank.png >> true >> 24

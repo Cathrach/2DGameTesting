@@ -32,6 +32,13 @@ public class MapState extends BasicGameState {
             Resources.triggers.put("justArrived", false);
             game.enterState(TestingGame.CUTSCENE);
         }
+
+        // check if learning skills by talking to NPCs
+        learnSkill("learnSkillDerive", 2);
+        learnSkill("learnSkillIntegrate", 3);
+        learnSkill("learnSkillBash", 4);
+        learnSkill("learnSkillIntegrationByParts", 9);
+
         Input input = container.getInput();
         if (input.isKeyPressed(Input.KEY_ESCAPE)) {
             PauseMenu.inMenu = PauseMenu.NONE;
@@ -79,11 +86,20 @@ public class MapState extends BasicGameState {
     public boolean isContainer(float xPos, float yPos) { return currentMap.isContainer(xPos, yPos); }
     public String getItem(float xPos, float yPos) { return currentMap.getItem(xPos, yPos); }
     public boolean isCutscene(float xPos, float yPos) { return currentMap.isCutscene(xPos, yPos); }
-    public String getCutscene(float xPos, float yPos) { return currentMap.getCutscene(xPos, yPos); }
+    public int getCutscene(float xPos, float yPos) { return currentMap.getCutscene(xPos, yPos); }
     public int getHeight() {
         return currentMap.pixelHeight;
     }
     public int getWidth() {
         return currentMap.pixelWidth;
+    }
+    public void learnSkill(String skill, int id) {
+        if (Resources.triggers.get(skill)) {
+            if(!Resources.party.get(0).battleEntity.skills.contains(Resources.skill_db[id])) {
+                for (Entity entity : Resources.party)
+                    entity.battleEntity.addSkill(id);
+            }
+            Resources.triggers.put(skill, false);
+        }
     }
 }

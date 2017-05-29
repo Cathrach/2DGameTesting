@@ -12,7 +12,7 @@ import java.util.Hashtable;
  * Created by serinahu on 5/9/17.
  */
 public class Resources {
-    static int money;
+    public static int money;
     static ArrayList<Entity> party;
     static Enemy[] enemy_db;
     // everything has an ID which corresponds to their position in this array!
@@ -131,7 +131,7 @@ public class Resources {
                 } else if (lineData.length == 5) {
                     scene[j] = new DialogueLine(lineData[0], new Image(lineData[1]), Boolean.parseBoolean(lineData[2]), Integer.parseInt(lineData[3]), lineData[4]);
                 } else {
-                    scene[j] = new DialogueLine("default", new Image("images/sprites/you.png"));
+                    scene[j] = new DialogueLine("default", new Image("images/sprites/heroine.png"));
                 }
             }
             dialogue_db[i] = new Dialogue(scene, new String[]{}, new int[]{});
@@ -142,6 +142,14 @@ public class Resources {
         triggers.put("killingLimits", false);
         triggers.put("killedLimits", false);
         triggers.put("finishedLimits", false);
+        triggers.put("learnSkillBash", false);
+        triggers.put("learnSkillDerive", false);
+        triggers.put("learnSkillIntegrate", false);
+        triggers.put("learnSkill+C", false);
+        triggers.put("learnSkillGetTriggy", false);
+        triggers.put("learnSkillGoOnATangent", false);
+        triggers.put("learnSkillHintHintHint", false);
+        triggers.put("learnSkillIntegrationByParts", false);
 
         // enemies
         Limit limit = new Limit();

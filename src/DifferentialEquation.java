@@ -8,7 +8,7 @@ public class DifferentialEquation extends Enemy {
     private boolean usedTriggy;
 
     public DifferentialEquation() {
-        super("Differential Equation",
+        super("Differential Equation", false,
                 "images/sprites/enemies/DifferentialEquation.png",
                 120, 60, 15, 10,
                 new EnemyDrop[]{

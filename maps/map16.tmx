@@ -10,6 +10,12 @@
     <property name="entryInfo" value="house_17_10_12"/>
    </properties>
   </tile>
+  <tile id="6">
+   <properties>
+    <property name="encounterChance" value="0.25"/>
+    <property name="encounterInfo" value="0"/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="entryInfo" value="map_18_0_-11"/>
@@ -32,8 +38,12 @@
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
+  <properties>
+   <property name="encounterChance" value="0.25"/>
+   <property name="encounterInfo" value="0"/>
+  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAUDBRiR8CgYBaOAMAAA3PXpPLAEAAA=
+   H4sIAAAAAAAAA2NgGAUDBRiR8FAH25kgeLCaNwqGBwAAukj4vrAEAAA=
   </data>
  </layer>
  <layer name="Background" width="20" height="15">

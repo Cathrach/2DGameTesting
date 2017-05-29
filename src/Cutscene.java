@@ -7,6 +7,7 @@ import org.newdawn.slick.state.*;
 public class Cutscene extends BasicGameState {
     private int id;
     static boolean isCutscene;
+    static boolean isShop;
     static Dialogue currDialogue;
     private static int timeElapsedSinceLastPress;
     private final int timeToWait = 100;
@@ -22,12 +23,19 @@ public class Cutscene extends BasicGameState {
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         isCutscene = false;
+        isShop = false;
         timeElapsedSinceLastPress = 0;
     }
 
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-        currDialogue.render(g);
+        if (isShop) {
+            Shop.render(g);
+        } else {
+            Resources.map_db[MapState.currentMapID].render(0,0);
+            Resources.party.get(0).render(container, game, g);
+            currDialogue.render(g);
+        }
     }
 
     @Override
