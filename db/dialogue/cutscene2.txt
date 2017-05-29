@@ -11,7 +11,7 @@ You: Let's figure out where we are first... >> images/backgrounds/scene2-0.png
 You, A, B, C: Wha-! Ms. KUBERSKA?! >> images/backgrounds/scene2-1.png
 Ms. Kuberska: Welcome to HABC land, the land of Calculus! >> images/backgrounds/scene2-1.png
 You, A, B, C: ...??? >> images/backgrounds/scene2-1.png
-Ms. Kuberska: You see, Mr. Weinstein, Ms. Basias, and Mr. Detchkov//usedto preside over this land... >> images/backgrounds/scene2-1.png
+Ms. Kuberska: You see, Mr. Weinstein, Ms. Basias, Mr. Detchkov, and I//used to preside over this land... >> images/backgrounds/scene2-1.png
 Ms. Kuberska: But everything changed when the Boiled Potato attacked. >> images/backgrounds/scene2-1.png
 Ms. Kuberska: Now, he steals munchkins and sends out tyrannical math//problems to terrorize students throughout the land. >> images/backgrounds/scene2-1.png
 Ms. Kuberska: We need YOUR help to restore order to HABC with the//power of math! >> images/backgrounds/scene2-1.png

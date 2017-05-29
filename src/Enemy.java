@@ -35,7 +35,7 @@ public class Enemy extends BattleEntity {
     }
 
     public Enemy(Enemy anotherEnemy) {
-        this.name = anotherEnemy.name;
+        super(anotherEnemy.name, false, anotherEnemy.battlerPath);
         drops = anotherEnemy.drops;
         baseHP = anotherEnemy.baseHP;
         baseMP = anotherEnemy.baseMP;
