@@ -20,8 +20,8 @@ public class Enemy extends BattleEntity {
         super();
     }
 
-    public Enemy(String name, String battlerPath, int baseHP, int baseMP, int baseATK, int baseDEF, EnemyDrop[] drops, int goldDropped) {
-        super(name, false, battlerPath);
+    public Enemy(String name, boolean isPlayer, String battlerPath, int baseHP, int baseMP, int baseATK, int baseDEF, EnemyDrop[] drops, int goldDropped) {
+        super(name, isPlayer, battlerPath);
         this.drops = drops;
         this.goldDropped = goldDropped;
         this.baseHP = baseHP;
@@ -50,7 +50,7 @@ public class Enemy extends BattleEntity {
     }
 
     public void getDrops() {
-        Resources.money += goldDropped;
+        Resources.money += this.goldDropped;
         for (EnemyDrop drop : drops) {
             if (Math.random() < drop.chance) {
                 Inventory.addItem(drop.item.getName(), 1);

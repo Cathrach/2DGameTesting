@@ -30,6 +30,12 @@
     <property name="entryInfo" value="house_28_5_6"/>
    </properties>
   </tile>
+  <tile id="6">
+   <properties>
+    <property name="encounterChance" value="1"/>
+    <property name="encounterInfo" value="2_3"/>
+   </properties>
+  </tile>
   <tile id="7">
    <properties>
     <property name="Blocked" value="true"/>
@@ -103,7 +109,7 @@
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAVDDRRC8SgYBSMNAABIw83KsAQAAA==
+   H4sIAAAAAAAAA2NgGAVDDRRCMaXgOxMCUwMMdvNGwdAHAII7CCqwBAAA
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">

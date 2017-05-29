@@ -27,6 +27,23 @@
    </properties>
   </tile>
  </tileset>
+ <tileset firstgid="724" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
+  <image source="../tilesets/teachers.png" width="384" height="360"/>
+  <tile id="28">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="9"/>
+   </properties>
+  </tile>
+  <tile id="40">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="9"/>
+   </properties>
+  </tile>
+ </tileset>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
@@ -53,7 +70,7 @@
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA0tiYmBIAuJkIC5CwsVofBAuBOJjjAwMPUAaGYDEYACXfhC/CQ3DzEMH14Bi16EYl/5mID7OiIobcZj3nBGB8enHhtHNA/kd2TxizMBnHrr7SDFrGxazQO77BhT/DsXkuA09fpHNHuyAkrjA5j9SzSMURqSYxwk0iwuIubGYCYr77SSmFUmgOVJALM2Eac4VRtLcB/KrJtAcLSDWZsI0hxT/wtKxJdAcKyC2xpGPQQAAPHSoJ7AEAAA=
+   H4sIAAAAAAAAA0tiYmBIAuJkIC5CwsVofBAuBOJjjAwMPUAaGYDEYACXfhC/CQ3DzEMH14Bi16EYl/5mID7OiIobcZj3nBGB8enHhtHNA/kd2TxizMBnHrr7SDFrGxB/YMJ03zeg+HcoJtVtf5gw4xfZ7MEOKIkLbP4j1TxCYUSKeZxAs7iAmBuLmaC4305iWpEEmiMFxNJMmOZcYSTNfSC/agLN0QJibSZMc0jx7zaoHkugOVZAbI0jH4MAANYJipKwBAAA
   </data>
  </layer>
 </map>

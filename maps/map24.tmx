@@ -16,6 +16,12 @@
     <property name="entryInfo" value="house_25_10_11"/>
    </properties>
   </tile>
+  <tile id="6">
+   <properties>
+    <property name="encounterChance" value="0.25"/>
+    <property name="encounterInfo" value="1_1"/>
+   </properties>
+  </tile>
   <tile id="18">
    <properties>
     <property name="entryInfo" value="map_31_0_11"/>
@@ -24,6 +30,16 @@
   <tile id="25">
    <properties>
     <property name="entryInfo" value="map_23_16_0"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="852" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
+  <image source="../tilesets/teachers.png" width="384" height="360"/>
+  <tile id="18">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="11"/>
    </properties>
   </tile>
  </tileset>
@@ -39,7 +55,7 @@
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGAVDBZgzQ/BgMG8wuYVSO6llL7XNGwWYAAAQD6nusAQAAA==
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
@@ -48,8 +64,13 @@
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
+  <properties>
+   <property name="Blocked" value="true"/>
+   <property name="isCutscene" value="true"/>
+   <property name="scene" value="11"/>
+  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA7vOyMBwHYhvADEzMwMDCzOCJgacAOo7joSfI2FhJDNEyDSPiQmCmYFYGckMFTLNoxSMNPMGOxjM4fcUmq+oYR7MrGQmys1DNqsYzbzrZGBks9DNS2IiHSOb1YxmHgBdo4posAQAAA==
+   H4sIAAAAAAAAA7vOyMBwHYhvADEzMwMDCzOCJgacAOo7joSfI2FhJDNEyDSPiQmCmYFYGckMFTLNoxQMZvPSmKnvvsEOBnN8PIXmK2qYBzMrmYly85DNKkYz7zoZGNksdPOSmEjHyGY1o5kHAPjrE1SwBAAA
   </data>
  </layer>
 </map>

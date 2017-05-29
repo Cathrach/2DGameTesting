@@ -11,9 +11,32 @@
     <property name="entryInfo" value="house_28_10_11"/>
    </properties>
   </tile>
+  <tile id="6">
+   <properties>
+    <property name="encounterChance" value="0.25"/>
+    <property name="encounterInfo" value="2"/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="entryInfo" value="map_26_0_-11"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="852" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
+  <image source="../tilesets/teachers.png" width="384" height="360"/>
+  <tile id="2">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="12"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="12"/>
    </properties>
   </tile>
  </tileset>
@@ -39,7 +62,7 @@
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA6XO4QmAIBAFYDGoJsgmqSbIBqgmiFrT0VLy4Di0u/LB+6Pcx7NaKcu0rp42pG0sdw8dfEeBNwmd1TeE8zadNwfkQDgvZMl4M7GkXm4j55lY6oFJPZfwOuRBwOvRmxPuA9OgW0MsiGTfl0j3vQVvoN7uexRspN75c+ObV7Ix5ZVsTHlX9FymOPTvBgRR0oKwBAAA
+   H4sIAAAAAAAAA6XP0QmAMAwEUFFQJ7BOok6gDqAdQETX7Gi22EAICYl4cD8tfVyXsigWpXX1tiFtc7X30CF2NHiT0dliUzRvL2VzQA5E81JWwZuJZfWkjZrncqkHJvUC43XIg4DXo7Ng3AemQ28dsSCWfVw8Y3GetI/mIP+UPB97Gk3LvuvDRqv3ZyPn/dnIeXf2glAcevcACaW18rAEAAA=
   </data>
  </layer>
 </map>

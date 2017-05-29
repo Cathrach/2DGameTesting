@@ -3,7 +3,7 @@
  */
 public class TaylorSeries extends Enemy {
     public TaylorSeries() {
-        super("Taylor Series",
+        super("Taylor Series", false,
                 "images/sprites/enemies/TaylorSeries.png",
                 160, 50, 50, 10,
                 new EnemyDrop[]{

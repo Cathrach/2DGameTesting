@@ -31,6 +31,12 @@
     <property name="entryInfo" value="house_0_11_6"/>
    </properties>
   </tile>
+  <tile id="6">
+   <properties>
+    <property name="encounterChance" value="1"/>
+    <property name="encounterInfo" value="1"/>
+   </properties>
+  </tile>
   <tile id="7">
    <properties>
     <property name="Blocked" value="true"/>
@@ -93,7 +99,7 @@
   </tile>
  </tileset>
  <tileset firstgid="916" source="../tilesets/items.tsx"/>
- <tileset firstgid="973" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
+ <tileset firstgid="944" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
   <image source="../tilesets/teachers.png" width="384" height="360"/>
   <tile id="5">
    <properties>
@@ -106,6 +112,7 @@
    <properties>
     <property name="Blocked" value="true"/>
     <property name="isCutscene" value="true"/>
+    <property name="oldScene" value="2"/>
     <property name="scene" value="2"/>
    </properties>
   </tile>
@@ -120,19 +127,23 @@
    H4sIAAAAAAAAA2NgGAWjYBQMJlDGDMGD1byBBAAUPHc0sAQAAA==
   </data>
  </layer>
- <layer name="Encounters" width="20" height="15">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
-  </data>
- </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA+NgYGDgGMWjeBSP4iGAAWoSN6uwBAAA
   </data>
  </layer>
+ <layer name="Encounters" width="20" height="15">
+  <properties>
+   <property name="encounterChance" value="1"/>
+   <property name="encounterInfo" value="0_1"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+  </data>
+ </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA7vOyMBwfRRTFQcDcQgRNLHmJQNxChE0sebhApeYUfnkmlfMDMH3KDTvCxOm2TOZyDePEBgo83CZT630SG3zBhIDADRXVlewBAAA
+   H4sIAAAAAAAAA7vOyMBwfRRTFQcDcQgRNLHmJQNxChE0sebhAluZUfnkmlfMDMEHKTTvCxOm2TOZyDePEBgo83CZT630SG3zBhIDANqaQqKwBAAA
   </data>
  </layer>
 </map>

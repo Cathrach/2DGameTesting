@@ -3,7 +3,7 @@
  */
 public class MaclaurinSeries extends Enemy {
     public MaclaurinSeries() {
-        super("Maclaurin Series",
+        super("Maclaurin Series", false,
                 "images/sprites/enemies/MacLaurinSeries.png",
                 140, 30, 50, 10,
                 new EnemyDrop[]{

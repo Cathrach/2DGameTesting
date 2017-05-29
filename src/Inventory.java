@@ -52,19 +52,19 @@ public class Inventory {
         for (int i=0; i<Resources.party.size(); i++) {
             Entity entity = Resources.party.get(i);
             if (entity != null) {
-                g.drawString(entity.battleEntity.name, 325, 75 + 70*i);
-                g.drawString("Equips:", 420, 75 + 70*i);
-                entity.getSprite().getSubImage(0, 0, 32, 45).draw(325, 95 + 70*i);
+                g.drawString(entity.battleEntity.name, 325, 75 + 85*i);
+                g.drawString("Equips:", 420, 75 + 85*i);
+                entity.getSprite().getSubImage(0, 0, 32, 45).draw(325, 95 + 85*i);
                 for (int j = 0; j < entity.battleEntity.equips.size(); j++) {
                     Equipment equipment = entity.battleEntity.equips.get(j);
-                    g.drawString(equipment.getName(), 420, 95 + 70*i + 15*j);
+                    g.drawString(equipment.getName(), 420, 90 + 85*i + 15*j);
                 }
             }
         }
         if (isSelectingTarget) {
             g.drawString("Member to use/equip this item:", 325, 35);
             g.drawString("(Press BACKSPACE to cancel)", 325, 55);
-            g.drawRect(320, 75 + 70*highlightedUnitID, 300, 70);
+            g.drawRect(320, 75 + 85*highlightedUnitID, 300, 85);
         } else {
             g.drawString("Press [ENTER] to select item", 325, 35);
             g.drawString("Press [S] for Stats Menu", 325, 55);

@@ -1,0 +1,4 @@
+3
+Weinstein Clone: Good job defeating those integration problems!!!//As promised, I'll teach you a new skill!!! >> images/backgrounds/blank.png
+--Learned skill INTEGRATION BY PARTS-- >> images/backgrounds/blank.png
+Weinstein Clone: This is a powerful method for solving integrals!!! But//as always, remember to look for simpler ways first!!! >> images/backgrounds/blank.png >> true >> 30 >> learnSkillIntegrationByParts

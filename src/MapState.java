@@ -33,13 +33,11 @@ public class MapState extends BasicGameState {
             game.enterState(TestingGame.CUTSCENE);
         }
 
-        // learn skills by talking to NPCs
-        if (Resources.triggers.get("learnSkillBash")) {
-            if(!Resources.party.get(0).battleEntity.skills.contains(Resources.skill_db[4])) {
-                Resources.party.get(0).battleEntity.addSkill(4);
-            }
-            Resources.triggers.put("learnSkillBash", false);
-        }
+        // check if learning skills by talking to NPCs
+        learnSkill("learnSkillDerive", 2);
+        learnSkill("learnSkillIntegrate", 3);
+        learnSkill("learnSkillBash", 4);
+        learnSkill("learnSkillIntegrationByParts", 9);
 
         Input input = container.getInput();
         if (input.isKeyPressed(Input.KEY_ESCAPE)) {
@@ -94,5 +92,14 @@ public class MapState extends BasicGameState {
     }
     public int getWidth() {
         return currentMap.pixelWidth;
+    }
+    public void learnSkill(String skill, int id) {
+        if (Resources.triggers.get(skill)) {
+            if(!Resources.party.get(0).battleEntity.skills.contains(Resources.skill_db[id])) {
+                for (Entity entity : Resources.party)
+                    entity.battleEntity.addSkill(id);
+            }
+            Resources.triggers.put(skill, false);
+        }
     }
 }

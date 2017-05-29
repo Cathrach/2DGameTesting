@@ -1,0 +1,6 @@
+5
+Weinstein Clone: Welcome to INTEGRATION ISLAND!!! It's time to learn//how to INTEGRATE!!! >> images/backgrounds/blank.png
+--Learned skill INTEGRATE-- >> images/backgrounds/blank.png
+Weinstein Clone: This tower is infested with Integration Problems.//I want you to practice defeating them. >> images/backgrounds/blank.png
+Weinstein Clone: Inside, you'll be able to find many useful items.//And, hinthinthint... >> images/backgrounds/blank.png
+Weinstein Clone: If you get to the top of the tower, I will teach you// a powerful new skill: INTEGRATION BY PARTS!!! >> images/backgrounds/blank.png >> true >> 27

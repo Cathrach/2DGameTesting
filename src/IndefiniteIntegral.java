@@ -6,7 +6,7 @@ import java.util.*;
 public class IndefiniteIntegral extends Enemy {
     private boolean firstTurnC, usedIntegrate;
     public IndefiniteIntegral() {
-        super("Indefinite Integral",
+        super("Indefinite Integral", false,
                 "images/sprites/enemies/IndefiniteIntegral.png",
                 90, 35, 35, 15,
                 new EnemyDrop[]{

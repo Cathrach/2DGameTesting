@@ -5,20 +5,58 @@
  <tileset firstgid="497" source="../tilesets/walls2.tsx"/>
  <tileset firstgid="753" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
+  <tile id="2">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3">
+   <properties>
+    <property name="Blocked" value="true"/>
+   </properties>
+  </tile>
   <tile id="5">
    <properties>
     <property name="entryInfo" value="house_29_14_6"/>
    </properties>
   </tile>
+  <tile id="6">
+   <properties>
+    <property name="encounterChance" value="1"/>
+    <property name="encounterInfo" value="3"/>
+   </properties>
+  </tile>
  </tileset>
+ <tileset firstgid="788" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
+  <image source="../tilesets/teachers.png" width="384" height="360"/>
+  <tile id="50">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="13"/>
+   </properties>
+  </tile>
+  <tile id="62">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="13"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="920" source="../tilesets/items.tsx"/>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGAUjHaxihuBRMAoGOwAAJi9db7AEAAA=
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
+  <properties>
+   <property name="encounterChance" value="1"/>
+   <property name="encounterInfo" value="3"/>
+  </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAVMUEwsfzCCQigeBaNgOAMA0zGfsbAEAAA=
+   H4sIAAAAAAAAA2NgGAVMUEwsfzCCQigejOA7EwIPRvNGwdABAC52qqmwBAAA
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
@@ -33,7 +71,7 @@
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAwtnYmAIH8H4OBDbMDIw2DFC2IT4xJjnA1Trh6QfH5+QedeJxMVA81IYCZtHKiDWPFVG6ponQGXzsAFQeH1EU0OueSVQs0g1bxSThgHZ6dTdsAQAAA==
+   H4sIAAAAAAAAAwtnYmAIH8H4OBDbMDIw2DFC2IT4xJjnA1Trh6QfH5+QedeJxMVA81IYCZuHDXxmgmBsgBjz3JgZGFQZsesnx7wgoHkCVDQPFwCF10c0NeSaVwI1i1TzRjFpGAASSeq6sAQAAA==
   </data>
  </layer>
 </map>

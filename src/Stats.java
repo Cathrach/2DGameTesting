@@ -29,8 +29,10 @@ public class Stats {
             }
         }
         // draw list of skills inside a frame
-        RoundedRectangle skillFrame = new RoundedRectangle(405, 30, 235, 420, 10);
-        g.draw(skillFrame);
+        g.setColor(Color.black);
+        g.fillRoundRect(405, 30, 235, 420, 10);
+        g.setColor(Color.white);
+        g.drawRoundRect(405, 30, 235, 420, 10);
         g.drawString("SKILLS", 420, 35);
         for (int i = 0; i < Resources.party.get(0).battleEntity.skills.size(); i++) {
             Skill skill = Resources.party.get(0).battleEntity.skills.get(i);

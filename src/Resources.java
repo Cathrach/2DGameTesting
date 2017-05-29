@@ -12,7 +12,7 @@ import java.util.Hashtable;
  * Created by serinahu on 5/9/17.
  */
 public class Resources {
-    static int money;
+    public static int money;
     static ArrayList<Entity> party;
     static Enemy[] enemy_db;
     // everything has an ID which corresponds to their position in this array!
@@ -142,6 +142,13 @@ public class Resources {
         triggers.put("killedLimits", false);
         triggers.put("finishedLimits", false);
         triggers.put("learnSkillBash", false);
+        triggers.put("learnSkillDerive", false);
+        triggers.put("learnSkillIntegrate", false);
+        triggers.put("learnSkill+C", false);
+        triggers.put("learnSkillGetTriggy", false);
+        triggers.put("learnSkillGoOnATangent", false);
+        triggers.put("learnSkillHintHintHint", false);
+        triggers.put("learnSkillIntegrationByParts", false);
 
         // enemies
         Limit limit = new Limit();
