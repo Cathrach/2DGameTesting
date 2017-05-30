@@ -41,15 +41,13 @@ public class Cutscene extends BasicGameState {
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
         Input input = container.getInput();
-        if (timeElapsedSinceLastPress == 0) {
+        if (timeElapsedSinceLastPress >= timeToWait) {
             if (input.isKeyPressed(Input.KEY_ENTER) || input.isKeyPressed(Input.KEY_SPACE)) {
                 currDialogue.nextLine(game);
+                timeElapsedSinceLastPress = 0;
             }
+        } else if (timeElapsedSinceLastPress >= 0 && timeElapsedSinceLastPress < timeToWait) {
             timeElapsedSinceLastPress += delta;
-        } else if (timeElapsedSinceLastPress > 0 && timeElapsedSinceLastPress < timeToWait) {
-            timeElapsedSinceLastPress += delta;
-        } else if (timeElapsedSinceLastPress >= timeToWait) {
-            timeElapsedSinceLastPress = 0;
         }
     }
 

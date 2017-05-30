@@ -36,7 +36,8 @@ public class Entity {
     }
     // render: draw the character
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-        g.drawString("X: " + xPos + " Y: " + yPos, 20, 25);
+        //g.drawString("X: " + xPos + " Y: " + yPos, 20, 25);
+        g.drawString("Press ESC to access Pause Menu", 15, 25);
         sprite.getSubImage(imgWidth*((int)frame), imgHeight*dir, imgWidth, imgHeight).draw(xPos, yPos-(imgHeight-hitHeight));
     }
     @Override
@@ -95,16 +96,16 @@ public class Entity {
         // check if player presses SPACE while facing & next to an NPC
         if (input.isKeyDown(Input.KEY_SPACE)){
             if (dir==0 && mapState.isCutscene(xPos + hitWidth/2, yPos + hitHeight + moveDist)){
-                Cutscene.currDialogue = Resources.dialogue_db[mapState.getCutscene(xPos + hitWidth/2, yPos + hitHeight + moveDist)];
+                Cutscene.changeDialogue(mapState.getCutscene(xPos + hitWidth/2, yPos + hitHeight + moveDist));
                 game.enterState(TestingGame.CUTSCENE);
             } else if (dir==1 && mapState.isCutscene(xPos - hitWidth, yPos + hitHeight/2)){
-                Cutscene.currDialogue = Resources.dialogue_db[mapState.getCutscene(xPos - hitWidth, yPos + hitHeight/2)];
+                Cutscene.changeDialogue(mapState.getCutscene(xPos - hitWidth, yPos + hitHeight/2));
                 game.enterState(TestingGame.CUTSCENE);
             } else if (dir==2 && mapState.isCutscene(xPos + hitWidth + moveDist, yPos + hitHeight/2)){
-                Cutscene.currDialogue = Resources.dialogue_db[mapState.getCutscene(xPos + hitWidth + moveDist, yPos + hitHeight/2)];
+                Cutscene.changeDialogue(mapState.getCutscene(xPos + hitWidth + moveDist, yPos + hitHeight/2));
                 game.enterState(TestingGame.CUTSCENE);
             } else if (dir==3 && mapState.isCutscene(xPos + hitWidth/2, yPos - hitHeight)){
-                Cutscene.currDialogue = Resources.dialogue_db[mapState.getCutscene(xPos + hitWidth/2, yPos - hitHeight)];
+                Cutscene.changeDialogue(mapState.getCutscene(xPos + hitWidth/2, yPos - hitHeight));
                 game.enterState(TestingGame.CUTSCENE);
             }
         }

@@ -12,9 +12,6 @@
   </tile>
  </tileset>
  <tileset firstgid="660" source="../tilesets/objects2.tsx"/>
- <tileset firstgid="916" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
-  <image source="../../Pictures/myGameAssets/teachers.png" width="384" height="360"/>
- </tileset>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
