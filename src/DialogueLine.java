@@ -39,6 +39,7 @@ public class DialogueLine {
         g.setColor(new Color(0, 0, 0, 100));
         g.fillRect(0, 400, 640, 80);
         g.setColor(Color.white);
+        g.drawRect(0,400,639,80);
         for (int i=0; i<lineSplit.length; i++) {
             g.drawString(lineSplit[i], 20, 420+i*15);
         }
