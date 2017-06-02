@@ -39,7 +39,7 @@
   <tile id="6">
    <properties>
     <property name="encounterChance" value="0.5"/>
-    <property name="encounterInfo" value="0"/>
+    <property name="encounterInfo" value="0_0"/>
    </properties>
   </tile>
   <tile id="7">

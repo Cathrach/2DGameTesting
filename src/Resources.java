@@ -43,6 +43,7 @@ public class Resources {
                     Float.parseFloat(effectData[10]), // ratio heal
                     Integer.parseInt(effectData[11])); // poison damage
         }
+        // putting the skills here rather than text file so it's easier to read
         skill_db = new Skill[10];
         skill_db[0] = new Skill("Solve for X", new Image("images/skills/attack.png"),
                 0, 0, 0, 1, 0, 1, TargetType.SINGLE_ENEMY,
@@ -137,19 +138,22 @@ public class Resources {
             dialogue_db[i] = new Dialogue(scene, new String[]{}, new int[]{});
         }
 
+        // read triggers from text file
+        BufferedReader triggerReader = new BufferedReader(new FileReader("db/triggers.txt"));
+        int numTriggers = Integer.parseInt(triggerReader.readLine());
         triggers = new Hashtable<>();
-        triggers.put("justArrived", true);
-        triggers.put("killingLimits", false);
-        triggers.put("killedLimits", false);
-        triggers.put("finishedLimits", false);
-        triggers.put("learnSkillBash", false);
-        triggers.put("learnSkillDerive", false);
-        triggers.put("learnSkillIntegrate", false);
-        triggers.put("learnSkill+C", false);
-        triggers.put("learnSkillGetTriggy", false);
-        triggers.put("learnSkillGoOnATangent", false);
-        triggers.put("learnSkillHintHintHint", false);
-        triggers.put("learnSkillIntegrationByParts", false);
+        for (int i=0; i<numTriggers; i++) {
+            String[] triggerData = triggerReader.readLine().split(", ");
+            triggers.put(triggerData[0], Boolean.parseBoolean(triggerData[1]));
+        }
+
+        // read maps from text file
+        BufferedReader mapReader = new BufferedReader(new FileReader("db/maps.txt"));
+        int numMaps = Integer.parseInt(mapReader.readLine());
+        map_db = new Map[numMaps];
+        for (int i = 0; i < numMaps; i++) {
+            map_db[i] = new Map("maps/" + mapReader.readLine() + ".tmx");
+        }
 
         // enemies
         Limit limit = new Limit();
@@ -162,14 +166,6 @@ public class Resources {
         MaclaurinSeries maclaurin = new MaclaurinSeries();
         TaylorSeries taylor = new TaylorSeries();
         enemy_db = new Enemy[]{limit, derivative, definite, indefinite, improper, solid, equation, maclaurin, taylor};
-
-        // maps
-        BufferedReader mapReader = new BufferedReader(new FileReader("db/maps.txt"));
-        int numMaps = Integer.parseInt(mapReader.readLine());
-        map_db = new Map[numMaps];
-        for (int i = 0; i < numMaps; i++) {
-            map_db[i] = new Map("maps/" + mapReader.readLine() + ".tmx");
-        }
 
         // check if there's a "save"; if not, make a new entity
         Resources.party = new ArrayList<>();

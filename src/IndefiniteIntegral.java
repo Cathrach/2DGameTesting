@@ -46,10 +46,4 @@ public class IndefiniteIntegral extends Enemy {
         }
         return new BattleAction(this, skills.get(0), temp.get(index).battleEntity);
     }
-
-    public IndefiniteIntegral(Enemy anotherIntegral) {
-        super(anotherIntegral);
-        firstTurnC = false;
-        usedIntegrate = false;
-    }
 }

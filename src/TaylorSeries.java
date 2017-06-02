@@ -29,7 +29,7 @@ public class TaylorSeries extends Enemy {
         }
     }
 
-    public TaylorSeries(Enemy anotherSeries) {
+    /*public TaylorSeries(Enemy anotherSeries) {
         super(anotherSeries);
-    }
+    }*/
 }

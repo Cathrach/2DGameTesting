@@ -43,11 +43,6 @@ public class Derivative extends Enemy {
         return new BattleAction(this, skills.get(0), temp.get(index).battleEntity);
     }
 
-    public Derivative(Enemy anotherDerivative) {
-        super(anotherDerivative);
-        usedDerive = false;
-    }
-
     @Override
     public String toString() {
         return "Derivative{" +

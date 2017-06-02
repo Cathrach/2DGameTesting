@@ -26,8 +26,8 @@ public class SolidRevolution extends Enemy {
         }
     }
 
-    public SolidRevolution(Enemy anotherSolid) {
+    /*public SolidRevolution(Enemy anotherSolid) {
         super(anotherSolid);
-    }
+    }*/
 
 }
