@@ -1,0 +1,3 @@
+2
+Shopkeeper: Welcome to this shop!
+Shopkeeper: Is there anything you would like to buy? >> none >> true >> -1 >> shop

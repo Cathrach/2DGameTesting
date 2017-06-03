@@ -1,0 +1,3 @@
+2
+Distressed Math Teacher: Monsters have taken over my office. Now I can't//grade my students' tests :(
+Distressed Math Teacher: Help me out by defeating the monsters in the//office! You can take the items inside. >> none >> true

@@ -125,15 +125,7 @@ public class Resources {
             DialogueLine[] scene = new DialogueLine[numLines];
             for (int j=0; j<numLines; j++) {
                 String[] lineData = sceneReader.readLine().split(" >> ");
-                if (lineData.length == 2) {
-                    scene[j] = new DialogueLine(lineData[0], new Image(lineData[1]));
-                } else if (lineData.length == 4) {
-                    scene[j] = new DialogueLine(lineData[0], new Image(lineData[1]), Boolean.parseBoolean(lineData[2]), Integer.parseInt(lineData[3]), "");
-                } else if (lineData.length == 5) {
-                    scene[j] = new DialogueLine(lineData[0], new Image(lineData[1]), Boolean.parseBoolean(lineData[2]), Integer.parseInt(lineData[3]), lineData[4]);
-                } else {
-                    scene[j] = new DialogueLine("default", new Image("images/sprites/heroine.png"));
-                }
+                scene[j] = new DialogueLine(lineData);
             }
             dialogue_db[i] = new Dialogue(scene, new String[]{}, new int[]{});
         }

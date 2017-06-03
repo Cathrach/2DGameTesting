@@ -1,5 +1,0 @@
-4
-Mr. Weinstein: Before you leave, I'll teach you a NEW SKILL!!! >> images/backgrounds/blank.png
--- Learned skill BASH -- >> images/backgrounds/blank.png
-Mr. Weinstein: BASH is the last line of defense!!! Always look for//more efficient solutions first!!! >> images/backgrounds/blank.png
-Mr. Weinstein: Remember your formulas and trig identities and you//can save yourself a lot of time!!! >> images/backgrounds/blank.png >> true >> 7 >> learnSkillBash
