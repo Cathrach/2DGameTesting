@@ -65,30 +65,7 @@ public class Map {
         String[] data = map.getTileProperty(tileID, "encounterInfo", "").split("_");
         Combat.currEnemies.clear();
         for (String index : data) {
-            switch (Integer.parseInt(index)) {
-                case 0:
-                    Combat.currEnemies.add(Resources.enemy_db[0]);
-                    break;
-                case 1:
-                    Combat.currEnemies.add(Resources.enemy_db[1]);
-                    break;
-                case 2:
-                    Combat.currEnemies.add(Resources.enemy_db[2]);
-                    break;
-                case 3:
-                    Combat.currEnemies.add(Resources.enemy_db[3]);
-                    break;
-                case 4:
-                    Combat.currEnemies.add(Resources.enemy_db[4]);
-                    break;
-                case 5:
-                    Combat.currEnemies.add(Resources.enemy_db[5]);
-                case 6:
-                    Combat.currEnemies.add(Resources.enemy_db[6]);
-                default:
-                    break;
-            }
-            //Combat.currEnemies.add(new Enemy(Resources.enemy_db[Integer.parseInt(index)]));
+            Combat.currEnemies.add(Resources.enemy_db[Integer.parseInt(index)]);
         }
     }
     public boolean isContainer(float xPos, float yPos){

@@ -9,7 +9,7 @@ public class Cutscene extends BasicGameState {
     static boolean isCutscene;
     static boolean isShop;
     static Dialogue currDialogue;
-    private static int timeElapsedSinceLastPress;
+    private static int timeSinceLastPress;
     private final int timeToWait = 100;
 
     public Cutscene(int id) {
@@ -24,7 +24,7 @@ public class Cutscene extends BasicGameState {
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         isCutscene = false;
         isShop = false;
-        timeElapsedSinceLastPress = 0;
+        timeSinceLastPress = 0;
     }
 
     @Override
@@ -41,20 +41,29 @@ public class Cutscene extends BasicGameState {
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
         Input input = container.getInput();
-        if (timeElapsedSinceLastPress >= timeToWait) {
+        if (timeSinceLastPress > timeToWait) {
             if (input.isKeyPressed(Input.KEY_ENTER) || input.isKeyPressed(Input.KEY_SPACE)) {
                 currDialogue.nextLine(game);
-                timeElapsedSinceLastPress = 0;
+                timeSinceLastPress = 0;
             }
-        } else if (timeElapsedSinceLastPress >= 0 && timeElapsedSinceLastPress < timeToWait) {
-            timeElapsedSinceLastPress += delta;
+        } else {
+            timeSinceLastPress += delta;
         }
     }
 
     public static void changeDialogue(int dialogueID) {
-        timeElapsedSinceLastPress = 0;
         currDialogue = Resources.dialogue_db[dialogueID];
         currDialogue.reset();
+        timeSinceLastPress = 0;
+    }
+
+    // patch for dialogue glitch where first dialogue lines were skipped
+    public static void enter(GameContainer container, StateBasedGame game, int delta) {
+        Input input = container.getInput();
+        game.enterState(TestingGame.CUTSCENE);
+        while (input.isKeyPressed(Input.KEY_ENTER) || input.isKeyPressed(Input.KEY_SPACE)) {
+            timeSinceLastPress = 0;
+        }
     }
 
 }
