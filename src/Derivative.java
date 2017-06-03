@@ -49,4 +49,8 @@ public class Derivative extends Enemy {
                 "usedDerive=" + usedDerive +
                 '}';
     }
+
+    public Derivative(Enemy anotherEnemy) {
+        this();
+    }
 }

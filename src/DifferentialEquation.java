@@ -48,4 +48,8 @@ public class DifferentialEquation extends Enemy {
             return new BattleAction(this, this.skills.get(0), temp.get(index).battleEntity);
         }
     }
+
+    public DifferentialEquation(Enemy anotherEnemy) {
+        this();
+    }
 }

@@ -19,4 +19,8 @@ public class Limit extends Enemy {
         int index = (int) (Math.random() * Resources.party.size());
         return new BattleAction(this, skills.get(0), Resources.party.get(index).battleEntity);
     }
+
+    public Limit(Enemy anotherLimit) {
+        this();
+    }
 }

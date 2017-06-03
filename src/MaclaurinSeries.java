@@ -25,4 +25,8 @@ public class MaclaurinSeries extends Enemy {
             return new BattleAction(this, skills.get(0), Resources.party.get(index).battleEntity);
         }
     }
+
+    public MaclaurinSeries(Enemy anotherEnemy) {
+        this();
+    }
 }

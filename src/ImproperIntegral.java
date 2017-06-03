@@ -47,4 +47,8 @@ public class ImproperIntegral extends Enemy {
         }
         return new BattleAction(this, skills.get(0), temp.get(index).battleEntity);
     }
+
+    public ImproperIntegral(Enemy anotherEnemy) {
+        this();
+    }
 }

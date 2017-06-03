@@ -7,7 +7,6 @@ import org.newdawn.slick.state.*;
 public class Cutscene extends BasicGameState {
     private int id;
     static boolean isCutscene;
-    static boolean isShop;
     static Dialogue currDialogue;
     private static int timeSinceLastPress;
     private final int timeToWait = 100;
@@ -23,31 +22,32 @@ public class Cutscene extends BasicGameState {
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         isCutscene = false;
-        isShop = false;
         timeSinceLastPress = 0;
     }
 
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-        if (isShop) {
-            Shop.render(g);
-        } else {
+        if (game.getCurrentStateID() == TestingGame.CUTSCENE) {
             Resources.map_db[MapState.currentMapID].render(0,0);
             Resources.party.get(0).render(container, game, g);
             currDialogue.render(g);
+        } else if (game.getCurrentStateID() == TestingGame.DEATH_SCREEN) {
+            g.drawImage(new Image("images/backgrounds/deathScreen.png"), 0,0);
         }
     }
 
     @Override
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-        Input input = container.getInput();
-        if (timeSinceLastPress > timeToWait) {
-            if (input.isKeyPressed(Input.KEY_ENTER) || input.isKeyPressed(Input.KEY_SPACE)) {
-                currDialogue.nextLine(game);
-                timeSinceLastPress = 0;
+        if (game.getCurrentStateID() == TestingGame.CUTSCENE) {
+            Input input = container.getInput();
+            if (timeSinceLastPress > timeToWait) {
+                if (input.isKeyPressed(Input.KEY_ENTER) || input.isKeyPressed(Input.KEY_SPACE)) {
+                    currDialogue.nextLine(game);
+                    timeSinceLastPress = 0;
+                }
+            } else {
+                timeSinceLastPress += delta;
             }
-        } else {
-            timeSinceLastPress += delta;
         }
     }
 

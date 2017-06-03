@@ -43,11 +43,14 @@ public class Combat extends BasicGameState {
     static int map;
     static String message;
 
+    static List<BattleEntity> livingAllies;
+
     public Combat(int id) {
         currEnemies = new ArrayList<>();
         this.id = id;
         turnOrder = new ArrayList<>();
         actionOrder = new ArrayList<>();
+        livingAllies = new ArrayList<>();
     }
 
     @Override
@@ -85,10 +88,17 @@ public class Combat extends BasicGameState {
         highlightedSkillID = 2;
         turnOrder.clear();
         actionOrder.clear();
-        // might change for ambushes, etc.
+        livingAllies.clear();
+        // determine which allies are still alive (can be revived OUTSIDE of combat)
         for (Entity entity : Resources.party) {
+            if (entity.battleEntity.getHP() > 0) {
+                livingAllies.add(entity.battleEntity);
+            }
+        }
+        // might change for ambushes, etc.
+        for (BattleEntity entity : livingAllies) {
             if (entity != null) {
-                turnOrder.add(entity.battleEntity);
+                turnOrder.add(entity);
             }
         }
         turnOrder.addAll(Combat.currEnemies);
@@ -138,22 +148,22 @@ public class Combat extends BasicGameState {
                 g.drawString(enemy.getName(), 405 + (i%2)*100, 125 + i*50);
             }
         }
-        for (int i = 0; i < Resources.party.size(); i++) {
-            Entity entity = Resources.party.get(i);
-            if (entity != null && entity.battleEntity.currHP > 0) {
-                entity.battleEntity.battler.draw(50 + (i%2)*100, 150 + i*50);
+        for (int i = 0; i < livingAllies.size(); i++) {
+            BattleEntity entity = livingAllies.get(i);
+            if (entity != null && entity.currHP > 0) {
+                entity.battler.draw(50 + (i%2)*100, 150 + i*50);
                 // draw name label for entity
                 g.setColor(new Color(0, 0, 0, 70));
                 g.fillRect(45 + (i%2)*100, 120 + i*50, 100, 25);
                 g.setColor(Color.white);
-                g.drawString(entity.battleEntity.getName(), 50 + (i%2)*100, 125 + i*50);
+                g.drawString(entity.getName(), 50 + (i%2)*100, 125 + i*50);
                 // draw HUD for entity
                 g.setColor(new Color(0, 0, 0, 70));
                 g.fillRect(i*100, 35, 100, 65);
                 g.setColor(Color.white);
-                g.drawString(entity.battleEntity.getName(), 5+i*100, 40);
-                g.drawString("HP " + String.valueOf(entity.battleEntity.currHP) + "/" + String.valueOf(entity.battleEntity.baseHP), 5+i*100, 60);
-                g.drawString("MP " + String.valueOf(entity.battleEntity.currMP) + "/" + String.valueOf(entity.battleEntity.baseMP), 5+i*100, 80);
+                g.drawString(entity.getName(), 5+i*100, 40);
+                g.drawString("HP " + String.valueOf(entity.currHP) + "/" + String.valueOf(entity.baseHP), 5+i*100, 60);
+                g.drawString("MP " + String.valueOf(entity.currMP) + "/" + String.valueOf(entity.baseMP), 5+i*100, 80);
             }
         }
 
@@ -298,10 +308,11 @@ public class Combat extends BasicGameState {
 
     public void updateDead() {
         // assuming no resurrection; remove dead from turn order list
-        for (int j = 0; j < Resources.party.size(); j++) {
-            if (Resources.party.get(j) != null && Resources.party.get(j).battleEntity.currHP <= 0) {
-                turnOrder.remove(Resources.party.get(j).battleEntity);
-                Resources.party.remove(j);
+        for (int j = 0; j < livingAllies.size(); j++) {
+            if (livingAllies.get(j) != null && livingAllies.get(j).currHP <= 0) {
+                livingAllies.get(j).currHP = 0;
+                turnOrder.remove(livingAllies.get(j));
+                livingAllies.remove(j);
                 j--;
             }
         }
@@ -321,17 +332,19 @@ public class Combat extends BasicGameState {
     }
 
     public void updateWin(StateBasedGame game) {
-        boolean alliesDead = Resources.party.size() == 0;
+        boolean alliesDead = livingAllies.size() == 0;
         boolean enemiesDead = Combat.currEnemies.size() == 0;
         if (Resources.triggers.get("killingLimits") && Resources.enemy_db[0].timesKilled >= 5) {
             Resources.triggers.put("killedLimits", true);
         }
-        if (alliesDead || enemiesDead) {
+        if (enemiesDead || !isCombat) {
             isCombat = false;
-        }
-        if (!isCombat) {
             game.enterState(TestingGame.MAP);
+        } else if (alliesDead) {
+            isCombat = false;
+            game.enterState(TestingGame.DEATH_SCREEN);
         }
+
     }
 }
 
@@ -393,8 +406,8 @@ class CombatKeyboard implements KeyListener {
                             Combat.possibleTargets.add(Combat.currMove);
                             break;
                         case SINGLE_ALLY:
-                            for (Entity entity : Resources.party) {
-                                Combat.possibleTargets.add(entity.battleEntity);
+                            for (BattleEntity entity : Combat.livingAllies) {
+                                Combat.possibleTargets.add(entity);
                             }
                             break;
                         case SINGLE_ENEMY:
@@ -405,8 +418,8 @@ class CombatKeyboard implements KeyListener {
                             }
                             break;
                         case ALL_ALLIES:
-                            for (Entity entity : Resources.party) {
-                                Combat.possibleTargets.add(entity.battleEntity);
+                            for (BattleEntity entity : Combat.livingAllies) {
+                                Combat.possibleTargets.add(entity);
                             }
                             break;
                         case ALL_ENEMIES:
@@ -424,7 +437,7 @@ class CombatKeyboard implements KeyListener {
             } else if (Combat.isSelectingTarget) {
                 if (key == Input.KEY_DOWN) {
                     if (Combat.possibleTargets.get(0) instanceof Ally) {
-                        if (Combat.highlightedTargetID < Resources.party.size() - 1) {
+                        if (Combat.highlightedTargetID < Combat.livingAllies.size() - 1) {
                             Combat.highlightedTargetID++;
                         }
                     } else {
@@ -446,7 +459,7 @@ class CombatKeyboard implements KeyListener {
                     Combat.isSelectingTarget = false;
                 } else if (key == Input.KEY_ENTER) {
                     if (Combat.possibleTargets.get(0) instanceof Ally) {
-                        Combat.selectedTargets.add(Resources.party.get(Combat.highlightedTargetID).battleEntity); // group selecion?
+                        Combat.selectedTargets.add(Combat.livingAllies.get(Combat.highlightedTargetID)); // group selecion?
                     } else {
                         Combat.selectedTargets.add(Combat.currEnemies.get(Combat.highlightedTargetID));
                     }
@@ -521,7 +534,7 @@ class CombatKeyboard implements KeyListener {
                             break;
                         case Combat.FLEE:
                             // flee somehow
-                            if (Combat.currEnemies.size() < Resources.party.size()/2) {
+                            if (Combat.currEnemies.size() < Combat.livingAllies.size()/2) {
                                 Combat.isCombat = false;
                             } else {
                                 Combat.message = "CANNOT FLEE, THERE ARE TOO MANY ENEMIES";
