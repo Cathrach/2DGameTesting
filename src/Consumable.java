@@ -46,15 +46,15 @@ public class Consumable extends Item {
     }
     public String setInfo() {
         info = "CONSUMABLE: " + String.valueOf(targetType) + " | ";
-        if (fixDamage != 0) { info += "-" + fixDamage + " HP "; }
-        if (fixHeal != 0) { info += "+" + fixHeal + " HP "; }
-        if (ratioHeal != 0) { info += "x" + ratioHeal + " HP "; }
-        if (fixMPHeal != 0) { info += "+" + fixMPHeal + " MP "; }
-        if (ratioMPHeal != 0) { info += "x" + ratioMPHeal + " MP "; }
-        if (fixHP != 0) { info += "+" + fixHP + " base HP "; }
-        if (fixMP != 0) { info += "+" + fixMP + " base MP "; }
-        if (fixATK != 0) { info += "+" + fixATK + " ATK "; }
-        if (fixDEF != 0) { info += "+" + fixDEF + " DEF "; }
+        if (fixDamage != 0) { info += "-" + fixDamage + "HP "; }
+        if (fixHeal != 0) { info += "+" + fixHeal + "HP "; }
+        if (ratioHeal != 0) { info += "x" + ratioHeal + "HP "; }
+        if (fixMPHeal != 0) { info += "+" + fixMPHeal + "MP "; }
+        if (ratioMPHeal != 0) { info += "x" + ratioMPHeal + "MP "; }
+        if (fixHP != 0) { info += "+" + fixHP + "HP "; }
+        if (fixMP != 0) { info += "+" + fixMP + "MP "; }
+        if (fixATK != 0) { info += "+" + fixATK + "ATK "; }
+        if (fixDEF != 0) { info += "+" + fixDEF + "DEF "; }
         return info;
     }
 }

@@ -50,14 +50,14 @@ public class Equipment extends Item {
     }
     public String setInfo() {
         info = String.valueOf(type) + " | ";
-        if (fixHP != 0) { info += "+" + fixHP + " base HP "; }
-        if (fixMP != 0) { info += "+" + fixMP + " base MP "; }
-        if (fixATK != 0) { info += "+" + fixATK + " ATK "; }
-        if (fixDEF != 0) { info += "+" + fixDEF + " DEF "; }
-        if (ratioHP != 1.0) { info += "x" + ratioHP + " HP "; }
-        if (ratioMP != 1.0) { info += "x" + ratioMP + " MP "; }
-        if (ratioATK != 1.0) { info += "x" + ratioATK + " ATK "; }
-        if (ratioDEF != 1.0) { info += "+" + ratioDEF + " DEF "; }
+        if (fixHP != 0) { info += "+" + fixHP + "HP "; }
+        if (fixMP != 0) { info += "+" + fixMP + "MP "; }
+        if (fixATK != 0) { info += "+" + fixATK + "ATK "; }
+        if (fixDEF != 0) { info += "+" + fixDEF + "DEF "; }
+        if (ratioHP != 1.0) { info += "x" + ratioHP + "HP "; }
+        if (ratioMP != 1.0) { info += "x" + ratioMP + "MP "; }
+        if (ratioATK != 1.0) { info += "x" + ratioATK + "ATK "; }
+        if (ratioDEF != 1.0) { info += "+" + ratioDEF + "DEF "; }
         return info;
     }
 }

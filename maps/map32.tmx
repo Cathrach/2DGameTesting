@@ -5,6 +5,12 @@
  <tileset firstgid="433" source="../tilesets/walls2.tsx"/>
  <tileset firstgid="689" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
+  <tile id="6">
+   <properties>
+    <property name="encounterChance" value="0.25"/>
+    <property name="encounterInfo" value="7_7"/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="entryInfo" value="map_31_0_-11"/>
@@ -13,6 +19,16 @@
   <tile id="18">
    <properties>
     <property name="entryInfo" value="house_33_15_11"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="724" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
+  <image source="../tilesets/teachers.png" width="384" height="360"/>
+  <tile id="18">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="19"/>
    </properties>
   </tile>
  </tileset>
@@ -28,7 +44,7 @@
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgIA4wI+GBAOxIeBSMglEwMgEAhvWDf7AEAAA=
+   H4sIAAAAAAAAA2NgIA4wI+GBAOxIeBQMHrCdCYJpbR697BkpgBj/kxJG1DYPFwAAzUCiCbAEAAA=
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
@@ -38,7 +54,7 @@
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA7vMyMDwHAt+AcSfoDQTEwODLxD7AbE/EDMDMQgcZ8TEl6H6kcFzJHNgemOBdBwQxwPxBUb85jExoZqHbA4M5AL5eUCcD8QPCJhngKZXAY0PArVAsTogPoDmF3TzHjNi6sUGeoFm9QFxP5pd6Oa9QDIP3Z3EAGzmYfMfPvABj5/Rw50cgGzeCSLDj1jzblDZvBckmIcvvmDm/aCC+5DNo0b4UcM8XGmGGPOQyxZC7gMAoyl7ZrAEAAA=
+   H4sIAAAAAAAAA7vMyMDwHAt+AcSfoDQTEwODLxD7AbE/EDMDMQgcZ8TEl6H6kcFzJHNgemOBdBwQxwPxBUb85jExoZqHbA4M5AL5eUCcD8QPCJhngKb3GZCvgCZWC+TXAfEBNL+gm/cYTR4X6AWa1QfE/Wj2oJv3Ask8dHcSA7CZh+43QuADHj+jhzs5ANm8E0SGH7Hm3aCyeS9IMA9ffMHM+0EF9yGbR43wo4Z5uNIMMeYhly2E3AcA+6b8U7AEAAA=
   </data>
  </layer>
 </map>

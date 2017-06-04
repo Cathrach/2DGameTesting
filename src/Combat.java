@@ -162,8 +162,8 @@ public class Combat extends BasicGameState {
                 g.fillRect(i*100, 35, 100, 65);
                 g.setColor(Color.white);
                 g.drawString(entity.getName(), 5+i*100, 40);
-                g.drawString("HP " + String.valueOf(entity.currHP) + "/" + String.valueOf(entity.baseHP), 5+i*100, 60);
-                g.drawString("MP " + String.valueOf(entity.currMP) + "/" + String.valueOf(entity.baseMP), 5+i*100, 80);
+                g.drawString("HP " + String.valueOf(entity.getCurrHP()) + "/" + String.valueOf(entity.getHP()), 5+i*100, 60);
+                g.drawString("MP " + String.valueOf(entity.getCurrMP()) + "/" + String.valueOf(entity.getMP()), 5+i*100, 80);
             }
         }
 
@@ -342,6 +342,15 @@ public class Combat extends BasicGameState {
             game.enterState(TestingGame.DEATH_SCREEN);
         }
 
+    }
+
+    public void animate(Graphics g, float xPos, float yPos) {
+        // draw series of progressively smaller circles centered at given position
+        g.setColor(Color.black);
+        g.setLineWidth(5);
+        for (int i=TestingGame.WIDTH; i>0; i--) {
+            g.drawOval(xPos - i/2, yPos - i/2, i*2, i*2);
+        }
     }
 }
 

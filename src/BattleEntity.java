@@ -66,6 +66,8 @@ public class BattleEntity {
         return (int) Math.floor((baseHP + fixSkillHP) * ratioSkillHP);
     }
 
+    public int getCurrHP() { return currHP; }
+
     public int getATK() {
         return (int) Math.floor((baseATK + fixSkillATK) * ratioSkillATK);
     }
@@ -77,6 +79,8 @@ public class BattleEntity {
     public int getMP() {
         return (int) Math.floor((baseMP + fixSkillMP) * ratioSkillMP);
     }
+
+    public int getCurrMP() { return currMP; }
 
     public String getName() {
         return name;

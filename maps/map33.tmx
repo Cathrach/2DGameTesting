@@ -4,6 +4,12 @@
  <tileset firstgid="241" source="../tilesets/walls2.tsx"/>
  <tileset firstgid="497" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
+  <tile id="6">
+   <properties>
+    <property name="encounterChance" value="1"/>
+    <property name="encounterInfo" value="5_5"/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="entryInfo" value="house_32_3_3"/>
@@ -22,7 +28,7 @@
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGAWjgHLwnRGCiRWnt3mjYHgAAFDLufWwBAAA
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">

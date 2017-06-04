@@ -14,6 +14,7 @@ public class Shop extends BasicGameState {
     static boolean isShop;
     static int highlightedItemID;
     static int mode;
+    static int previousMode;
     final static int BUYING = 0;
     final static int SELLING = 1;
     final static int POPUP = 2;
@@ -135,6 +136,7 @@ class ShopKeyboard implements KeyListener {
                 Shop.highlightedItemID = 0;
             }
         } else if (key == Input.KEY_ENTER) {
+            Shop.previousMode = Shop.mode;
             if (Shop.mode == Shop.BUYING) {
                 Shop.mode = Shop.POPUP;
                 Item item = Resources.item_db[Shop.items[Shop.highlightedItemID]];
@@ -152,7 +154,7 @@ class ShopKeyboard implements KeyListener {
                 Resources.money += (int) (item.getValue() * 0.75);
                 Inventory.removeItem(item.getName(), 1);
             } else if (Shop.mode == Shop.POPUP) {
-                Shop.mode = Shop.BUYING;
+                Shop.mode = Shop.previousMode;
                 Shop.message = "";
             }
         } else if (key == Input.KEY_BACK) {

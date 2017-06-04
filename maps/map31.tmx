@@ -6,6 +6,12 @@
  <tileset firstgid="561" source="../tilesets/walls2.tsx"/>
  <tileset firstgid="817" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
+  <tile id="6">
+   <properties>
+    <property name="encounterChance" value="1"/>
+    <property name="encounterInfo" value="8_8"/>
+   </properties>
+  </tile>
   <tile id="11">
    <properties>
     <property name="entryInfo" value="map_24_0_-11"/>
@@ -17,6 +23,16 @@
    </properties>
   </tile>
  </tileset>
+ <tileset firstgid="852" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
+  <image source="../tilesets/teachers.png" width="384" height="360"/>
+  <tile id="18">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="18"/>
+   </properties>
+  </tile>
+ </tileset>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
@@ -24,7 +40,7 @@
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgoC0wZ4bgwWoePcBoGAw/MBqnAwMAN9H/8LAEAAA=
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
@@ -42,7 +58,7 @@
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA/NgYiAI3gLVvAPi93jUujNBsAcR5v0FqvkHxP8JqCXWPF5mBgY+IOZnRhUvQNNLrHnEAlLM20CEuoF0HwicBao9B8Tncegh1by7QLX3gPg+HvNCgdiCSDPR0yF6mLpD+cSaSSgduiOJU5IOYWaRah4uADOLVPPQ8wOl5pHqvs+MDAxfGBE0McCCCdU8AJdaT7GwBAAA
+   H4sIAAAAAAAAA/NgYiAI3gLVvAPi93jUujNBsAcR5v0FqvkHxP8JqCXWPF5mBgY+IOZnRhUvQNNLrHnEAlLM20CEuoF0HwicBao9B8Tncegh1by7QLX3gPg+HvNCgdiCSDPR0yF6mLpD+cSaSSgduiOJE/J3GjPudAgzixTz8AGYWaSah54fKDWPVPd9ZmRg+MKIoIkBFkyo5gEA3F2KpLAEAAA=
   </data>
  </layer>
 </map>

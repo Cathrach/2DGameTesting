@@ -1,4 +1,4 @@
-16
+18
 justArrived, true
 questPotatoDead, false
 questKillingLimits, false
@@ -15,3 +15,5 @@ learnSkillIntegrationByParts, false
 shopConsumables, false
 shopWeapons, false
 shopDefense, false
+getTI-NSpire, false
+gotTI-NSpire, false

@@ -4,6 +4,12 @@
  <tileset firstgid="241" source="../tilesets/walls2.tsx"/>
  <tileset firstgid="497" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
+  <tile id="6">
+   <properties>
+    <property name="encounterChance" value="0.25"/>
+    <property name="encounterInfo" value="6_6"/>
+   </properties>
+  </tile>
   <tile id="18">
    <properties>
     <property name="entryInfo" value="map_40_0_11"/>
@@ -12,6 +18,23 @@
   <tile id="25">
    <properties>
     <property name="entryInfo" value="map_38_16_0"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="532" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
+  <image source="../tilesets/teachers.png" width="384" height="360"/>
+  <tile id="1">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="20"/>
+   </properties>
+  </tile>
+  <tile id="13">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="20"/>
    </properties>
   </tile>
  </tileset>
@@ -27,17 +50,17 @@
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGAWjgDbgOyMED1bzRgFlYCDiFwBJW7CqsAQAAA==
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA6WTTw/BQBTEl0tTlIMLRa8IwUkVV/9vvv+HMY038bJ50i2HX95mJzPp20kT51wXtEAssw06IBGtL1harGapj8EEZGAAhiAFI6Uxz9IymfQuwFL0KZiBOXg2nGu6N+XZR/tS5d2Dg9xtQQ527pP1DfqOMum9g0L0E7gIV3DzdO7ta4XK19oD9OS9z0Yu8yyNXt0BZ9WuxOrP6iM0L7SP0Lw6ffCtLP2XPqwuqYf2Ue4QCcyLKuDu7GMNNuq+6r/w0e/JLlfqTp/rkovf/8Z/eAGFhGl9sAQAAA==
+   H4sIAAAAAAAAA6WTTw/BQBTEl0tTlIMLpa4IwUkVV/9vPorvfzCNN+nLZmW3HH55m53MpG8nTYwxXdACscw26IBEtL7g0mI1S30MMjABAzAEKRiJ9mpUebZGX6a8C7AUfQpmYA6eyGmaD+XZRvtS5d2Dg9xtQQ52psr6Bn1HmfTeQSH6CVyEK7hZOve2tULla+0BevLeZ0cu81wavboDTt+uxNWfq4/QvNA+QvPq9MG3cum/9OHqknpoH+UOkcC8yAN3Zx9rsFH3vv/CRr8nu1ypO32uSy5++xv/4Q3mR9bPsAQAAA==
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA7VSiQmAMAw0I/kNok5QnECdpDqpG9hggjHUmoIeHDS0OXK5FkUaDq7zCM/v3rATZ6GB513cWdGRRp+YZ8iY1Rne5nif4PQmucD9fjHqodcysFKsRX9JtcUzevWBq+Imej3VFs+W3THe9NBrrl7KM2rpXceykRk9zYizNXDtmhHLRmbUqhnxz/akxf05eoiWNGLeOTtZ66xjmfM+v8QfegdU4somsAQAAA==
+   H4sIAAAAAAAAA7VSgQ2DQAgUd3AAR7Ctg6gTmE5gnUQ7qRv0iZCnBBWS9pKL/gsXjrMozjFCfn/Ccd0VNmJV5rsX5PstoNXRHH161qVdMwRmHR21Ee8T7N4kZ/j+Pjv10GuTeFO8i/6Gzh7P6HVJXBXfonehs8ezZ3eMKz30GtU784xaetdWNjKjoxlxtgfkXTOsbGRGrZoR/9metLg/oodoScPyztnJs87aypz3+Uv8Q+8Dk1pT8bAEAAA=
   </data>
  </layer>
 </map>

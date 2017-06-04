@@ -34,6 +34,10 @@ public class MapState extends BasicGameState {
             Resources.triggers.put("justArrived", false);
             game.enterState(TestingGame.CUTSCENE);
         }
+        if (Resources.triggers.get("getTI-NSpire") && !Resources.triggers.get("gotTI-NSpire")) {
+            Resources.triggers.put("gotTI-NSpire", true);
+            Inventory.addItem("TI-NSpire", 4);
+        }
         if (Resources.triggers.get("questKillingLimits") && Resources.enemy_db[0].timesKilled >=5) {
             Resources.triggers.put("questKillingLimits", false);
             Resources.triggers.put("questKilledLimits", true);
