@@ -34,7 +34,7 @@
   <tile id="6">
    <properties>
     <property name="encounterChance" value="1"/>
-    <property name="encounterInfo" value="0_0"/>
+    <property name="encounterInfo" value="0_0_0"/>
    </properties>
   </tile>
   <tile id="7">
@@ -101,7 +101,7 @@
  <tileset firstgid="916" source="../tilesets/items.tsx"/>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAW0BguYGRgWMlNmxhwK9SODFVQ0axSMAnoCAC8sT1WwBAAA
+   H4sIAAAAAAAAA2NgGAW0BguYGRiWMFNmxhwK9SODFVQ0axSMAnoCAKZyiKKwBAAA
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
@@ -110,7 +110,7 @@
    <property name="encounterInfo" value="0_1"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYHCDcmYIHqzmjQL6AQBWppfOsAQAAA==
+   H4sIAAAAAAAAA2NgGAWjYPCCcmYEHozmjQL6AgBRmaiYsAQAAA==
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">

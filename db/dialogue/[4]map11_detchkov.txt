@@ -1,9 +1,11 @@
-8
+10 >> questKillingLimits, 4; questKilledLimits, 5; questFinishedLimits, 9
 Mr. Detchkov: Have you polished your algebra and trig skills?
-Mr. Detchkov: I will give you four SCIENTIFIC CALCULATORS once you//have defeated five Limits.
+Mr. Detchkov: I will give you four FOUR-FUNCTION CALCULATORS once//you have defeated five Limits.
 Mr. Detchkov: You will need them to make your trip through FUNCTION//FOREST easier.
-Mr. Detchkov: Now go defeat some Limits! >> none >> true >> -1
-Mr. Detchkov: Ah, I see you have defeated 5 limits. As promised,//I will give you four SCIENTIFIC CALCULATORS.
---Obtained four SCIENTIFIC CALCULATORS--
+Mr. Detchkov: Now go defeat some Limits! Come back once you are//finished. >> none >> true >> -1 >> questKillingLimits
+Mr. Detchkov: Have you defeated 5 Limits yet? Come back once you//are finished. >> none >> true
+Mr. Detchkov: Ah, I see you have defeated 5 limits. As promised,//I will give you four FOUR-FUNCTION CALCULATORS.
+-- Obtained FOUR-FUNCTION CALCULATORS x4 --
 Mr. Detchkov: These are very powerful calculators, but don't rely//on them too much.
-Mr. Detchkov: You only need a pencil and paper, really, for the//simpler problems! >> none >> true >> -1
+Mr. Detchkov: You only need a pencil and paper, really, for the//simpler problems! >> none >> true >> -1 >> questFinishedLimits
+Mr. Detchkov: How are the new calculators? >> none >> true

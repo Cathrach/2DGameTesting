@@ -12,6 +12,7 @@ public class PauseMenu extends BasicGameState {
     static final int NONE = -1;
     static final int INVENTORY = 0;
     static final int STATS = 1;
+    static final int QUESTS = 2;
 
     public PauseMenu(int id) {
         this.id = id;
@@ -29,17 +30,31 @@ public class PauseMenu extends BasicGameState {
 
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-        // have toggle-able button on top
-        // render either the inventory or the stat menus
+        // render one of the available menus
         if (inMenu == INVENTORY) {
             Inventory.render(g);
         } else if (inMenu == STATS){
             Stats.render(g);
+        } else if (inMenu == QUESTS) {
+            g.drawString("QUESTS", 50, 50);
+            g.drawString("STATUS", 500, 50);
+            g.drawString("Press ESC to return to menu", 10, 450);
+            int yOffset = 0;
+            for (int i=0; i<Resources.quests_db.length; i++) {
+                Quest quest = Resources.quests_db[i];
+                if (quest.getStatus() != Quest.NOT_STARTED) {
+                    g.drawString(quest.getName(), 50, yOffset*60 + 80);
+                    g.drawString(quest.getDescription(), 50, yOffset*60 + 100);
+                    g.drawString(quest.getStatusString(), 500, yOffset*60 + 80);
+                    yOffset++;
+                }
+            }
         } else {
             g.drawString("[ESC] - return to game", 200, 150);
             g.drawString("[X] - quit game", 200, 180);
             g.drawString("[I] - inventory", 200, 210);
             g.drawString("[S] - stats", 200, 240);
+            g.drawString("[Q] - quest log", 200, 270);
         }
     }
 
@@ -63,6 +78,8 @@ public class PauseMenu extends BasicGameState {
         } else if (input.isKeyPressed(Input.KEY_S)) {
             inMenu = STATS;
             Stats.init();
+        } else if (input.isKeyPressed(Input.KEY_Q)) {
+            inMenu = QUESTS;
         }
 
         // update the current menu

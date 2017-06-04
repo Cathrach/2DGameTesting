@@ -334,9 +334,6 @@ public class Combat extends BasicGameState {
     public void updateWin(StateBasedGame game) {
         boolean alliesDead = livingAllies.size() == 0;
         boolean enemiesDead = Combat.currEnemies.size() == 0;
-        if (Resources.triggers.get("killingLimits") && Resources.enemy_db[0].timesKilled >= 5) {
-            Resources.triggers.put("killedLimits", true);
-        }
         if (enemiesDead || !isCombat) {
             isCombat = false;
             game.enterState(TestingGame.MAP);

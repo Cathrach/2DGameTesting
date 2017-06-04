@@ -51,6 +51,13 @@
     <property name="Blocked" value="true"/>
    </properties>
   </tile>
+  <tile id="13">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="14"/>
+   </properties>
+  </tile>
   <tile id="14">
    <properties>
     <property name="Blocked" value="true"/>
@@ -126,7 +133,7 @@
  <tileset firstgid="1048" source="../tilesets/items.tsx"/>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjgHpAlwWBR8EooDYAAOiVD8CwBAAA
+   H4sIAAAAAAAAA2NgGAWjgHpAl2WgXTAKhjMAAMqAe/KwBAAA
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
@@ -141,12 +148,12 @@
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA/NnYGDwH8WjGIjXMQ28G0bxKMaHAdc7l0SwBAAA
+   H4sIAAAAAAAAA/NnYGDwH8U0xylMA+8GQnjdEHDjKB7ZGAA+wrFcsAQAAA==
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAwtnZGAIH+E4mImBIYSJME2seZuBarcAcTIQp+ChiTXvMFDtESD+AsTYwGcmCCbWvJVAtauAeDUQrwHitVA8jRlVjljzdgLV7gLi3UBczIzAi5hR5Yg1byZQ7XwgXoDFvzDxmSSatx6IN2AxDyZOinnEAnLTI6X6aW3eQGIAmIDLA7AEAAA=
+   H4sIAAAAAAAAAwtnZGAIH+E4mImBIYSJME2seZuBarcAcTIQp0DpKcyo/BQSzDsMVHsEiL8AMQwsYEawPzNBMLHmrQSqXQXEq4F4DRDXMUPwNGZUOWLN2wlUuwuIdwNxMZK7FjGjyhFr3kyg2vlAvADJvzAAE59JonnrgXgDFvNg4qSYRywgNz1Sqp/W5g0kBgAMgpC0sAQAAA==
   </data>
  </layer>
 </map>

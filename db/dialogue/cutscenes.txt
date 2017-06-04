@@ -1,4 +1,4 @@
-17
+18
 [0]intro1
 [1]intro2
 [2]map8_kats
@@ -16,3 +16,4 @@
 [14]shop_consumables
 [15]shop_weapons
 [16]shop_defense
+[17]map2_sign

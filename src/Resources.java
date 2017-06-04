@@ -22,6 +22,7 @@ public class Resources {
     static SkillEffect[] skilleffect_db;
     static Dialogue[] dialogue_db;
     static Hashtable<String, Boolean> triggers;
+    static Quest[] quests_db;
     public static void init() throws SlickException, IOException {
         money = 0;
         // read skills from text file
@@ -115,21 +116,6 @@ public class Resources {
             );
         }
 
-        // read dialogue from text file
-        BufferedReader dialogueReader = new BufferedReader(new FileReader("db/dialogue/cutscenes.txt"));
-        int numScenes = Integer.parseInt(dialogueReader.readLine());
-        dialogue_db = new Dialogue[numScenes];
-        for (int i=0; i<numScenes; i++) {
-            BufferedReader sceneReader = new BufferedReader(new FileReader("db/dialogue/" + dialogueReader.readLine() + ".txt"));
-            int numLines = Integer.parseInt(sceneReader.readLine());
-            DialogueLine[] scene = new DialogueLine[numLines];
-            for (int j=0; j<numLines; j++) {
-                String[] lineData = sceneReader.readLine().split(" >> ");
-                scene[j] = new DialogueLine(lineData);
-            }
-            dialogue_db[i] = new Dialogue(scene, new String[]{}, new int[]{});
-        }
-
         // read triggers from text file
         BufferedReader triggerReader = new BufferedReader(new FileReader("db/triggers.txt"));
         int numTriggers = Integer.parseInt(triggerReader.readLine());
@@ -137,6 +123,48 @@ public class Resources {
         for (int i=0; i<numTriggers; i++) {
             String[] triggerData = triggerReader.readLine().split(", ");
             triggers.put(triggerData[0], Boolean.parseBoolean(triggerData[1]));
+        }
+
+        // read quests from text file
+        BufferedReader questReader = new BufferedReader(new FileReader("db/quests.txt"));
+        int numQuests = Integer.parseInt(questReader.readLine());
+        quests_db = new Quest[numQuests];
+        for (int i=0; i<numQuests; i++) {
+            String[] questData = questReader.readLine().split(" >> ");
+            quests_db[i] = new Quest(questData[0], questData[1], Integer.parseInt(questData[2]), questData[3], questData[4]);
+        }
+
+        // read dialogue from text file
+        BufferedReader dialogueReader = new BufferedReader(new FileReader("db/dialogue/cutscenes.txt"));
+        // iterate through the list of scenes
+        int numScenes = Integer.parseInt(dialogueReader.readLine());
+        dialogue_db = new Dialogue[numScenes];
+        for (int i=0; i<numScenes; i++) {
+            BufferedReader sceneReader = new BufferedReader(new FileReader("db/dialogue/" + dialogueReader.readLine() + ".txt"));
+            String[] sceneData = sceneReader.readLine().split(" >> ");
+            // create an array of lines for each scene
+            int numLines = Integer.parseInt(sceneData[0]);
+            DialogueLine[] scene = new DialogueLine[numLines];
+            for (int j=0; j<numLines; j++) {
+                String[] lineData = sceneReader.readLine().split(" >> ");
+                scene[j] = new DialogueLine(lineData);
+            }
+            // create array of conditions for quests (if applicable), and their corresponding dialogue paths
+            // dialoguePaths[] is an array of ints specifying the starting index to use when accessing the lines in the dialogue arrays
+            if (sceneData.length > 1) {
+                String[] questTriggers = sceneData[1].split("; ");
+                int numQuestTriggers = questTriggers.length;
+                String[] conditions = new String[numQuestTriggers];
+                int[] dialoguePaths = new int[numQuestTriggers];
+                for (int j=0; j<numQuestTriggers; j++) {
+                    String[] questData = questTriggers[j].split(", ");
+                    conditions[j] = questData[0];
+                    dialoguePaths[j] = Integer.parseInt(questData[1]);
+                }
+                dialogue_db[i] = new Dialogue(scene, conditions, dialoguePaths);
+            } else {
+                dialogue_db[i] = new Dialogue(scene, new String[]{}, new int[]{});
+            }
         }
 
         // read maps from text file

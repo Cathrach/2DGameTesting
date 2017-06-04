@@ -1,8 +1,9 @@
-15
+16
 justArrived, true
-killingLimits, false
-killedLimits, false
-finishedLimits, false
+questPotatoDead, false
+questKillingLimits, false
+questKilledLimits, false
+questFinishedLimits, false
 learnSkillBash, false
 learnSkillDerive, false
 learnSkillIntegrate, false

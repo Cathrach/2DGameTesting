@@ -38,6 +38,13 @@
     <property name="scene" value="6"/>
    </properties>
   </tile>
+  <tile id="18">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="17"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
@@ -66,7 +73,7 @@
    <property name="scene" value="6"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA52SwQ3CMAxF2/SACvNBuXIBNigrABMAEwATAEvkAhvQFRA3fkSsflKhOnnSUxJV/rJcVybLqsApjGFCtQu4hhu49e9lZN7c1zlruIN7ePDvVWQe9+M44jzBc2SOwP04Ljiv8JaYp+nHRmSn9PPKuzIyQy0D05WRGfYxLr7nHf084Dtv74zMsI+Zz3uivoGlae+MzJAJ90jLv7pwj7RwHe9F6l5znaVM3qPU/bNBpqPEPxjCUfF713z/AMldpB+wBAAA
+   H4sIAAAAAAAAA52SwQ3CMAxF2/SACvNBuXIpbAArABMAEwATAEvkAhvACogbP5KjfFKhxnnSUxJV/rJcN6Yomsgp1DCh2jlcww3cynuhzGulzrmEO7iHB3mvlHncj+OI8wTPipy2Cnfux3HBeYU3ZV+elH6sIjunn3fZlfEzTGVgujJ+hn2MZe539POAnzLcGT/DPmaS90T9C9Ym3Bk/Qybeo1T+1cV7lArX8V7k7HVcZymT9yh3/2yU6ajxD4ZwVP3eU75/AWemWJewBAAA
   </data>
  </layer>
 </map>

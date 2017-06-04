@@ -27,10 +27,28 @@ public class MapState extends BasicGameState {
         leader.render(container, game, g);
     }
     public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
+        // update quest conditions
         if (Resources.triggers.get("justArrived")) {
             Cutscene.currDialogue = Resources.dialogue_db[1];
+            Resources.quests_db[0].setStatus(1);
             Resources.triggers.put("justArrived", false);
             game.enterState(TestingGame.CUTSCENE);
+        }
+        if (Resources.triggers.get("questKillingLimits") && Resources.enemy_db[0].timesKilled >=5) {
+            Resources.triggers.put("questKillingLimits", false);
+            Resources.triggers.put("questKilledLimits", true);
+        } else if (Resources.triggers.get("questKilledLimits") && Resources.triggers.get("questFinishedLimits")) {
+            Resources.triggers.put("questKilledLimits", false);
+            Inventory.addItem("Four-function Calculator", 4);
+        }
+
+        // update quest statuses
+        for (Quest quest : Resources.quests_db) {
+            if (Resources.triggers.get(quest.getOngoingTrigger())) {
+                quest.setStatus(1);
+            } else if (Resources.triggers.get(quest.getCompletedTrigger())) {
+                quest.setStatus(2);
+            }
         }
 
         // check if shopping
