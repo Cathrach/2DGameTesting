@@ -30,6 +30,6 @@ public class TaylorSeries extends Enemy {
     }
 
     public TaylorSeries(Enemy anotherSeries) {
-        super(anotherSeries);
+        this();
     }
 }

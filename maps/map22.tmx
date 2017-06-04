@@ -34,7 +34,7 @@
   <tile id="6">
    <properties>
     <property name="encounterChance" value="1"/>
-    <property name="encounterInfo" value="0_0"/>
+    <property name="encounterInfo" value="0_0_0"/>
    </properties>
   </tile>
   <tile id="7">
@@ -101,7 +101,7 @@
  <tileset firstgid="916" source="../tilesets/items.tsx"/>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAW0BguYGRgWMlNmxhwK9SODFVQ0axSMAnoCAC8sT1WwBAAA
+   H4sIAAAAAAAAA2NgGAW0BguYGRimQzG5YA4OvTBzl5Bg9goK3DEKRsFAAgD03oNYsAQAAA==
   </data>
  </layer>
  <layer name="Encounters" width="20" height="15">
@@ -110,7 +110,7 @@
    <property name="encounterInfo" value="0_1"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYHCDcmYIHqzmjQL6AQBWppfOsAQAAA==
+   H4sIAAAAAAAAA2NgGAWjYPCCcmYEprZ51DJzFNAPAAA35zpBsAQAAA==
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
@@ -125,7 +125,7 @@
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA7vOyMBwfYhgQSAWIoPGZZ4iECuRQeMyr5CZgaGIGUKD8BMmCC5mhmAQgMkVIdGEzCtC0o8PEDLvMxMEE2MWspm4zPvKhF/vTKD8fiA+wARhgwBIDyXmnQfiC0jmfcFjHiw8SAHUNI9QfODCMECtfENt8wYSAwBZK6fhsAQAAA==
+   H4sIAAAAAAAAA7vOyMBwfYhgQSAWIoPGZZ4iECuRQeMyr5CZgaGIGUKD8BMmCC5mRmCYXBESTci8IqhebADdbHzmfWaCYFxmYQOFeMz7yoRf70yg/H4gPsAEYYMASA8l5p0H4gtI5n3BYx4sPEgB1DSPUHzgwjBArXxDbfMGEgMAf0zKhrAEAAA=
   </data>
  </layer>
 </map>

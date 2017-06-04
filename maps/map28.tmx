@@ -33,7 +33,7 @@
   <tile id="6">
    <properties>
     <property name="encounterChance" value="1"/>
-    <property name="encounterInfo" value="2_2"/>
+    <property name="encounterInfo" value="2_2_2"/>
    </properties>
   </tile>
   <tile id="7">

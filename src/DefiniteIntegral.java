@@ -48,9 +48,7 @@ public class DefiniteIntegral extends Enemy {
         return new BattleAction(this, skills.get(0), temp.get(index).battleEntity);
     }
 
-    public DefiniteIntegral(Enemy anotherIntegral) {
-        super(anotherIntegral);
-        firstTurnBash = false;
-        usedIntegrate = false;
+    public DefiniteIntegral(Enemy anotherEnemy) {
+        this();
     }
 }

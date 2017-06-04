@@ -16,6 +16,11 @@ public class Entity {
     private final float SPEED = 0.1f;
     private final double frameSpeed = 0.1;
     Ally battleEntity;
+
+    // for handling keypresses for cutscenes
+    private float timeSinceLastPress;
+    private final int waitTime = 100;
+
     // constructor: make character at some position
     public Entity(float xPos, float yPos, int dir, int frame, Ally battleEntity, String spritePath) throws SlickException {
         sprite = new Image(spritePath);
@@ -30,9 +35,8 @@ public class Entity {
         imgHeight = 45;
         this.battleEntity = battleEntity;
     }
-    // init: set up animations?
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
-        // do you need this empty function for anything besides animation?
+        // nothing to do here
     }
     // render: draw the character
     public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
@@ -94,20 +98,22 @@ public class Entity {
             }
         }
         // check if player presses SPACE while facing & next to an NPC
-        if (input.isKeyDown(Input.KEY_SPACE)){
+        timeSinceLastPress += delta;
+        if (input.isKeyDown(Input.KEY_SPACE) && timeSinceLastPress > waitTime){
             if (dir==0 && mapState.isCutscene(xPos + hitWidth/2, yPos + hitHeight + moveDist)){
                 Cutscene.changeDialogue(mapState.getCutscene(xPos + hitWidth/2, yPos + hitHeight + moveDist));
-                game.enterState(TestingGame.CUTSCENE);
+                Cutscene.enter(container, game, delta);
             } else if (dir==1 && mapState.isCutscene(xPos - hitWidth, yPos + hitHeight/2)){
                 Cutscene.changeDialogue(mapState.getCutscene(xPos - hitWidth, yPos + hitHeight/2));
-                game.enterState(TestingGame.CUTSCENE);
+                Cutscene.enter(container, game, delta);
             } else if (dir==2 && mapState.isCutscene(xPos + hitWidth + moveDist, yPos + hitHeight/2)){
                 Cutscene.changeDialogue(mapState.getCutscene(xPos + hitWidth + moveDist, yPos + hitHeight/2));
-                game.enterState(TestingGame.CUTSCENE);
+                Cutscene.enter(container, game, delta);
             } else if (dir==3 && mapState.isCutscene(xPos + hitWidth/2, yPos - hitHeight)){
                 Cutscene.changeDialogue(mapState.getCutscene(xPos + hitWidth/2, yPos - hitHeight));
-                game.enterState(TestingGame.CUTSCENE);
+                Cutscene.enter(container, game, delta);
             }
+            timeSinceLastPress = 0;
         }
     }
     public Image getSprite() {

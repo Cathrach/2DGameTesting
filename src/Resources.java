@@ -22,6 +22,7 @@ public class Resources {
     static SkillEffect[] skilleffect_db;
     static Dialogue[] dialogue_db;
     static Hashtable<String, Boolean> triggers;
+    static Quest[] quests_db;
     public static void init() throws SlickException, IOException {
         money = 0;
         // read skills from text file
@@ -43,6 +44,7 @@ public class Resources {
                     Float.parseFloat(effectData[10]), // ratio heal
                     Integer.parseInt(effectData[11])); // poison damage
         }
+        // putting the skills here rather than text file so it's easier to read
         skill_db = new Skill[10];
         skill_db[0] = new Skill("Solve for X", new Image("images/skills/attack.png"),
                 0, 0, 0, 1, 0, 1, TargetType.SINGLE_ENEMY,
@@ -114,42 +116,64 @@ public class Resources {
             );
         }
 
+        // read triggers from text file
+        BufferedReader triggerReader = new BufferedReader(new FileReader("db/triggers.txt"));
+        int numTriggers = Integer.parseInt(triggerReader.readLine());
+        triggers = new Hashtable<>();
+        for (int i=0; i<numTriggers; i++) {
+            String[] triggerData = triggerReader.readLine().split(", ");
+            triggers.put(triggerData[0], Boolean.parseBoolean(triggerData[1]));
+        }
+
+        // read quests from text file
+        BufferedReader questReader = new BufferedReader(new FileReader("db/quests.txt"));
+        int numQuests = Integer.parseInt(questReader.readLine());
+        quests_db = new Quest[numQuests];
+        for (int i=0; i<numQuests; i++) {
+            String[] questData = questReader.readLine().split(" >> ");
+            quests_db[i] = new Quest(questData[0], questData[1], Integer.parseInt(questData[2]), questData[3], questData[4]);
+        }
+
         // read dialogue from text file
         BufferedReader dialogueReader = new BufferedReader(new FileReader("db/dialogue/cutscenes.txt"));
+        // iterate through the list of scenes
         int numScenes = Integer.parseInt(dialogueReader.readLine());
         dialogue_db = new Dialogue[numScenes];
         for (int i=0; i<numScenes; i++) {
             BufferedReader sceneReader = new BufferedReader(new FileReader("db/dialogue/" + dialogueReader.readLine() + ".txt"));
-            int numLines = Integer.parseInt(sceneReader.readLine());
+            String[] sceneData = sceneReader.readLine().split(" >> ");
+            // create an array of lines for each scene
+            int numLines = Integer.parseInt(sceneData[0]);
             DialogueLine[] scene = new DialogueLine[numLines];
             for (int j=0; j<numLines; j++) {
                 String[] lineData = sceneReader.readLine().split(" >> ");
-                if (lineData.length == 2) {
-                    scene[j] = new DialogueLine(lineData[0], new Image(lineData[1]));
-                } else if (lineData.length == 4) {
-                    scene[j] = new DialogueLine(lineData[0], new Image(lineData[1]), Boolean.parseBoolean(lineData[2]), Integer.parseInt(lineData[3]), "");
-                } else if (lineData.length == 5) {
-                    scene[j] = new DialogueLine(lineData[0], new Image(lineData[1]), Boolean.parseBoolean(lineData[2]), Integer.parseInt(lineData[3]), lineData[4]);
-                } else {
-                    scene[j] = new DialogueLine("default", new Image("images/sprites/heroine.png"));
-                }
+                scene[j] = new DialogueLine(lineData);
             }
-            dialogue_db[i] = new Dialogue(scene, new String[]{}, new int[]{});
+            // create array of conditions for quests (if applicable), and their corresponding dialogue paths
+            // dialoguePaths[] is an array of ints specifying the starting index to use when accessing the lines in the dialogue arrays
+            if (sceneData.length > 1) {
+                String[] questTriggers = sceneData[1].split("; ");
+                int numQuestTriggers = questTriggers.length;
+                String[] conditions = new String[numQuestTriggers];
+                int[] dialoguePaths = new int[numQuestTriggers];
+                for (int j=0; j<numQuestTriggers; j++) {
+                    String[] questData = questTriggers[j].split(", ");
+                    conditions[j] = questData[0];
+                    dialoguePaths[j] = Integer.parseInt(questData[1]);
+                }
+                dialogue_db[i] = new Dialogue(scene, conditions, dialoguePaths);
+            } else {
+                dialogue_db[i] = new Dialogue(scene, new String[]{}, new int[]{});
+            }
         }
 
-        triggers = new Hashtable<>();
-        triggers.put("justArrived", true);
-        triggers.put("killingLimits", false);
-        triggers.put("killedLimits", false);
-        triggers.put("finishedLimits", false);
-        triggers.put("learnSkillBash", false);
-        triggers.put("learnSkillDerive", false);
-        triggers.put("learnSkillIntegrate", false);
-        triggers.put("learnSkill+C", false);
-        triggers.put("learnSkillGetTriggy", false);
-        triggers.put("learnSkillGoOnATangent", false);
-        triggers.put("learnSkillHintHintHint", false);
-        triggers.put("learnSkillIntegrationByParts", false);
+        // read maps from text file
+        BufferedReader mapReader = new BufferedReader(new FileReader("db/maps.txt"));
+        int numMaps = Integer.parseInt(mapReader.readLine());
+        map_db = new Map[numMaps];
+        for (int i = 0; i < numMaps; i++) {
+            map_db[i] = new Map("maps/" + mapReader.readLine() + ".tmx");
+        }
 
         // enemies
         Limit limit = new Limit();
@@ -162,14 +186,6 @@ public class Resources {
         MaclaurinSeries maclaurin = new MaclaurinSeries();
         TaylorSeries taylor = new TaylorSeries();
         enemy_db = new Enemy[]{limit, derivative, definite, indefinite, improper, solid, equation, maclaurin, taylor};
-
-        // maps
-        BufferedReader mapReader = new BufferedReader(new FileReader("db/maps.txt"));
-        int numMaps = Integer.parseInt(mapReader.readLine());
-        map_db = new Map[numMaps];
-        for (int i = 0; i < numMaps; i++) {
-            map_db[i] = new Map("maps/" + mapReader.readLine() + ".tmx");
-        }
 
         // check if there's a "save"; if not, make a new entity
         Resources.party = new ArrayList<>();

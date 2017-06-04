@@ -36,8 +36,7 @@ public class Inventory {
 
         // draw list of items
         for (int i = 0; i<items.size(); i++){
-            //g.drawString(items.get(i).getName() + " x " + items.get(i).getQuantity(), 30, 55+i*20);
-            items.get(i).render(30, 55 + i*40, g);
+            items.get(i).render(30, 55 + i*40, false, g);
             g.drawString(String.valueOf("x " + items.get(i).getQuantity()), 270, 55 + i*40);
         }
 

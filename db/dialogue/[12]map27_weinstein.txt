@@ -1,0 +1,7 @@
+6
+Weinstein Clone: Welcome to INTEGRATION ISLAND!!! It's time to//learn how to INTEGRATE!!!
+-- Learned skill INTEGRATE --
+Weinstein Clone: This tower is infested with Integration//Problems. I want you to practice defeating them.
+Weinstein Clone: Inside, you'll be able to find many useful//items. And, hinthinthint...
+Weinstein Clone: If you get to the top of the tower, I will teach//you a powerful new skill: INTEGRATION BY PARTS!!!
+Weinstein Clone: Plus, I'll give you four TI-NSPIRES!!! Wouldn't//that be cool?!! >> none >> true >> -1 >> learnSkillIntegrate

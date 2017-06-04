@@ -49,9 +49,7 @@ public class DifferentialEquation extends Enemy {
         }
     }
 
-    public DifferentialEquation(Enemy anotherEquation) {
-        super(anotherEquation);
-        usedBash = false;
-        usedTriggy = false;
+    public DifferentialEquation(Enemy anotherEnemy) {
+        this();
     }
 }

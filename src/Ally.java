@@ -15,7 +15,7 @@ public class Ally extends BattleEntity {
     float ratioEquipDEF;
 
     public Ally(String name, String battlerPath) {
-        super(name, true, battlerPath);
+        super(name, true, battlerPath, 20, 10, 5, 3);
         fixEquipHP = 0;
         fixEquipMP = 0;
         fixEquipATK = 0;
@@ -25,7 +25,6 @@ public class Ally extends BattleEntity {
         ratioEquipATK = 1;
         ratioEquipDEF = 1;
         equips = new ArrayList<>();
-        System.out.println(this.skills);
     }
 
     // equips here

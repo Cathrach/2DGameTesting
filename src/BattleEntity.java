@@ -34,17 +34,17 @@ public class BattleEntity {
     ArrayList<SkillEffect> currSkillEffects;
 
     public BattleEntity() {
-        this("default", false, "images/sprites/enemies/Limit.png");
+        this("default", false, "images/sprites/enemies/Limit.png", 20, 10, 5, 3);
     }
 
-    public BattleEntity(String name, boolean isPlayer, String battlerPath) {
+    public BattleEntity(String name, boolean isPlayer, String battlerPath, int baseHP, int baseMP, int baseATK, int baseDEF) {
         this.name = name;
-        currHP = 20;
-        baseHP = 20;
-        currMP = 10;
-        baseMP = 10;
-        baseATK = 5;
-        baseDEF = 3;
+        this.currHP = baseHP;
+        this.baseHP = baseHP;
+        this.currMP = baseMP;
+        this.baseMP = baseMP;
+        this.baseATK = baseATK;
+        this.baseDEF = baseDEF;
         ratioSkillHP = 1;
         ratioSkillMP = 1;
         ratioSkillATK = 1;
@@ -66,6 +66,8 @@ public class BattleEntity {
         return (int) Math.floor((baseHP + fixSkillHP) * ratioSkillHP);
     }
 
+    public int getCurrHP() { return currHP; }
+
     public int getATK() {
         return (int) Math.floor((baseATK + fixSkillATK) * ratioSkillATK);
     }
@@ -77,6 +79,8 @@ public class BattleEntity {
     public int getMP() {
         return (int) Math.floor((baseMP + fixSkillMP) * ratioSkillMP);
     }
+
+    public int getCurrMP() { return currMP; }
 
     public String getName() {
         return name;

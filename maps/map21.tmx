@@ -29,17 +29,17 @@
  </layer>
  <layer name="Entrances" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAUjDZgxQ/BAmmfKDMHUAtQ2bxQMTgAAgRHiM7AEAAA=
+   H4sIAAAAAAAAA2NgGAUjEZgxQ/BAmWfKDMHUAtQ2bxQMTgAAoDsQO7AEAAA=
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgHMVUw5+YsIu74xAnxyw2MsxEVjudCYKRzWMj0hxsGJd5IBxNAKP7ixAmxTxCZpLrX2qYMYrJwwAfW2ULsAQAAA==
+   H4sIAAAAAAAAA2NkYGBgHMVUw5+YsIu74xDHh3HpYSPDTJBamL7pTAgMM4+NBHehuwOXeSAcTQCjm0cIk2IeITPJjWNqmDGKycMA2ioO0rAEAAA=
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA63TwQ3CMAwF0Dg+wzjABMACUAaAgWGDhgkaziActVaNWxQbYekr8sHPrZTkGEI2pKUkQyL2qXmdce9uCOBoz8XrlTwhhBdMT8s+jvQWlOXMuaZs1G5LrvQtN5iepQ5OcxU/50vpfu/wtuVO0GwS87q3lPT+UewdKeeK6fnf9ot5ob4ZcnJ4nTAbZfBbujs9NpMy+O4/HB7gaGZl/OJJU3v8lhDrxhscN0/MsAQAAA==
+   H4sIAAAAAAAAA6XT0Q3CIBDGca486zjGCdQFtA5QB9YNwAmKzxqvkS8lV8xxesk/hIf+aJOSOudSQ4GLDXX+k+aNjefuc+Rnu5bVQy9y7knLVTsPSW/NrSrrtnK21oa78rvcaLkejeZkTYPnMeX+YPB22Qv8bCw8uddGev8OvBM3KKble8MX88L7Pnc2eGNh9sLAXbobPZhRGPj3HwaP/GwmYfzilab0cJd85T7J3t7HvFOwBAAA
   </data>
  </layer>
 </map>

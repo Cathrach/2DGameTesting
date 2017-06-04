@@ -1,0 +1,19 @@
+18
+justArrived, true
+questPotatoDead, false
+questKillingLimits, false
+questKilledLimits, false
+questFinishedLimits, false
+learnSkillBash, false
+learnSkillDerive, false
+learnSkillIntegrate, false
+learnSkill+C, false
+learnSkillGetTriggy, false
+learnSkillGoOnATangent, false
+learnSkillHintHintHint, false
+learnSkillIntegrationByParts, false
+shopConsumables, false
+shopWeapons, false
+shopDefense, false
+getTI-NSpire, false
+gotTI-NSpire, false

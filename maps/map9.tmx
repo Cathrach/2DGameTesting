@@ -51,6 +51,13 @@
     <property name="Blocked" value="true"/>
    </properties>
   </tile>
+  <tile id="13">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="14"/>
+   </properties>
+  </tile>
   <tile id="14">
    <properties>
     <property name="Blocked" value="true"/>
@@ -93,7 +100,7 @@
   </tile>
  </tileset>
  <tileset firstgid="916" source="../tilesets/items.tsx"/>
- <tileset firstgid="973" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
+ <tileset firstgid="944" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
   <image source="../tilesets/teachers.png" width="384" height="360"/>
   <tile id="0">
    <properties>
@@ -112,7 +119,7 @@
  </tileset>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYHCCVcyoeBSMAgAxYvJ0sAQAAA==
+   H4sIAAAAAAAAA2NgGAWjYGiBVcwD7YJRMFAAAMCqRbiwBAAA
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
@@ -125,17 +132,17 @@
  </layer>
  <layer name="Encounters" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
+   H4sIAAAAAAAAA2NgGAWjgHbAf6AdMAqGFQAAjO0mYbAEAAA=
   </data>
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA/NnYGDwH8WjmAZ4HdPAu2EUDy8MAP9YIN2wBAAA
+   H4sIAAAAAAAAA/NnYGDwH8VDDuswDbwbiMFrhog7R/HQwAC1tQaBsAQAAA==
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAAwtnZGAIH8VUxdJMDAwyTIRpYs3bDFS7hQlBawOxDhaaWPMOA9UeYULQuACx5q0BmrEWiNcxIdggfJYZVY5Y8z5D3VTMjIpvMiPcdoUE82SZsfsPGTyhsnlfSDAPHZMa/vQ2byAxAINiXmKwBAAA
+   H4sIAAAAAAAAAwtnZGAIH8VUxdJMDAwyTIRpYs3bDFS7hQlBa4NoZgitw4SgiTXvMFDtESYEDQIHmBkwALHmrQGasRaI1zFB2HXMEAzib2BGyBFr3mcmTLfAwB6gecVAfIUE82Sx+A0dPKGyeV9IMA8dkxr+9DZvIDEA++L4TLAEAAA=
   </data>
  </layer>
 </map>

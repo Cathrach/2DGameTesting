@@ -21,32 +21,11 @@ public class Enemy extends BattleEntity {
     }
 
     public Enemy(String name, boolean isPlayer, String battlerPath, int baseHP, int baseMP, int baseATK, int baseDEF, EnemyDrop[] drops, int goldDropped) {
-        super(name, isPlayer, battlerPath);
+        super(name, isPlayer, battlerPath, baseHP, baseMP, baseATK, baseDEF);
         this.drops = drops;
         this.goldDropped = goldDropped;
-        this.baseHP = baseHP;
-        this.baseMP = baseMP;
-        this.baseATK = baseATK;
-        this.baseDEF = baseDEF;
-        this.currHP = baseHP;
-        this.currMP = baseMP;
         this.isDead = false;
         this.timesKilled = 0;
-    }
-
-    public Enemy(Enemy anotherEnemy) {
-        super(anotherEnemy.name, false, anotherEnemy.battlerPath);
-        drops = anotherEnemy.drops;
-        baseHP = anotherEnemy.baseHP;
-        baseMP = anotherEnemy.baseMP;
-        baseATK = anotherEnemy.baseATK;
-        baseDEF = anotherEnemy.baseDEF;
-        currHP = baseHP;
-        currMP = baseMP;
-        ratioSkillHP = 1;
-        ratioSkillATK = 1;
-        ratioSkillDEF = 1;
-        skills = anotherEnemy.skills;
     }
 
     public void getDrops() {

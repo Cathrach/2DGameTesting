@@ -19,10 +19,12 @@ public class Item {
     }
     public void init() {
     }
-    public void render(float xPos, float yPos, Graphics g) {
+    public void render(float xPos, float yPos, boolean renderValue, Graphics g) {
         item.draw(xPos, yPos);
         g.drawString(name, xPos + item.getWidth() + 10, yPos);
-        g.drawString("Value: " + value + "munchkins", xPos + item.getWidth() + 10, yPos + 15);
+        if (renderValue) {
+            g.drawString("Price: " + value + "munchkins", xPos + item.getWidth() + 10, yPos + 15);
+        }
     }
     public Image getImage(){
         return item;

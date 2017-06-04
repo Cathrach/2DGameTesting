@@ -60,7 +60,7 @@
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NmYGBgphAzImF0OXEmCMal9ysSm5WRcvOQsSgR5mHDIHewMZLnX1zuEKOiebgwCxHmfSXBLBiORsKUuo9U83DFxVc8/sXnR/S4IDX9EYtZkezAZR4+v+EyC908mH6Qmm8MEIwshmw+TA2t0h89zAMAXR9u87AEAAA=
+   H4sIAAAAAAAAA72SYQ6AIAhGMbEbVIfr/kew382p2zcWpFn9eBsTfMLQE5EfxAEyt02ZFPNFPkIcnO7jwp0PWQwfOlm4Uh+zezav1sf6ok+DG3yxw1XZgdH+en3aLqIxrzWj3EXr/+slwBuaz5pNc0lfvZ9qDsrgGfprzVf/7w/fCaBrm8mwBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">

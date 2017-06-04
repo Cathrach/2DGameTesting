@@ -4,7 +4,7 @@
  <tileset firstgid="241" source="../tilesets/ground2.tsx"/>
  <tileset firstgid="433" source="../tilesets/walls.tsx"/>
  <tileset firstgid="561" source="../tilesets/walls2.tsx"/>
- <tileset firstgid="817" name="objects" tilewidth="32" tileheight="32" tilecount="37" columns="7">
+ <tileset firstgid="817" name="objects" tilewidth="32" tileheight="32" tilecount="35" columns="7">
   <image source="../tilesets/objects.png" width="224" height="160"/>
   <tile id="4">
    <properties>
@@ -19,7 +19,7 @@
   <tile id="6">
    <properties>
     <property name="encounterChance" value="1"/>
-    <property name="encounterInfo" value="0"/>
+    <property name="encounterInfo" value="0_0_0_0"/>
    </properties>
   </tile>
   <tile id="11">
@@ -28,7 +28,7 @@
    </properties>
   </tile>
  </tileset>
- <tileset firstgid="867" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
+ <tileset firstgid="852" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
   <image source="../tilesets/teachers.png" width="384" height="360"/>
   <tile id="2">
    <properties>
@@ -66,12 +66,12 @@
  </layer>
  <layer name="Background" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NkYGBgBOJyJgRmZBg4HM6InY1LDRsBTIodhMwiZCYhs6YzQTC6OLo/0fm43IFsngETfveR6kdi/U6peeSEPyH3wcyklh8pMQ9fGiHVTEJ5hhR3EsoXpMQzMfqJDU9CegEBWjYksAQAAA==
+   H4sIAAAAAAAAA2NkYGBgBOJyJgRmZBg4HM6InY1LDRsBTIodhMwiZCYhs6YzQTC6OLo/0fm43IHLPHzhS6wfifU7peaRE/6E3Aczk1p+pMQ8fGmEVDMJ5RlS3EkoX5ASz8ToJzY8CekFAKbbrvGwBAAA
   </data>
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA62UyQ3CMBBFHefEegcEd0AsJ+iAEoAC2K5cAj1QAaQCSAVABcAlV5ZWQPyRHMU4jpSFLz1NJvkeT2wnY87YAmzBDthgFZMZGIC8ydgccQ324AAcoOptBPkY/nNL1COtRTwinsBZ5DSXpwIPUpTmJa/Xn3xPd02qwlvjfl9eLvuHyEc8OFbNSS342jw8J9Ea0tptlHl06sDT5b/5VPFaYm9szXpF0TLE72jeOY10+5lG/6rTQ199zdmNowx6yYKc6Z9nEvWYpM8SxpRBRamXVHXUaYCmVO+CeAU3Hq9Pz+eKOvR9TMAdPMATvCL2LM9J9VzpH/MFmeQgSbAEAAA=
+   H4sIAAAAAAAAA62USw6CMBCGS1n53KvRvRofK72BR1APYJQTIHfwBMoJlBOoJ1A3bH1cReM/SRuaUhIB/+TLMDCd/rSFOWfMAVuwAz5Yp2QJJqBsM7ZC9MAeHEAAdL2tOB8reu6KfiRPxCPiCZxFTnNJVXicqjIv1Up/6j3TNamJ2haPfMlcrZ8in/H4WD0n9VDX58k5idaQ1m6jzWPSADVDnpyTXLE3vmG98igwvHMemfYzj/7VZwRfY8PZTaMCvBRByY7OM4k8ZvFZw5g6aGj9sqqNPh3QVfpdEK/gxtP5lHWh6EPfxwLcwQM8wetHz+qc1C9U/jFfWIdNxrAEAAA=
   </data>
  </layer>
 </map>

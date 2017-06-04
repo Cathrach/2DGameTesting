@@ -16,6 +16,7 @@ public class TestingGame extends StateBasedGame {
     public static final int PAUSE_MENU = 3;
     public static final int COMBAT = 4;
     public static final int SHOP = 5;
+    public static final int DEATH_SCREEN = 6;
 
     public static final int WIDTH = 640;
     public static final int HEIGHT = 480;
@@ -28,7 +29,8 @@ public class TestingGame extends StateBasedGame {
         this.addState(new Cutscene(CUTSCENE));
         this.addState(new PauseMenu(PAUSE_MENU));
         this.addState(new Combat(COMBAT));
-        this.addState(new Combat(SHOP));
+        this.addState(new Shop(SHOP));
+        this.addState(new Cutscene(DEATH_SCREEN));
         this.enterState(MAIN_MENU);
     }
 

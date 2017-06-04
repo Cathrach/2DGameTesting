@@ -47,7 +47,6 @@ public class Dialogue {
             if (lines[currLineID].mapID >= 0) {
                 MapState.changeMap(lines[currLineID].mapID);
             }
-            reset();
             game.enterState(TestingGame.MAP);
         } else {
             currLineID++;

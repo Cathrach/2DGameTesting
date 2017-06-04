@@ -1,7 +1,7 @@
 6
 Water >> 10 >> Rather scarce since potatoes keep boiling it. >> SINGLE_ALLY >> 0 >> 5 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
 Granola Bar >> 15 >> Eat this to keep your brain energized for the exams. >> SELF >> 0 >> 10 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
-Gravy >> 100 >> Rumor has it that potatoes fear this. >> SINGLE_ENEMY >> 50 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
-Coffee >> 60 >> The liquid of life. >> ALL_ALLIES >> 0 >> 0 >> 0.3 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
 Apple >> 15 >> Apparently teachers love this crisp, sweet fruit. >> SINGLE_ALLY >> 0 >> 10 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
+Coffee >> 60 >> The liquid of life. >> ALL_ALLIES >> 0 >> 0 >> 0.3 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0
 Chocolate >> 60 >> A deliciously smooth and sweet treat. >> SINGLE_ALLY >> 0 >> 0 >> 0.2 >> 0 >> 0.2 >> 0 >> 0 >> 0 >> 0
+Gravy >> 100 >> Rumor has it that potatoes fear this. >> SINGLE_ENEMY >> 50 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0 >> 0

@@ -1,0 +1,10 @@
+9 >> gotTI-NSpire, 8
+Weinstein Clone: Good job defeating those integration problems!!!//As promised, I'll teach you a new skill!!!
+-- Learned skill INTEGRATION BY PARTS --
+Weinstein Clone: This is a powerful method for solving integrals!!!//But as always, remember to look for simpler ways first!!! >> none >> false >> -1 >> learnSkillIntegrationByParts
+Weinstein Clone: And now, here are four TI-NSPIRES!!!
+-- Obtained TI-NSPIRE x4 --
+Weinstein Clone: These calculators are extremely useful!!! Not only//can you graph functions, but you can solve equations!!!
+Weinstein Clone: You can even compute the answers to integrals!!!//This calculator is packed with shortcuts!!!
+Weinstein Clone: Have fun playing with them!!! >> none >> true >> -1 >> getTI-NSpire
+Weinstein Clone: Aren't TI-NSpires great?!! >> none >> true

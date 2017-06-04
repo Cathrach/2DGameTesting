@@ -1,0 +1,3 @@
+2
+Shopkeeper: Welcome to this shop! Here, you can buy//and sell all sorts of calculators and math tools.
+Shopkeeper: Is there anything you would like to buy//or sell? >> none >> true >> -1 >> shopWeapons

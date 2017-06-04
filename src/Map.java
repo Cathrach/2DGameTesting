@@ -83,12 +83,13 @@ public class Map {
                     break;
                 case 5:
                     Combat.currEnemies.add(new SolidRevolution(Resources.enemy_db[5]));
+                    break;
                 case 6:
                     Combat.currEnemies.add(new DifferentialEquation(Resources.enemy_db[6]));
+                    break;
                 default:
                     break;
             }
-            Combat.currEnemies.add(new Enemy(Resources.enemy_db[Integer.parseInt(index)]));
         }
     }
     public boolean isContainer(float xPos, float yPos){
@@ -118,6 +119,6 @@ public class Map {
     }
     public int getCutscene(float xPos, float yPos) {
         int tileID = map.getTileId((int) xPos / tileWidth, (int) yPos / tileHeight, map.getLayerIndex("Blocked"));
-        return Integer.parseInt(map.getTileProperty(tileID, "scene", "none"));
+        return Integer.parseInt(map.getTileProperty(tileID, "scene", "0"));
     }
 }

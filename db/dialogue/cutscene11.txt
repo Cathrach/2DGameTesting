@@ -1,5 +1,0 @@
-4
-Weinstein Clone: You've made it to DERIVATIVE DUNES!!! >> images/backgrounds/blank.png
-Weinstein Clone: Now, I'll teach you how to DERIVE!!! >> images/backgrounds/blank.png
--- Learned skill DERIVE -- >> images/backgrounds/blank.png
-Weinstein Clone: This is one of the most fundamental concepts of//calculus -- make good use of it!!! >> images/backgrounds/blank.png >> true >> 25 >> learnSkillDerive

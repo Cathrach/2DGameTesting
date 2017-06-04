@@ -1,6 +1,7 @@
 import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.*;
 
 /**
  * Created by serinahu on 5/12/17.
@@ -12,24 +13,26 @@ public class DialogueLine {
     String triggerChange;
     int mapID;
 
-    public DialogueLine(String line, Image speaker) {
-        this.lineSplit = line.split("//");
-        this.speaker = speaker;
-        this.isLast = false;
-        this.mapID = -1;
-        this.triggerChange = "";
-    }
+    public DialogueLine(String[] data) throws SlickException {
+        // if the text file for the scene is empty, assign default text
+        try { this.lineSplit = data[0].split("//"); }
+        catch (ArrayIndexOutOfBoundsException e) { this.lineSplit = new String[]{"...?"}; }
 
-    public DialogueLine(String line, Image speaker, boolean isLast, int mapID, String triggerChange) {
-        this.lineSplit = line.split("//");
-        this.speaker = speaker;
-        this.isLast = isLast;
-        if (this.isLast) {
-            this.mapID = mapID;
-        } else {
-            this.mapID = -1; // -1 for old map
-        }
-        this.triggerChange = triggerChange;
+        // if there is no specified image, assign default image
+        try { this.speaker = new Image(data[1]); }
+        catch (RuntimeException e) { this.speaker = new Image("images/backgrounds/blank.png"); }
+
+        // if it is not specified whether this line is the last line, assign default value
+        try { this.isLast = Boolean.valueOf(data[2]); }
+        catch (ArrayIndexOutOfBoundsException e) { this.isLast = false; }
+
+        // if no map is specified, assign default (-1 means map does not change)
+        try { this.mapID = Integer.parseInt(data[3]); }
+        catch (ArrayIndexOutOfBoundsException | IllegalArgumentException e) { this.mapID = -1; }
+
+        // if no trigger is specified, assign default
+        try { this.triggerChange = data[4]; }
+        catch (ArrayIndexOutOfBoundsException e) { this.triggerChange = ""; }
     }
 
     public void render(Graphics g) {

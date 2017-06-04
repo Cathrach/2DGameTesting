@@ -26,7 +26,7 @@ public class MaclaurinSeries extends Enemy {
         }
     }
 
-    public MaclaurinSeries(Enemy anotherSeries) {
-        super(anotherSeries);
+    public MaclaurinSeries(Enemy anotherEnemy) {
+        this();
     }
 }
