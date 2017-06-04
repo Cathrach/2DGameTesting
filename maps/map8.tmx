@@ -119,7 +119,7 @@
  </tileset>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjgLpgGjMEj4JRQG0AAKaS3QOwBAAA
+   H4sIAAAAAAAAA2NgGAWjgLpgGTMEj4JRQG0AAKkfXuqwBAAA
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">

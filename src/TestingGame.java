@@ -46,6 +46,7 @@ public class TestingGame extends StateBasedGame {
             getState(SHOP).init(container, this);
             Inventory.initListener(container);
             Combat.initListener(container);
+            Shop.initListener(container);
         }
         catch (IOException e) {
             System.out.println("bad file path");

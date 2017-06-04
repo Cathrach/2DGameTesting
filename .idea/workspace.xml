@@ -2,30 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="879bada7-3ef8-4932-bbc3-19fc35ada0d8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dialogue/[14]map11_shop.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/dialogue/cutsceneShop.txt" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene1.txt" afterPath="$PROJECT_DIR$/db/dialogue/[0]intro1.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene10.txt" afterPath="$PROJECT_DIR$/db/dialogue/[9]map20_teacher.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene11.txt" afterPath="$PROJECT_DIR$/db/dialogue/[10]map25_weinstein.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene12.txt" afterPath="$PROJECT_DIR$/db/dialogue/[11]map24_sign.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene13.txt" afterPath="$PROJECT_DIR$/db/dialogue/[12]map27_weinstein.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene14.txt" afterPath="$PROJECT_DIR$/db/dialogue/[13]map30_weinstein.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene2.txt" afterPath="$PROJECT_DIR$/db/dialogue/[1]intro2.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene3.txt" afterPath="$PROJECT_DIR$/db/dialogue/[2]map8_kats.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene4.txt" afterPath="$PROJECT_DIR$/db/dialogue/[3]map9_basias.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene5.txt" afterPath="$PROJECT_DIR$/db/dialogue/[4]map11_detchkov.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene6.txt" afterPath="$PROJECT_DIR$/db/dialogue/[5]map7_weinstein.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene7.txt" afterPath="$PROJECT_DIR$/db/dialogue/[6]map2_kuberska.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene8.txt" afterPath="$PROJECT_DIR$/db/dialogue/[7]map18_sign.txt" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/cutscene9.txt" afterPath="$PROJECT_DIR$/db/dialogue/[8]map23_sign.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DGameTesting/DialogueLine.class" afterPath="$PROJECT_DIR$/out/production/2DGameTesting/DialogueLine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/2DGameTesting/Resources.class" afterPath="$PROJECT_DIR$/out/production/2DGameTesting/Resources.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dialogue/[15]shop_weapons.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/dialogue/[16]shop_defense.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/db/dialogue/[14]map11_shop.txt" afterPath="$PROJECT_DIR$/db/dialogue/[14]shop_consumables.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tilesets/objects.png" afterPath="$PROJECT_DIR$/tilesets/objects.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/consumables.txt" afterPath="$PROJECT_DIR$/db/consumables.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dialogue/[10]map25_weinstein.txt" afterPath="$PROJECT_DIR$/db/dialogue/[10]map25_weinstein.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dialogue/[12]map27_weinstein.txt" afterPath="$PROJECT_DIR$/db/dialogue/[12]map27_weinstein.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dialogue/[13]map30_weinstein.txt" afterPath="$PROJECT_DIR$/db/dialogue/[13]map30_weinstein.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dialogue/[4]map11_detchkov.txt" afterPath="$PROJECT_DIR$/db/dialogue/[4]map11_detchkov.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dialogue/[5]map7_weinstein.txt" afterPath="$PROJECT_DIR$/db/dialogue/[5]map7_weinstein.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dialogue/[6]map2_kuberska.txt" afterPath="$PROJECT_DIR$/db/dialogue/[6]map2_kuberska.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dialogue/[9]map20_teacher.txt" afterPath="$PROJECT_DIR$/db/dialogue/[9]map20_teacher.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/dialogue/cutscenes.txt" afterPath="$PROJECT_DIR$/db/dialogue/cutscenes.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map1.tmx" afterPath="$PROJECT_DIR$/maps/map1.tmx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DialogueLine.java" afterPath="$PROJECT_DIR$/src/DialogueLine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Resources.java" afterPath="$PROJECT_DIR$/src/Resources.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/triggers.txt" afterPath="$PROJECT_DIR$/db/triggers.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map10.tmx" afterPath="$PROJECT_DIR$/maps/map10.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map11.tmx" afterPath="$PROJECT_DIR$/maps/map11.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map7.tmx" afterPath="$PROJECT_DIR$/maps/map7.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map8.tmx" afterPath="$PROJECT_DIR$/maps/map8.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/map9.tmx" afterPath="$PROJECT_DIR$/maps/map9.tmx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Inventory.java" afterPath="$PROJECT_DIR$/src/Inventory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Item.java" afterPath="$PROJECT_DIR$/src/Item.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Map.java" afterPath="$PROJECT_DIR$/src/Map.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MapState.java" afterPath="$PROJECT_DIR$/src/MapState.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Shop.java" afterPath="$PROJECT_DIR$/src/Shop.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestingGame.java" afterPath="$PROJECT_DIR$/src/TestingGame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,7 +39,58 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Dialogue.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Dialogue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1222">
+              <caret line="48" column="13" lean-forward="false" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PauseMenu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/PauseMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-234">
+              <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Stats.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Stats.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Resources.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Resources.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="127" column="54" lean-forward="false" selection-start-line="127" selection-start-column="54" selection-end-line="127" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DialogueLine.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DialogueLine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="832">
+              <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -76,6 +129,8 @@
       <find>selectedAction</find>
       <find>Resources.party</find>
       <find>updateW</find>
+      <find>initListener</find>
+      <find>listener</find>
     </findStrings>
     <replaceStrings>
       <replace>Inventory.highlightedItemID</replace>
@@ -95,11 +150,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/db/dialogue/cutscene7.txt" />
-        <option value="$PROJECT_DIR$/db/dialogue/cutscene6.txt" />
-        <option value="$PROJECT_DIR$/db/dialogue/cutscene8.txt" />
-        <option value="$PROJECT_DIR$/src/Stats.java" />
-        <option value="$PROJECT_DIR$/db/dialogue/cutscene9.txt" />
         <option value="$PROJECT_DIR$/db/dialogue/cutscene10.txt" />
         <option value="$PROJECT_DIR$/db/dialogue/cutscene12.txt" />
         <option value="$PROJECT_DIR$/db/dialogue/cutscene11.txt" />
@@ -109,7 +159,6 @@
         <option value="$PROJECT_DIR$/db/triggers" />
         <option value="$PROJECT_DIR$/src/BattleEntity.java" />
         <option value="$PROJECT_DIR$/src/Ally.java" />
-        <option value="$PROJECT_DIR$/db/triggers.txt" />
         <option value="$PROJECT_DIR$/src/Entity.java" />
         <option value="$PROJECT_DIR$/src/Dialogue.java" />
         <option value="$PROJECT_DIR$/src/Enemy.java" />
@@ -123,29 +172,35 @@
         <option value="$PROJECT_DIR$/src/DefiniteIntegral.java" />
         <option value="$PROJECT_DIR$/src/MaclaurinSeries.java" />
         <option value="$PROJECT_DIR$/src/Combat.java" />
-        <option value="$PROJECT_DIR$/src/TestingGame.java" />
         <option value="$PROJECT_DIR$/src/Cutscene.java" />
-        <option value="$PROJECT_DIR$/src/Inventory.java" />
-        <option value="$PROJECT_DIR$/src/Shop.java" />
-        <option value="$PROJECT_DIR$/src/MapState.java" />
-        <option value="$PROJECT_DIR$/src/Map.java" />
         <option value="$PROJECT_DIR$/src/Resources.java" />
         <option value="$PROJECT_DIR$/db/dialogue/[14]shop.txt" />
-        <option value="$PROJECT_DIR$/db/dialogue/cutscenes.txt" />
         <option value="$PROJECT_DIR$/db/dialogue/[2]map8_kats.txt" />
         <option value="$PROJECT_DIR$/db/dialogue/[14]map11_shop.txt" />
         <option value="$PROJECT_DIR$/db/dialogue/[3]map9_basias.txt" />
-        <option value="$PROJECT_DIR$/db/dialogue/[4]map11_detchkov.txt" />
-        <option value="$PROJECT_DIR$/db/dialogue/[5]map7_weinstein.txt" />
-        <option value="$PROJECT_DIR$/db/dialogue/[6]map2_kuberska.txt" />
         <option value="$PROJECT_DIR$/db/dialogue/[7]map18_sign.txt" />
         <option value="$PROJECT_DIR$/db/dialogue/[8]map23_sign.txt" />
-        <option value="$PROJECT_DIR$/db/dialogue/[9]map20_teacher.txt" />
-        <option value="$PROJECT_DIR$/db/dialogue/[10]map25_weinstein.txt" />
         <option value="$PROJECT_DIR$/db/dialogue/[11]map24_sign.txt" />
-        <option value="$PROJECT_DIR$/db/dialogue/[12]map27_weinstein.txt" />
-        <option value="$PROJECT_DIR$/db/dialogue/[13]map30_weinstein.txt" />
         <option value="$PROJECT_DIR$/src/DialogueLine.java" />
+        <option value="$PROJECT_DIR$/db/dialogue/[9]map20_teacher.txt" />
+        <option value="$PROJECT_DIR$/db/dialogue/[13]map30_weinstein.txt" />
+        <option value="$PROJECT_DIR$/db/dialogue/[6]map2_kuberska.txt" />
+        <option value="$PROJECT_DIR$/db/dialogue/[10]map25_weinstein.txt" />
+        <option value="$PROJECT_DIR$/db/dialogue/[12]map27_weinstein.txt" />
+        <option value="$PROJECT_DIR$/db/dialogue/[5]map7_weinstein.txt" />
+        <option value="$PROJECT_DIR$/src/MapState.java" />
+        <option value="$PROJECT_DIR$/db/dialogue/[16]shop_defense.txt" />
+        <option value="$PROJECT_DIR$/db/dialogue/[15]shop_weapons.txt" />
+        <option value="$PROJECT_DIR$/db/dialogue/[14]shop_consumables.txt" />
+        <option value="$PROJECT_DIR$/src/TestingGame.java" />
+        <option value="$PROJECT_DIR$/src/Map.java" />
+        <option value="$PROJECT_DIR$/src/Inventory.java" />
+        <option value="$PROJECT_DIR$/src/Item.java" />
+        <option value="$PROJECT_DIR$/db/dialogue/cutscenes.txt" />
+        <option value="$PROJECT_DIR$/src/Shop.java" />
+        <option value="$PROJECT_DIR$/db/consumables.txt" />
+        <option value="$PROJECT_DIR$/db/dialogue/[4]map11_detchkov.txt" />
+        <option value="$PROJECT_DIR$/db/triggers.txt" />
       </list>
     </option>
   </component>
@@ -503,7 +558,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.5031348" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11620112" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09385475" sideWeight="0.49791667" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.4960815" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32863188" sideWeight="0.4968652" order="7" side_tool="false" content_ui="tabs" />
@@ -603,54 +658,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/maps.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Skill.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Stats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="34" column="47" lean-forward="true" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/EnemyDrop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BattleAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/equipment.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/sprites/enemies/Derivative.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -661,25 +668,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/PauseMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/maps/map10.tmx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/triggers.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -798,75 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Combat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5408">
-          <caret line="244" column="13" lean-forward="true" selection-start-line="244" selection-start-column="13" selection-end-line="244" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/TestingGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="47" column="43" lean-forward="false" selection-start-line="47" selection-start-column="43" selection-end-line="47" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Shop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="53" column="41" lean-forward="false" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-          <folding>
-            <element signature="e#585#586#0" expanded="false" />
-            <element signature="e#622#623#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MapState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="88" column="22" lean-forward="false" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
-          <folding>
-            <element signature="e#2109#2177#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="113" column="29" lean-forward="false" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="117" column="4" lean-forward="false" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cutscene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1085">
-          <caret line="49" column="13" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-572">
-          <caret line="43" column="47" lean-forward="true" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Ally.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-976">
@@ -899,62 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Resources.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="127" column="54" lean-forward="false" selection-start-line="127" selection-start-column="54" selection-end-line="127" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Dialogue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="48" column="13" lean-forward="false" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/dialogue/[2]map8_kats.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/dialogue/[4]map11_detchkov.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="80" lean-forward="false" selection-start-line="4" selection-start-column="80" selection-end-line="4" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/dialogue/[3]map9_basias.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="72" lean-forward="false" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/dialogue/[5]map7_weinstein.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="123" lean-forward="false" selection-start-line="4" selection-start-column="123" selection-end-line="4" selection-end-column="123" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/dialogue/[6]map2_kuberska.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="98" lean-forward="false" selection-start-line="2" selection-start-column="98" selection-end-line="2" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/dialogue/[7]map18_sign.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -963,10 +830,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/dialogue/[8]map23_sign.txt">
+    <entry file="file://$PROJECT_DIR$/src/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="43" lean-forward="false" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
+        <state relative-caret-position="547">
+          <caret line="113" column="29" lean-forward="false" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -974,15 +841,15 @@
     <entry file="file://$PROJECT_DIR$/db/dialogue/[9]map20_teacher.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
-          <caret line="2" column="125" lean-forward="false" selection-start-line="2" selection-start-column="125" selection-end-line="2" selection-end-column="125" />
+          <caret line="2" column="67" lean-forward="false" selection-start-line="2" selection-start-column="67" selection-end-line="2" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/dialogue/[10]map25_weinstein.txt">
+    <entry file="file://$PROJECT_DIR$/db/dialogue/[13]map30_weinstein.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="122" lean-forward="false" selection-start-line="4" selection-start-column="122" selection-end-line="4" selection-end-column="122" />
+        <state relative-caret-position="78">
+          <caret line="3" column="69" lean-forward="true" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
           <folding />
         </state>
       </provider>
@@ -995,34 +862,183 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/dialogue/[8]map23_sign.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="1" column="43" lean-forward="false" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/dialogue/[6]map2_kuberska.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="62" lean-forward="false" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/dialogue/[10]map25_weinstein.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="63" lean-forward="false" selection-start-line="4" selection-start-column="63" selection-end-line="4" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/db/dialogue/[12]map27_weinstein.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
-          <caret line="5" column="133" lean-forward="false" selection-start-line="5" selection-start-column="133" selection-end-line="5" selection-end-column="133" />
+          <caret line="5" column="71" lean-forward="false" selection-start-line="5" selection-start-column="71" selection-end-line="5" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/dialogue/[13]map30_weinstein.txt">
+    <entry file="file://$PROJECT_DIR$/db/dialogue/[5]map7_weinstein.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" column="148" lean-forward="false" selection-start-line="3" selection-start-column="148" selection-end-line="3" selection-end-column="148" />
+        <state relative-caret-position="104">
+          <caret line="4" column="67" lean-forward="false" selection-start-line="4" selection-start-column="67" selection-end-line="4" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/dialogue/[14]map11_shop.txt">
+    <entry file="file://$PROJECT_DIR$/db/dialogue/[3]map9_basias.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1" lean-forward="true" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+        <state relative-caret-position="26">
+          <caret line="1" column="72" lean-forward="false" selection-start-line="1" selection-start-column="72" selection-end-line="1" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/dialogue/[2]map8_kats.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/dialogue/[16]shop_defense.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="98" lean-forward="false" selection-start-line="2" selection-start-column="98" selection-end-line="2" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestingGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="48" column="41" lean-forward="false" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="121" column="71" lean-forward="false" selection-start-line="121" selection-start-column="71" selection-end-line="121" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Inventory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="38" column="54" lean-forward="false" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Combat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2931">
+          <caret line="214" column="62" lean-forward="true" selection-start-line="214" selection-start-column="62" selection-end-line="214" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/dialogue/[15]shop_weapons.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="98" lean-forward="false" selection-start-line="2" selection-start-column="98" selection-end-line="2" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/dialogue/[14]shop_consumables.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="78" lean-forward="true" selection-start-line="2" selection-start-column="78" selection-end-line="2" selection-end-column="78" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/dialogue/cutscenes.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+        <state relative-caret-position="0">
+          <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/equipment.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Shop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="10" column="73" lean-forward="false" selection-start-line="10" selection-start-column="73" selection-end-line="10" selection-end-column="73" />
+          <folding>
+            <element signature="e#6229#6230#0" expanded="true" />
+            <element signature="e#6263#6264#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/consumables.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MapState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1900">
+          <caret line="102" column="33" lean-forward="false" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
+          <folding>
+            <element signature="e#2397#2465#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cutscene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="44" column="48" lean-forward="true" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/dialogue/[4]map11_detchkov.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -1031,6 +1047,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="832">
           <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Resources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="127" column="54" lean-forward="false" selection-start-line="127" selection-start-column="54" selection-end-line="127" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/PauseMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-234">
+          <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Stats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/triggers.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="18" lean-forward="false" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Dialogue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1222">
+          <caret line="48" column="13" lean-forward="false" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
           <folding />
         </state>
       </provider>

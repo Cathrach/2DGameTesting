@@ -1,4 +1,4 @@
-15
+17
 [0]intro1
 [1]intro2
 [2]map8_kats
@@ -13,4 +13,6 @@
 [11]map24_sign
 [12]map27_weinstein
 [13]map30_weinstein
-[14]map11_shop
+[14]shop_consumables
+[15]shop_weapons
+[16]shop_defense

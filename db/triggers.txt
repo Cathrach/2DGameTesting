@@ -1,4 +1,4 @@
-12
+15
 justArrived, true
 killingLimits, false
 killedLimits, false
@@ -11,3 +11,6 @@ learnSkillGetTriggy, false
 learnSkillGoOnATangent, false
 learnSkillHintHintHint, false
 learnSkillIntegrationByParts, false
+shopConsumables, false
+shopWeapons, false
+shopDefense, false

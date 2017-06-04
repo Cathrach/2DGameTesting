@@ -33,18 +33,27 @@ public class MapState extends BasicGameState {
             game.enterState(TestingGame.CUTSCENE);
         }
 
-        // check if learning skills by talking to NPCs
-        learnSkill("learnSkillDerive", 2);
-        learnSkill("learnSkillIntegrate", 3);
-        learnSkill("learnSkillBash", 4);
-        learnSkill("learnSkillIntegrationByParts", 9);
+        // check if shopping
+        shopping(game, "shopConsumables");
+        shopping(game, "shopWeapons");
+        shopping(game, "shopDefense");
 
+        // check if learning skills by talking to NPCs
+        learningSkill("learnSkillDerive", 2);
+        learningSkill("learnSkillIntegrate", 3);
+        learningSkill("learnSkillBash", 4);
+        learningSkill("learnSkillIntegrationByParts", 9);
+
+        // check if trying to access pause menu
         Input input = container.getInput();
         if (input.isKeyPressed(Input.KEY_ESCAPE)) {
             PauseMenu.inMenu = PauseMenu.NONE;
             game.enterState(TestingGame.PAUSE_MENU);
         }
+
+        // update player's position on screen & interaction w/ environment
         leader.update(container, game, delta, this);
+
         // if the tile is an entry, change the current map ID and current map
         if (currentMap.isEntry(leader.xPos, leader.yPos)) {
             String[] data = currentMap.getEntry(leader.xPos, leader.yPos);
@@ -62,7 +71,6 @@ public class MapState extends BasicGameState {
                 leader.yPos = currentMap.tileHeight * Integer.parseInt(data[3]);
             }
         }
-        // if trigger (NPC, chest), do something
 
         // if there's a random encounter, change state to combat
         if (sinceLastEncounter >= timeToWait) {
@@ -80,6 +88,22 @@ public class MapState extends BasicGameState {
         currentMapID = newMapID;
         currentMap = Resources.map_db[currentMapID];
     }
+    public void learningSkill(String skill, int id) {
+        if (Resources.triggers.get(skill)) {
+            if(!Resources.party.get(0).battleEntity.skills.contains(Resources.skill_db[id])) {
+                for (Entity entity : Resources.party)
+                    entity.battleEntity.addSkill(id);
+            }
+            Resources.triggers.put(skill, false);
+        }
+    }
+    public void shopping(StateBasedGame game, String shopType) {
+        if (Resources.triggers.get(shopType)) {
+            Resources.triggers.put(shopType, false);
+            Shop.enter(shopType);
+            game.enterState(TestingGame.SHOP);
+        }
+    }
     public boolean isBlocked(float xPos, float yPos) {
         return currentMap.isBlocked(xPos, yPos);
     }
@@ -92,14 +116,5 @@ public class MapState extends BasicGameState {
     }
     public int getWidth() {
         return currentMap.pixelWidth;
-    }
-    public void learnSkill(String skill, int id) {
-        if (Resources.triggers.get(skill)) {
-            if(!Resources.party.get(0).battleEntity.skills.contains(Resources.skill_db[id])) {
-                for (Entity entity : Resources.party)
-                    entity.battleEntity.addSkill(id);
-            }
-            Resources.triggers.put(skill, false);
-        }
     }
 }

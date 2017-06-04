@@ -1,5 +1,9 @@
-4
+8
 Mr. Detchkov: Have you polished your algebra and trig skills?
-Mr. Detchkov: It's about time you upgraded your calculators.
-Mr. Detchkov: Before you leave TRIG TOWN and head into FUNCTION//FOREST, you'll need to defeat the evil guards.
-Mr. Detchkov: Take these SCIENTIFIC CALCULATORS and enjoy! >> none >> true >> -1
+Mr. Detchkov: I will give you four SCIENTIFIC CALCULATORS once you//have defeated five Limits.
+Mr. Detchkov: You will need them to make your trip through FUNCTION//FOREST easier.
+Mr. Detchkov: Now go defeat some Limits! >> none >> true >> -1
+Mr. Detchkov: Ah, I see you have defeated 5 limits. As promised,//I will give you four SCIENTIFIC CALCULATORS.
+--Obtained four SCIENTIFIC CALCULATORS--
+Mr. Detchkov: These are very powerful calculators, but don't rely//on them too much.
+Mr. Detchkov: You only need a pencil and paper, really, for the//simpler problems! >> none >> true >> -1

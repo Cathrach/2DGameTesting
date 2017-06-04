@@ -1,4 +1,4 @@
 3
 Weinstein Clone: Good job defeating those integration problems!!!//As promised, I'll teach you a new skill!!!
 --Learned skill INTEGRATION BY PARTS--
-Weinstein Clone: This is a powerful method for solving integrals!!! But//as always, remember to look for simpler ways first!!! >> none >> true >> -1 >> learnSkillIntegrationByParts
+Weinstein Clone: This is a powerful method for solving integrals!!!//But as always, remember to look for simpler ways first!!! >> none >> true >> -1 >> learnSkillIntegrationByParts

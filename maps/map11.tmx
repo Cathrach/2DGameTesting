@@ -24,13 +24,27 @@
  <tileset firstgid="660" source="../tilesets/objects2.tsx"/>
  <tileset firstgid="916" source="../tilesets/ground2.tsx"/>
  <tileset firstgid="1108" source="../tilesets/items.tsx"/>
- <tileset firstgid="1152" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
+ <tileset firstgid="1136" name="people" tilewidth="32" tileheight="32" tilecount="132" columns="12">
   <image source="../tilesets/teachers.png" width="384" height="360"/>
+  <tile id="2">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="5"/>
+   </properties>
+  </tile>
   <tile id="3">
    <properties>
     <property name="Blocked" value="true"/>
     <property name="isCutscene" value="true"/>
     <property name="scene" value="4"/>
+   </properties>
+  </tile>
+  <tile id="14">
+   <properties>
+    <property name="Blocked" value="true"/>
+    <property name="isCutscene" value="true"/>
+    <property name="scene" value="5"/>
    </properties>
   </tile>
   <tile id="15">
@@ -43,7 +57,7 @@
  </tileset>
  <layer name="Containers" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA2NgGAWjgHognAUVj4JRQE0AANhIalWwBAAA
+   H4sIAAAAAAAAA2NgGAWjYBSMgqEBAGlKTgywBAAA
   </data>
  </layer>
  <layer name="Entrances" width="20" height="15">
@@ -63,7 +77,7 @@
  </layer>
  <layer name="Blocked" width="20" height="15">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAA7vOyMBwfYjgeCBOIIPGZV4+EBeQQeMyDx9oZsEtR455/VQyT4+ZgUEfig2YKTevmAkVU2oeMWComkfIHmrlG2qbN5AYANEq6cywBAAA
+   H4sIAAAAAAAAA7vOyMBwfYjgeCBOIIPGZV4+EBeQQeMyDx8oZsEtR6x5RUhm1FPBvDqgGXrMDAz6UGzATJl5xIJR8/BjcvXRy7yBxAC4QdS4sAQAAA==
   </data>
  </layer>
 </map>
