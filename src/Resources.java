@@ -56,8 +56,8 @@ public class Resources {
                 new SkillEffect[]{}, new TargetType[]{});
         skill_db[3] = new Skill("Integrate", new Image("images/skills/attack.png"), 0, 10, 0, 2, 0, 1, TargetType.SINGLE_ENEMY,
                 new SkillEffect[]{}, new TargetType[]{});
-        skill_db[4] = new Skill("Bash", new Image("images/skills/attack.png"), 0, 25, 50, 0.5f, 0, 1, TargetType.SINGLE_ENEMY,
-                new SkillEffect[]{skilleffect_db[1]}, new TargetType[]{TargetType.SELF});
+        skill_db[4] = new Skill("Bash", new Image("images/skills/attack.png"), 0, 5, 25, 0, 0, 1, TargetType.SINGLE_ENEMY,
+                new SkillEffect[]{skilleffect_db[1]}, new TargetType[]{TargetType.SINGLE_ENEMY});
         skill_db[5] = new Skill("+C", new Image("images/skills/defend.png"), 1, 15, 0, 0, 0, 0, TargetType.ALL_ALLIES,
                 new SkillEffect[]{skilleffect_db[2]}, new TargetType[]{TargetType.ALL_ALLIES});
         skill_db[6] = new Skill("Get Triggy", new Image("images/skills/attack.png"), 0, 10, 0, 1, 0, 0.5f, TargetType.SINGLE_ENEMY,

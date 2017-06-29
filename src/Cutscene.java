@@ -44,6 +44,8 @@ public class Cutscene extends BasicGameState {
                 if (input.isKeyPressed(Input.KEY_ENTER) || input.isKeyPressed(Input.KEY_SPACE)) {
                     currDialogue.nextLine(game);
                     timeSinceLastPress = 0;
+                } else if (input.isKeyPressed(Input.KEY_S)) {
+                    currDialogue.currLineID = currDialogue.lines.length - 1;
                 }
             } else {
                 timeSinceLastPress += delta;

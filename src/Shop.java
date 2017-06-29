@@ -136,9 +136,9 @@ class ShopKeyboard implements KeyListener {
                 Shop.highlightedItemID = 0;
             }
         } else if (key == Input.KEY_ENTER) {
-            Shop.previousMode = Shop.mode;
             if (Shop.mode == Shop.BUYING) {
                 Shop.mode = Shop.POPUP;
+                Shop.previousMode = Shop.BUYING;
                 Item item = Resources.item_db[Shop.items[Shop.highlightedItemID]];
                 if (item.getValue() <= Resources.money) {
                     Shop.message = "Purchased " + item.getName() + " x 1";
@@ -147,12 +147,19 @@ class ShopKeyboard implements KeyListener {
                 } else {
                     Shop.message = "Not enough munchkins to purchase this item";
                 }
-            } else if (Shop.mode == Shop.SELLING) {
+            } else if (Shop.mode == Shop.SELLING && Inventory.items.size() > 0) {
+                Shop.previousMode = Shop.SELLING;
                 Shop.mode = Shop.POPUP;
                 Item item = Inventory.items.get(Shop.highlightedItemID);
                 Shop.message = "Sold " + item.getName() + " x 1";
                 Resources.money += (int) (item.getValue() * 0.75);
                 Inventory.removeItem(item.getName(), 1);
+                if (Inventory.items.size() == 0) {
+                    Shop.mode = Shop.BUYING;
+                    Shop.previousMode = Shop.BUYING;
+                } else if (!Inventory.items.contains(item)) {
+                    Shop.highlightedItemID = 0;
+                }
             } else if (Shop.mode == Shop.POPUP) {
                 Shop.mode = Shop.previousMode;
                 Shop.message = "";
